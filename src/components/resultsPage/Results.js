@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import dummyPerson from '../../images/dummy.jpg';
 
 export default function Results() {
 	return (
@@ -11,7 +10,7 @@ export default function Results() {
 						<div className="card-body">
 							<h5 className="card-title">Dummy person</h5>
 							<img
-								src={dummyPerson}
+								src="images/dummy.jpg"
 								alt=""
 								width="100"
 								style={{ borderRadius: '50%' }}
