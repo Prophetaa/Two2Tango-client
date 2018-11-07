@@ -4,7 +4,9 @@
 	"main": "src/index.js",
 	"private": true,
 	"dependencies": {
+		"i": "^0.3.6",
 		"react": "^16.6.0",
+		"react-bootstrap": "^0.32.4",
 		"react-dom": "^16.6.0",
 		"react-dropzone": "^7.0.1",
 		"react-filepond": "^3.0.0",
