@@ -1,8 +1,8 @@
 import '../../styling/LoginForm.css';
-import * as React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
-export default class LoginForm extends React.Component {
+export default class LoginForm extends Component {
 	state = {};
 
 	handleSubmit = e => {
