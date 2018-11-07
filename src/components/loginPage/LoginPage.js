@@ -1,13 +1,12 @@
-import * as React from 'react'
-import {connect} from 'react-redux'
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 // import {Redirect} from 'react-router-dom'
-import {login} from '../../actions/users'
-import LoginForm from './LoginForm'
+import { login } from '../../actions/users';
+import LoginForm from './LoginForm';
 
 
-class LoginPage extends React.Component{
-
-
+class LoginPage extends Component {
     handleSubmit = (data) => {
       this.props.login(data.email, data.password);
     };
@@ -35,3 +34,4 @@ class LoginPage extends React.Component{
     { login }
   )(LoginPage);
   
+
