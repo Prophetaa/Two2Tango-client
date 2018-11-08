@@ -119,10 +119,6 @@
     --input-padding-y: .75rem;
   }
   
-  body {
-    background: rgb(221, 221, 221);
-
-  }
   .container{
     width: 42%;
     max-width: 650px;
