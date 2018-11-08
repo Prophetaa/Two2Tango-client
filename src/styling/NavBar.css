@@ -1,21 +1,22 @@
 #main-nav {
     margin: auto;
     height: 15vh;
-    background: linear-gradient( rgb(70, 36, 41)  23.57%, rgba(80, 63, 63, 0) 99.47%);
-    /* background-color: rgb(85, 29, 37)  */
+    /* background: linear-gradient( rgb(70, 36, 41)  23.57%, rgba(80, 63, 63, 0) 99.47%); */
+    background-color: #F2EFEA;
 }
 .navitem {
     font-size: 25px;
-    margin: 20px 10px 5px 10px;
+    margin: 24px 15px 5px 15px;
     padding: 5px;
     padding-top: 10px;
 }
 a {
-    color: whitesmoke !important;
+    color: #555555 !important;
 }
 a:hover {
     text-decoration: none;
-    color: #A00D26 !important
+    color: #000000 !important;
+
 }
 .logo {
     width: 300px;
@@ -24,4 +25,11 @@ a:hover {
     background: url('.../../images/logo-grey.png') no-repeat;
     
     
+}
+
+@media (max-width: 992px) {
+    .logo {
+        width: 200px;
+        height: 12 vh
+    }
 }

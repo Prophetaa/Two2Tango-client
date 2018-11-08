@@ -1,7 +1,7 @@
 import * as React from "react";
-// import { Link } from 'react-router-dom';
-import { Nav, NavItem } from 'react-bootstrap'
+import { Nav, NavItem, MenuItem, NavDropdown} from 'react-bootstrap'
 import "../../styling/NavBar.css";
+
 
  export default class Navbar extends React.Component{
    render(){ 
@@ -34,9 +34,6 @@ import "../../styling/NavBar.css";
         <NavItem className="navitem" eventKey={2} href="/preferences">
         <i class="fas fa-sliders-h"></i>
         </NavItem>
-        {/* {user && (<NavItem className="navitem" eventKey={2} href="/signup">
-          Contact
-        </NavItem>)} */}
        </Nav>
        </div>
     )
