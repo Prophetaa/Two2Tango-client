@@ -8,18 +8,12 @@
     width: 42% !important;
   }
   
-  body {
-    background: rgb(221, 221, 221);
-
-  }
-  
   .card-signin {
     border: 0;
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
   }
-
 
   .card-signin .card-title {
     margin-bottom: 2rem;
