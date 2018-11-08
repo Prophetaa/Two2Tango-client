@@ -28,10 +28,12 @@ export default class LocationSearchInput extends Component {
 					<div>
 						<input
 							{...getInputProps({
-								placeholder: 'City',
+								id:'geoLocate',
+								placeholder: 'City *',
 								className: 'location-search-input  form-control'
 							})}
 						/>
+						
 						<div className="autocomplete-dropdown-container">
 							{loading && <div>Loading...</div>}
 							{suggestions.map(suggestion => {

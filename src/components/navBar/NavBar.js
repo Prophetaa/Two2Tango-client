@@ -1,9 +1,10 @@
-import * as React from "react";
+import "../../styling/NavBar.css";
+import  React,{Component} from "react";
 // import { Link } from 'react-router-dom';
 import { Nav, NavItem } from 'react-bootstrap'
-import "../../styling/NavBar.css";
 
- export default class Navbar extends React.Component{
+
+ export default class Navbar extends Component{
    render(){ 
     return(
        <div>
