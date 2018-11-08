@@ -11,7 +11,7 @@ class App extends React.Component {
  render() {
     return (
       <div className="main">
-     <Route  exact path ="/registration" component={RegistrationPage}/>
+     <Route  exact path ="/signup" component={RegistrationPage}/>
      <Route exact path="/login" component={LoginPage}/>
       </div>
     );
@@ -19,3 +19,4 @@ class App extends React.Component {
 }
 
 export default App;
+
