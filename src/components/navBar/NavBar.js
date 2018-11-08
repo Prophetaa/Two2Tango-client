@@ -1,4 +1,3 @@
-
 import React, { Component, Fragment } from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -51,3 +50,4 @@ const mapStateToProps = function(state) {
 };
 
 export default connect(mapStateToProps)(Navbar);
+
