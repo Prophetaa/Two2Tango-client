@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 //import { Link } from 'react-router-dom';
 
 export default function Results(props) {
+	console.log(props.results);
 	return (
 		<div>
 			<h1 className="text-center p-3 ">Your future tango partners</h1>
@@ -30,6 +31,28 @@ export default function Results(props) {
 					</tr>
 				</thead>
 				<tbody>
+					{props.results.map(result => (
+						<Fragment key={result}>
+							<tr>
+								<th scope="row">
+									<img
+										className="results-profile-img"
+										src={result.photoUrl}
+										alt="profile"
+									/>
+								</th>
+								<td className="align-middle">
+									{result.firstName} {result.lastName}
+								</td>
+								<td className="align-middle">{result.role}</td>
+								<td className="align-middle">{result.level}</td>
+								<td className="align-middle">{result.age}</td>
+								<td className="align-middle">{result.gender}</td>
+								<td className="align-middle">{result.height}</td>
+							</tr>
+						</Fragment>
+					))}
+
 					<tr>
 						<th scope="row">
 							<img
@@ -39,67 +62,14 @@ export default function Results(props) {
 							/>
 						</th>
 						<td className="align-middle">Mark</td>
-						<td>Leader</td>
-						<td>Professional</td>
-						<td>37</td>
-						<td>Male</td>
-						<td>184</td>
-					</tr>
-					<tr>
-						<th scope="row">
-							<img
-								className="results-profile-img"
-								src="images/dummy.jpg"
-								alt=""
-							/>
-						</th>
-						<td>Mark</td>
-						<td>Leader</td>
-						<td>Professional</td>
-						<td>37</td>
-						<td>Male</td>
-						<td>184</td>
-					</tr>
-					<tr>
-						<th scope="row">
-							<img
-								className="results-profile-img"
-								src="images/dummy.jpg"
-								alt=""
-							/>
-						</th>
-						<td>Mark</td>
-						<td>Leader</td>
-						<td>Professional</td>
-						<td>37</td>
-						<td>Male</td>
-						<td>184</td>
+						<td className="align-middle">Leader</td>
+						<td className="align-middle">Professional</td>
+						<td className="align-middle">37</td>
+						<td className="align-middle">Male</td>
+						<td className="align-middle">184</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	);
 }
-
-/* <ul>
-<li>
-	<div className="result-item">
-		<div className="card-body">
-			<h5 className="card-title">Dummy person</h5>
-			<img
-				src="images/dummy.jpg"
-				alt=""
-				width="100"
-				style={{ borderRadius: '50%' }}
-			/>
-			<p className="card-text">
-				With supporting text below as a natural lead-in to additional
-				content.
-			</p>
-			<Link to="" className="btn btn-primary">
-				Show profile
-			</Link>
-		</div>
-	</div>
-</li>
-</ul> */
