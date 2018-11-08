@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Results(props) {
 	console.log(props.results);
@@ -35,11 +35,13 @@ export default function Results(props) {
 						<Fragment key={result}>
 							<tr>
 								<th scope="row">
-									<img
-										className="results-profile-img"
-										src={result.photoUrl}
-										alt="profile"
-									/>
+									<Link to={`/profiles/${result.id}`}>
+										<img
+											className="results-profile-img"
+											src={result.photoUrl}
+											alt="profile"
+										/>
+									</Link>
 								</th>
 								<td className="align-middle">
 									{result.firstName} {result.lastName}
