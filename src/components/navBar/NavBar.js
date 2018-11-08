@@ -1,3 +1,4 @@
+
 import React, { Component, Fragment } from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -9,6 +10,7 @@ class Navbar extends Component {
 			<div>
 				<Nav id="main-nav">
 					<NavItem className="navitem logo" eventKey={1} href="/home" />
+
 
 					<NavItem className="navitem" eventKey={2} href="/search">
 						Find a partner
