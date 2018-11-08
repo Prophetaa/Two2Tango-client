@@ -1,9 +1,9 @@
-import * as React from 'react';
-// import { Link } from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import '../../styling/NavBar.css';
 
-export default class Navbar extends React.Component {
+class Navbar extends Component {
 	render() {
 		return (
 			<div>
@@ -20,26 +20,32 @@ export default class Navbar extends React.Component {
 						Contact
 					</NavItem>
 
-					{/* Below to show only when user is true, 
-        still to be done once the login is totally functionint  */}
-
-					<NavItem className="navitem" eventKey={2} href="/profile">
-						<i className="fas fa-user-circle" />
-					</NavItem>
-					<NavItem className="navitem" eventKey={2} href="/messages">
-						<i className="far fa-envelope" />
-					</NavItem>
-					<NavItem className="navitem" eventKey={2} href="/partners">
-						<i className="fas fa-user-friends" />
-					</NavItem>
-					<NavItem className="navitem" eventKey={2} href="/preferences">
-						<i className="fas fa-sliders-h" />
-					</NavItem>
-					{/* {user && (<NavItem className="navitem" eventKey={2} href="/signup">
-          Contact
-        </NavItem>)} */}
+					{this.props.currentUser && (
+						<Fragment>
+							<NavItem className="navitem" eventKey={2} href="/profile">
+								<i className="fas fa-user-circle" />
+							</NavItem>
+							<NavItem className="navitem" eventKey={2} href="/messages">
+								<i className="far fa-envelope" />
+							</NavItem>
+							<NavItem className="navitem" eventKey={2} href="/partners">
+								<i className="fas fa-user-friends" />
+							</NavItem>
+							<NavItem className="navitem" eventKey={2} href="/preferences">
+								<i className="fas fa-sliders-h" />
+							</NavItem>
+						</Fragment>
+					)}
 				</Nav>
 			</div>
 		);
 	}
 }
+
+const mapStateToProps = function(state) {
+	return {
+		currentUser: state.currentUser
+	};
+};
+
+export default connect(mapStateToProps)(Navbar);
