@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 export default function Results(props) {
 	return (
 		<div>
 			<h1 className="text-center p-3 ">Your future tango partners</h1>
-			<table class="table table-striped">
+			<table className="table table-striped">
 				<thead>
 					<tr>
 						<th scope="col" />
