@@ -7,6 +7,7 @@ import { getAllResults } from '../../actions/results';
 class ResultsListContainer extends Component {
 	componentDidMount() {
 		this.props.getAllResults();
+		console.log('request sent');
 	}
 
 	render() {
