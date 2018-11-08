@@ -1,18 +1,17 @@
-import { createStore, applyMiddleware, compose, combineReducers } from "redux";
-import reducer from './reducers/index'
-import ReduxThunk from "redux-thunk";
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
+import ReduxThunk from 'redux-thunk';
+import reducers from './reducers';
+import { storeJwt } from './middleware';
 
-const reducers = combineReducers(reducer)
+const reducer = combineReducers(reducers);
 
-const devTools =
- (window ).__REDUX_DEVTOOLS_EXTENSION__ &&
- (window ).__REDUX_DEVTOOLS_EXTENSION__();
+const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
 
 const enhancer = compose(
- applyMiddleware(
-   ReduxThunk
- ),
- devTools
+	applyMiddleware(ReduxThunk, storeJwt),
+	devTools
 );
 
-export default createStore(reducers, enhancer);
+const store = createStore(reducer, enhancer);
+
+export default store;
