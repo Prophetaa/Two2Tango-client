@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Results from './Results';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getAllResults } from '../../actions/results';
 
@@ -9,6 +10,7 @@ class ResultsListContainer extends Component {
 	}
 
 	render() {
+		if (!this.props.currentUser) return <Redirect to="/login" />;
 		return (
 			<div>
 				<Results results={this.props.results} />
