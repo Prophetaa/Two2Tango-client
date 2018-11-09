@@ -11,7 +11,10 @@ class ProfilePageContainer extends Component {
 		if (!this.props.profile) return null;
 		return (
 			<div>
-				<ProfilePage profile={this.props.profile} />
+				<ProfilePage
+					profile={this.props.profile}
+					currentUser={this.props.currentUser}
+				/>
 			</div>
 		);
 	}
