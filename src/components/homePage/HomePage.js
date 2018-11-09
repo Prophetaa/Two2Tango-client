@@ -12,7 +12,7 @@ import Avatar3 from '../../styling/images/Avatar3.png'
 import Avatar5 from '../../styling/images/Avatar5.png'
 import Avatar6 from '../../styling/images/Avatar6.png'
 import Avatar7 from '../../styling/images/Avatar7.png'
-import logoWhite from '../../styling/images/logo.jpg'
+import logoWhite from '../../styling/images/logo-grey.png'
 
 export class homePage extends Component {
 
@@ -139,7 +139,10 @@ export class homePage extends Component {
               </div>
             </div>    
           </div> */}
-          <div className=""></div>
+          <div className="media border p-3">
+          <img src={Avatar7} className="mr-3 mt-3 rounded-circle" alt="avatar" />
+
+          </div>
 
           {/* join  */}
           <div className="container-fluid background-bottom-home text-right">
