@@ -22,13 +22,13 @@ export class homePage extends Component {
       <div>
         <main>
           {/* background dancers */}
-          <div className="container-fluid background-top">
+          <div className="container-fluid background-top-home">
             <div className="row">
               <div className="col-12">
                 {/* <img className="container-fluid" src={background} alt="background"/> */}
                   <h2 className="display-3">Find a tango partner <br/>in your city</h2> 
                   <button type="button" className="btn btn-outline-light btn-lg">log In</button>
-                  <button type="button" className="btn btn-primary btn-lg">SignUp</button>
+                  <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">SignUp</button>
               </div>   
             </div>
           </div>
@@ -36,7 +36,7 @@ export class homePage extends Component {
           <div className="container-fluid wcyd">
             <div className="row text-center">
               <div className="col-12">
-                <h2 className="display-4 title">what you can do</h2>
+                <h2 className="display-4 title-home">what you can do</h2>
               </div>
             </div> 
             <div className="row text-center">
@@ -55,14 +55,14 @@ export class homePage extends Component {
             </div>
           </div>
           {/* new tangueros  */}
-          <div className="container-fluid tangueros">
+          <div className="container-fluid tangueros-home">
             <div className="row text-center">
               <div className="col-12">
-                <h2 className="display-4 title ">New tangueros</h2>
+                <h2 className="display-4 title-home ">New tangueros</h2>
               </div>
             </div>
             <div className="row text-center">
-              <div className="col-sm-12 col-md-4">
+              {/* <div className="col-sm-12 col-md-4">
                 <div className="card">
                   <img src={Avatar5} className="rounded-circle card-imd-top" alt="event-icon" />
                   <div className="card-title name">Claudio</div>
@@ -88,34 +88,69 @@ export class homePage extends Component {
                     <p className="about d-flex flex-wrap">I missed so many events because I was alone. Now I enjoy a full tango life</p>
                   </div>
                 </div>
-              </div>
-              <div className="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <img src={Avatar2} className="avatar" alt="event-icon" />
+              </div> */}
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+                <img src={Avatar2} className="avatar-home" alt="event-icon" />
                 <p className="name">Claudio</p>
                 <p className="level">Beginer</p>
               </div>
-              <div className="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <img src={Avatar3} className="avatar" alt="event-icon" />
-                <p className="name">Claudio</p>
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+                <img src={Avatar3} className="avatar-home" alt="event-icon" />
+                <p className="name-home">Claudio</p>
                 <p className="level">Beginer</p>
               </div>
-              <div className="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <img src={Avatar4} className="avatar" alt="event-icon" />
-                <p className="name">Claudio</p>
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+                <img src={Avatar4} className="avatar-home" alt="event-icon" />
+                <p className="name-home">Claudio</p>
                 <p className="level">Beginer</p>
               </div>
-            </div>            
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+                <img src={Avatar4} className="avatar-home" alt="event-icon" />
+                <p className="name-home">Claudio</p>
+                <p className="level">Beginer</p>
+              </div>
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+                <img src={Avatar4} className="avatar-home" alt="event-icon" />
+                <p className="name-home">Claudio</p>
+                <p className="level">Beginer</p>
+              </div>
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+                <img src={Avatar4} className="avatar-home" alt="event-icon" />
+                <p className="name-home">Claudio</p>
+                <p className="level">Beginer</p>
+              </div>
+            </div> 
+            <div className="container-fluid text-center">
+              <div className="row-12">
+                <div className="col-12">
+                  <h2 className="display-3">Join them on the dancefloor.</h2> 
+                  <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">SignUp</button>
+                </div>   
+              </div>
+            </div>
           </div>
+          {/* about */}
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-lg-6">   
+                <p className="h1 m-5 pb-5">I was too shy to invite followers. Now I have regular partners and I dance a lot!</p>
+              </div>
+              <div className="col-lg-6">
+                <img src={Avatar7} className="img-fluid rounded-circle" alt="avatar" />
+              </div>
+            </div>    
+          </div>
+
           {/* join  */}
-          <div className="container-fluid background-bottom text-right">
+          <div className="container-fluid background-bottom-home text-right">
             <div className="row-12">
               <div className="col-12">
                 <h2 className="display-3">Time to dance.<br/>Find your partner now.</h2> 
-                <button type="button" className="btn btn-primary btn-lg">SignUp</button>
+                <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">SignUp</button>
               </div>   
             </div>
           </div>
-          <div className="container-fluid footer">
+          <div className="container-fluid footer-home">
               <div className="row">
                 <div className="col-12">
                   <img src={logoWhite} alt="logo" />
