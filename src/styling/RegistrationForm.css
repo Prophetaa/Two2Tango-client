@@ -163,7 +163,9 @@ div#firstName{
   width:49%;
   margin-right:1%;
 }
-
+.genderMenus{
+  padding-bottom: 2%;
+}
 div#lastName{
   float:right;
   width:49%;
@@ -174,15 +176,23 @@ div#lastName{
  padding: 3%;
 }
 
+.genderMenu{
+  padding-bottom: 2%;
+}
 
 .finalStepBtn{
   background-color: #A00D26;
   font-size: 80px;
+  color:white;
   border: none;
 }
 
 .finalStepBtn:hover{
   background-color: rgb(185, 17, 45)
+}
+
+.finalStepBtn:active{
+  background-color: rgb(165, 14, 39)
 }
 
 .finalStepBtn span {

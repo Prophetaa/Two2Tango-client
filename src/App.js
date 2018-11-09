@@ -2,9 +2,10 @@ import './styling/App.css';
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import LoginPage from './components/loginPage/LoginPage';
-import RegistrationPage from './components/registrationPage/RegistrationPage';
+ import RegistrationPage from './components/registrationPage/RegistrationPage';
 import NavBar from './components/navBar/NavBar'
 import ResultsListContainer from './components/resultsPage/ResultsListContainer';
+
 
 
 class App extends Component {

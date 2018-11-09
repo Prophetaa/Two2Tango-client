@@ -5,15 +5,15 @@ import PlacesAutocomplete, {
 } from 'react-places-autocomplete';
 
 export default class LocationSearchInput extends Component {
-	state = { address: '' };
+	state = { city: '' };
 
-	handleChange = async address => {
-		await this.setState({ address });
-		this.props.onChange(address);
+	handleChange = async city => {
+		await this.setState({ city });
+		this.props.onChange(city);
 	};
 
-	handleSelect = address => {
-		geocodeByAddress(address)
+	handleSelect = city => {
+		geocodeByAddress(city)
 			.then(results => getLatLng(results[0]))
 			.then(latLng => console.log('Success', latLng))
 			.catch(error => console.error('Error', error));
@@ -22,11 +22,12 @@ export default class LocationSearchInput extends Component {
 	render() {
 		return (
 			<PlacesAutocomplete
-				value={this.state.address}
+				value={this.state.city}
 				onChange={this.handleChange}>
 				{({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
 					<div>
 						<input
+						required
 							{...getInputProps({
 								id:'geoLocate',
 								placeholder: 'City *',
@@ -35,7 +36,7 @@ export default class LocationSearchInput extends Component {
 						/>
 						
 						<div className="autocomplete-dropdown-container">
-							{loading && <div>Loading...</div>}
+							{loading && <div>Loading names...</div>}
 							{suggestions.map(suggestion => {
 								const className = suggestion.active
 									? 'suggestion-item--active'
