@@ -1,8 +1,8 @@
 import React from "react";
 import "../../styling/ProfilePage.css";
 
-export default function ProfilePage() {
-//   const { profile } = this.props;
+export default function ProfilePage(props) {
+  const { profile } = props;  
   return (
     <div className="main">
       <div className="top">
@@ -12,7 +12,7 @@ export default function ProfilePage() {
         </div>
 
         <div className="image-column">
-          {/* {profile.photoUrl} */}
+          {profile.photoUrl}
           <img
             src="https://img.freepik.com/free-photo/business-young-woman-looking-at-camera-in-the-office_1301-6547.jpg?size=338&ext=jpg"
             className="image"
@@ -21,20 +21,20 @@ export default function ProfilePage() {
         </div>
         <div className="details">
           <ul className="details-list">
-            {/* <li>NAME: {profile.name}</li>
+            <li>NAME: {profile.name}</li>
             <li>CITY: {profile.city}</li>
             <li>ROLE: {profile.role}</li>
             <li>LEVEL: {profile.level}</li>
             <li>HEIGHT: {profile.height}</li>
             <li>AGE: {profile.age}</li>
-            <li>GENDER: {profile.gender}</li> */}
+            <li>GENDER: {profile.gender}</li>
           </ul>
           <button className="update">UPDATE MY PROFILE</button>
         </div>
         <div className="about">
           <h3>ABOUT ME</h3>
           <p>
-            {/* {profile.about} */}
+            {profile.about}
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
