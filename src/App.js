@@ -5,6 +5,7 @@ import LoginPage from './components/loginPage/LoginPage';
 import RegistrationPage from './components/registrationPage/RegistrationPage';
 import NavBar from './components/navBar/NavBar'
 import ResultsListContainer from './components/resultsPage/ResultsListContainer';
+import homePage from './components/homePage/HomePage';
 
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
             <NavBar />
           </nav>
 			<div className="main">
+				<Route exact path="/home" component={homePage} />
 				<Route exact path="/signup" component={RegistrationPage} />
 				<Route exact path="/login" component={LoginPage} />
 				<Route exact path="/results" component={ResultsListContainer} />
