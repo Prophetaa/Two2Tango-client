@@ -1,6 +1,6 @@
 
 main{
-  font-family: Manrope;
+  font-family: 'Work Sans';
 }
 
 .background-top-home{
@@ -60,10 +60,28 @@ main{
 
 .avatar-box-home{
   margin-bottom: 6.25rem;
+  align-items: center;
 }
 
 .name-home{
   color:#A00D26;
+}
+
+.about-home{
+  background-color: #FFFFFF;
+}
+
+.avatar-big-home{
+  width: 15.625rem;
+  height: 15.625rem;
+}
+
+.avatar-text-home{
+  color:black;
+}
+
+.quote{
+  
 }
 
 .background-bottom-home{

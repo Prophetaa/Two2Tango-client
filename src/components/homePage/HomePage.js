@@ -8,11 +8,11 @@ import laugh from '../../styling/images/laugh.png'
 import Avatar4 from '../../styling/images/Avatar4.png'
 import Avatar2 from '../../styling/images/Avatar2.png'
 import Avatar3 from '../../styling/images/Avatar3.png'
-
-import Avatar5 from '../../styling/images/Avatar5.png'
 import Avatar6 from '../../styling/images/Avatar6.png'
 import Avatar7 from '../../styling/images/Avatar7.png'
 import logoWhite from '../../styling/images/logo-grey.png'
+import quoteLeft from '../../styling/images/quote-left.png'
+import quoteRight from '../../styling/images/quote-right.png'
 
 export class homePage extends Component {
 
@@ -53,6 +53,7 @@ export class homePage extends Component {
               </div>
             </div>
           </div>
+
           {/* new tangueros  */}
           <div className="container-fluid tangueros-home">
             <div className="row text-center">
@@ -60,60 +61,38 @@ export class homePage extends Component {
                 <h2 className="display-4 title-home ">New tangueros</h2>
               </div>
             </div>
-            <div className="row text-center">
-              {/* <div className="col-sm-12 col-md-4">
-                <div className="card">
-                  <img src={Avatar5} className="rounded-circle card-imd-top" alt="event-icon" />
-                  <div className="card-title name">Claudio</div>
-                  <div className="card-body">
-                    <p className="about d-flex flex-wrap">Beginer</p>            
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-12 col-md-4">
-                <div className="card">
-                  <img src={Avatar6} className="rounded-circle card-imd-top" alt="event-icon" />
-                  <div className="card-title name">Claudio</div>
-                  <div className="card-body">
-                    <p className="about d-flex flex-wrap">I was too shy to invite followers. Now I have regular partners and I dance a lot! </p>            
-                  </div>
-                </div>
-              </div>
-              <div className="col-sm-12 col-md-4">
-                <div className="card">
-                  <img src={Avatar7} className="rounded-circle card-imd-top" alt="event-icon" />
-                  <div className="card-title name">Claudio</div>
-                  <div className="card-body">
-                    <p className="about d-flex flex-wrap">I missed so many events because I was alone. Now I enjoy a full tango life</p>
-                  </div>
-                </div>
-              </div> */}
-              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+            <div className="row text-center d-flex justify-content-around">
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
                 <img src={Avatar2} className="avatar-home" alt="event-icon" />
                 <p className="name">Claudio</p>
                 <p className="level">Beginer</p>
               </div>
-              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
                 <img src={Avatar3} className="avatar-home" alt="event-icon" />
                 <p className="name-home">Claudio</p>
                 <p className="level">Beginer</p>
               </div>
-              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
                 <img src={Avatar4} className="avatar-home" alt="event-icon" />
                 <p className="name-home">Claudio</p>
                 <p className="level">Beginer</p>
               </div>
-              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
                 <img src={Avatar4} className="avatar-home" alt="event-icon" />
                 <p className="name-home">Claudio</p>
                 <p className="level">Beginer</p>
               </div>
-              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
                 <img src={Avatar4} className="avatar-home" alt="event-icon" />
                 <p className="name-home">Claudio</p>
                 <p className="level">Beginer</p>
               </div>
-              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 avatar-box-home">
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
+                <img src={Avatar4} className="avatar-home" alt="event-icon" />
+                <p className="name-home">Claudio</p>
+                <p className="level">Beginer</p>
+              </div>
+              <div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
                 <img src={Avatar4} className="avatar-home" alt="event-icon" />
                 <p className="name-home">Claudio</p>
                 <p className="level">Beginer</p>
@@ -128,22 +107,29 @@ export class homePage extends Component {
               </div>
             </div>
           </div>
+
           {/* about */}
-          {/* <div className="container-fluid">
-            <div className="row">
-              <div className="col-lg-6">   
-                <p className="h1 m-5 pb-5">I was too shy to invite followers. Now I have regular partners and I dance a lot!</p>
+          <div className="container-fluid about-home">
+            <div className="media">
+              <img src={Avatar6} className="mr-4 mt-4 rounded-circle avatar-big-home" alt="avatar" />
+              <div className="media-body avatar-box-home">
+                <div className="container  d-flex justify-content-start">
+                  <img src={quoteLeft} className="quote" alt="quote-left" />
+                </div>
+                <h1 className="display-4 avatar-text-home">I was too shy to invite followers. Now I have regular partners and I dance a lot!</h1>
+                <div className="container  d-flex justify-content-end">
+                  <img src={quoteRight} className="d-flex justify-content-end quote" alt="quote-right" />
+                </div>
               </div>
-              <div className="col-lg-6">
-                <img src={Avatar7} className="img-fluid rounded-circle" alt="avatar" />
+            </div>
+            <div className="media">
+              <div className="media-body avatar-box-home">
+                <h1 className="display-4 avatar-text-home">I missed so many events because I was alone. Now I enjoy a full tango life</h1>
               </div>
-            </div>    
-          </div> */}
-          <div className="media border p-3">
-          <img src={Avatar7} className="mr-3 mt-3 rounded-circle" alt="avatar" />
-
+              <img src={Avatar7} className="mr-4 mt-4 rounded-circle avatar-big-home" alt="avatar" />
+            </div>
           </div>
-
+          
           {/* join  */}
           <div className="container-fluid background-bottom-home text-right">
             <div className="row-12">
