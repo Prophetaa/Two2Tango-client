@@ -16,8 +16,11 @@ export default function ProfilePage(props) {
 					<img src={profile.photoUrl} className="image" alt="" />
 				</div>
 				<div className="details">
-					<ul className="details-list">
-						<li>NAME: {profile.firstName}</li>
+					<ul className="list-unstyled details-list">
+						<li className="d-flex justify-content-around">
+							<span className="text-uppercase">name: </span>
+							<span>{profile.firstName}</span>
+						</li>
 						<li>CITY: {profile.city}</li>
 						<li>ROLE: {profile.role}</li>
 						<li>LEVEL: {profile.level}</li>
@@ -25,10 +28,12 @@ export default function ProfilePage(props) {
 						<li>AGE: {profile.age}</li>
 						<li>GENDER: {profile.gender}</li>
 					</ul>
-					<button className="update">UPDATE MY PROFILE</button>
+					<button className="btn update text-uppercase">
+						update my profile
+					</button>
 				</div>
 				<div className="about">
-					<h3>ABOUT ME</h3>
+					<h3 className="text-uppercase">ABOUT ME</h3>
 					<p>
 						{profile.about}
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
