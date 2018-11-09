@@ -4,6 +4,7 @@ import MessageForm from './MessageForm';
 
 export default function ProfilePage(props) {
 	const { profile } = props;
+
 	return (
 		<div className="main">
 			<div className="top">
@@ -33,7 +34,7 @@ export default function ProfilePage(props) {
 					</button>
 				</div>
 				<div className="about">
-					<h3 className="text-uppercase">ABOUT ME</h3>
+					<h3 className="text-uppercase">about me</h3>
 					<p>
 						{profile.about}
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -43,8 +44,8 @@ export default function ProfilePage(props) {
 						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 						pariatur.
 					</p>
+					{props.profile.userId !== props.currentUser.id && <MessageForm />}
 				</div>
-				<MessageForm />
 			</div>
 		</div>
 	);
