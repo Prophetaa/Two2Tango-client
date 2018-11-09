@@ -3,6 +3,7 @@ import { baseUrl } from '../constants';
 import { isExpired } from '../jwt';
 import { logout } from '../actions/users';
 
+
 export const SET_RESULTS = 'SET_RESULTS';
 export const SET_PROFILE = 'SET_PROFILE';
 

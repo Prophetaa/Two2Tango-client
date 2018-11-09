@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import '../../styling/RegistrationForm.css';
+import { connect } from 'react-redux';
+
+import { postProfile } from '../../actions/registration'
+
 import Dropzone from 'react-dropzone';
 import * as request from 'superagent';
 
@@ -10,12 +14,24 @@ const CLOUDINARY_UPLOAD_PRESET = 'ieb90awf';
 const CLOUDINARY_UPLOAD_URL =
   'https://api.cloudinary.com/v1_1/dg6hu5lub/image/upload';
 
-export default class RegistrationForm2 extends Component {
-  state = {role:null};
+ class RegistrationForm2 extends Component {
+  state = {role:null, gender:null};
 
-  handleSubmit = e => {
+  handleSubmit = async(e) => {
     e.preventDefault();
-    this.props.onSubmit(this.state);
+    await this.props.postProfile(
+      this.state.first_name,
+      this.state.last_name,
+      this.state.role,
+      this.state.tango_level,
+      this.state.photoURL,
+      this.state.gender,
+      this.state.age,
+      this.state.height,
+      this.state.city
+    )
+
+    await this.props.onSubmit(this.state);
   };
 
   handleChange = event => {
@@ -28,12 +44,15 @@ export default class RegistrationForm2 extends Component {
 
   handleSelectCity = event => {
     let formatedCity = event.split(',', 1);
-    this.setState({ city: formatedCity });
+    this.setState({ city: formatedCity[0] });
   };
 
   handleButtonClick = input => {
 	if(input === "Leader") this.setState({role: "Leader"})
-	if(input === "Follower") this.setState({role: "Follower"})
+  if(input === "Follower") this.setState({role: "Follower"})
+  if(input === "male") this.setState({gender:"male"})
+  if(input === "female") this.setState({gender:"female"})
+  if(input === "other") this.setState({gender:"other"})
   }
 
   handleCheck = level => {
@@ -150,6 +169,30 @@ export default class RegistrationForm2 extends Component {
                   <div className="form-group">
                     <LocationSearchInput onChange={this.handleSelectCity}/>
                   </div>
+                  <div class="dropdown genderMenu">
+                    <button
+                      class="form-control dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false">
+					{this.state.gender === null ? "Gender": this.state.gender}
+                    </button>
+                    <div
+                      className="dropdown-menu form-control"
+                      aria-labelledby="dropdownMenuButton">
+                      <span class="dropdown-item " onClick={()=> this.handleButtonClick("male")}>
+                        male
+                      </span>
+                      <span class="dropdown-item" onClick={()=> this.handleButtonClick("female")}>
+                        female
+                      </span>
+                      <span class="dropdown-item" onClick={()=> this.handleButtonClick("other")}>
+                        other
+                      </span>
+                    </div>
+                  </div>
                   <div class="dropdown">
                     <button
                       class="form-control dropdown-toggle"
@@ -171,7 +214,7 @@ export default class RegistrationForm2 extends Component {
                       </span>
                     </div>
                   </div>
-				  <CheckBoxes handleCheck={this.handleCheck} />
+				  <CheckBoxes handleCheck={this.handleCheck} currentPage="2"/>
                   <button
                     className="btn btn-lg btn-primary btn-block text-uppercase finalStepBtn"
                     type="submit">
@@ -186,3 +229,11 @@ export default class RegistrationForm2 extends Component {
     );
   }
 }
+
+
+export default connect(
+  null,
+  {
+    postProfile
+  }
+)(RegistrationForm2);
