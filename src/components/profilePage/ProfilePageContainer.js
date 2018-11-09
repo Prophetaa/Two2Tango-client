@@ -4,8 +4,8 @@ import ProfilePage from "./ProfilePage";
 import { getOneProfile } from "../../actions/results";
 
 class ProfilePageContainer extends Component {
-  componentDidMount() {
-    this.props.getOneProfile(Number(this.props.match.params.id));
+    componentDidMount() {
+    this.props.getOneProfile()
   }
   render() {
     return (

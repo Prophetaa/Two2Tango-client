@@ -20,7 +20,7 @@ class App extends Component {
 				<Route exact path="/signup" component={RegistrationPage} />
 				<Route exact path="/login" component={LoginPage} />
 				<Route exact path="/results" component={ResultsListContainer} />
-				<Route exact path="/profiles/:id" component={ProfilePageContainer} />
+				<Route exact path="/profile/" component={ProfilePageContainer} />
 			</div>
 			</div>
 		);

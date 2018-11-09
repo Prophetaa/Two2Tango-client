@@ -27,9 +27,9 @@ export const getAllResults = () => (dispatch, getState) => {
 		.then(result => dispatch(setAllResults(result.body)))
 		.catch(err => console.log(err));
 };
-export const getOneProfile = (id) => dispatch => {
+export const getOneProfile = () => (dispatch) => {
 	request
-		.get(`${baseUrl}/profiles/${id}`)
-		.then(result => dispatch(getProfile(result.body)))
+		.get(`${baseUrl}/profiles`, console.log("fetching"))
+		.then(result =>  dispatch(getProfile(result.body)))
 		.catch(err => console.log(err));
 };
