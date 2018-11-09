@@ -1,8 +1,10 @@
 import React from 'react';
 import '../../styling/ProfilePage.css';
 import MessageForm from './MessageForm';
+import { userId } from '../../jwt';
 
 export default function ProfilePage(props) {
+	const currentUserId = userId(props.currentUser.jwt);
 	const { profile } = props;
 
 	return (
@@ -44,7 +46,7 @@ export default function ProfilePage(props) {
 						reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 						pariatur.
 					</p>
-					{props.profile.userId !== props.currentUser.id && <MessageForm />}
+					{props.profile.userId !== currentUserId && <MessageForm />}
 				</div>
 			</div>
 		</div>

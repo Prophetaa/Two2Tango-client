@@ -7,8 +7,10 @@ class MessageForm extends PureComponent {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		console.log(this.props.profile.userId);
 		this.props.sendMessage(this.state.message, this.props.profile.userId);
+		this.setState({
+			message: ''
+		});
 	};
 
 	handleChange = event => {
@@ -21,7 +23,7 @@ class MessageForm extends PureComponent {
 
 	render() {
 		return (
-			<div className="form-group was-validated  message-form">
+			<div className="form-group was-validated message-form">
 				<form onSubmit={this.handleSubmit}>
 					<div className="form-group">
 						<label htmlFor="message">Message:</label>
@@ -49,7 +51,6 @@ class MessageForm extends PureComponent {
 
 const mapStateToProps = function(state) {
 	return {
-		login: state.login,
 		currentUser: state.currentUser,
 		profile: state.profile
 	};
