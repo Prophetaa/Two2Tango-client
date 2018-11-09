@@ -38,7 +38,7 @@ const userSignupSuccess = () => ({
 
 export const login = (email, password) => (dispatch) =>  
 request
-		.post(`${baseUrl}/login`)
+		.post(`${baseUrl}/logins`, console.log(email,password))
     .send({email, password})
     .then(result => dispatch(userLoginSuccess(result.body)))
     .catch(err => {
