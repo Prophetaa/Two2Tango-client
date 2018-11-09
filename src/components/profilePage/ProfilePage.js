@@ -1,5 +1,6 @@
-import React from "react";
-import "../../styling/ProfilePage.css";
+import React from 'react';
+import '../../styling/ProfilePage.css';
+import MessageForm from './MessageForm';
 
 export default function ProfilePage(props) {
   const { profile } = props;  
@@ -43,6 +44,7 @@ export default function ProfilePage(props) {
             pariatur.{" "}
           </p>
         </div>
+        <MessageForm />
       </div>
     </div>
   );
