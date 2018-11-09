@@ -7,6 +7,7 @@ class MessageForm extends PureComponent {
 
 	handleSubmit = e => {
 		e.preventDefault();
+		console.log(this.props.profile.userId);
 		this.props.sendMessage(this.state.message, this.props.profile.userId);
 	};
 
@@ -20,19 +21,26 @@ class MessageForm extends PureComponent {
 
 	render() {
 		return (
-			<div className="message-form">
+			<div className="form-group was-validated  message-form">
 				<form onSubmit={this.handleSubmit}>
-					<label>
-						Message:
+					<div className="form-group">
+						<label htmlFor="message">Message:</label>
 						<textarea
+							className="form-control"
+							id="message"
 							rows="4"
 							cols="50"
 							name="message"
+							placeholder="Send along your email address and a nice message so this person can contact you!"
 							value={this.state.message || ''}
 							onChange={this.handleChange}
+							required
 						/>
-					</label>
-					<button type="submit">Send</button>
+					</div>
+
+					<button type="submit" className="btn btn-success btn-block">
+						Send
+					</button>
 				</form>
 			</div>
 		);
