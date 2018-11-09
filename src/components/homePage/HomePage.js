@@ -14,7 +14,6 @@ import Avatar6 from '../../styling/images/Avatar6.png'
 import Avatar7 from '../../styling/images/Avatar7.png'
 import logoWhite from '../../styling/images/logo.jpg'
 
-
 export class homePage extends Component {
 
   render() {
@@ -130,7 +129,7 @@ export class homePage extends Component {
             </div>
           </div>
           {/* about */}
-          <div className="container-fluid">
+          {/* <div className="container-fluid">
             <div className="row">
               <div className="col-lg-6">   
                 <p className="h1 m-5 pb-5">I was too shy to invite followers. Now I have regular partners and I dance a lot!</p>
@@ -139,7 +138,8 @@ export class homePage extends Component {
                 <img src={Avatar7} className="img-fluid rounded-circle" alt="avatar" />
               </div>
             </div>    
-          </div>
+          </div> */}
+          <div className=""></div>
 
           {/* join  */}
           <div className="container-fluid background-bottom-home text-right">

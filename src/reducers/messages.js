@@ -1,8 +1,8 @@
-import { SET_RESULTS } from '../actions/results';
+import { SET_ALL_MESSAGES } from '../actions/messages';
 
 export default function(state = null, { type, payload }) {
 	switch (type) {
-		case SET_RESULTS:
+		case SET_ALL_MESSAGES:
 			return payload;
 		default:
 			return state;

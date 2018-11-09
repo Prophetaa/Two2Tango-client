@@ -8,18 +8,12 @@
     width: 42% !important;
   }
   
-  body {
-    background: rgb(221, 221, 221);
-
-  }
-  
   .card-signin {
     border: 0;
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
   }
-
 
   .card-signin .card-title {
     margin-bottom: 2rem;
@@ -125,8 +119,96 @@ justify-content: center;
 }
 
 .dropZone{
-    border-radius: 100%;
-    width: 12vw;
-    height: 22vh;
-    background-color: #777
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+       border: solid 1px #555;
+      background-image: url("https://static.thenounproject.com/png/204868-200.png");
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat; 
+			box-shadow:  0 0 10px  rgba(0,0,0,0.6);
+			-moz-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+			-webkit-box-shadow: 0 0 10px  rgba(0,0,0,0.6);
+			-o-box-shadow: 0 0 10px  rgba(0,0,0,0.6)
   }
+
+.dropZone:hover{
+  background-color: rgb(245, 245, 245);
+}
+
+.NamesDiv{
+  display: inline-flex;
+  
+}
+
+.menu2inputs{
+  position: relative;
+  top:50%;
+  width: 100%;
+}
+
+.ProfileInfo{
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+div#firstName{
+  float:left;
+  width:49%;
+  margin-right:1%;
+}
+
+div#lastName{
+  float:right;
+  width:49%;
+  margin-right:1%;
+}
+
+.ProfileInfo{
+ padding: 3%;
+}
+
+
+.finalStepBtn{
+  background-color: #A00D26;
+  font-size: 80px;
+  border: none;
+}
+
+.finalStepBtn:hover{
+  background-color: rgb(185, 17, 45)
+}
+
+.finalStepBtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.finalStepBtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.finalStepBtn:hover span {
+  padding-right: 25px;
+}
+
+.finalStepBtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.dropdown-menu{
+  background-color: rgb(247, 244, 244);
+  border: none;
+}
+.dropdown-item{
+  background-color: rgb(247, 244, 244);
+  border-color: black;
+}

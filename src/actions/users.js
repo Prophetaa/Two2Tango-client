@@ -4,6 +4,7 @@ import {baseUrl} from '../constants'
 
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS'
 export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED'
+export const GET_USER = 'GET_USER'
 
 export const USER_LOGOUT = 'USER_LOGOUT'
 
@@ -37,7 +38,7 @@ const userSignupSuccess = () => ({
 
 export const login = (email, password) => (dispatch) =>  
 request
-		.post(`${baseUrl}/login`)
+		.post(`${baseUrl}/logins`, console.log(email,password))
     .send({email, password})
     .then(result => dispatch(userLoginSuccess(result.body)))
     .catch(err => {
@@ -65,3 +66,4 @@ export const signup = (email, password) => (dispatch) =>
 				console.error(err)
 			}
 		})
+
