@@ -1,6 +1,8 @@
 import React from 'react';
+import '../../styling/MessagesPage.css';
 
 export default function messages(props) {
+	console.log(props);
 	return (
 		<div className="container">
 			<ul className="list-unstyled">
@@ -12,13 +14,7 @@ export default function messages(props) {
 							alt=""
 							width="50"
 						/>
-						<div className="media-body message">
-							<h5 className="mt-0 mb-1">List-based media object</h5>
-							Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-							scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-							vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-							nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-						</div>
+						<div className="media-body message">{message.content}</div>
 					</li>
 				))}
 			</ul>
