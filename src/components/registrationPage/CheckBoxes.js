@@ -31,8 +31,8 @@ for (let i = 0; i < inputs.length; i++) {
         <p className="ProfileInfo text-center">Tango Level:</p>
         <div className="checkBox_container">
           <label class="check_container">
-          <span className="checkBoxSpan">Begginer</span> 
-            <input type="checkbox" onClick={()=>this.props.handleCheck("begginer")}/>
+          <span className="checkBoxSpan">Beginner</span> 
+            <input type="checkbox" onClick={()=>this.props.handleCheck("beginner")}/>
             <span class="checkmark" />
           </label>
 
