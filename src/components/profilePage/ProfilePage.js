@@ -13,16 +13,11 @@ export default function ProfilePage(props) {
 				</div>
 
 				<div className="image-column">
-					{profile.photoUrl}
-					<img
-						src="https://img.freepik.com/free-photo/business-young-woman-looking-at-camera-in-the-office_1301-6547.jpg?size=338&ext=jpg"
-						className="image"
-						alt=""
-					/>
+					<img src={profile.photoUrl} className="image" alt="" />
 				</div>
 				<div className="details">
 					<ul className="details-list">
-						<li>NAME: {profile.name}</li>
+						<li>NAME: {profile.firstName}</li>
 						<li>CITY: {profile.city}</li>
 						<li>ROLE: {profile.role}</li>
 						<li>LEVEL: {profile.level}</li>
