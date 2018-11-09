@@ -3,7 +3,7 @@ main{
   font-family: Manrope;
 }
 
-.background-top{
+.background-top-home{
   background-image: url('./images/background01.jpg');
   background-repeat: no-repeat;
   background-position: Center;
@@ -13,14 +13,15 @@ main{
   padding-left: 6.25rem;
 }
 
-.btn-primary {
+.SignInPrmBtn {
   color: #ffffff;
   background-color: #A00D26;
   border-color: #a00d1f;
   margin:10px;
+  width:315px;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active{
+.SignInPrmBtn:hover, .SignInPrmBtn:focus, .SignInPrmBtn:active, .SignInPrmBtn.active{
   color: #A00D26;
   background-color: #ffffff;
   border-color: #ffffff; 
@@ -33,27 +34,39 @@ main{
   padding-bottom: 8rem;
 }
 
-.title{
+.title-home{
   padding-bottom: 3rem;
 }
 
-.tangueros{
-  padding-top: 50px;
+.tangueros-home{
+  padding-top: 3.125rem;
+  padding-bottom: 9.375rem;
   background-color: #F2EFEA;
 }
 
-.card{
-  width:340px ;
-  height:430px ;
-  padding:5px;
-  margin:10px;
+/* .card{
+  width: 21.25rem;
+  height: 26.875rem;
+  padding: 0.3125rem;
+  margin: 0.625rem;
+} */
+
+.avatar-home {
+  vertical-align: middle;
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
 }
 
-.name{
+.avatar-box-home{
+  margin-bottom: 6.25rem;
+}
+
+.name-home{
   color:#A00D26;
 }
 
-.background-bottom{
+.background-bottom-home{
   background-image: url('./images/background02.jpg');
   background-repeat: no-repeat;
   background-position: Center;
@@ -64,8 +77,8 @@ main{
   padding-left: 6.25rem;
 }
 
-.footer{
+.footer-home{
   background-color: #FFFFFF;
-  padding-top:25px;
+  padding-top: 1.5625rem;
   text-align: center;
 }
