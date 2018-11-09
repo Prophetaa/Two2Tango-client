@@ -58,7 +58,7 @@ export class homePage extends Component {
           <div className="container-fluid tangueros-home">
             <div className="row text-center">
               <div className="col-12">
-                <h2 className="display-4 title-home ">New tangueros</h2>
+                <h1 className="display-4 title-home ">New tangueros</h1>
               </div>
             </div>
             <div className="row text-center d-flex justify-content-around">

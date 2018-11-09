@@ -36,8 +36,15 @@ main{
   padding-bottom: 8rem;
 }
 
+.icon{
+  width:100px;
+  height: 100px;
+
+}
+
 .title-home{
   padding-bottom: 3rem;
+  color: black;
 }
 
 .tangueros-home{
