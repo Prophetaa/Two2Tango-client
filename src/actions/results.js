@@ -3,7 +3,6 @@ import { baseUrl } from '../constants';
 import { isExpired } from '../jwt';
 import { logout } from '../actions/users';
 
-
 export const SET_RESULTS = 'SET_RESULTS';
 export const SET_PROFILE = 'SET_PROFILE';
 
@@ -29,9 +28,15 @@ export const getAllResults = () => (dispatch, getState) => {
 		.catch(err => console.log(err));
 };
 
-export const getOneProfile = id => dispatch => {
+export const getOneProfile = id => (dispatch, getState) => {
+	const state = getState();
+	const jwt = state.currentUser.jwt;
+
+	if (isExpired(jwt)) return dispatch(logout());
+
 	request
 		.get(`${baseUrl}/profiles/${id}`)
+		.set('Authorization', `Bearer ${jwt}`)
 		.then(result => dispatch(setProfile(result.body)))
 		.catch(err => console.log(err));
 };
