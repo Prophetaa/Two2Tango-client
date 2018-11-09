@@ -1,0 +1,102 @@
+
+main{
+  font-family: 'Work Sans';
+}
+
+.background-top-home{
+  background-image: url('./images/background01.jpg');
+  background-repeat: no-repeat;
+  background-position: Center;
+  color:white;
+  height: 35.625rem;
+  padding-top: 14.75rem;
+  padding-left: 6.25rem;
+}
+
+.SignInPrmBtn {
+  color: #ffffff;
+  background-color: #A00D26;
+  border-color: #a00d1f;
+  margin:10px;
+  width:315px;
+}
+
+.SignInPrmBtn:hover, .SignInPrmBtn:focus, .SignInPrmBtn:active, .SignInPrmBtn.active{
+  color: #A00D26;
+  background-color: #ffffff;
+  border-color: #ffffff; 
+}
+
+.wcyd{
+  background-color: #FFFFFF;
+  height:35.625rem;
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+}
+
+.title-home{
+  padding-bottom: 3rem;
+}
+
+.tangueros-home{
+  padding-top: 3.125rem;
+  padding-bottom: 9.375rem;
+  background-color: #F2EFEA;
+}
+
+/* .card{
+  width: 21.25rem;
+  height: 26.875rem;
+  padding: 0.3125rem;
+  margin: 0.625rem;
+} */
+
+.avatar-home {
+  vertical-align: middle;
+  width: 6.25rem;
+  height: 6.25rem;
+  border-radius: 50%;
+}
+
+.avatar-box-home{
+  margin-bottom: 6.25rem;
+  align-items: center;
+}
+
+.name-home{
+  color:#A00D26;
+}
+
+.about-home{
+  background-color: #FFFFFF;
+}
+
+.avatar-big-home{
+  width: 15.625rem;
+  height: 15.625rem;
+}
+
+.avatar-text-home{
+  color:black;
+}
+
+.quote{
+  
+}
+
+.background-bottom-home{
+  background-image: url('./images/background02.jpg');
+  background-repeat: no-repeat;
+  background-position: Center;
+  color:white;
+  width: 100%;
+  height: 32.625rem;
+  padding-top: 14.75rem;
+  padding-left: 6.25rem;
+}
+
+.footer-home{
+  background-color: #FFFFFF;
+  padding-top: 1.5625rem;
+  text-align: center;
+}
