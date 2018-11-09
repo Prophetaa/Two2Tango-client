@@ -102,7 +102,9 @@ export class homePage extends Component {
               <div className="row-12">
                 <div className="col-12">
                   <h2 className="display-3">Join them on the dancefloor.</h2> 
-                  <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">SignUp</button>
+                  <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">
+                    SignUp
+                  </button>
                 </div>   
               </div>
             </div>
@@ -110,24 +112,33 @@ export class homePage extends Component {
 
           {/* about */}
           <div className="container-fluid about-home">
-            <div className="media">
-              <img src={Avatar6} className="mr-4 mt-4 rounded-circle avatar-big-home" alt="avatar" />
-              <div className="media-body avatar-box-home">
-                <div className="container  d-flex justify-content-start">
-                  <img src={quoteLeft} className="quote" alt="quote-left" />
+            <div className="row"> 
+              <div className="media">
+                <img src={Avatar6} className="rounded-circle avatar-big-home m-5" alt="avatar" />
+                <div className="media-body avatar-box-home">
+                  <img src={quoteLeft} className="quote align-left" alt="quote-left" />
+                  <h1 className="display-4 avatar-text-home">
+                    I was too shy to invite followers. Now I have regular partners and I dance a lot!
+                  </h1>
+                  <div className="container-fluid d-flex justify-content-end">
+                    <img src={quoteRight} className="quote" alt="quote-right" />
+                  </div>
                 </div>
-                <h1 className="display-4 avatar-text-home">I was too shy to invite followers. Now I have regular partners and I dance a lot!</h1>
-                <div className="container  d-flex justify-content-end">
-                  <img src={quoteRight} className="d-flex justify-content-end quote" alt="quote-right" />
+              </div> 
+              <div className="media">
+                <div className="media-body avatar-box-home">
+                  <img src={quoteLeft} className="quote align-left" alt="quote-left" />
+                  <h1 className="display-4 avatar-text-home">
+                    I missed so many events because I was alone. Now I enjoy a full tango life
+                  </h1>
+                  <div className="container-fluid d-flex justify-content-end">
+                    <img src={quoteRight} className="quote" alt="quote-right" />
+                  </div>
                 </div>
+                <img src={Avatar7} className="rounded-circle avatar-big-home m-5" alt="avatar" />
               </div>
-            </div>
-            <div className="media">
-              <div className="media-body avatar-box-home">
-                <h1 className="display-4 avatar-text-home">I missed so many events because I was alone. Now I enjoy a full tango life</h1>
-              </div>
-              <img src={Avatar7} className="mr-4 mt-4 rounded-circle avatar-big-home" alt="avatar" />
-            </div>
+            
+            </div>         
           </div>
           
           {/* join  */}
