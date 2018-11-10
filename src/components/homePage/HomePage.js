@@ -18,6 +18,8 @@ import quoteRight from '../../styling/images/quote-right.png'
 export class homePage extends Component {
 
   render() {
+    const {history} = this.props
+
     return (
       <div>
         <main>
@@ -27,11 +29,15 @@ export class homePage extends Component {
               <div className="col-12">
                 <div className="container position-absolute image-top">
                   <h2 className="display-3">Find a tango partner <br/>in your city</h2> 
-                  <button type="button" className="btn btn-outline-light btn-lg">log In</button>
-                  <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">SignUp</button>
+                  <button type="button" className="btn btn-outline-light btn-lg"
+                          onClick={() => history.push(`/login`)}>log In
+                  </button>
+                  <button type="button" className="btn btn-primary btn-lg SignInPrmBtn"
+                          onClick={() => history.push(`/signup`)}
+                          >SignUp
+                  </button>
                 </div>
                 <img className="container" src={backgroud1} alt="background"/>
-                
               </div>   
             </div>
           </div>
@@ -107,8 +113,9 @@ export class homePage extends Component {
               <div className="row-12">
                 <div className="col-12">
                   <h4 className="display-4">Join them on the dancefloor</h4> 
-                  <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">
-                    SignUp
+                  <button type="button" className="btn btn-primary btn-lg SignInPrmBtn"
+                          onClick={() => history.push(`/signup`)}
+                          >SignUp
                   </button>
                 </div>   
               </div>
@@ -150,7 +157,9 @@ export class homePage extends Component {
             <div className="row-12">
               <div className="col-12">
                 <h2 className="display-3">Time to dance<br/>Find your partner now</h2> 
-                <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">SignUp</button>
+                <button type="button" className="btn btn-primary btn-lg SignInPrmBtn"
+                        onClick={() => history.push(`/signup`)}>SignUp
+                </button>
               </div>   
             </div>
           </div>
