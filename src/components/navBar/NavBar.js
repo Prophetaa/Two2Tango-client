@@ -8,7 +8,7 @@ class Navbar extends Component {
 		return (
 			<div>
 				<Nav id="main-nav">
-				{!this.props.currentUser && (
+					{!this.props.currentUser && (
 						<Fragment>
 							<NavItem className="navitem" eventKey={2} href="/login">
 								<i className="fas fa-user-circle" />
@@ -28,7 +28,7 @@ class Navbar extends Component {
 								<i className="far fa-envelope" />
 							</NavItem>
 							<NavItem className="navitem" eventKey={2} href="/partners">
-								<i class="fas fa-cog"></i>
+								<i className="fas fa-cog" />
 							</NavItem>
 							<NavItem className="navitem" eventKey={2} href="/preferences">
 								<i className="fas fa-sliders-h" />
@@ -48,4 +48,3 @@ const mapStateToProps = function(state) {
 };
 
 export default connect(mapStateToProps)(Navbar);
-
