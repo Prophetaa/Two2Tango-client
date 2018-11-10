@@ -7,11 +7,11 @@ import profile from './profile';
 import messages from './messages';
 
 export default {
-	login,
-	currentUser,
-	signup,
 	currentRegPage,
-	results,
+	currentUser,
+	login,
+	messages,
 	profile,
-	messages
+	results,
+	signup
 };
