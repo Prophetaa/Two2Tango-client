@@ -11,7 +11,9 @@ class Navbar extends Component {
 				<nav className="navbar navbar-expand-sm navbar-light bg-light sticky-top">
 					{this.props.currentUser && (
 						<div className="container">
-							<img className="" src={logoWhite} alt="logo" />
+							<Link to="/home">
+								<img className="" src={logoWhite} alt="logo" />
+							</Link>
 							<button
 								className="navbar-toggler"
 								type="button"
@@ -55,7 +57,9 @@ class Navbar extends Component {
 					)}
 					{!this.props.currentUser && (
 						<div className="container">
-							<img className="" src={logoWhite} alt="logo" />
+							<Link to="/home">
+								<img className="" src={logoWhite} alt="logo" />
+							</Link>
 							<button
 								className="navbar-toggler"
 								type="button"
