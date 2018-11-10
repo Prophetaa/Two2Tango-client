@@ -68,6 +68,7 @@ class Navbar extends Component {
 								</label>
 								<label className="btn btn-secondary">
 									<input
+
 										type="radio"
 										name="options"
 										id="option3"

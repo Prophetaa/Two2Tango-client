@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import { getAllResults } from '../../actions/results';
 
 class ResultsListContainer extends Component {
-	componentDidMount() {
-		this.props.getAllResults();
+	async componentDidMount() {
+		await this.props.getAllResults();
 		console.log('request sent');
 	}
 
