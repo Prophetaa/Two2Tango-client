@@ -2,11 +2,11 @@
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;
   }
-  .container{
+  /* .container{
     width: 42%;
     max-width: 650px;
     margin-top: 0px !important;
-  }
+  } */
   
   .card-signin {
     border: 0;
@@ -119,11 +119,11 @@
     --input-padding-y: .75rem;
   }
   
-  .container{
+  /* .container{
     width: 42%;
     max-width: 650px;
     margin-top: 80px;
-  }
+  } */
   
   .card-signin {
     border: 0;

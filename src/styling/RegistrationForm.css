@@ -3,11 +3,11 @@
     --input-padding-y: .75rem;
   }
 
-  .container{
+  /* .container{
     max-width: 650px;
     width: 42% !important;
   }
-  
+   */
   .card-signin {
     border: 0;
     border-radius: 1rem;

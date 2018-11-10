@@ -8,6 +8,7 @@ import ResultsListContainer from './components/resultsPage/ResultsListContainer'
 import homePage from './components/homePage/HomePage';
 import ProfilePageContainer from './components/profilePage/ProfilePageContainer';
 import MessageListContainer from './components/messagePage/MessageListContainer';
+import EditProfileContainer from './components/profilePage/EditProfileContainer';
 
 class App extends Component {
 	render() {
@@ -23,6 +24,7 @@ class App extends Component {
 					<Route exact path="/results" component={ResultsListContainer} />
 					<Route exact path="/profiles/:id" component={ProfilePageContainer} />
 					<Route exact path="/messages" component={MessageListContainer} />
+					<Route exact path="/edit-profile" component={EditProfileContainer} />
 				</div>
 			</div>
 		);
