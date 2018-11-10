@@ -1,10 +1,11 @@
 import React from 'react';
 import '../../styling/ProfilePage.css';
 import MessageForm from './MessageForm';
-import { userId } from '../../jwt';
+import { toUserId } from '../../jwt';
+import { Link } from 'react-router-dom';
 
 export default function ProfilePage(props) {
-	const currentUserId = userId(props.currentUser.jwt);
+	const currentUserId = toUserId(props.currentUser.jwt);
 	const { profile } = props;
 
 	return (
@@ -31,9 +32,13 @@ export default function ProfilePage(props) {
 						<li>AGE: {profile.age}</li>
 						<li>GENDER: {profile.gender}</li>
 					</ul>
-					<button className="btn update text-uppercase">
-						update my profile
-					</button>
+					{props.profile.userId === currentUserId && (
+						<Link to="/edit-profile">
+							<button className="btn update text-uppercase">
+								update my profile
+							</button>
+						</Link>
+					)}
 				</div>
 				<div className="about">
 					<h3 className="text-uppercase">about me</h3>

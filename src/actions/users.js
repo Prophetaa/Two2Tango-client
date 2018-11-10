@@ -36,11 +36,10 @@ const userSignupSuccess = () => ({
 
 export const login = (email, password) => dispatch =>
 	request
-		.post(`${baseUrl}/logins`, console.log(email, password))
+		.post(`${baseUrl}/logins`)
 		.send({ email, password })
 		.then(result => dispatch(userLoginSuccess(result.body)))
 		.catch(err => {
-			console.log('submiting login info!');
 			if (err.status === 400) {
 				dispatch(userLoginFailed(err.response.body.message));
 			} else {
@@ -52,7 +51,7 @@ export const signup = (email, password) => dispatch =>
 	request
 		.post(`${baseUrl}/users`)
 		.send({ email, password })
-		.then(result => {
+		.then(_ => {
 			dispatch(userSignupSuccess());
 		})
 		.catch(err => {
