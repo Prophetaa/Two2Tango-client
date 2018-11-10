@@ -1,7 +1,16 @@
-#main-nav {
+.icons-navbar{
+    background-color: transparent;
+    border: 0;
+}
+
+
+
+
+
+/* #main-nav {
     margin: auto;
     height: 15vh;
-    /* background: linear-gradient( rgb(70, 36, 41)  23.57%, rgba(80, 63, 63, 0) 99.47%); */
+    background: linear-gradient( rgb(70, 36, 41)  23.57%, rgba(80, 63, 63, 0) 99.47%);
     background-color: #F2EFEA;
 
 }
@@ -36,4 +45,4 @@ a:hover {
         width: 200px;
         height: 12 vh
     }
-}
+} */
