@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
-//import '../../styling/NavBar.css';
+import '../../styling/NavBar.css';
 import logoWhite from '../../styling/images/logo-grey.png'
 
 class Navbar extends Component {
 	render() {
+		const {history} =this.props
+
 		return (
 			<div>
 				<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
@@ -15,9 +17,9 @@ class Navbar extends Component {
 							<span className="navbar-toggler-icon"></span>
 						</button>
 						<div className="collapse navbar-collapse" id="navbarResponsive">
-						{/* <ul className="navbar-nav ml-auto d-inline-md">
+						<ul className="navbar-nav ml-auto d-inline-md">
 							<li className="nav-item ">
-								<button className="btn btn-outline-secondary btn-lg icon">
+								<button className="btn btn-outline-secondary btn-lg icons-navbar">
 									<i className="fas fa-user-circle" />
 								</button>
 							</li>
@@ -30,33 +32,7 @@ class Navbar extends Component {
 							<li className="nav-item">
 								<i className="fas fa-sliders-h" />
 							</li>
-						</ul> */}
-							<div className="btn-group btn-group-toggle nav-item navbar-nav ml-auto d-inline-md" data-toggle="buttons">
-								<label className="btn btn-secondary active">
-									<input type="radio" name="options" 
-										id="option1" autocomplete="off" checked
-									/> 
-									<i className="fas fa-user-circle" />
-								</label>
-								<label className="btn btn-secondary">
-									<input type="radio" name="options" 
-										id="option2" autocomplete="off"
-									/> 
-									<i className="far fa-envelope" />
-								</label>
-								<label className="btn btn-secondary">
-									<input type="radio" name="options" 
-										id="option3" autocomplete="off"
-									/> 
-									<i class="fas fa-cog"></i>
-								</label>
-								<label className="btn btn-secondary">
-									<input type="radio" name="options" 
-										id="option3" autocomplete="off"
-									/> 
-									<i className="fas fa-sliders-h" />
-								</label>
-							</div>
+						</ul>
 						</div>
 					</div>
 				</nav>
