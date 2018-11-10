@@ -3,13 +3,17 @@ main{
   font-family: 'Work Sans';
 }
 
+.container{
+  max-width:100%;
+}
+
 .background-top-home{
   background-image: url('./images/background01.jpg');
   background-repeat: no-repeat;
   background-position: Center;
   color:white;
   height: 35.625rem;
-  max-width: 100%;
+  width: 100%;
   padding-top: 14.75rem;
   padding-left: 6.25rem;
 }
