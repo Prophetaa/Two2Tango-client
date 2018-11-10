@@ -48,7 +48,7 @@ export const getOneProfile = id => (dispatch, getState) => {
 		.catch(err => console.log(err));
 };
 
-export const updateProfile = (profileId, data) => (dispatch, getState) => {
+export const updateProfile = data => (dispatch, getState) => {
 	const state = getState();
 	const jwt = state.currentUser.jwt;
 
@@ -57,7 +57,7 @@ export const updateProfile = (profileId, data) => (dispatch, getState) => {
 	request
 		.put(`${baseUrl}/profiles`)
 		.set('Authorization', `Bearer ${jwt}`)
-		.send({ profileId, data })
+		.send(data)
 		.then(result => dispatch(updatedProfile(result.body)))
 		.catch(err => console.log(err));
 };

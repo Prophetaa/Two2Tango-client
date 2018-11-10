@@ -11,7 +11,7 @@ class ResultsListContainer extends Component {
 	}
 
 	render() {
-		if (!this.props.currentUser) return <Redirect to="/login" />;
+		if (!this.props.currentUser) return <Redirect to="/home" />;
 		if (!this.props.results) return null;
 		return (
 			<div>
