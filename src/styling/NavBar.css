@@ -3,46 +3,20 @@
     border: 0;
 }
 
-
-
-
-
-/* #main-nav {
-    margin: auto;
-    height: 15vh;
-    background: linear-gradient( rgb(70, 36, 41)  23.57%, rgba(80, 63, 63, 0) 99.47%);
-    background-color: #F2EFEA;
-
+.link-navbar{
+    color:black;
 }
 
-.navitem {
-    font-size: 25px;
-    margin: 24px 15px 5px 15px;
-    padding: 5px;
-    padding-top: 10px;
+.link-navbar:hover, 
+.link-navbar:focus, 
+.link-navbar:active, 
+.link-navbar.active{
+    color:#A00D26;
 }
 
-a {
-    color: #555555 !important;
+.icons-navbar:hover, 
+.icons-navbar:focus, 
+.icons-navbar:active, 
+.icons-navbar.active{
+    color:#A00D26;
 }
-
-a:hover {
-    text-decoration: none;
-    color: #000000 !important;
-
-}
-
-.logo {
-    width: 300px;
-    height: 15vh;
-    margin: 12px;
-    background: url('.../../images/logo-grey.png') no-repeat;
-      
-}
-
-@media (max-width: 992px) {
-    .logo {
-        width: 200px;
-        height: 12 vh
-    }
-} */
