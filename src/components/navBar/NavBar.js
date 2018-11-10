@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../styling/NavBar.css';
@@ -97,8 +97,7 @@ const mapStateToProps = function(state) {
 
 export default connect(mapStateToProps)(Navbar);
 
-{
-	/* <Nav id="main-nav">
+/* <Nav id="main-nav">
 				{!this.props.currentUser && (
 						<Fragment>
 							<NavItem className="navitem" eventKey={2} href="/login">
@@ -127,4 +126,3 @@ export default connect(mapStateToProps)(Navbar);
 						</Fragment>
 					)}
 				</Nav> */
-}
