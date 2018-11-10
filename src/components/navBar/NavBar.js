@@ -47,7 +47,9 @@ class Navbar extends Component {
 									<li className="nav-item">
 										<button className="btn btn-outline-secondary btn-lg icons-navbar">
 											<Link to="/results" className="link-navbar">
+
 												<i className="fas fa-search" />
+
 											</Link>
 										</button>
 									</li>
