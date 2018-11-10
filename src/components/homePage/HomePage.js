@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Component } from 'react'
 import '../../styling/HomePage.css';
 
+import backgroud1 from '../../styling/images/background01.jpg'
 import event from '../../styling/images/event.png'
 import interview from '../../styling/images/interview.png'
 import laugh from '../../styling/images/laugh.png'
@@ -21,18 +22,22 @@ export class homePage extends Component {
       <div>
         <main>
           {/* background dancers */}
-          <div className="container background-top-home">
+          <div className="container position-fix">
             <div className="row">
               <div className="col-12">
-                {/* <img className="container" src={background} alt="background"/> */}
+                <div className="container position-absolute image-top">
                   <h2 className="display-3">Find a tango partner <br/>in your city</h2> 
                   <button type="button" className="btn btn-outline-light btn-lg">log In</button>
                   <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">SignUp</button>
+                </div>
+                <img className="container" src={backgroud1} alt="background"/>
+                
               </div>   
             </div>
           </div>
+          
           {/* what you can do */}
-          <div className="container wcyd">
+          <div className="container wcyd position-fix">
             <div className="row text-center">
               <div className="col-12">
                 <h2 className="display-4 title-home">what you can do</h2>
@@ -55,7 +60,7 @@ export class homePage extends Component {
           </div>
 
           {/* new tangueros  */}
-          <div className="container tangueros-home">
+          <div className="container tangueros-home position-fix">
             <div className="row text-center">
               <div className="col-12">
                 <h1 className="display-4 title-home ">New tangueros</h1>
@@ -98,7 +103,7 @@ export class homePage extends Component {
                 <p className="level">Beginer</p>
               </div>
             </div> 
-            <div className="container text-center">
+            <div className="container text-center position-fix">
               <div className="row-12">
                 <div className="col-12">
                   <h4 className="display-4">Join them on the dancefloor</h4> 
@@ -111,9 +116,9 @@ export class homePage extends Component {
           </div>
 
           {/* about */}
-          <div className="container about-home">
+          <div className="container about-home position-fix">
             <div className="row"> 
-              <div className="media">
+              <div className="media position-fix">
                 <img src={Avatar6} className="rounded-circle avatar-big-home m-5" alt="avatar" />
                 <div className="media-body avatar-box-home">
                   <img src={quoteLeft} className="quote align-left" alt="quote-left" />
@@ -125,13 +130,13 @@ export class homePage extends Component {
                   </div>
                 </div>
               </div> 
-              <div className="media">
+              <div className="media position-fix">
                 <div className="media-body avatar-box-home">
                   <img src={quoteLeft} className="quote align-left" alt="quote-left" />
                   <h1 className="display-4 avatar-text-home">
                     I missed so many events because I was alone. Now I enjoy a full tango life
                   </h1>
-                  <div className="container d-flex justify-content-end">
+                  <div className="container d-flex justify-content-end position-fix">
                     <img src={quoteRight} className="quote" alt="quote-right" />
                   </div>
                 </div>

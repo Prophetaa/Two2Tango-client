@@ -7,8 +7,9 @@ main{
   max-width:100%;
 }
 
-.background-top-home{
-  background-image: url('./images/background01.jpg');
+/* .background-top-home */
+.image-top{
+  /* background-image: url('./images/background01.jpg'); */
   background-repeat: no-repeat;
   background-position: Center;
   color:white;
@@ -16,6 +17,10 @@ main{
   width: 100%;
   padding-top: 14.75rem;
   padding-left: 6.25rem;
+}
+
+.background-dancers-text{
+  color:white;
 }
 
 .SignInPrmBtn {
