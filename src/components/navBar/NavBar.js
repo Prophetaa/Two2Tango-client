@@ -23,7 +23,7 @@ class Navbar extends Component {
 								<ul className="navbar-nav ml-auto d-inline-md">
 									<li className="nav-item ">
 										<button className="btn btn-outline-secondary btn-lg icons-navbar">
-											<Link to="/my-profile">
+											<Link to="/profiles/my-profile">
 												<i className="fas fa-user-circle" />
 											</Link>
 										</button>
