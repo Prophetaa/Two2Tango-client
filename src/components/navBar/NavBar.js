@@ -1,40 +1,82 @@
 import React, { Component, Fragment } from 'react';
-import { Nav, NavItem } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import '../../styling/NavBar.css';
 import logoWhite from '../../styling/images/logo-grey.png'
 
 class Navbar extends Component {
 	render() {
-		const {history} =this.props
-
 		return (
 			<div>
 				<nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+				{this.props.currentUser && (
+										<div className="container">
+										<img className="" src={logoWhite} alt="logo"/>
+										<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+											<span className="navbar-toggler-icon"></span>
+										</button>
+										<div className="collapse navbar-collapse" id="navbarResponsive">
+										<ul className="navbar-nav ml-auto d-inline-md">
+											<li className="nav-item ">
+												<button className="btn btn-outline-secondary btn-lg icons-navbar">
+													<Link to="/profile">
+														<i className="fas fa-user-circle" />
+													</Link>
+												</button>
+											</li>
+											<li className="nav-item">
+												<button className="btn btn-outline-secondary btn-lg icons-navbar">
+													<Link to="/messages">
+														<i className="far fa-envelope" />
+													</Link>
+												</button>
+											</li>
+											<li className="nav-item">
+												<button className="btn btn-outline-secondary btn-lg icons-navbar">
+													<Link to="/setting">
+														<i class="fas fa-cog"></i>
+													</Link>
+												</button>
+											</li>
+											<li className="nav-item">
+												<button className="btn btn-outline-secondary btn-lg icons-navbar">
+													<Link to="/preference">
+														<i className="fas fa-sliders-h" />
+													</Link>
+												</button>
+											</li>
+										</ul>
+										</div>
+									</div>
+				)}
+				{!this.props.currentUser && (
 					<div className="container">
-						<img className="" src={logoWhite} alt="logo"/>
-						<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-							<span className="navbar-toggler-icon"></span>
-						</button>
-						<div className="collapse navbar-collapse" id="navbarResponsive">
-						<ul className="navbar-nav ml-auto d-inline-md">
-							<li className="nav-item ">
-								<button className="btn btn-outline-secondary btn-lg icons-navbar">
+					<img className="" src={logoWhite} alt="logo"/>
+					<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+						<span className="navbar-toggler-icon"></span>
+					</button>
+					<div className="collapse navbar-collapse" id="navbarResponsive">
+					<ul className="navbar-nav ml-auto d-inline-md">
+						<li className="nav-item ">
+							<button className="btn btn-outline-secondary btn-lg icons-navbar">
+								<Link to="/signup">
 									<i className="fas fa-user-circle" />
-								</button>
-							</li>
-							<li className="nav-item">
-								<i className="far fa-envelope" />
-							</li>
-							<li className="nav-item">
-								<i class="fas fa-cog"></i>
-							</li>
-							<li className="nav-item">
-								<i className="fas fa-sliders-h" />
-							</li>
+								</Link>
+							</button>
+						</li>
+						<li className="nav-item">
+							<button className="btn btn-outline-secondary btn-lg icons-navbar">
+								<Link to="/login">
+									<i className="far fa-envelope" />
+								</Link>
+							</button>
+						</li>
 						</ul>
 						</div>
-					</div>
+						</div>
+						
+				)}
+
 				</nav>
 			</div>
 		);
