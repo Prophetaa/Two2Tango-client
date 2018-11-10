@@ -16,14 +16,26 @@ class EditProfileContainer extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
-		this.props.updateProfile();
-		e.target.reset();
+		this.props.updateProfile(this.state);
+		this.props.history.push(`/results`);
 	};
 
 	render() {
 		return (
 			<div>
-				<EditProfileForm />
+				<EditProfileForm
+					firstName={this.state.firstName}
+					lastName={this.state.lastName}
+					city={this.state.city}
+					role={this.state.role}
+					level={this.state.level}
+					height={this.state.height}
+					age={this.state.age}
+					gender={this.state.gender}
+					about={this.state.about}
+					onSubmit={this.handleSubmit}
+					onChange={this.handleChange}
+				/>
 			</div>
 		);
 	}

@@ -1,3 +1,4 @@
-.container.edit-profile {
-  
+.edit-profile header {
+  height: 130px;
+  background: linear-gradient(to right, #A00D26 60%, rgba(80, 63, 63, 0) 99.47%)
 }

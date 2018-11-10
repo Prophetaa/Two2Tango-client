@@ -4,6 +4,7 @@
 	"main": "src/index.js",
 	"private": true,
 	"dependencies": {
+		"history": "^4.7.2",
 		"i": "^0.3.6",
 		"react": "^16.6.0",
 		"react-bootstrap": "^0.32.4",

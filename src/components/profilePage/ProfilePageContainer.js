@@ -6,8 +6,9 @@ import { Redirect } from 'react-router-dom';
 
 class ProfilePageContainer extends Component {
 	componentDidMount() {
-		if (!this.props.authenticated) return null;
-		this.props.getOneProfile(this.props.match.params.id);
+		if (this.props.match.path === '/my-profile')
+			this.props.getOneProfile(this.props.userId);
+		else this.props.getOneProfile(this.props.match.params.id);
 	}
 
 	render() {

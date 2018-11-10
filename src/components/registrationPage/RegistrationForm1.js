@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../styling/RegistrationForm.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 export default class RegistrationForm extends Component {
 	state = {};
@@ -70,10 +70,7 @@ export default class RegistrationForm extends Component {
 									</button>
 									<p className="d-block text-center mt-2 small">
 										Already a user?
-										<Link to={"/login"}>
-											Sign In
-										</Link>
-										.
+										<Link to={'/login'}> Sign In</Link>
 									</p>
 									<hr className="my-4" />
 									<button
@@ -82,7 +79,8 @@ export default class RegistrationForm extends Component {
 										type="submit">
 										<i className="fab fa-google mr-2" /> Sign up with Google
 									</button>
-									<button disabled
+									<button
+										disabled
 										className="btn btn-lg btn-facebook btn-block text-uppercase"
 										type="submit">
 										<i className="fab fa-facebook-f mr-2" /> Sign up with

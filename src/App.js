@@ -5,12 +5,13 @@ import LoginPage from './components/loginPage/LoginPage';
 import RegistrationPage from './components/registrationPage/RegistrationPage';
 import NavBar from './components/navBar/NavBar';
 import ResultsListContainer from './components/resultsPage/ResultsListContainer';
-import homePage from './components/homePage/HomePage';
+import HomePage from './components/homePage/HomePage';
 import ProfilePageContainer from './components/profilePage/ProfilePageContainer';
 import MessageListContainer from './components/messagePage/MessageListContainer';
 import EditProfileContainer from './components/profilePage/EditProfileContainer';
+import LogoutPage from './components/logoutPage/LogoutPage';
 
-class App extends Component {
+export default class App extends Component {
 	render() {
 		return (
 			<div>
@@ -18,9 +19,10 @@ class App extends Component {
 					<NavBar />
 				</nav>
 				<div className="main">
-					<Route exact path="/home" component={homePage} />
-					<Route exact path="/signup" component={RegistrationPage} />
+					<Route exact path="/home" component={HomePage} />
 					<Route exact path="/login" component={LoginPage} />
+					<Route exact path="/logout" component={LogoutPage} />
+					<Route exact path="/signup" component={RegistrationPage} />
 					<Route exact path="/results" component={ResultsListContainer} />
 					<Route exact path="/profiles/:id" component={ProfilePageContainer} />
 					<Route exact path="/messages" component={MessageListContainer} />
@@ -30,5 +32,3 @@ class App extends Component {
 		);
 	}
 }
-
-export default App;
