@@ -2,11 +2,11 @@ import { USER_LOGIN_SUCCESS, USER_LOGOUT } from '../actions/users';
 import { localStorageJwtKey } from '../constants';
 
 let initialState = null;
+
 try {
 	const jwt = localStorage.getItem(localStorageJwtKey);
-	const id = localStorage.getItem('id');
 	if (jwt) {
-		initialState = { jwt, id };
+		initialState = { jwt };
 	}
 } catch (e) {
 	console.log(`Couldn't get data from the current State`, e);

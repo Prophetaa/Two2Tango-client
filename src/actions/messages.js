@@ -28,7 +28,7 @@ export const getAllMessages = () => (dispatch, getState) => {
 		.catch(err => console.log(err));
 };
 
-export const sendMessage = (content, id) => (dispatch, getState) => {
+export const sendMessage = (content, userId) => (dispatch, getState) => {
 	const state = getState();
 	const jwt = state.currentUser.jwt;
 
@@ -37,7 +37,7 @@ export const sendMessage = (content, id) => (dispatch, getState) => {
 	request
 		.post(`${baseUrl}/messages`)
 		.set('Authorization', `Bearer ${jwt}`)
-		.send({ content, id })
+		.send({ content, userId })
 		.then(result => dispatch(messageSent()))
 		.catch(err => console.log(err));
 };

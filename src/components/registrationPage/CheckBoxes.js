@@ -6,6 +6,7 @@ export default class CheckBoxes extends Component {
   state={toggle:false}
 
   componentDidMount(){
+    if(this.props.currentPage === "2"){ //If statement to make checkBox component re-usable in diff ways
     let inputs = document.getElementsByTagName('input'),
     checkboxes = [];
 
@@ -24,6 +25,7 @@ for (let i = 0; i < inputs.length; i++) {
     }
 }
   }
+}
 
   render() {
     return (
@@ -45,7 +47,7 @@ for (let i = 0; i < inputs.length; i++) {
         <div className="checkBox_container lastCheckBox">
           <label class="check_container">
           <span className="checkBoxSpan">Advanced</span> 
-            <input type="checkbox"onClick={()=>this.props.handleCheck("advanced")}/>
+            <input type="checkbox"    onChange={()=>this.props.handleCheck("advanced")}/>
             <span class="checkmark" />
           </label>
 

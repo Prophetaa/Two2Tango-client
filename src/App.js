@@ -6,26 +6,29 @@ import RegistrationPage from './components/registrationPage/RegistrationPage';
 import NavBar from './components/navBar/NavBar';
 import ResultsListContainer from './components/resultsPage/ResultsListContainer';
 import homePage from './components/homePage/HomePage';
-import ProfilePageContainer from './components/profilePage/ProfilePageContainer'
+import ProfilePageContainer from './components/profilePage/ProfilePageContainer';
+import MessageListContainer from './components/messagePage/MessageListContainer';
+import EditProfileContainer from './components/profilePage/EditProfileContainer';
 
 class App extends Component {
 	render() {
 		return (
 			<div>
-          <nav>
-            <NavBar />
-          </nav>
-			<div className="main">
-				<Route exact path="/home" component={homePage} />
-				<Route exact path="/signup" component={RegistrationPage} />
-				<Route exact path="/login" component={LoginPage} />
-				<Route exact path="/results" component={ResultsListContainer} />
-				<Route exact path="/profile/" component={ProfilePageContainer} />
-			</div>
+				<nav>
+					<NavBar />
+				</nav>
+				<div className="main">
+					<Route exact path="/home" component={homePage} />
+					<Route exact path="/signup" component={RegistrationPage} />
+					<Route exact path="/login" component={LoginPage} />
+					<Route exact path="/results" component={ResultsListContainer} />
+					<Route exact path="/profiles/:id" component={ProfilePageContainer} />
+					<Route exact path="/messages" component={MessageListContainer} />
+					<Route exact path="/edit-profile" component={EditProfileContainer} />
+				</div>
 			</div>
 		);
 	}
 }
 
 export default App;
-
