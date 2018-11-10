@@ -6,8 +6,10 @@ import { getAllResults } from '../../actions/results';
 
 class ResultsListContainer extends Component {
 	componentDidMount() {
-		this.props.getAllResults();
-		console.log('request sent');
+		if (this.props.authenticated) {
+			console.log('ResultsListContainer Component did Mount');
+			this.props.getAllResults();
+		}
 	}
 
 	render() {
@@ -23,6 +25,7 @@ class ResultsListContainer extends Component {
 
 const mapStateToProps = function(state) {
 	return {
+		authenticated: state.currentUser !== null,
 		login: state.login,
 		currentUser: state.currentUser,
 		results: state.results

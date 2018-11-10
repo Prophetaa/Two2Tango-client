@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import ProfilePage from './ProfilePage';
 import { getOneProfile } from '../../actions/results';
 import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
 
 class ProfilePageContainer extends Component {
 	componentDidMount() {
@@ -35,9 +34,7 @@ const mapStateToProps = function(state) {
 	};
 };
 
-export default withRouter(
-	connect(
-		mapStateToProps,
-		{ getOneProfile }
-	)(ProfilePageContainer)
-);
+export default connect(
+	mapStateToProps,
+	{ getOneProfile }
+)(ProfilePageContainer);
