@@ -7,7 +7,6 @@ import { getAllResults } from '../../actions/results';
 class ResultsListContainer extends Component {
 	componentDidMount() {
 		if (this.props.authenticated) {
-			console.log('ResultsListContainer Component did Mount');
 			this.props.getAllResults();
 		}
 	}
