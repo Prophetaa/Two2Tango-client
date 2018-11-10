@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import ProfilePage from './ProfilePage';
 import { getOneProfile } from '../../actions/results';
 import { Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { toUserId } from '../../jwt';
 
 class ProfilePageContainer extends Component {
 	componentDidMount() {
-		if (this.props.match.path === '/my-profile')
-			this.props.getOneProfile(this.props.userId);
+		if (this.props.match.params.id === 'my-profile')
+			this.props.getOneProfile(toUserId(this.props.currentUser.jwt));
 		else this.props.getOneProfile(this.props.match.params.id);
 	}
 
@@ -35,9 +35,7 @@ const mapStateToProps = function(state) {
 	};
 };
 
-export default withRouter(
-	connect(
-		mapStateToProps,
-		{ getOneProfile }
-	)(ProfilePageContainer)
-);
+export default connect(
+	mapStateToProps,
+	{ getOneProfile }
+)(ProfilePageContainer);
