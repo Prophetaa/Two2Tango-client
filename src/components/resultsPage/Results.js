@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../../styling/ResultsPage.css';
 
 export default function Results(props) {
-	console.log(props.results);
 	return (
 		<div>
 			<h1 className="text-center p-3 ">Your future tango partners</h1>
