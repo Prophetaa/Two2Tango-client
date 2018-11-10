@@ -21,10 +21,10 @@ export class homePage extends Component {
       <div>
         <main>
           {/* background dancers */}
-          <div className="container-fluid background-top-home">
+          <div className="container background-top-home">
             <div className="row">
               <div className="col-12">
-                {/* <img className="container-fluid" src={background} alt="background"/> */}
+                {/* <img className="container" src={background} alt="background"/> */}
                   <h2 className="display-3">Find a tango partner <br/>in your city</h2> 
                   <button type="button" className="btn btn-outline-light btn-lg">log In</button>
                   <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">SignUp</button>
@@ -32,7 +32,7 @@ export class homePage extends Component {
             </div>
           </div>
           {/* what you can do */}
-          <div className="container-fluid wcyd">
+          <div className="container wcyd">
             <div className="row text-center">
               <div className="col-12">
                 <h2 className="display-4 title-home">what you can do</h2>
@@ -55,7 +55,7 @@ export class homePage extends Component {
           </div>
 
           {/* new tangueros  */}
-          <div className="container-fluid tangueros-home">
+          <div className="container tangueros-home">
             <div className="row text-center">
               <div className="col-12">
                 <h1 className="display-4 title-home ">New tangueros</h1>
@@ -98,10 +98,10 @@ export class homePage extends Component {
                 <p className="level">Beginer</p>
               </div>
             </div> 
-            <div className="container-fluid text-center">
+            <div className="container text-center">
               <div className="row-12">
                 <div className="col-12">
-                  <h2 className="display-3">Join them on the dancefloor.</h2> 
+                  <h4 className="display-4">Join them on the dancefloor</h4> 
                   <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">
                     SignUp
                   </button>
@@ -111,7 +111,7 @@ export class homePage extends Component {
           </div>
 
           {/* about */}
-          <div className="container-fluid about-home">
+          <div className="container about-home">
             <div className="row"> 
               <div className="media">
                 <img src={Avatar6} className="rounded-circle avatar-big-home m-5" alt="avatar" />
@@ -120,7 +120,7 @@ export class homePage extends Component {
                   <h1 className="display-4 avatar-text-home">
                     I was too shy to invite followers. Now I have regular partners and I dance a lot!
                   </h1>
-                  <div className="container-fluid d-flex justify-content-end">
+                  <div className="container d-flex justify-content-end">
                     <img src={quoteRight} className="quote" alt="quote-right" />
                   </div>
                 </div>
@@ -131,26 +131,25 @@ export class homePage extends Component {
                   <h1 className="display-4 avatar-text-home">
                     I missed so many events because I was alone. Now I enjoy a full tango life
                   </h1>
-                  <div className="container-fluid d-flex justify-content-end">
+                  <div className="container d-flex justify-content-end">
                     <img src={quoteRight} className="quote" alt="quote-right" />
                   </div>
                 </div>
                 <img src={Avatar7} className="rounded-circle avatar-big-home m-5" alt="avatar" />
-              </div>
-            
+              </div>  
             </div>         
           </div>
           
           {/* join  */}
-          <div className="container-fluid background-bottom-home text-right">
+          <div className="container background-bottom-home text-right">
             <div className="row-12">
               <div className="col-12">
-                <h2 className="display-3">Time to dance.<br/>Find your partner now.</h2> 
+                <h2 className="display-3">Time to dance<br/>Find your partner now</h2> 
                 <button type="button" className="btn btn-primary btn-lg SignInPrmBtn">SignUp</button>
               </div>   
             </div>
           </div>
-          <div className="container-fluid footer-home">
+          <div className="container footer-home">
               <div className="row">
                 <div className="col-12">
                   <img src={logoWhite} alt="logo" />

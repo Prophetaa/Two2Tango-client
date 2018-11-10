@@ -19,7 +19,7 @@ export default class LoginForm extends Component {
 	};
 	render() {
 		return (
-			<div className="container">
+			<div className="container login">
 				<div className="row">
 					<div className="col-lg-10 col-xl-9 mx-auto">
 						<div className="card card-signin flex-row my-5">

@@ -10,7 +10,7 @@ class Navbar extends Component {
 				<Nav id="main-nav">
 				{!this.props.currentUser && (
 						<Fragment>
-							<NavItem className="navitem" eventKey={2} href="/sign">
+							<NavItem className="navitem" eventKey={2} href="/login">
 								<i className="fas fa-user-circle" />
 							</NavItem>
 							<NavItem className="navitem" eventKey={2} href="/messages">
@@ -28,7 +28,7 @@ class Navbar extends Component {
 								<i className="far fa-envelope" />
 							</NavItem>
 							<NavItem className="navitem" eventKey={2} href="/partners">
-								<i className="fas fa-user-friends" />
+								<i class="fas fa-cog"></i>
 							</NavItem>
 							<NavItem className="navitem" eventKey={2} href="/preferences">
 								<i className="fas fa-sliders-h" />
