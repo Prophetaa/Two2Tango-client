@@ -11,13 +11,11 @@ import MessageListContainer from './components/messagePage/MessageListContainer'
 import EditProfileContainer from './components/profilePage/EditProfileContainer';
 import LogoutPage from './components/logoutPage/LogoutPage';
 
-export default class App extends Component {
+class App extends Component {
 	render() {
 		return (
-			<div>
-				<nav>
-					<NavBar />
-				</nav>
+			<div className="App">
+				<NavBar />
 				<div className="main">
 					<Route exact path="/home" component={HomePage} />
 					<Route exact path="/login" component={LoginPage} />
@@ -32,3 +30,5 @@ export default class App extends Component {
 		);
 	}
 }
+
+export default App;
