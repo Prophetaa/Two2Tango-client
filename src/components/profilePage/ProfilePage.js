@@ -18,27 +18,45 @@ export default function ProfilePage(props) {
 
 				<div className="image-column">
 					<img src={profile.photoUrl} className="image" alt="" />
-				</div>
-				<div className="details">
-					<ul className="list-unstyled details-list">
-						<li className="d-flex justify-content-around">
-							<span className="text-uppercase">name: </span>
-							<span>{profile.firstName}</span>
-						</li>
-						<li>CITY: {profile.city}</li>
-						<li>ROLE: {profile.role}</li>
-						<li>LEVEL: {profile.level}</li>
-						<li>HEIGHT: {profile.height}</li>
-						<li>AGE: {profile.age}</li>
-						<li>GENDER: {profile.gender}</li>
-					</ul>
 					{props.profile.userId === currentUserId && (
 						<Link to="/edit-profile">
 							<button className="btn update text-uppercase">
-								update my profile
+								update profile
 							</button>
 						</Link>
 					)}
+				</div>
+				<div className="details">
+					<ul className="list-unstyled details-list">
+						<li className="d-flex justify-content-between">
+							<span className="text-uppercase">name: </span>
+							<span>{profile.firstName}</span>
+						</li>
+						<li className="d-flex justify-content-between">
+							<span className="text-uppercase">city: </span>
+							<span>{profile.city}</span>
+						</li>
+						<li className="d-flex justify-content-between">
+							<span className="text-uppercase">role: </span>
+							<span>{profile.role}</span>
+						</li>
+						<li className="d-flex justify-content-between">
+							<span className="text-uppercase">level: </span>
+							<span>{profile.level}</span>
+						</li>
+						<li className="d-flex justify-content-between">
+							<span className="text-uppercase">height: </span>
+							<span>{profile.height}</span>
+						</li>
+						<li className="d-flex justify-content-between">
+							<span className="text-uppercase">age: </span>
+							<span>{profile.age}</span>
+						</li>
+						<li className="d-flex justify-content-between">
+							<span className="text-uppercase">gender: </span>
+							<span>{profile.gender}</span>
+						</li>
+					</ul>
 				</div>
 				<div className="about">
 					<h3 className="text-uppercase">about me</h3>

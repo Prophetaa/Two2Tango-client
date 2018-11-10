@@ -34,13 +34,13 @@ export class homePage extends Component {
 									<button
 										type="button"
 										className="btn btn-outline-light btn-lg"
-										onClick={() => history.push(`/login`)}>
+										onClick={() => this.props.history.push(`/login`)}>
 										log In
 									</button>
 									<button
 										type="button"
 										className="btn btn-primary btn-lg SignInPrmBtn"
-										onClick={() => history.push(`/signup`)}>
+										onClick={() => this.props.history.push(`/signup`)}>
 										SignUp
 									</button>
 								</div>
