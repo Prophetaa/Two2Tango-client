@@ -40,7 +40,7 @@ export default function ProfilePage(props) {
                 <span className='my-details-profile'>{profile.level}</span>
               </li>
               <li className="d-flex justify-content-between">
-                <span className="text-uppercase">height: </span>
+                <span className="text-uppercase">height (cm): </span>
                 <span className='my-details-profile'>{profile.height}</span>
               </li>
               <li className="d-flex justify-content-between">

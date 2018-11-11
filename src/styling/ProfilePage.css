@@ -24,31 +24,29 @@ body {
     padding: 10px;
 }
 .image-profile {
-    width: 90%;
+    width: 80%;
     height: auto;
-    min-height: 350px;
+    min-height: 200px;
     border-radius: 50%;
-    padding: 40px;
-    padding-left: 60px;
-    vertical-align: middle
+    margin: 35px;
 }
 .details-profile {
     background-color: #FFFFFF;
     padding: 10px;
 }
 .details-list-profile {
-    padding: 65px;
+    padding: 55px;
     font-size: 13px;
+    max-width: 300px;
 }
 .details-list-profile li {
-    padding: 6px;
+    padding: 7px;
 }
 .my-details-profile {
     color: #747D88;
-    text-align: left
 }
 .about-profile {
-    padding: 75px 60px 10px 10px;
+    padding: 75px 60px 10px 40px;
     background-color: #FFFFFF;
     text-align: justify;
 }
@@ -64,7 +62,7 @@ body {
 
 .update-profile {
     margin: auto;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .update-btn-profile {
     font-size: 16px;
@@ -80,7 +78,8 @@ body {
         width: 100%;
     }
     .my-profile h1 {
-        padding-left: 60px;
+        padding-left: 30px;
+        font-size: 40px;
     }
     .image-profile {
         padding: 20px;

@@ -54,7 +54,7 @@ export default class LoginForm extends Component {
 										<label htmlFor="inputPassword">Password</label>
 									</div>
 									<button
-										className="btn btn-lg btn-primary btn-block text-uppercase"
+										className="btn btn-lg btn-primary btn-block text-uppercase btn-login"
 										type="submit">
 										Login
 									</button>
