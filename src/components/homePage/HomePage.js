@@ -15,19 +15,18 @@ import Avatar7 from '../../styling/images/Avatar7.png';
 // import logoWhite from '../../styling/images/logo-grey.png';
 import quoteLeft from '../../styling/images/quote-left.png';
 import quoteRight from '../../styling/images/quote-right.png';
-import Footer from './Footer'
+import Footer from './Footer';
 
 export class homePage extends Component {
 	render() {
 		return (
-			<div>
-				<main>
-					{/* background dancers */}
-					<div className="container background-top-home">
+			<div className="home">
+				<div className="background-top-home">
+					<div className="container ">
 						<div className="row">
 							<div className="col-12">
 								<div className="background-dancers-text">
-									<h2 className="display-3">
+									<h2>
 										Find a tango partner <br />
 										in your city
 									</h2>
@@ -35,44 +34,66 @@ export class homePage extends Component {
 										type="button"
 										className="btn btn-outline-light btn-lg"
 										onClick={() => this.props.history.push(`/login`)}>
-										log In
+										Log In
 									</button>
 									<button
 										type="button"
 										className="btn btn-primary btn-lg SignInPrmBtn"
 										onClick={() => this.props.history.push(`/signup`)}>
-										SignUp
+										Sign Up
 									</button>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 
-					{/* what you can do */}
-					<div className="container wcyd position-fix">
-						<div className="row text-center">
+				<section className="what-you-can-do">
+					<div className="container">
+						<div className="row">
 							<div className="col-12">
-								<h2 className="display-4 title-home">What you can do</h2>
+								<h2 className="text-center display-4 title-home">
+									What you can do
+								</h2>
 							</div>
 						</div>
 						<div className="row">
-							<div className="col-xs-12 col-sm-6 col-md-4">
-								<img src={interview} alt="interview icons-home" className="icons-home" />
-								<div className="align-baseline">Build a network of suitable partners</div>
+							<div className="col-xs-12 col-sm-12 col-md-4">
+								<img
+									src={interview}
+									alt="interview icons-home"
+									className="icons-home"
+								/>
+								<div className="text-center">
+									Build a network of suitable partners
+								</div>
 							</div>
-							<div className="col-xs-12 col-sm-6 col-md-4">
-								<img src={event} alt="event icons-home" className="icons-home "/>
-								<div className="align-baseline">Discover tango events all over the world</div>
+							<div className="col-xs-12 col-sm-12 col-md-4">
+								<img
+									src={event}
+									alt="event icons-home"
+									className="icons-home "
+								/>
+								<div className="text-center">
+									Discover tango events all over the world
+								</div>
 							</div>
-							<div className="col-xs-12 col-sm-6 col-md-4">
-								<img src={laugh} alt="laugh icons-home" className="icons-home "/>
-								<div className="text-center">Keep in touch with the tango community</div>
+							<div className="col-xs-12 col-sm-12 col-md-4">
+								<img
+									src={laugh}
+									alt="laugh icons-home"
+									className="icons-home "
+								/>
+								<div className="text-center">
+									Keep in touch with the tango community
+								</div>
 							</div>
 						</div>
 					</div>
+				</section>
 
-					{/* new tangueros  */}
-					<div className="container tangueros-home position-fix">
+				<section className="new-tangueros">
+					<div className="container tangueros-home">
 						<div className="row text-center">
 							<div className="col-12">
 								<h1 className="display-4 title-home ">New tangueros</h1>
@@ -129,47 +150,73 @@ export class homePage extends Component {
 							</div>
 						</div>
 					</div>
+				</section>
 
-					{/* about */}
+				<section className="testimonials">
 					<div className="container about-home">
 						<div className="row avatar-row-home">
-						<img className="rounded-circle avatar-big-home mx-auto" src={Avatar7} alt="avatarBig" />
-							<div className="col-xs-12 col-sm-8 col-md-8">
-								<img src={quoteLeft} className="quote left-home float-left" alt="quote-left"/>
-								<h1 className="avatar-text-home">
-									I was too shy to invite followers. Now I have regular
-									partners and I dance a lot!
-								</h1>
-								<img src={quoteRight} className="quote right-home float-right" alt="quote-right" />
+							<img
+								className="rounded-circle avatar-big-home mx-auto"
+								src={Avatar7}
+								alt="avatarBig"
+							/>
+							<div className="col-xs-12 col-sm-12 col-md-8">
+								<img
+									src={quoteLeft}
+									className="quote left-home float-left"
+									alt="quote-left"
+								/>
+								<p className="h1 avatar-text-home">
+									I was too shy to invite followers. Now I have regular partners
+									and I dance a lot!
+								</p>
+								<img
+									src={quoteRight}
+									className="quote right-home float-right"
+									alt="quote-right"
+								/>
 								<div>Clara, 36, leader</div>
-							</div>	
+							</div>
 						</div>
 					</div>
 					<div className="container about-home">
 						<div className="row avatar-row-home">
-							<div className="col-xs-12 col-sm-8 col-md-8">
-								<img src={quoteLeft} className="quote left-home float-left" alt="quote-left"/>
-								<h1 className="avatar-text-home">
+							<div className="col-xs-12 col-sm-12 col-md-8">
+								<img
+									src={quoteLeft}
+									className="quote left-home float-left"
+									alt="quote-left"
+								/>
+								<p className="h1 avatar-text-home">
 									I missed so many events because I was alone. Now I enjoy a
 									full tango life
-								</h1>
-								<img src={quoteRight} className="quote right-home float-right" alt="quote-right" />
+								</p>
+								<img
+									src={quoteRight}
+									className="quote right-home float-right"
+									alt="quote-right"
+								/>
 								<div>Beth, 26, follower</div>
 							</div>
-							<img className="rounded-circle avatar-big-home mx-auto" src={Avatar6} alt="avatarBig" />	
+							<img
+								className="rounded-circle avatar-big-home mx-auto"
+								src={Avatar6}
+								alt="avatarBig"
+							/>
 						</div>
 					</div>
+				</section>
 
-					{/* join  */}
+				<section className="find-your-partner">
 					<div className="container background-bottom-home text-right">
 						<div className="row">
 							<div className="col-12">
 								<div>
-									<h2 className="display-3">
+									<p className="h2">
 										Time to dance
 										<br />
 										Find your partner now
-									</h2>
+									</p>
 									<button
 										type="button"
 										className="btn btn-primary btn-lg SignInPrmBtn"
@@ -180,7 +227,8 @@ export class homePage extends Component {
 							</div>
 						</div>
 					</div>
-				</main>
+				</section>
+
 				<Footer />
 			</div>
 		);
