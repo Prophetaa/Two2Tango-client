@@ -40,7 +40,7 @@ class MessageForm extends PureComponent {
 						/>
 					</div>
 
-					<button type="submit" className="btn btn-success btn-block">
+					<button type="submit" className="btn btn-success btn-block send">
 						Send
 					</button>
 				</form>
