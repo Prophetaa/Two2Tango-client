@@ -1,0 +1,30 @@
+
+
+.prefBtn{
+min-width: 40%;
+color:white;
+}
+
+.acceptChanges{
+    margin-left: 10%;
+    max-width: 40%;
+    background-color: green;
+}
+
+.acceptChanges:hover{
+    background-color: rgb(1, 160, 1);
+}
+
+.cancelChanges{
+    
+    background-color: #A00D26;
+}
+
+.cancelChanges:hover{
+    background-color: rgb(185, 17, 45);
+}
+
+.buttonsContainer{
+    display: flex;
+    justify-content: center;
+}

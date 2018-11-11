@@ -61,3 +61,5 @@ export const updateProfile = data => (dispatch, getState) => {
 		.then(result => dispatch(updatedProfile(result.body)))
 		.catch(err => console.log(err));
 };
+
+

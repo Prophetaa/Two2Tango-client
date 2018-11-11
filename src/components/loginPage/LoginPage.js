@@ -7,6 +7,7 @@ import LoginForm from './LoginForm';
 class LoginPage extends Component {
 	handleSubmit = data => {
 		this.props.login(data.email, data.password);
+
 	};
 
 	render() {

@@ -32,29 +32,29 @@ for (let i = 0; i < inputs.length; i++) {
       <div >
         <p className="ProfileInfo text-center">Tango Level:</p>
         <div className="checkBox_container">
-          <label class="check_container">
+          <label className="check_container">
           <span className="checkBoxSpan">Beginner</span> 
-            <input type="checkbox" onClick={()=>this.props.handleCheck("beginner")}/>
-            <span class="checkmark" />
+            <input id="beginner" type="checkbox" onClick={()=>this.props.handleCheck("beginner")}/>
+            <span className="checkmark" />
           </label>
 
-          <label class="check_container">
+          <label className="check_container">
           <span className="checkBoxSpan">Intermediate</span> 
-            <input type="checkbox" onClick={()=>this.props.handleCheck("intermediate")}/>
-            <span class="checkmark" />
+            <input id="intermediate" type="checkbox" onClick={()=>this.props.handleCheck("intermediate")}/>
+            <span className="checkmark" />
           </label>
         </div>
         <div className="checkBox_container lastCheckBox">
-          <label class="check_container">
+          <label className="check_container">
           <span className="checkBoxSpan">Advanced</span> 
-            <input type="checkbox"    onChange={()=>this.props.handleCheck("advanced")}/>
-            <span class="checkmark" />
+            <input id="advanced" type="checkbox"    onChange={()=>this.props.handleCheck("advanced")}/>
+            <span className="checkmark" />
           </label>
 
-          <label class="check_container">
+          <label className="check_container">
           <span className="checkBoxSpan">Professional</span> 
-            <input class="checkmark" type="checkbox" onClick={()=>this.props.handleCheck("professional")}/>
-            <span class="checkmark" />
+            <input  id="professional" className="checkmark" type="checkbox" onClick={()=>this.props.handleCheck("professional")}/>
+            <span className="checkmark" />
           </label>
         </div>
       </div>

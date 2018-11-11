@@ -110,7 +110,7 @@ const CLOUDINARY_UPLOAD_URL =
       </div>
     );
     return (
-      <div className="container">
+      <div className="container signupContainer">
         <div className="row">
           <div className="col-lg-10 col-xl-9 mx-auto">
             <div className="card card-signin flex-row my-5">
