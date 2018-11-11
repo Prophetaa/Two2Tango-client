@@ -33,6 +33,8 @@ class EditProfileContainer extends Component {
 					age={this.state.age}
 					gender={this.state.gender}
 					about={this.state.about}
+					email={this.state.email}
+					password={this.state.password}
 					onSubmit={this.handleSubmit}
 					onChange={this.handleChange}
 				/>
