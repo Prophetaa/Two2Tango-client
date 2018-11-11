@@ -26,7 +26,6 @@ export default class LocationSearchInput extends Component {
 				{({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
 					<div>
 						<input
-						required
 							{...getInputProps({
 								id:'geoLocate',
 								placeholder: 'City *',

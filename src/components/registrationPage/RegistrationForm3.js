@@ -7,7 +7,7 @@ import { postPreferences } from '../../actions/registration';
 import LocationSearchInput from './Geolocate';
 import CheckBoxes from './CheckBoxes';
 class RegistrationForm3 extends Component {
-  state = { cities: [], role: null, gender: null, tango_level: [], age: [] };
+  state = { cities:[], role: null, gender: null, tango_level: [], age: [] };
 
   handleCheck = level => {
     //Checks if this level is already on the react state, if it is it deletes it

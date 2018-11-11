@@ -12,12 +12,14 @@ import {
 
 import LocationSearchInput from '../registrationPage/Geolocate';
 import CheckBoxes from '../registrationPage/CheckBoxes';
+import GenderMenu from './GenderMenu';
+import RoleMenu from './RoleMenu';
 
 class PreferencesPage extends Component {
   async componentDidMount() {
     this.props.fetchPreferences();
   }
-  state = { level: [], };
+  state ={ cities:[], level: [] };
 
   updateState =  () => {
     if (this.props.currentUser) {
@@ -62,36 +64,37 @@ class PreferencesPage extends Component {
     }
   };
 
-  handleSelectCity = event => {
+
+  handleButtonClick = input => {
+    if (input === 'male') this.setState({ gender: 'male' });
+    if (input === 'female') this.setState({ gender: 'female' });
+    if (input === 'other') this.setState({ gender: 'other' });
+    if (input === 'leader') this.setState({ role: 'leader' });
+    if (input === 'follower') this.setState({ role: 'follower' });
+  };
+
+
+  // Cities form
+  selectCities = e => { // adds typed city to the array
+    e.preventDefault();
+    if (this.state.cities.length < 4) {
+      if (this.state.cities.includes(this.state.city)) return null;
+      if (this.state.city) this.setState({ cities: [...this.state.cities, this.state.city] });
+    }
+  };
+
+  removeCity = city => { //removes city from the list
+    let i = this.state.cities.findIndex(index => index === city);
+    this.state.cities.splice(i, 1);
+    this.setState({ cities: [...this.state.cities] });
+  };
+  
+  handleSelectCity = event => { // handles selection of city from the suggestted list
     let formatedCity = event.split(',', 1);
     this.setState({ city: formatedCity[0] });
   };
 
-  handleButtonClick = input => {
-    if (input === 'leader') this.setState({ role: 'leader' });
-    if (input === 'follower') this.setState({ role: 'follower' });
-    if (input === 'male') this.setState({ gender: 'male' });
-    if (input === 'female') this.setState({ gender: 'female' });
-    if (input === 'other') this.setState({ gender: 'other' });
-  };
 
-  handleSubmit = async e => {
-    e.preventDefault();
-    let error = document.getElementById('inputError');
-    if (!error) {
-      await this.props.updatePreferences(
-        this.state.city,
-        this.state.gender,
-        [
-          parseInt(this.state.max_height, 10),
-          parseInt(this.state.min_height, 10)
-        ],
-        this.state.role,
-        this.state.level,
-        [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
-      );
-    }
-  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -100,6 +103,27 @@ class PreferencesPage extends Component {
       [name]: value
     });
   };
+
+  handleSubmit = async e => {
+    e.preventDefault();
+    let error = document.getElementById('inputError');
+    if (!error) {
+      await this.props.updatePreferences(
+        this.state.cities,
+        this.state.gender,
+        [
+          parseInt(this.state.max_height, 10),
+          parseInt(this.state.min_height, 10)
+        ],
+        this.state.role,
+        this.state.level,
+        [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
+      )
+      window.location="/results"
+    }
+
+  };
+
 
   render() {
     if (!this.props.currentUser) return <Redirect to="/home" />;
@@ -132,65 +156,8 @@ class PreferencesPage extends Component {
                       </li>
                     ))}
                   </div>
-                  <div className="dropdown genderMenu">
-                    <button
-                      className="form-control dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false">
-                      {this.state.gender === null
-                        ? 'Select a Gender'
-                        : this.state.gender}
-                    </button>
-                    <div
-                      className="dropdown-menu form-control"
-                      aria-labelledby="dropdownMenuButton">
-                      <span
-                        className="dropdown-item "
-                        onClick={() => this.handleButtonClick('male')}>
-                        male
-                      </span>
-                      <span
-                        className="dropdown-item"
-                        onClick={() => this.handleButtonClick('female')}>
-                        female
-                      </span>
-                      <span
-                        className="dropdown-item"
-                        onClick={() => this.handleButtonClick('other')}>
-                        other
-                      </span>
-                    </div>
-                  </div>
-                  <div className="dropdown">
-                    <button
-                      className="form-control dropdown-toggle"
-                      type="button"
-                      required
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false">
-                      {this.state.role === null
-                        ? 'Select a Role'
-                        : this.state.role}
-                    </button>
-                    <div
-                      className="dropdown-menu form-control"
-                      aria-labelledby="dropdownMenuButton">
-                      <span
-                        className="dropdown-item "
-                        onClick={() => this.handleButtonClick('leader')}>
-                        leader
-                      </span>
-                      <span
-                        className="dropdown-item"
-                        onClick={() => this.handleButtonClick('follower')}>
-                        follower
-                      </span>
-                    </div>
+                  <GenderMenu gender={this.state.gender} handleButtonClick={this.handleButtonClick}/>
+                  <RoleMenu role={this.state.role} handleButtonClick={this.handleButtonClick}/>
                     <div className="heightSelection">
                       <CheckBoxes handleCheck={this.handleCheck} />
                     </div>
@@ -290,7 +257,6 @@ class PreferencesPage extends Component {
                         <span>Save Changes</span>
                       </button>
                     </div>
-                  </div>
                 </form>
               </div>
             </div>
