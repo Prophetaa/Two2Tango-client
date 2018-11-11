@@ -7,23 +7,23 @@ body {
     background: linear-gradient(to right, #A00D26, rgba(90, 2, 2, 0.733));
     /* background-color: #A00D26 */
 }
-h1 {
+.my-profile h1 {
     font-size: 50px;
     color: #F2EFEA;
     padding: 7px;
     padding-left: 100px;
     font-weight: 200 !important;
 }
-.main {
- max-width: 100%;
+.main-profile {
+ width: 100%;
  margin: 0 !important;
  background-color: #FFFFFF
 }
-.image-column {   
+.image-column-profile {   
     background-color: #FFFFFF;
     padding: 10px;
 }
-.image {
+.image-profile {
     width: 100%;
     height: auto;
     min-height: 350px;
@@ -32,42 +32,42 @@ h1 {
     padding-left: 60px;
     vertical-align: middle
 }
-.details {
+.details-profile {
     background-color: #FFFFFF;
     padding: 10px;
 }
-.details-list {
+.details-list-profile {
     padding: 35px;
     padding-top: 55px;
     font-size: 13px;
 }
-
-li {
+.details-list-profile li {
     padding: 6px;
 }
-.about {
+.my-details-profile {
+    color: #747D88;
+    text-align: left
+}
+.about-profile {
     padding: 55px 60px 10px 10px;
     background-color: #FFFFFF;
     text-align: justify;
 }
- h3 {
+ .about-profile h3 {
     padding: 0px 5px 20px 5px;
     font-size: 16px;
 }
-p {
+.about-profile p {
     color: #747D88;
     font-size: 16px;
     padding: 5px;
 }
-footer {
-    width: 100%;
-    height: 10% !important
-}
-.update {
+
+.update-profile {
     margin: auto;
-    margin-top: 60px;
+    margin-top: 40px;
 }
-.update-btn {
+.update-btn-profile {
     font-size: 16px;
     background-color: #A00D26;
     padding: 5px 30px 5px 30px;
@@ -83,15 +83,15 @@ footer {
     h1 {
         padding-left: 60px;
     }
-    .image {
+    .image-profile {
         padding: 20px;
         min-height: 200px;
     }
-    .about {
+    .about-profile {
         padding: 20px;
         margin-left: 10px;
     }
-    .update-btn {
+    .update-btn-profile {
         margin-bottom: 10px;
     }
 }

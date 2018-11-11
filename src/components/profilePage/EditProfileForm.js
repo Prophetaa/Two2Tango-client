@@ -14,7 +14,7 @@ export default function EditProfileForm(props) {
 							<div className="col-sm">
 								<img src="" alt="" />
 								<div className="form-group">
-									<label htmlFor="firstName" className="text-uppercase">
+									<label htmlFor="firstName" className="text-uppercase labels">
 										First name:
 									</label>
 									<input
@@ -27,7 +27,7 @@ export default function EditProfileForm(props) {
 									/>
 								</div>
 								<div className="form-group">
-									<label htmlFor="lastName" className="text-uppercase">
+									<label htmlFor="lastName" className="text-uppercase labels">
 										Last name:
 									</label>
 									<input
@@ -40,7 +40,7 @@ export default function EditProfileForm(props) {
 									/>
 								</div>
 								<div className="form-group">
-									<label htmlFor="city" className="text-uppercase">
+									<label htmlFor="city" className="text-uppercase labels">
 										City:
 									</label>
 									<input
@@ -55,7 +55,7 @@ export default function EditProfileForm(props) {
 							</div>
 							<div className="col-sm">
 								<div className="form-group">
-									<label htmlFor="role" className="text-uppercase">
+									<label htmlFor="role" className="text-uppercase labels">
 										Role:
 									</label>
 									<select
@@ -69,7 +69,7 @@ export default function EditProfileForm(props) {
 									</select>
 								</div>
 								<div className="form-group">
-									<label htmlFor="level" className="text-uppercase">
+									<label htmlFor="level" className="text-uppercase labels">
 										Level:
 									</label>
 									<select
@@ -84,7 +84,7 @@ export default function EditProfileForm(props) {
 									</select>
 								</div>
 								<div className="form-group">
-									<label htmlFor="height" className="text-uppercase">
+									<label htmlFor="height" className="text-uppercase labels">
 										Height:
 									</label>
 									<input
@@ -97,7 +97,7 @@ export default function EditProfileForm(props) {
 									/>
 								</div>
 								<div className="form-group">
-									<label htmlFor="age" className="text-uppercase">
+									<label htmlFor="age" className="text-uppercase labels">
 										Age:
 									</label>
 									<input
@@ -110,7 +110,7 @@ export default function EditProfileForm(props) {
 									/>
 								</div>
 								<div className="form-group">
-									<label htmlFor="gender" className="text-uppercase">
+									<label htmlFor="gender" className="text-uppercase labels">
 										Gender:
 									</label>
 									<select
@@ -131,7 +131,7 @@ export default function EditProfileForm(props) {
 							</div>
 							<div className="col-sm">
 								<div className="form-group">
-									<label className="text-uppercase" htmlFor="about-me">
+									<label className="text-uppercase" htmlFor="about-me labels">
 										About me:
 									</label>
 									<textarea

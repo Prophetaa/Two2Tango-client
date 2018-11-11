@@ -1,7 +1,9 @@
 .media-body.message {
-	border: 1px solid black;
 	padding: 10px;
 }
 .message {
 	border: 1px solid grey !important
+}
+.send {
+	background-color: rgb(91, 150, 91)
 }
