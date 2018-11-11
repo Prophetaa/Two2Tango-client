@@ -12,7 +12,7 @@ export default function EditProfileForm(props) {
           <form onSubmit={props.onSubmit}>
             <div className="row edit-row">
               <div className="col-sm">
-                <img src="" alt="" />
+			  <img src={props.photoUrl} className="image-profile" alt="" />
                 <div className="form-group">
                   <label htmlFor="firstName" className="text-uppercase labels">
                     First name:
@@ -23,7 +23,7 @@ export default function EditProfileForm(props) {
                     id="firstName"
                     name="firstName"
                     onChange={props.onChange}
-                    value={props.firstName || ""}
+					value={props.firstName || ""}
                   />
                 </div>
                 <div className="form-group">
@@ -39,7 +39,10 @@ export default function EditProfileForm(props) {
                     onChange={props.onChange}
                   />
                 </div>
-                <div className="form-group">
+                
+              </div>
+              <div className="col-sm">
+			  <div className="form-group">
                   <label htmlFor="city" className="text-uppercase labels">
                     City:
                   </label>
@@ -52,8 +55,6 @@ export default function EditProfileForm(props) {
                     onChange={props.onChange}
                   />
                 </div>
-              </div>
-              <div className="col-sm">
                 <div className="form-group">
                   <label htmlFor="height" className="text-uppercase labels">
                     Height:
@@ -89,7 +90,7 @@ export default function EditProfileForm(props) {
                   </label>
                   <select
                     name="gender"
-                    className="form-control edit-select"
+					className="form-control edit-select"
                     value={props.gender || ""}
                     onChange={props.onChange}
                   >
@@ -154,7 +155,7 @@ export default function EditProfileForm(props) {
                 className="btn btn-primary btn-block text-uppercase edit-btn"
                 type="submit"
               >
-                Update profile
+                Save changes
               </button>
             </div>
           </form>

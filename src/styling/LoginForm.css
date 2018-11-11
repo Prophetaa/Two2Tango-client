@@ -105,6 +105,10 @@
     font-size: 12px;
     color: #777;
   }
+  .btn-login {
+    background-color: #A00D26;
+    border: none
+  }
   
   .btn-google {
     color: white;
