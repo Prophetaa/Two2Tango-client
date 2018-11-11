@@ -1,7 +1,8 @@
-import '../../styling/preferencePage.css'
+import '../../styling/preferencePage.css';
 import React, { Component } from 'react';
 import '../../styling/RegistrationForm.css';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import {
@@ -14,42 +15,42 @@ import CheckBoxes from '../registrationPage/CheckBoxes';
 
 class PreferencesPage extends Component {
   async componentDidMount() {
-    await this.props.fetchPreferences()
-    }
-  state = { level:[]
-  };
+    this.props.fetchPreferences();
+  }
+  state = { level: [], };
 
-  updateState = async() =>{
-    console.log("fetching", this.props.usersPreferences)
-      await this.setState({
+  updateState =  () => {
+    if (this.props.currentUser) {
+       this.setState({
         role: this.props.usersPreferences.role,
         city: this.props.usersPreferences.city,
         min_age: this.props.usersPreferences.age[0],
         max_age: this.props.usersPreferences.age[1],
         gender: this.props.usersPreferences.gender,
-        min_height:this.props.usersPreferences.height[1],
+        min_height: this.props.usersPreferences.height[1],
         max_height: this.props.usersPreferences.height[0]
-      });
-      await this.selectLevels()
-  }
+      })
+       this.selectLevels();
+    }
+  };
 
-  selectLevels = async() =>{
-      let arr = await this.props.usersPreferences.level
-      if(arr.includes("beginner")){
-          let level = document.getElementById("beginner")
-          level.click()
-      } else if (arr.includes("intermediate")){
-        let level = document.getElementById("intermediate")
-        level.click()
-      }else if (arr.includes("advanced")){
-        let level = document.getElementById("advanced")
-        level.click()
-      }else if (arr.includes("professional")){
-        let level = document.getElementById("professional")
-        level.click()
-      }
-  }
-  
+  selectLevels = async () => {
+    let arr = await this.props.usersPreferences.level;
+    if (arr.includes('beginner')) {
+      let level = document.getElementById('beginner');
+      level.click();
+    } else if (arr.includes('intermediate')) {
+      let level = document.getElementById('intermediate');
+      level.click();
+    } else if (arr.includes('advanced')) {
+      let level = document.getElementById('advanced');
+      level.click();
+    } else if (arr.includes('professional')) {
+      let level = document.getElementById('professional');
+      level.click();
+    }
+  };
+
   handleCheck = nLevel => {
     //Checks if this level is already on the react state, if it is it deletes it
     if (this.state.level.includes(nLevel)) {
@@ -101,9 +102,10 @@ class PreferencesPage extends Component {
   };
 
   render() {
-    if(this.state.boolean !== false)this.updateState()
+    if (!this.props.currentUser) return <Redirect to="/home" />;
     return (
       <div className="container signupContainer">
+      {Object.keys(this.props.usersPreferences).length > 0 && Object.keys(this.state).length > 2 ?
         <div className="row">
           <div className="col-lg-10 col-xl-9 mx-auto">
             <div className="card card-signin flex-row my-5">
@@ -180,7 +182,7 @@ class PreferencesPage extends Component {
                     <div className="groupInputs">
                       <div className="form-group smallInput" id="minAge">
                         <input
-                          placeholder="Min Age *"
+                          placeholder="Min Age "
                           type="number"
                           name="min_age"
                           id="inputMaxHeight"
@@ -193,7 +195,7 @@ class PreferencesPage extends Component {
                       <div className="form-group smallInput" id="maxAge">
                         <input
                           type="number"
-                          placeholder="Max Age *"
+                          placeholder="Max Age "
                           id="inputMinHeight"
                           className="form-control menu2inputs"
                           name="max_age"
@@ -278,15 +280,19 @@ class PreferencesPage extends Component {
               </div>
             </div>
           </div>
-        </div> 
-      </div>
-    );
+        </div> :
+      <div> 
+       <h1>Loading...</h1>
+       {Object.keys(this.props.usersPreferences).length > 1 ? this.updateState(): null}
+    </div>}
+   </div>)
   }
 }
 
 const mapStateToProps = function(state) {
   return {
-    usersPreferences: state.usersPreferences
+    usersPreferences: state.usersPreferences,
+    currentUser: state.currentUser
   };
 };
 export default connect(
