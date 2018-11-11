@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Component } from 'react';
 import '../../styling/HomePage.css';
 import history from '../../history';
+import { connect } from 'react-redux';
+import { getLatestProfiles } from '../../actions/results';
 
 // import backgroud1 from '../../styling/images/background01.jpg';
 import event from '../../styling/images/event.png';
@@ -18,6 +20,10 @@ import quoteRight from '../../styling/images/quote-right.png';
 import Footer from './Footer';
 
 export class homePage extends Component {
+	componentDidMount() {
+		this.props.getLatestProfiles();
+	}
+
 	render() {
 		return (
 			<div className="home">
@@ -96,45 +102,24 @@ export class homePage extends Component {
 					<div className="container tangueros-home">
 						<div className="row text-center">
 							<div className="col-12">
-								<h1 className="display-4 title-home ">New tangueros</h1>
+								<p className="display-4 title-home ">New tangueros</p>
 							</div>
 						</div>
 						<div className="row text-center d-flex justify-content-around">
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar2} className="avatar-home" alt="avatar0" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar3} className="avatar-home" alt="avatar1" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar2" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar3" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar4" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar5" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar6" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
+							{this.props.latestProfiles &&
+								this.props.latestProfiles.map((profile, i) => (
+									<div
+										key={i}
+										className="col-4 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
+										<img
+											src={profile.photoUrl}
+											className="avatar-home m-4"
+											alt="avatar0"
+										/>
+										<p className="name-home">{profile.firstName}</p>
+										<p className="level-home-home">{profile.level}</p>
+									</div>
+								))}
 						</div>
 						<div className="container text-center position-fix">
 							<div className="row-xs-12">
@@ -235,4 +220,45 @@ export class homePage extends Component {
 	}
 }
 
-export default homePage;
+const mapStateToProps = function(state) {
+	return {
+		currentUser: state.currentUser,
+		latestProfiles: state.latestProfiles
+	};
+};
+
+export default connect(
+	mapStateToProps,
+	{ getLatestProfiles }
+)(homePage);
+
+/* <div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
+								<img src={Avatar3} className="avatar-home" alt="avatar1" />
+								<p className="name-home">Claudio</p>
+								<p className="level-home">Beginer</p>
+							</div>
+							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
+								<img src={Avatar4} className="avatar-home" alt="avatar2" />
+								<p className="name-home">Claudio</p>
+								<p className="level-home">Beginer</p>
+							</div>
+							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
+								<img src={Avatar4} className="avatar-home" alt="avatar3" />
+								<p className="name-home">Claudio</p>
+								<p className="level-home">Beginer</p>
+							</div>
+							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
+								<img src={Avatar4} className="avatar-home" alt="avatar4" />
+								<p className="name-home">Claudio</p>
+								<p className="level-home">Beginer</p>
+							</div>
+							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
+								<img src={Avatar4} className="avatar-home" alt="avatar5" />
+								<p className="name-home">Claudio</p>
+								<p className="level-home">Beginer</p>
+							</div>
+							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
+								<img src={Avatar4} className="avatar-home" alt="avatar6" />
+								<p className="name-home">Claudio</p>
+								<p className="level-home">Beginer</p>
+							</div> */

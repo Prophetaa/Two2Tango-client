@@ -5,7 +5,8 @@ import currentRegPage from './currentRegPage';
 import results from './results';
 import profile from './profile';
 import messages from './messages';
-import usersPreferences from './usersPreferences'
+import usersPreferences from './usersPreferences';
+import latestProfiles from './latestProfiles';
 
 export default {
 	currentRegPage,
@@ -15,5 +16,6 @@ export default {
 	profile,
 	usersPreferences,
 	results,
-	signup
+	signup,
+	latestProfiles
 };
