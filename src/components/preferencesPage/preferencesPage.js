@@ -23,7 +23,7 @@ class PreferencesPage extends Component {
     if (this.props.currentUser) {
        this.setState({
         role: this.props.usersPreferences.role,
-        city: this.props.usersPreferences.city,
+        cities: this.props.usersPreferences.city,
         min_age: this.props.usersPreferences.age[0],
         max_age: this.props.usersPreferences.age[1],
         gender: this.props.usersPreferences.gender,
@@ -116,6 +116,21 @@ class PreferencesPage extends Component {
                 <form className="form-signin" onSubmit={this.handleSubmit}>
                   <div className="form-group">
                     <LocationSearchInput onChange={this.handleSelectCity} />
+                    <button className="citiesBtn" onClick={this.selectCities}>
+                      add city
+                    </button>
+                  </div>
+                  <div className="selectedCities">
+                    {this.state.cities.map(city => (
+                      <li className="citiesLi">
+                        {city}{' '}
+                        <div
+                          className="removecitiesBtn"
+                          onClick={() => this.removeCity(city)}>
+                          x
+                        </div>
+                      </li>
+                    ))}
                   </div>
                   <div className="dropdown genderMenu">
                     <button

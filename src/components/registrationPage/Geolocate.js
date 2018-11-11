@@ -9,14 +9,13 @@ export default class LocationSearchInput extends Component {
 
 	handleChange = async city => {
 		await this.setState({ city:city.split(',',1) });
-		this.props.onChange(city);
+	await	this.props.onChange(city);
+		
 	};
 
 	handleSelect = city => {
 		geocodeByAddress(city)
 			.then(results => getLatLng(results[0]))
-			.then(latLng => console.log('Success', latLng))
-			.catch(error => console.error('Error', error));
 	};
 
 	render() {
