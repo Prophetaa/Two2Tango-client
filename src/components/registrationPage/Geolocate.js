@@ -8,7 +8,7 @@ export default class LocationSearchInput extends Component {
 	state = { city: '' };
 
 	handleChange = async city => {
-		await this.setState({ city });
+		await this.setState({ city:city.split(',',1) });
 		this.props.onChange(city);
 	};
 
@@ -51,7 +51,7 @@ export default class LocationSearchInput extends Component {
 											style
 										})}>
 										<span onClick={this.handleSelect}>
-											{suggestion.description}
+											{suggestion.description.split(",",1)}
 										</span>
 									</div>
 								);

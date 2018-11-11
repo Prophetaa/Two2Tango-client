@@ -3,7 +3,7 @@ import { Component } from 'react';
 import '../../styling/HomePage.css';
 import history from '../../history';
 
-import backgroud1 from '../../styling/images/background01.jpg';
+// import backgroud1 from '../../styling/images/background01.jpg';
 import event from '../../styling/images/event.png';
 import interview from '../../styling/images/interview.png';
 import laugh from '../../styling/images/laugh.png';
