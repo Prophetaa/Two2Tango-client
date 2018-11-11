@@ -1,27 +1,27 @@
 
-main{
+.home{
   font-family: 'Work Sans';
   background-color: #FFFFFF;
 }
 
-.container{
-  max-width:100%;
-}
+
 
 .background-top-home{
+  background: black;
   background-image: url('./images/background01.jpg');
   background-repeat: no-repeat;
-  background-position: Center;
-  color:white;
-  min-height: 35.625rem;
-  width: 100%;
+  background-position: center;
 }
 
 .background-dancers-text{
   color:white;
-  padding-top: 250px;
+  padding-top: 150px;
   padding-left: 50px;
   padding-bottom: 100px;
+}
+
+.background-dancers-text > h2 {
+  font-size: 48px;
 }
 
 .SignInPrmBtn {
@@ -38,10 +38,8 @@ main{
   border-color: #ffffff; 
 }
 
-.wcyd{
+.what-you-can-do{
   background-color: #FFFFFF;
-  height:35.625rem;
-  max-width: 100%;
   padding-top: 4rem;
   padding-bottom: 8rem;
 }
@@ -49,6 +47,8 @@ main{
 .icons-home{
   width: 100px;
   height: 100px;
+  display: block;
+  margin: 0 auto 20px;
 }
 
 .title-home{
@@ -56,11 +56,10 @@ main{
   color: black;
 }
 
-.tangueros-home{
-  padding-top: 3.125rem;
-  padding-bottom: 9.375rem;
+.new-tangueros{
+  padding-top: 2rem;
+  padding-bottom: 3.125rem;
   background-color: #F2EFEA;
-  max-width: 100%;
 }
 
 .avatar-home {
@@ -71,7 +70,7 @@ main{
 }
 
 .avatar-box-home{
-  margin-bottom: 6.25rem;
+  margin-bottom: 2rem;
   align-items: center;
   max-width: 100%;
 }
@@ -80,9 +79,9 @@ main{
   color:#A00D26;
 }
 
-.about-home{
+.testimonials{
   background-color: #FFFFFF;
-  max-width: 100%;
+  padding-top: 20px;
 }
 
 .avatar-row-home{
@@ -93,8 +92,8 @@ main{
 }
 
 .avatar-big-home{
-  width: 15.625rem;
-  height: 15.625rem;
+  width: 12rem;
+  height: 12rem;
   margin-top: 1.3125rem;
   margin-bottom: 1.3125rem;
 }
@@ -109,21 +108,27 @@ main{
   margin-left:-10px;
 }
 
-.background-bottom-home{
+.find-your-partner{
+  background-color: black;
   background-image: url('./images/background02.jpg');
   background-repeat: no-repeat;
-  background-position: Center;
+  background-position: center;
   color:white;
-  width: 100%;
-  max-width: 100%;
-  min-height: 32.625rem;
-  padding-top: 14.75rem;
-  padding-left: 6.25rem;
+  height: 300px;
+  padding: 2rem;
 }
 
-.footer-home{
+footer{
   background-color: #FFFFFF;
   padding-top: 1.5625rem;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .find-your-partner {
+    text-align: center;
+    height: 200px;
+    padding: 10px;
+  }
 }
