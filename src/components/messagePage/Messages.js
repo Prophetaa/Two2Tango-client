@@ -5,7 +5,7 @@ export default function messages(props) {
 	console.log(props);
 	return (
 		<div className="container messages">
-			<h1 className="text-center">Your messages</h1>
+			<h1 className="text-center">Inbox</h1>
 			<ul className="list-unstyled">
 				{props.messages.map(message => (
 					<li key={message.id} className="media">
