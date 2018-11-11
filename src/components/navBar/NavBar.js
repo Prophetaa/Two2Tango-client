@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import { fetchPreferences } from '../../actions/registration'
 import '../../styling/NavBar.css';
 import logoWhite from '../../styling/images/logo-grey.png';
 
@@ -12,7 +14,7 @@ class Navbar extends Component {
 					{this.props.currentUser && (
 						<div className="container">
 							<Link to="/home">
-								<img className="" src={logoWhite} alt="logo" />
+								<img className="tangoLogo" src={logoWhite} alt="logo" />
 							</Link>
 							<button
 								className="navbar-toggler"
@@ -39,15 +41,17 @@ class Navbar extends Component {
 									</li>
 									<li className="nav-item">
 										<button className="btn btn-outline-light btn-lg icons-navbar">
-											<Link to="/setting" className="link-navbar">
+											<Link to="/preferences" className="link-navbar">
 												<i className="fas fa-cog fa-lg" />
 											</Link>
 										</button>
 									</li>
 									<li className="nav-item">
+
 										<button className="btn btn-outline-light btn-lg icons-navbar">
 											<Link to="/results" className="link-navbar">
 												<i className="fas fa-search fa-lg" />
+
 											</Link>
 										</button>
 									</li>
@@ -95,8 +99,9 @@ class Navbar extends Component {
 
 const mapStateToProps = function(state) {
 	return {
-		currentUser: state.currentUser
+		currentUser: state.currentUser,
+		usersPreferences: state.usersPreferences
 	};
 };
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps, {fetchPreferences})(Navbar);

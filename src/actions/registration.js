@@ -8,6 +8,7 @@ export const SET_PAGE_TO_1 = 'SET_PAGE_TO_1';
 export const SET_PAGE_TO_2 = 'SET_PAGE_TO_2';
 export const SET_PAGE_TO_3 = 'SET_PAGE_TO_3';
 export const SET_PAGE_TO_4 = "SET_PAGE_TO_4"
+export const PREFS_FETCHED = "PREFS_FETCHED"
 
 export const resetRegPage = () => ({
   type: SET_PAGE_TO_1
@@ -23,6 +24,11 @@ export const goToThirdPage = () => ({
 
 export const goToResults = () => ({
 	type: SET_PAGE_TO_4
+})
+
+export const preferencesFetched = payload =>({
+  type: PREFS_FETCHED,
+  payload
 })
 
 export const postProfile = (
@@ -59,7 +65,7 @@ export const postProfile = (
 };
 
 
-export const postPreferences = (city,gender, height, role, level) => async(dispatch, getState) => {
+export const postPreferences = (city,gender, height, role, level, age) => async(dispatch, getState) => {
 	let state = getState();
 	if (!state.currentUser) return null;
 	let jwt = state.currentUser.jwt;
@@ -67,8 +73,38 @@ export const postPreferences = (city,gender, height, role, level) => async(dispa
 	request
 	  .post(`${baseUrl}/preferences`,console.log(level))
 	  .set('Authorization', `Bearer ${jwt}`)
-	  .send({city, gender, height, role,level })
+	  .send({city, gender, height, role,level, age })
 	  .catch(err => {
 		console.error(err);
 	  });
+  };
+
+  export const fetchPreferences = () => (dispatch,getState) => {
+  	let state = getState();
+	if (!state.currentUser) return null;
+	let jwt = state.currentUser.jwt;
+	if (isExpired(jwt)) return dispatch(logout());
+	request
+	  .get(`${baseUrl}/preferences`)
+	  .set('Authorization', `Bearer ${jwt}`, console.log("fetching prefs"))
+	  .then(res => dispatch(preferencesFetched(res.body)))
+	  .catch(err => {
+		console.error(err);
+	  });
+  };
+  
+
+
+  export const updatePreferences = (city,gender, height, role, level, age) => (dispatch, getState) => {
+    const state = getState();
+    const jwt = state.currentUser.jwt;
+  
+    if (isExpired(jwt)) return dispatch(logout());
+  
+    request
+      .put(`${baseUrl}/preferences`, console.log(city,gender, height, role, level, age))
+      .set('Authorization', `Bearer ${jwt}`)
+      .send(city,gender, height, role, level, age)
+      .then(res=> console.log(res.body))
+      .catch(err => console.log(err));
   };

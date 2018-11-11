@@ -1,22 +1,62 @@
+import '../../styling/preferencePage.css'
 import React, { Component } from 'react';
 import '../../styling/RegistrationForm.css';
-
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { postPreferences } from '../../actions/registration';
-import LocationSearchInput from './Geolocate';
-import CheckBoxes from './CheckBoxes';
-class RegistrationForm3 extends Component {
-  state = { role: null, gender: null, tango_level: [], age: [] };
+import {
+  updatePreferences
+} from '../../actions/registration';
 
-  handleCheck = level => {
+import LocationSearchInput from '../registrationPage/Geolocate';
+import CheckBoxes from '../registrationPage/CheckBoxes';
+
+class PreferencesPage extends Component {
+  async componentDidMount() {
+    await this.updateState()
+    }
+  state = { level:[]
+  };
+
+  updateState = async() =>{
+     await this.setState({
+        role: this.props.usersPreferences.role,
+        city: this.props.usersPreferences.city,
+        min_age: this.props.usersPreferences.age[0],
+        max_age: this.props.usersPreferences.age[1],
+        gender: this.props.usersPreferences.gender,
+        min_height:this.props.usersPreferences.height[1],
+        max_height: this.props.usersPreferences.height[0]
+      });
+      await this.selectLevels()
+  }
+
+  selectLevels = async() =>{
+      let arr = await this.props.usersPreferences.level
+      console.log(arr)
+      if(arr.includes("beginner")){
+          let level = document.getElementById("beginner")
+          level.click()
+      } else if (arr.includes("intermediate")){
+        let level = document.getElementById("intermediate")
+        level.click()
+      }else if (arr.includes("advanced")){
+        let level = document.getElementById("advanced")
+        level.click()
+      }else if (arr.includes("professional")){
+        let level = document.getElementById("professional")
+        level.click()
+      }
+  }
+
+  handleCheck = nLevel => {
     //Checks if this level is already on the react state, if it is it deletes it
-    if (this.state.tango_level.includes(level)) {
-      let i = this.state.tango_level.findIndex(index => index === level);
-      this.state.tango_level.splice(i, 1);
-      this.setState({ tango_level: [...this.state.tango_level] });
+    if (this.state.level.includes(nLevel)) {
+      let i = this.state.level.findIndex(index => index === nLevel);
+      this.state.level.splice(i, 1);
+      this.setState({ level: [...this.state.level] });
     } else {
-      this.setState({ tango_level: [...this.state.tango_level, level] });
+      this.setState({ level: [...this.state.level, nLevel] });
     }
   };
 
@@ -35,20 +75,19 @@ class RegistrationForm3 extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    let error = document.getElementById("inputError")
-    if(!error){ 
-    await this.props.postPreferences(
-      this.state.city,
-      this.state.gender,
-      [
-        parseInt(this.state.max_height, 10),
-        parseInt(this.state.min_height, 10)
-      ],
-      this.state.role,
-      this.state.tango_level,
-      [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
-    );
-    this.props.onSubmit();
+    let error = document.getElementById('inputError');
+    if (!error) {
+      await this.props.updatePreferences(
+        this.state.city,
+        this.state.gender,
+        [
+          parseInt(this.state.max_height, 10),
+          parseInt(this.state.min_height, 10)
+        ],
+        this.state.role,
+        this.state.level,
+        [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
+      );
     }
   };
 
@@ -68,15 +107,15 @@ class RegistrationForm3 extends Component {
             <div className="card card-signin flex-row my-5">
               <div className="card-body">
                 <h5 className="card-title text-center">
-                  Step 3: Matching Preferences
+                  Searching Preferences
                 </h5>
                 <form className="form-signin" onSubmit={this.handleSubmit}>
                   <div className="form-group">
                     <LocationSearchInput onChange={this.handleSelectCity} />
                   </div>
-                  <div class="dropdown genderMenu">
+                  <div className="dropdown genderMenu">
                     <button
-                      class="form-control dropdown-toggle"
+                      className="form-control dropdown-toggle"
                       type="button"
                       id="dropdownMenuButton"
                       data-toggle="dropdown"
@@ -90,25 +129,25 @@ class RegistrationForm3 extends Component {
                       className="dropdown-menu form-control"
                       aria-labelledby="dropdownMenuButton">
                       <span
-                        class="dropdown-item "
+                        className="dropdown-item "
                         onClick={() => this.handleButtonClick('male')}>
                         male
                       </span>
                       <span
-                        class="dropdown-item"
+                        className="dropdown-item"
                         onClick={() => this.handleButtonClick('female')}>
                         female
                       </span>
                       <span
-                        class="dropdown-item"
+                        className="dropdown-item"
                         onClick={() => this.handleButtonClick('other')}>
                         other
                       </span>
                     </div>
                   </div>
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button
-                      class="form-control dropdown-toggle"
+                      className="form-control dropdown-toggle"
                       type="button"
                       required
                       id="dropdownMenuButton"
@@ -123,12 +162,12 @@ class RegistrationForm3 extends Component {
                       className="dropdown-menu form-control"
                       aria-labelledby="dropdownMenuButton">
                       <span
-                        class="dropdown-item "
+                        className="dropdown-item "
                         onClick={() => this.handleButtonClick('leader')}>
                         leader
                       </span>
                       <span
-                        class="dropdown-item"
+                        className="dropdown-item"
                         onClick={() => this.handleButtonClick('follower')}>
                         follower
                       </span>
@@ -189,31 +228,49 @@ class RegistrationForm3 extends Component {
                       </div>
                     </div>
                     {this.state.max_age > 99 || this.state.min_age < 10 ? (
-                      <span id="inputError" className="warningAge" style={{ color: 'red' }}>
+                      <span
+                        id="inputError"
+                        className="warningAge"
+                        style={{ color: 'red' }}>
                         Please , people that age probably don't tango...
                       </span>
-                    ): null}
-                    {this.state.min_height < 130 &&  (
-                      <span id="inputError" className="warningAge" style={{ color: 'red' }}>
-                       that's too low, come on...
+                    ) : null}
+                    {this.state.min_height < 130 && (
+                      <span
+                        id="inputError"
+                        className="warningAge"
+                        style={{ color: 'red' }}>
+                        that's too low, come on...
                       </span>
-                    ) }
-                     {this.state.max_height > 210 &&  (
-                      <span id="inputError" className="warningAge" style={{ color: 'red' }}>
-                       that's too high, come on...
+                    )}
+                    {this.state.max_height > 210 && (
+                      <span
+                        id="inputError"
+                        className="warningAge"
+                        style={{ color: 'red' }}>
+                        that's too high, come on...
                       </span>
-                    ) }
-                    {this.state.min_height > this.state.max_height &&(
-                      <span id="inputError" className="warningAge" style={{ color: 'red' }}>
+                    )}
+                    {this.state.min_height > this.state.max_height && (
+                      <span
+                        id="inputError"
+                        className="warningAge"
+                        style={{ color: 'red' }}>
                         minimum height can't be higher than the maximum height!
                       </span>
-                      
-                    ) }
-                    <button
-                      className="btn btn-lg btn-block text-uppercase finalStepBtn"
-                      type="submit">
-                      <span>Let's find a Partner!</span>
-                    </button>
+                    )}
+                    <div className="buttonsContainer">
+                      <Link className="Links" to={'/results'}>
+                        <button className="btn btn-lg btn-block text-uppercase prefBtn cancelChanges">
+                          <span>Cancel Changes</span>
+                        </button>
+                      </Link>
+                      <button
+                        className="btn btn-lg btn-block text-uppercase prefBtn acceptChanges"
+                        type="submit">
+                        <span>Save Changes</span>
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -225,9 +282,14 @@ class RegistrationForm3 extends Component {
   }
 }
 
+const mapStateToProps = function(state) {
+  return {
+    usersPreferences: state.usersPreferences
+  };
+};
 export default connect(
-  null,
+  mapStateToProps,
   {
-    postPreferences
+    updatePreferences
   }
-)(RegistrationForm3);
+)(PreferencesPage);

@@ -3,7 +3,8 @@
     --input-padding-y: .75rem;
   }
 
-  .registration-form-1{
+  .signupContainer{
+    align-content: center;
     max-width: 650px;
     width: 42% !important;
   }
@@ -111,7 +112,8 @@
   }
 
   .Links{
-    
+    text-decoration: none !important;
+    color: inherit;
   }
 .photoUploader{
 display: flex;
@@ -164,6 +166,25 @@ div#lastName{
   float:right;
   width:49%;
   margin-right:1%;
+}
+
+.groupInputs{
+  display: flex;
+}
+
+.smallInput{
+  width: 45%;
+  padding-left: 8%;
+}
+
+.bottomPadding{
+  padding-bottom: 5%;
+}
+
+.warningAge{
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .ProfileInfo{
