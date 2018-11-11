@@ -243,3 +243,22 @@ div#lastName{
   background-color: rgb(247, 244, 244);
   border-color: black;
 }
+
+.removecitiesBtn{
+  border-radius: 100%;
+  width: 4% !important;
+  justify-content: center;
+  display: flex;
+  background-color: rgba(185, 16, 44, 0.877);
+  color:white;
+  margin-left: 2%;
+}
+
+.removecitiesBtn:hover{
+  background-color: rgba(160, 13, 37, 0.877);
+}
+
+.citiesLi{
+display: inline;
+
+}
