@@ -7,7 +7,7 @@ body {
     background: linear-gradient(to right, #A00D26, rgba(90, 2, 2, 0.733));
     /* background-color: #A00D26 */
 }
-h1 {
+.my-profile h1 {
     font-size: 50px;
     color: #F2EFEA;
     padding: 7px;
