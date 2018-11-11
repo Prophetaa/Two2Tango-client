@@ -6,6 +6,7 @@ import { logout } from '../actions/users';
 export const SET_RESULTS = 'SET_RESULTS';
 export const SET_PROFILE = 'SET_PROFILE';
 export const UPDATED_PROFILE = 'UPDATED_PROFILE';
+export const SET_LATEST_PROFILES = 'SET_LATEST_PROFILES';
 
 const setAllResults = results => ({
 	type: SET_RESULTS,
@@ -15,6 +16,11 @@ const setAllResults = results => ({
 const setProfile = profile => ({
 	type: SET_PROFILE,
 	payload: profile
+});
+
+const setLatestProfiles = profiles => ({
+	type: SET_LATEST_PROFILES,
+	payload: profiles
 });
 
 const updatedProfile = profile => ({
@@ -48,6 +54,13 @@ export const getOneProfile = id => (dispatch, getState) => {
 		.catch(err => console.log(err));
 };
 
+export const getLatestProfiles = () => dispatch => {
+	request
+		.get(`${baseUrl}/latest-profiles`)
+		.then(result => dispatch(setLatestProfiles(result.body)))
+		.catch(err => console.log(err));
+};
+
 export const updateProfile = data => (dispatch, getState) => {
 	const state = getState();
 	const jwt = state.currentUser.jwt;
@@ -61,5 +74,3 @@ export const updateProfile = data => (dispatch, getState) => {
 		.then(result => dispatch(updatedProfile(result.body)))
 		.catch(err => console.log(err));
 };
-
-

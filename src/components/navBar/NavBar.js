@@ -18,7 +18,7 @@ class Navbar extends Component {
               </Link>
               <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ml-auto d-inline-md">
-                  <li class="dropdown nav-item">
+                  <li className="dropdown nav-item">
                     <div
                       className="btn-lg icons-navbar dropdown-toggle"
                       data-toggle="dropdown"
@@ -27,7 +27,7 @@ class Navbar extends Component {
                       aria-expanded="false">
                       <i className="fas fa-user-circle fa-lg" />
                     </div>
-                    <ul class="dropdown-menu">
+                    <ul className="dropdown-menu">
                       <Link className="Links" to={'/profiles/my-profile'}>
                         <li className="dropDownLi">
                           <span className="dropDownLink">Your Profile</span>

@@ -7,7 +7,7 @@ import { postPreferences } from '../../actions/registration';
 import LocationSearchInput from './Geolocate';
 import CheckBoxes from './CheckBoxes';
 class RegistrationForm3 extends Component {
-  state = { role: null, gender: null, tango_level: [], age: [] };
+  state = { cities:[], role: null, gender: null, tango_level: [], age: [] };
 
   handleCheck = level => {
     //Checks if this level is already on the react state, if it is it deletes it
@@ -21,8 +21,15 @@ class RegistrationForm3 extends Component {
   };
 
   handleSelectCity = event => {
+    if (event === 'remove') this.setState({ city: '' });
     let formatedCity = event.split(',', 1);
     this.setState({ city: formatedCity[0] });
+  };
+
+  removeCity = city => {
+    let i = this.state.cities.findIndex(index => index === city);
+    this.state.cities.splice(i, 1);
+    this.setState({ cities: [...this.state.cities] });
   };
 
   handleButtonClick = input => {
@@ -33,28 +40,36 @@ class RegistrationForm3 extends Component {
     if (input === 'other') this.setState({ gender: 'other' });
   };
 
+  selectCities = e => {
+    e.preventDefault();
+    if (this.state.cities.length < 4) {
+      if (this.state.cities.includes(this.state.city)) return null;
+      if (this.state.city)
+        this.setState({ cities: [...this.state.cities, this.state.city] });
+    }
+  };
+
   handleSubmit = async e => {
     e.preventDefault();
-    let error = document.getElementById("inputError")
-    if(!error){ 
-    await this.props.postPreferences(
-      this.state.city,
-      this.state.gender,
-      [
-        parseInt(this.state.max_height, 10),
-        parseInt(this.state.min_height, 10)
-      ],
-      this.state.role,
-      this.state.tango_level,
-      [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
-    );
-    this.props.onSubmit();
+    let error = document.getElementById('inputError');
+    if (!error) {
+      await this.props.postPreferences(
+        this.state.cities,
+        this.state.gender,
+        [
+          parseInt(this.state.max_height, 10),
+          parseInt(this.state.min_height, 10)
+        ],
+        this.state.role,
+        this.state.tango_level,
+        [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
+      );
+      this.props.onSubmit();
     }
   };
 
   handleChange = event => {
     const { name, value } = event.target;
-
     this.setState({
       [name]: value
     });
@@ -73,6 +88,21 @@ class RegistrationForm3 extends Component {
                 <form className="form-signin" onSubmit={this.handleSubmit}>
                   <div className="form-group">
                     <LocationSearchInput onChange={this.handleSelectCity} />
+                    <button className="citiesBtn" onClick={this.selectCities}>
+                      add city
+                    </button>
+                  </div>
+                  <div className="selectedCities">
+                    {this.state.cities.map(city => (
+                      <li className="citiesLi">
+                        {city}{' '}
+                        <div
+                          className="removecitiesBtn"
+                          onClick={() => this.removeCity(city)}>
+                          x
+                        </div>
+                      </li>
+                    ))}
                   </div>
                   <div class="dropdown genderMenu">
                     <button
@@ -189,26 +219,37 @@ class RegistrationForm3 extends Component {
                       </div>
                     </div>
                     {this.state.max_age > 99 || this.state.min_age < 10 ? (
-                      <span id="inputError" className="warningAge" style={{ color: 'red' }}>
+                      <span
+                        id="inputError"
+                        className="warningAge"
+                        style={{ color: 'red' }}>
                         Please , people that age probably don't tango...
                       </span>
-                    ): null}
-                    {this.state.min_height < 130 &&  (
-                      <span id="inputError" className="warningAge" style={{ color: 'red' }}>
-                       that's too low, come on...
+                    ) : null}
+                    {this.state.min_height < 130 && (
+                      <span
+                        id="inputError"
+                        className="warningAge"
+                        style={{ color: 'red' }}>
+                        that's too low, come on...
                       </span>
-                    ) }
-                     {this.state.max_height > 210 &&  (
-                      <span id="inputError" className="warningAge" style={{ color: 'red' }}>
-                       that's too high, come on...
+                    )}
+                    {this.state.max_height > 210 && (
+                      <span
+                        id="inputError"
+                        className="warningAge"
+                        style={{ color: 'red' }}>
+                        that's too high, come on...
                       </span>
-                    ) }
-                    {this.state.min_height > this.state.max_height &&(
-                      <span id="inputError" className="warningAge" style={{ color: 'red' }}>
+                    )}
+                    {this.state.min_height > this.state.max_height && (
+                      <span
+                        id="inputError"
+                        className="warningAge"
+                        style={{ color: 'red' }}>
                         minimum height can't be higher than the maximum height!
                       </span>
-                      
-                    ) }
+                    )}
                     <button
                       className="btn btn-lg btn-block text-uppercase finalStepBtn"
                       type="submit">

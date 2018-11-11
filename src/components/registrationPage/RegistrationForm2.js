@@ -48,8 +48,8 @@ const CLOUDINARY_UPLOAD_URL =
   };
 
   handleButtonClick = input => {
-	if(input === "Leader") this.setState({role: "Leader"})
-  if(input === "Follower") this.setState({role: "Follower"})
+	if(input === "leader") this.setState({role: "leader"})
+  if(input === "follower") this.setState({role: "follower"})
   if(input === "male") this.setState({gender:"male"})
   if(input === "female") this.setState({gender:"female"})
   if(input === "other") this.setState({gender:"other"})
@@ -206,11 +206,11 @@ const CLOUDINARY_UPLOAD_URL =
                     <div
                       className="dropdown-menu form-control"
                       aria-labelledby="dropdownMenuButton">
-                      <span class="dropdown-item " onClick={()=> this.handleButtonClick("Leader")}>
-                        Leader
+                      <span class="dropdown-item " onClick={()=> this.handleButtonClick("leader")}>
+                        leader
                       </span>
-                      <span class="dropdown-item" onClick={()=> this.handleButtonClick("Follower")}>
-                        Follower
+                      <span class="dropdown-item" onClick={()=> this.handleButtonClick("follower")}>
+                        follower
                       </span>
                     </div>
                   </div>

@@ -65,7 +65,7 @@ export const postProfile = (
 };
 
 
-export const postPreferences = (city,gender, height, role, level, age) => async(dispatch, getState) => {
+export const postPreferences = (city , gender, height, role, level, age) => async(dispatch, getState) => {
 	let state = getState();
 	if (!state.currentUser) return null;
 	let jwt = state.currentUser.jwt;
@@ -95,16 +95,16 @@ export const postPreferences = (city,gender, height, role, level, age) => async(
   
 
 
-  export const updatePreferences = (city,gender, height, role, level, age) => (dispatch, getState) => {
+  export const updatePreferences = (city , gender, height, role, level, age) => (dispatch, getState) => {
     const state = getState();
     const jwt = state.currentUser.jwt;
   
     if (isExpired(jwt)) return dispatch(logout());
   
     request
-      .put(`${baseUrl}/preferences`, console.log(city,gender, height, role, level, age))
+      .put(`${baseUrl}/preferences`, console.log("puting"))
       .set('Authorization', `Bearer ${jwt}`)
-      .send(city,gender, height, role, level, age)
+      .send({city, gender, height, role, level, age})
       .then(res=> console.log(res.body))
       .catch(err => console.log(err));
   };
