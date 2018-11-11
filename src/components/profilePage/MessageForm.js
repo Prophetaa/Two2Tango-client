@@ -28,7 +28,7 @@ class MessageForm extends PureComponent {
 					<div className="form-group">
 						<label htmlFor="message">Message:</label>
 						<textarea
-							className="form-control"
+							className="form-control message"
 							id="message"
 							rows="4"
 							cols="50"
