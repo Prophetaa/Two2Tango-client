@@ -23,7 +23,7 @@ class PreferencesPage extends Component {
 
   updateState =  () => {
     if (this.props.currentUser) {
-       this.setState({
+        this.setState({
         role: this.props.usersPreferences.role,
         cities: this.props.usersPreferences.city,
         min_age: this.props.usersPreferences.age[0],
@@ -38,16 +38,19 @@ class PreferencesPage extends Component {
 
   selectLevels = async () => {
     let arr = await this.props.usersPreferences.level;
+    console.log(arr)
     if (arr.includes('beginner')) {
       let level = document.getElementById('beginner');
-      level.click();
-    } else if (arr.includes('intermediate')) {
+      level.click();}
+    if (arr.includes('intermediate')) {
       let level = document.getElementById('intermediate');
       level.click();
-    } else if (arr.includes('advanced')) {
+    } 
+     if (arr.includes('advanced')) {
       let level = document.getElementById('advanced');
       level.click();
-    } else if (arr.includes('professional')) {
+    } 
+    if (arr.includes('professional')) {
       let level = document.getElementById('professional');
       level.click();
     }
