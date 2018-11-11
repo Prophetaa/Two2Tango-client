@@ -95,16 +95,16 @@ export const postPreferences = (city , gender, height, role, level, age) => asyn
   
 
 
-  export const updatePreferences = (cities,gender, height, role, level, age) => (dispatch, getState) => {
+  export const updatePreferences = (city , gender, height, role, level, age) => (dispatch, getState) => {
     const state = getState();
     const jwt = state.currentUser.jwt;
   
     if (isExpired(jwt)) return dispatch(logout());
   
     request
-      .put(`${baseUrl}/preferences`)
+      .put(`${baseUrl}/preferences`, console.log("puting"))
       .set('Authorization', `Bearer ${jwt}`)
-      .send(cities,gender, height, role, level, age)
+      .send({city, gender, height, role, level, age})
       .then(res=> console.log(res.body))
       .catch(err => console.log(err));
   };
