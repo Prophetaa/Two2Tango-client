@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import {
-  updatePreferences
+  updatePreferences,
+  fetchPreferences
 } from '../../actions/registration';
 
 import LocationSearchInput from '../registrationPage/Geolocate';
@@ -13,13 +14,14 @@ import CheckBoxes from '../registrationPage/CheckBoxes';
 
 class PreferencesPage extends Component {
   async componentDidMount() {
-    await this.updateState()
+    await this.props.fetchPreferences()
     }
   state = { level:[]
   };
 
   updateState = async() =>{
-     await this.setState({
+    console.log("fetching", this.props.usersPreferences)
+      await this.setState({
         role: this.props.usersPreferences.role,
         city: this.props.usersPreferences.city,
         min_age: this.props.usersPreferences.age[0],
@@ -33,7 +35,6 @@ class PreferencesPage extends Component {
 
   selectLevels = async() =>{
       let arr = await this.props.usersPreferences.level
-      console.log(arr)
       if(arr.includes("beginner")){
           let level = document.getElementById("beginner")
           level.click()
@@ -48,7 +49,7 @@ class PreferencesPage extends Component {
         level.click()
       }
   }
-
+  
   handleCheck = nLevel => {
     //Checks if this level is already on the react state, if it is it deletes it
     if (this.state.level.includes(nLevel)) {
@@ -100,6 +101,7 @@ class PreferencesPage extends Component {
   };
 
   render() {
+    if(this.state.boolean !== false)this.updateState()
     return (
       <div className="container signupContainer">
         <div className="row">
@@ -276,7 +278,7 @@ class PreferencesPage extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
     );
   }
@@ -290,6 +292,7 @@ const mapStateToProps = function(state) {
 export default connect(
   mapStateToProps,
   {
-    updatePreferences
+    updatePreferences,
+    fetchPreferences
   }
 )(PreferencesPage);

@@ -25,3 +25,10 @@
 .icons-navbar.active{
     color:#A00D26;
 }
+
+
+.dropDownLi:hover{
+    background-color: #A00D26;
+    color: white
+
+}

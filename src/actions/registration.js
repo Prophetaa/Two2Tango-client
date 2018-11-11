@@ -87,7 +87,7 @@ export const postPreferences = (city,gender, height, role, level, age) => async(
 	request
 	  .get(`${baseUrl}/preferences`)
 	  .set('Authorization', `Bearer ${jwt}`, console.log("fetching prefs"))
-	  .then(res => dispatch(preferencesFetched(res.body)))
+    .then(res => dispatch(preferencesFetched(res.body)))
 	  .catch(err => {
 		console.error(err);
 	  });
