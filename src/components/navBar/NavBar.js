@@ -9,7 +9,7 @@ import logoWhite from '../../styling/images/logo-grey.png';
 class Navbar extends Component {
 	render() {
 		return (
-			<div>
+			<div className="navbar-style">
 				<nav className="navbar navbar-expand-sm navbar-light bg-light sticky-top">
 					{this.props.currentUser && (
 						<div className="container">
@@ -26,30 +26,32 @@ class Navbar extends Component {
 							<div className="collapse navbar-collapse" id="navbarResponsive">
 								<ul className="navbar-nav ml-auto d-inline-md">
 									<li className="nav-item ">
-										<button className="btn btn-outline-secondary btn-lg icons-navbar">
+										<button className="btn btn-outline-light btn-lg icons-navbar">
 											<Link to={`/profiles/my-profile`} className="link-navbar">
-												<i className="fas fa-user-circle" />
+												<i className="fas fa-user-circle fa-lg" />
 											</Link>
 										</button>
 									</li>
 									<li className="nav-item">
-										<button className="btn btn-outline-secondary btn-lg icons-navbar">
+										<button className="btn btn-outline-light btn-lg icons-navbar">
 											<Link to="/messages" className="link-navbar">
-												<i className="far fa-envelope" />
+												<i className="far fa-envelope fa-lg" />
 											</Link>
 										</button>
 									</li>
 									<li className="nav-item">
-										<button className="btn btn-outline-secondary btn-lg icons-navbar">
-											<Link to="/setting" className="link-navbar">
-												<i className="fas fa-cog" />
-											</Link>
-										</button>
-									</li>
-									<li className="nav-item">
-										<button className="btn btn-outline-secondary btn-lg icons-navbar" onClick={this.props.fetchPreferences}>
+										<button className="btn btn-outline-light btn-lg icons-navbar">
 											<Link to="/preferences" className="link-navbar">
-												<i className="fas fa-search" />
+												<i className="fas fa-cog fa-lg" />
+											</Link>
+										</button>
+									</li>
+									<li className="nav-item">
+
+										<button className="btn btn-outline-light btn-lg icons-navbar">
+											<Link to="/results" className="link-navbar">
+												<i className="fas fa-search fa-lg" />
+
 											</Link>
 										</button>
 									</li>
@@ -74,14 +76,14 @@ class Navbar extends Component {
 									<li className="nav-item ">
 										<button className="btn btn-outline-secondary btn-lg icons-navbar">
 											<Link to="/signup" className="link-navbar">
-												<i className="fas fa-user-plus" />
+												<i className="fas fa-user-plus fa-lg" />
 											</Link>
 										</button>
 									</li>
 									<li className="nav-item">
 										<button className="btn btn-outline-secondary btn-lg icons-navbar">
 											<Link to="/login" className="link-navbar">
-												<i className="fas fa-key" />
+												<i className="fas fa-key fa-lg" />
 											</Link>
 										</button>
 									</li>
