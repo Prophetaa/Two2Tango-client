@@ -10,7 +10,7 @@
   background: black;
   background-image: url('./images/background01.jpg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: right;
 }
 
 .background-dancers-text{
@@ -130,5 +130,9 @@ footer{
     text-align: center;
     height: 200px;
     padding: 10px;
+  }
+
+  .background-top-home {
+    background-position: center;
   }
 }
