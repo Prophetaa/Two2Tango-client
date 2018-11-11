@@ -1,18 +1,84 @@
 .edit-profile header {
   height: 5rem;
-  background: linear-gradient(to right, #A00D26, rgba(90, 2, 2, 0.733));
-}
-/* label {
-  margin-bottom: 1rem
-} */
-.labels {
-  font-size: 13px;
-  margin-bottom: 0
+  background: linear-gradient(to right, #a00d26, rgba(90, 2, 2, 0.733));
 }
 .edit-profile h1 {
   font-size: 50px;
-  color: #F2EFEA;
+  color: #f2efea;
+  padding: 7px;
+  padding-left: 90px !important;
+  font-weight: 200 !important;
+}
+.edit-row {
+  margin-top: 30px;
+}
+.labels {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.edit-profile h1 {
+  font-size: 50px;
+  color: #f2efea;
   padding: 7px;
   padding-left: 100px;
   font-weight: 200 !important;
+}
+.edit-inputs {
+  height: 2rem;
+  width: 90%;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+}
+.edit-select {
+  height: 2rem;
+  width: 90% !important;
+}
+.about-edit h3 {
+  padding: 0px 5px 10px 5px;
+  font-size: 14px;
+}
+.about-edit p {
+  color: #747d88;
+  font-size: 16px;
+  padding: 5px;
+}
+.edit-btn {
+  background-color: #a00d26;
+  width: 25rem;
+  margin: auto;
+  margin-top: 30px;
+  border: none;
+}
+.edit-btn:hover {
+  background-color: #a00d26;
+  border: none;
+}
+
+/* Blue border remove */
+.edit-inputs {
+  outline: none;
+  box-shadow: none !important;
+  border-bottom: 1px solid #ccc !important;
+}
+.edit-select,
+textarea {
+  outline: none;
+  box-shadow: none !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Small screens */
+
+@media only screen and (max-width: 768px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+  .edit-profile h1 {
+    padding-left: 60px;
+    font-size: 40px;
+  }
+  .edit-btn {
+    margin-bottom: 10px;
+  }
 }
