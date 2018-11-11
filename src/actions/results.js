@@ -54,15 +54,9 @@ export const getOneProfile = id => (dispatch, getState) => {
 		.catch(err => console.log(err));
 };
 
-export const getLatestProfiles = () => (dispatch, getState) => {
-	const state = getState();
-	const jwt = state.currentUser.jwt;
-
-	if (isExpired(jwt)) return dispatch(logout());
-
+export const getLatestProfiles = () => dispatch => {
 	request
 		.get(`${baseUrl}/latest-profiles`)
-		.set('Authorization', `Bearer ${jwt}`)
 		.then(result => dispatch(setLatestProfiles(result.body)))
 		.catch(err => console.log(err));
 };
@@ -80,5 +74,3 @@ export const updateProfile = data => (dispatch, getState) => {
 		.then(result => dispatch(updatedProfile(result.body)))
 		.catch(err => console.log(err));
 };
-
-
