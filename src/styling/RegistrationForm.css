@@ -239,7 +239,9 @@ div#lastName{
   justify-content: center;
   padding-bottom: 3%;
 }
-
+.checkmark{
+  margin-left: 5%;
+}
 .finalStepBtn:disabled{
   background-color: #A00D26;
 }
