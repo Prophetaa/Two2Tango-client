@@ -29,7 +29,7 @@ class SignupPage extends Component {
         email: stateUpdate.email,
         password: stateUpdate.password
       });
-       await this.props.postSignup(stateUpdate.email, stateUpdate.password);
+      await this.props.postSignup(stateUpdate.email, stateUpdate.password);
       await this.props.login(stateUpdate.email, stateUpdate.password)
         this.props.goToSecondPage();
     }
@@ -41,14 +41,11 @@ class SignupPage extends Component {
       this.props.goToResults()
     }
   
-
-    componentWillUnmount(){
-      this.props.resetRegPage()
-    }
+componentWillUnmount(){
+  this.props.resetRegPage()
+}
 
   render() {
-    if (this.props.signup.success) return <Redirect to="/login" />;
-
     return (
       <div>
         {this.props.currentRegPage === 1 && (
@@ -80,6 +77,7 @@ class SignupPage extends Component {
 const mapStateToProps = function(state) {
   return {
     signup: state.signup,
+    currentUser: state.currentUser,
     currentRegPage: state.currentRegPage
   };
 };
