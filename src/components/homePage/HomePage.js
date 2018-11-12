@@ -125,7 +125,7 @@ export class homePage extends Component {
 										type="button"
 										className="btn btn-primary btn-lg SignInPrmBtn"
 										onClick={() => history.push(`/signup`)}>
-										SignUp
+										Sign Up
 									</button>
 								</div>
 							</div>
@@ -202,7 +202,7 @@ export class homePage extends Component {
 										type="button"
 										className="btn btn-primary btn-lg SignInPrmBtn"
 										onClick={() => history.push(`/signup`)}>
-										SignUp
+										Sign Up
 									</button>
 								</div>
 							</div>
@@ -227,34 +227,3 @@ export default connect(
 	mapStateToProps,
 	{ getLatestProfiles }
 )(homePage);
-
-/* <div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar3} className="avatar-home" alt="avatar1" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar2" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar3" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar4" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar5" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div>
-							<div className="col-xs-12 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
-								<img src={Avatar4} className="avatar-home" alt="avatar6" />
-								<p className="name-home">Claudio</p>
-								<p className="level-home">Beginer</p>
-							</div> */
