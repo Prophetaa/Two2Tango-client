@@ -14,7 +14,7 @@ class Navbar extends Component {
   render() {
     return (
       <div className="navbar-style">
-        <nav className="navbar navbar-expand navbar-light sticky-top">
+        <nav className="navbar navbar-expand navbar-light sticky-top navbar-right">
           {this.props.currentUser && (
             <div className="container">
               <div className="nav-header">
@@ -78,27 +78,30 @@ class Navbar extends Component {
             </div>
           )}
           {!this.props.currentUser && (
-            <div className="container-fluid">
+            <div className="container">
               <div className="nav-header">
                 <Link to="/home">
-                  <img className="" src={logoWhite} alt="logo" />
+                  <img className="tangoLogo" src={logoWhite} alt="logo" />
+                  {/* <img className="tangoLogoXs d-block d-sm-none " src={logoXS} alt="logo" /> */}
                 </Link>
               </div>
-              <div className="col-xs-12">
+              <div className="col-xs-12 d-none d-sm-block ">
                 <ul className="navbar-nav ml-auto d-inline-md right-align">
                   <li className="nav-item ">
-                    <button className="btn btn-outline-secondary btn-lg icons-navbar">
+                    {/* <button className="btn btn-outline-secondary btn-lg icons-navbar"> */}
                       <Link to="/signup" className="link-navbar">
-                        <i className="fas fa-user-plus fa-md" />
+                        {/* <i className="fas fa-user-plus fa-md icon-navbar" /> */}
+                         <h6>Sign Up</h6>
                       </Link>
-                    </button>
+                    {/* </button> */}
                   </li>
                   <li className="nav-item">
-                    <button className="btn btn-outline-secondary btn-lg icons-navbar">
+                    {/* <button className="btn btn-outline-secondary btn-lg icons-navbar"> */}
                       <Link to="/login" className="link-navbar">
-                        <i className="fas fa-key fa-md" />
+                        {/* <i className="fas fa-key fa-md icon-navbar" /> */}
+                         <h6>Log In</h6>
                       </Link>
-                    </button>
+                    {/* </button> */}
                   </li>
                 </ul>
               </div>

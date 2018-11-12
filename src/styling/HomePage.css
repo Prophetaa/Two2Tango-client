@@ -43,7 +43,8 @@
   background-color: #A00D26;
   border-color: #a00d1f;
   /* margin:10px; */
-  width:315px;
+  max-width:315px;
+  width:55%
 }
 
 .SignInPrmBtn:hover, .SignInPrmBtn:focus, .SignInPrmBtn:active, .SignInPrmBtn.active{
