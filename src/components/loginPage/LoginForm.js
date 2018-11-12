@@ -1,5 +1,5 @@
 import '../../styling/LoginForm.css';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 export default class LoginForm extends Component {
@@ -30,7 +30,7 @@ export default class LoginForm extends Component {
 										<input
 											type="email"
 											id="inputEmail"
-											className="form-control"
+											className="form-control p-3"
 											placeholder="Email address"
 											name="email"
 											required
@@ -40,7 +40,7 @@ export default class LoginForm extends Component {
 										<label htmlFor="inputEmail">Email address</label>
 									</div>
 									<hr />
-									<div className="form-label-group">
+									<div className="form-label-group mb-5">
 										<input
 											type="password"
 											id="inputPassword"
