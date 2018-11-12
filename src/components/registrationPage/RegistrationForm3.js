@@ -59,8 +59,8 @@ class RegistrationForm3 extends Component {
         this.state.cities,
         this.state.gender,
         [
-          parseInt(this.state.max_height, 10),
-          parseInt(this.state.min_height, 10)
+          parseInt(this.state.min_height, 10),
+          parseInt(this.state.max_height, 10)
         ],
         this.state.role,
         this.state.tango_level,
