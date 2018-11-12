@@ -58,11 +58,11 @@ export default class LoginForm extends Component {
 										type="submit">
 										Login
 									</button>
-									<span className="d-block text-center mt-2 small">
+									<span className="d-block text-center mt-2 small account-no">
 										Don't have an account yet?
 										<Link
 											to="/signup"
-											className="d-block text-center mt-2 small Links">
+											className="d-block text-center mt-2 small Links signup-link">
 											Sign up here
 										</Link>
 									</span>

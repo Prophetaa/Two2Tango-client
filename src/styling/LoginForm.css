@@ -3,9 +3,10 @@
     --input-padding-y: .75rem;
   }
   .login{
-    width: 42%;
-    max-width: 650px;
+    width: 62%;
+    /* max-width: 650px; */
     margin-top: 0px !important;
+    padding: 0 !important
   }
   
   .card-signin {
@@ -107,7 +108,10 @@
   }
   .btn-login {
     background-color: #A00D26;
-    border: none
+    border: none;
+  }
+  .btn-login:hover {
+    background-color: #b80321
   }
   
   .btn-google {
@@ -145,7 +149,7 @@
   .card-signin .card-img-left {
     width: 45%;
     /* Link to your background image using in the property below! */
-    background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
+    /* background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512'); */
     background-size: cover;
   }
   
@@ -236,3 +240,23 @@
     color: white;
     background-color: #3b5998;
   }
+  .signup-link, .account-no {
+    font-size: .8rem
+  }
+  .signup-link {
+    font-weight: 400;
+    font-size: .9rem;
+    color: #A00D26 !important
+  }
+
+  /* Small screens */
+@media only screen and (max-width: 768px) {
+  [class*="col-"] {
+      width: 100%;
+  }
+  .login {
+    width: 100%;
+    margin: auto ;
+    padding: 0 !important;
+  }
+}
