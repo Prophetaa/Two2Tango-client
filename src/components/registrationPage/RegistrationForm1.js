@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import '../../styling/RegistrationForm.css';
-import { Link } from 'react-router-dom';
+import { Link , Redirect} from 'react-router-dom';
 
 import ReCaptcha from './ReCaptcha';
 
 
-export default class RegistrationForm extends Component {
+class RegistrationForm extends Component {
   state = {};
 
   handleSubmit = e => {
@@ -28,6 +29,7 @@ export default class RegistrationForm extends Component {
   };
 
   render() {
+    if (this.props.currentUser) return <Redirect to="/results" />
     return (
       <div className="container registration-form-1 signupContainer">
         <div className="row">
@@ -122,3 +124,11 @@ export default class RegistrationForm extends Component {
     );
   }
 }
+
+const mapStateToProps = function(state) {
+	return {
+		currentUser: state.currentUser
+	};
+};
+
+export default connect(mapStateToProps)(RegistrationForm)

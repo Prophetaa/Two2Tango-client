@@ -106,6 +106,20 @@ color:white;
     border-bottom: 3px lightgray solid;
 }
 
-.acceptChanges{
-
+.cityInput{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
+
+.citiesBtn{
+    background-color: #A00D26;
+    color:white;
+    border-radius: 5px 0x 5px 5px;
+    border:none;
+}
+
+.citiesBtn:hover{
+    background-color: rgb(185, 14, 43);
+}
+

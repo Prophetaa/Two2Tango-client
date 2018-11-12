@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { sendMessage } from '../../actions/messages';
+import "../../styling/MessageForm.css";
 
 class MessageForm extends PureComponent {
 	state = {};
@@ -23,6 +24,7 @@ class MessageForm extends PureComponent {
 
 	render() {
 		return (
+			<div className='container-msg'>
 			<div className="form-group was-validated message-form">
 				<form onSubmit={this.handleSubmit}>
 					<div className="form-group">
@@ -38,11 +40,14 @@ class MessageForm extends PureComponent {
 							onChange={this.handleChange}
 							required
 						/>
-					</div>
-					<button type="submit" className="btn btn-success btn-block send">
+						<button type="submit" className="btn btn-success btn-block send">
+					
+
 						Send
 					</button>
+					</div>
 				</form>
+			</div>
 			</div>
 		);
 	}
