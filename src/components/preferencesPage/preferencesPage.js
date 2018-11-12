@@ -142,10 +142,10 @@ class PreferencesPage extends Component {
                     Searching Preferences
                   </h5>
                   <form className="form-signin" onSubmit={this.handleSubmit}>
-                    <div className="form-group">
+                    <div className="form-group row cityInput">
                       <LocationSearchInput onChange={this.handleSelectCity} />
-                      <button className="citiesBtn" onClick={this.selectCities}>
-                        add city
+                      <button className="citiesBtn  text-uppercase" onClick={this.selectCities}>
+                       add city
                       </button>
                     </div>
                     <div className="citiesContainer container row">
