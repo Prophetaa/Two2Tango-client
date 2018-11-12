@@ -13,10 +13,12 @@ class Navbar extends Component {
         <nav className="navbar navbar-expand-sm navbar-light bg-light sticky-top">
           {this.props.currentUser && (
             <div className="container">
-              <Link to="/home">
-                <img className="tangoLogo" src={logoWhite} alt="logo" />
-              </Link>
-              <div className="collapse navbar-collapse" id="navbarResponsive">
+              <div className="nav-header">
+                <Link to="/home">
+                  <img className="tangoLogo img-responsive" src={logoWhite} alt="logo" />
+                </Link>
+              </div>
+              <div className="col-xs-12" id="navbarResponsive">
                 <ul className="navbar-nav ml-auto d-inline-md">
                   <li className="dropdown nav-item">
                     <div
@@ -25,7 +27,7 @@ class Navbar extends Component {
                       role="button"
                       aria-haspopup="true"
                       aria-expanded="false">
-                      <i className="fas fa-user-circle fa-lg" />
+                      <i className="fas fa-user-circle fa-md" />
                     </div>
                     <ul className="dropdown-menu">
                       <Link className="Links" to={'/profiles/my-profile'}>
@@ -43,21 +45,21 @@ class Navbar extends Component {
                   <li className="nav-item">
                     <button className="btn btn-outline-light btn-lg icons-navbar">
                       <Link to="/messages" className="link-navbar">
-                        <i className="far fa-envelope fa-lg" />
+                        <i className="far fa-envelope fa-md" />
                       </Link>
                     </button>
                   </li>
                   <li className="nav-item">
                     <button className="btn btn-outline-light btn-lg icons-navbar">
                       <Link to="/preferences" className="link-navbar">
-                        <i className="fas fa-cog fa-lg" />
+                        <i className="fas fa-cog fa-md" />
                       </Link>
                     </button>
                   </li>
                   <li className="nav-item">
                     <button className="btn btn-outline-light btn-lg icons-navbar">
                       <Link to="/results" className="link-navbar">
-                        <i className="fas fa-search fa-lg" />
+                        <i className="fas fa-search fa-md" />
                       </Link>
                     </button>
                   </li>
@@ -66,30 +68,25 @@ class Navbar extends Component {
             </div>
           )}
           {!this.props.currentUser && (
-            <div className="container">
-              <Link to="/home">
-                <img className="" src={logoWhite} alt="logo" />
-              </Link>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarResponsive">
-                <span className="navbar-toggler-icon" />
-              </button>
-              <div className="collapse navbar-collapse" id="navbarResponsive">
-                <ul className="navbar-nav ml-auto d-inline-md">
+            <div className="container-fluid">
+              <div className="nav-header">
+                <Link to="/home">
+                  <img className="" src={logoWhite} alt="logo" />
+                </Link>
+              </div>
+              <div className="col-xs-12">
+                <ul className="navbar-nav ml-auto d-inline-md right-align">
                   <li className="nav-item ">
                     <button className="btn btn-outline-secondary btn-lg icons-navbar">
                       <Link to="/signup" className="link-navbar">
-                        <i className="fas fa-user-plus fa-lg" />
+                        <i className="fas fa-user-plus fa-md" />
                       </Link>
                     </button>
                   </li>
                   <li className="nav-item">
                     <button className="btn btn-outline-secondary btn-lg icons-navbar">
                       <Link to="/login" className="link-navbar">
-                        <i className="fas fa-key fa-lg" />
+                        <i className="fas fa-key fa-md" />
                       </Link>
                     </button>
                   </li>
