@@ -2,10 +2,12 @@ import React from 'react';
 import '../../styling/MessagesPage.css';
 
 export default function messages(props) {
-	console.log(props);
 	return (
 		<div className="container messages">
 			<h1 className="text-center">Inbox</h1>
+			{!props.messages && (
+				<h2>'You have no messages yet, start a conversation with someone!'}</h2>
+			)}
 			<ul className="list-unstyled">
 				{props.messages.map(message => (
 					<li key={message.id} className="media">
