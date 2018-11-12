@@ -27,6 +27,7 @@ body {
 }
 .image-profile {
     width: 70%;
+    max-width: 300px;
     height: auto;
     min-height: 200px;
     border-radius: 50%;
@@ -69,6 +70,7 @@ body {
     color: #747D88;
     font-size: 16px;
     padding: 5px;
+    margin-bottom: 30px;
 }
 
 .update-profile {
@@ -81,7 +83,7 @@ body {
     background-color: #A00D26;
     /* padding: 5px 30px 5px 30px; */
     color: #F2EFEA;
-    width: 20rem;
+    width: 100%;
 }
 .update-btn-profile:hover {
     background-color: #b80321

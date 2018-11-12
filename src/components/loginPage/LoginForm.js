@@ -21,7 +21,7 @@ export default class LoginForm extends Component {
 		return (
 			<div className="container login">
 				<div className="row">
-					<div className="col-lg-10 col-xl-9 mx-auto">
+					<div className="col-lg-10 col-xl-9 mx-auto padd">
 						<div className="card card-signin flex-row my-5">
 							<div className="card-body">
 								<form className="form-signin" onSubmit={this.handleSubmit}>
@@ -37,9 +37,9 @@ export default class LoginForm extends Component {
 											value={this.state.email || ''}
 											onChange={this.handleChange}
 										/>
-										<label htmlFor="inputEmail">Email address</label>
+										{!this.state.email && <label htmlFor="inputEmail">Email address</label>}
 									</div>
-									<hr />
+								
 									<div className="form-label-group mb-5">
 										<input
 											type="password"
@@ -51,7 +51,7 @@ export default class LoginForm extends Component {
 											value={this.state.password || ''}
 											onChange={this.handleChange}
 										/>
-										<label htmlFor="inputPassword">Password</label>
+										{!this.state.password && <label htmlFor="inputPassword">Password</label>}
 									</div>
 									<button
 										className="btn btn-lg btn-primary btn-block text-uppercase btn-login"
