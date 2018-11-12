@@ -31,8 +31,7 @@ export default class LocationSearchInput extends Component {
 								placeholder: 'City *',
 								className: 'location-search-input  form-control'
 							})}
-						/>
-						
+						/>	
 						<div className="autocomplete-dropdown-container">
 							{loading && <div>Loading names...</div>}
 							{suggestions.map(suggestion => {

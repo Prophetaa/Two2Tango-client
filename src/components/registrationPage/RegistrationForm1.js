@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import '../../styling/RegistrationForm.css';
-import { Link , Redirect} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import ReCaptcha from './ReCaptcha';
 
@@ -103,15 +103,19 @@ class RegistrationForm extends Component {
                   <hr className="my-4" />
                   <button
                     disabled
+                    data-toggle="tooltip"
+                    title="Not yet available"
                     className="btn btn-lg btn-google btn-block text-uppercase"
                     type="submit">
                     <i className="fab fa-google mr-2" /> Sign up with Google
                   </button>
                   <button
                     disabled
+                    data-toggle="tooltip"
+                    title="Not yet available"
                     className="btn btn-lg btn-facebook btn-block text-uppercase"
                     type="submit">
-                    <i className="fab fa-facebook-f mr-2" /> Sign up with
+                    <i className="fab fa-facebook-f mr-2"  /> Sign up with
                     Facebook
                   </button>
                 </form>

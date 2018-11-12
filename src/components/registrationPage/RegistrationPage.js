@@ -17,9 +17,10 @@ import {
 } from '../../actions/registration';
 import currentRegPage from '../../reducers/index';
 class SignupPage extends Component {
-  state = {};
+  state = {logged:false};
 
   componentDidMount(){
+    if(this.props.currentUser) this.isLogged()
     this.props.resetRegPage()
   }
 
@@ -40,12 +41,17 @@ class SignupPage extends Component {
     handlePageChange3 = async() => {
       this.props.goToResults()
     }
+
+    isLogged = async() =>{
+      await this.setState({logged:true})
+    }
   
 componentWillUnmount(){
   this.props.resetRegPage()
 }
 
   render() {
+    if (this.props.currentUser && this.state.logged === true) return <Redirect to="/results" />
     return (
       <div>
         {this.props.currentRegPage === 1 && (

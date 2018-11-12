@@ -144,7 +144,7 @@ class PreferencesPage extends Component {
                   <form className="form-signin" onSubmit={this.handleSubmit}>
                     <div className="form-group row cityInput">
                       <LocationSearchInput onChange={this.handleSelectCity} />
-                      <button className="citiesBtn  text-uppercase" onClick={this.selectCities}>
+                      <button className="citiesBtn text-uppercase" onClick={this.selectCities}>
                        add city
                       </button>
                     </div>

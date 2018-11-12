@@ -30,7 +30,6 @@ const CLOUDINARY_UPLOAD_URL =
       this.state.height,
       this.state.city
     )
-
     await this.props.onSubmit(this.state);
   };
 
@@ -97,13 +96,14 @@ const CLOUDINARY_UPLOAD_URL =
     const renderUploader = (
       <div className="uploader">
         <div>
-          <div className="FileUpload">
+          <div className="FileUpload" required>
             <Dropzone
             className={"dropZone"}
-            required
 			        style={this.state.photoURL ? mystyle:null}
               onDrop={this.onImageDrop.bind(this)}
               multiple={false}
+              data-toggle="tooltip"
+              title="add a picture"
               accept="image/*">
             </Dropzone>
           </div>
@@ -157,7 +157,7 @@ const CLOUDINARY_UPLOAD_URL =
                   </div>
                   <div className="form-group" id="lastName">
                     <input
-					placeholder="Height in cms *"
+				            	placeholder="Height in cms *"
                       type="height"
                       name="height"
                       id="inputPassword"
@@ -217,6 +217,7 @@ const CLOUDINARY_UPLOAD_URL =
                   </div>
 				  <CheckBoxes handleCheck={this.handleCheck} currentPage="2"/>
                   <button
+                    disabled={!this.state.photoURL}
                     className="btn btn-lg btn-primary btn-block text-uppercase finalStepBtn"
                     type="submit">
                     <span>Final Step</span>
