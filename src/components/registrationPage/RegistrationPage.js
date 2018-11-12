@@ -37,13 +37,14 @@ class SignupPage extends Component {
         handlePageChange2 = async() => {
       await this.props.goToThirdPage()
     }
-  
     handlePageChange3 = async() => {
       this.props.goToResults()
     }
   
 
-
+    componentWillUnmount(){
+      this.props.resetRegPage()
+    }
 
   render() {
     if (this.props.signup.success) return <Redirect to="/login" />;

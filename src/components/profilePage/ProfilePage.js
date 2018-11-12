@@ -3,7 +3,6 @@ import "../../styling/ProfilePage.css";
 import MessageForm from "./MessageForm";
 import { toUserId } from "../../jwt";
 import { Link } from "react-router-dom";
-import Avatar7 from '../../styling/images/Avatar7.png';
 
 export default function ProfilePage(props) {
   const currentUserId = toUserId(props.currentUser.jwt);

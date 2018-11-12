@@ -22,12 +22,12 @@ export default class RoleMenu extends Component {
           className="dropdown-menu form-control"
           aria-labelledby="dropdownMenuButton">
           <span
-            className="dropdown-item "
+            className="dropdown-item item1"
             onClick={() => this.props.handleButtonClick('leader')}>
             leader
           </span>
           <span
-            className="dropdown-item"
+            className="dropdown-item item3"
             onClick={() => this.props.handleButtonClick('follower')}>
             follower
           </span>
