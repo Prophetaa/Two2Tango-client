@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getAllResults } from '../../actions/results';
 
 class ResultsListContainer extends Component {
-	componentDidMount() {
+	async componentDidMount() {
 		if (this.props.authenticated) {
 			this.props.getAllResults();
 		}
