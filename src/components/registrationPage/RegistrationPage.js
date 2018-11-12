@@ -17,11 +17,11 @@ import {
 } from '../../actions/registration';
 import currentRegPage from '../../reducers/index';
 class SignupPage extends Component {
-  state = {logged:false};
+  state = { logged: false };
 
-  componentDidMount(){
-    if(this.props.currentUser) this.isLogged()
-    this.props.resetRegPage()
+  componentDidMount() {
+    if (this.props.currentUser) this.isLogged();
+    this.props.resetRegPage();
   }
 
   handlePageChange = async stateUpdate => {
@@ -31,38 +31,44 @@ class SignupPage extends Component {
         password: stateUpdate.password
       });
       await this.props.postSignup(stateUpdate.email, stateUpdate.password);
-      await this.props.login(stateUpdate.email, stateUpdate.password)
-        this.props.goToSecondPage();
+      await this.props.login(stateUpdate.email, stateUpdate.password);
+      this.props.goToSecondPage();
     }
-  }
-        handlePageChange2 = async() => {
-      await this.props.goToThirdPage()
-    }
-    handlePageChange3 = async() => {
-      this.props.goToResults()
-    }
+  };
+  handlePageChange2 = async () => {
+    await this.props.goToThirdPage();
+  };
+  handlePageChange3 = async () => {
+    await this.props.goToResults();
+  };
 
-    isLogged = async() =>{
-      await this.setState({logged:true})
-    }
-  
-componentWillUnmount(){
-  this.props.resetRegPage()
-}
+  isLogged = async () => {
+    await this.setState({ logged: true });
+  };
+
+  facebookSubmit = async(fbState) => {
+    this.setState({fbState})
+  }
+
+  componentWillUnmount() {
+    this.props.resetRegPage();
+  }
+
 
   render() {
-    if (this.props.currentUser && this.state.logged === true) return <Redirect to="/results" />
+    if (this.props.currentUser && this.state.logged === true)
+      return <Redirect to="/results" />;
     return (
       <div>
         {this.props.currentRegPage === 1 && (
           <div>
-            <RegistrationForm1 onSubmit={this.handlePageChange} />
+            <RegistrationForm1 onSubmit={this.handlePageChange} facebookSubmit={this.facebookSubmit}/>
             <p style={{ color: 'red' }}>{this.props.signup.error}</p>{' '}
           </div>
         )}
         {this.props.currentRegPage === 2 && (
           <div>
-            <RegistrationForm2 onSubmit={this.handlePageChange2} />
+            <RegistrationForm2 fbState={this.state.fbState} onSubmit={this.handlePageChange2} />
             <p style={{ color: 'red' }}>{this.props.signup.error}</p>{' '}
           </div>
         )}
@@ -72,9 +78,7 @@ componentWillUnmount(){
             <p style={{ color: 'red' }}>{this.props.signup.error}</p>{' '}
           </div>
         )}
-        {this.props.currentRegPage === 4 && ( 
-          <Redirect to={"/results"} />
-        )}
+        {this.props.currentRegPage === 4 && <Redirect to={'/results'} />}
       </div>
     );
   }
