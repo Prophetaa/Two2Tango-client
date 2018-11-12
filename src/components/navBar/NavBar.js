@@ -30,7 +30,7 @@ class Navbar extends Component {
                     <ul className="dropdown-menu">
                       <Link className="Links" to={'/profiles/my-profile'}>
                         <li className="dropDownLi">
-                          <span className="dropDownLink">Your Profile</span>
+                          <span className="dropDownLink">My Profile</span>
                         </li>
                       </Link>
                       <Link className="Links" to={'/logout'}>
