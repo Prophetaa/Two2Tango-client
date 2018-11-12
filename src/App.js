@@ -12,8 +12,6 @@ import EditProfileContainer from './components/profilePage/EditProfileContainer'
 import LogoutPage from './components/logoutPage/LogoutPage';
 import preferencesPage from './components/preferencesPage/preferencesPage';
 
-
-
 class App extends Component {
 	render() {
 		return (
@@ -30,6 +28,7 @@ class App extends Component {
 					<Route exact path="/preferences" component={preferencesPage} />
 					<Route exact path="/messages" component={MessageListContainer} />
 					<Route exact path="/edit-profile" component={EditProfileContainer} />
+					<Route component={HomePage} />
 				</div>
 			</div>
 		);
