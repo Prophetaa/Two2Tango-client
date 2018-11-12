@@ -234,6 +234,15 @@ div#lastName{
   opacity: 1;
   right: 0;
 }
+.recaptcha{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3%;
+}
+
+.finalStepBtn:disabled{
+  background-color: #A00D26;
+}
 
 .dropdown-menu{
   background-color: rgb(247, 244, 244);

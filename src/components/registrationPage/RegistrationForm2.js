@@ -44,7 +44,7 @@ const CLOUDINARY_UPLOAD_URL =
 
   handleSelectCity = event => {
     let formatedCity = event.split(',', 1);
-    this.setState({ city: formatedCity[0] });
+    this.setState({ city: `${formatedCity[0]}` });
   };
 
   handleButtonClick = input => {
@@ -96,17 +96,18 @@ const CLOUDINARY_UPLOAD_URL =
     const mystyle={backgroundImage:`url(${this.state.photoURL})`, backgroundSize:"100%"}
     const renderUploader = (
       <div className="uploader">
-        <form>
+        <div>
           <div className="FileUpload">
             <Dropzone
-			      className={"dropZone"}
+            className={"dropZone"}
+            required
 			        style={this.state.photoURL ? mystyle:null}
               onDrop={this.onImageDrop.bind(this)}
               multiple={false}
               accept="image/*">
             </Dropzone>
           </div>
-        </form>
+        </div>
       </div>
     );
     return (
@@ -169,9 +170,9 @@ const CLOUDINARY_UPLOAD_URL =
                   <div className="form-group">
                     <LocationSearchInput onChange={this.handleSelectCity}/>
                   </div>
-                  <div class="dropdown genderMenu">
+                  <div className="dropdown genderMenu">
                     <button
-                      class="form-control dropdown-toggle"
+                      className="form-control dropdown-toggle"
                       type="button"
                       id="dropdownMenuButton"
                       data-toggle="dropdown"
@@ -182,20 +183,20 @@ const CLOUDINARY_UPLOAD_URL =
                     <div
                       className="dropdown-menu form-control"
                       aria-labelledby="dropdownMenuButton">
-                      <span class="dropdown-item " onClick={()=> this.handleButtonClick("male")}>
+                      <span className="dropdown-item " onClick={()=> this.handleButtonClick("male")}>
                         male
                       </span>
-                      <span class="dropdown-item" onClick={()=> this.handleButtonClick("female")}>
+                      <span className="dropdown-item" onClick={()=> this.handleButtonClick("female")}>
                         female
                       </span>
-                      <span class="dropdown-item" onClick={()=> this.handleButtonClick("other")}>
+                      <span className="dropdown-item" onClick={()=> this.handleButtonClick("other")}>
                         other
                       </span>
                     </div>
                   </div>
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button
-                      class="form-control dropdown-toggle"
+                      className="form-control dropdown-toggle"
                       type="button"
                       id="dropdownMenuButton"
                       data-toggle="dropdown"
@@ -206,10 +207,10 @@ const CLOUDINARY_UPLOAD_URL =
                     <div
                       className="dropdown-menu form-control"
                       aria-labelledby="dropdownMenuButton">
-                      <span class="dropdown-item " onClick={()=> this.handleButtonClick("leader")}>
+                      <span className="dropdown-item " onClick={()=> this.handleButtonClick("leader")}>
                         leader
                       </span>
-                      <span class="dropdown-item" onClick={()=> this.handleButtonClick("follower")}>
+                      <span className="dropdown-item" onClick={()=> this.handleButtonClick("follower")}>
                         follower
                       </span>
                     </div>

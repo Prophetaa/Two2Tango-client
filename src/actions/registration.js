@@ -4,14 +4,15 @@ import { baseUrl } from '../constants';
 import { isExpired } from '../jwt';
 import { logout } from './users';
 
-export const SET_PAGE_TO_1 = 'SET_PAGE_TO_1';
+export const CLEAN_PAGE_COUNTER = 'CLEAN_PAGE_COUNTER';
 export const SET_PAGE_TO_2 = 'SET_PAGE_TO_2';
 export const SET_PAGE_TO_3 = 'SET_PAGE_TO_3';
-export const SET_PAGE_TO_4 = "SET_PAGE_TO_4"
+export const PREFS_POSTED = "PREFS_POSTED"
 export const PREFS_FETCHED = "PREFS_FETCHED"
+export const PROFILE_CREATED = "PROFILE_CREATED"
 
 export const resetRegPage = () => ({
-  type: SET_PAGE_TO_1
+  type: CLEAN_PAGE_COUNTER
 });
 
 export const goToSecondPage = () => ({
@@ -23,12 +24,16 @@ export const goToThirdPage = () => ({
 });
 
 export const goToResults = () => ({
-	type: SET_PAGE_TO_4
+	type: PREFS_POSTED
 })
 
 export const preferencesFetched = payload =>({
   type: PREFS_FETCHED,
   payload
+})
+
+export const profileCreated = () =>({
+  type: PROFILE_CREATED
 })
 
 export const postProfile = (
@@ -58,7 +63,8 @@ export const postProfile = (
 		gender,
 		age,
 		height,
-		city})
+    city})
+    .then(res=> dispatch(profileCreated()))
     .catch(err => {
       console.error(err);
     });
@@ -92,8 +98,6 @@ export const postPreferences = (city , gender, height, role, level, age) => asyn
 		console.error(err);
 	  });
   };
-  
-
 
   export const updatePreferences = (city , gender, height, role, level, age) => (dispatch, getState) => {
     const state = getState();

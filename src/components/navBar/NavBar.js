@@ -19,7 +19,7 @@ class Navbar extends Component {
             <div className="container">
               <div className="nav-header">
                 <Link to="/home">
-                  <img className="tangoLogo" src={logoWhite} alt="logo" />
+                  <img className="tangoLogo d-none d-sm-block" src={logoWhite} alt="logo" />
                   <img className="tangoLogoXs " src={logoXS} alt="logo" />
                 </Link>
               </div>
@@ -111,13 +111,13 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = function(state) {
-  return {
-    currentUser: state.currentUser,
-    usersPreferences: state.usersPreferences
-  };
+	return {
+		currentUser: state.currentUser,
+		usersPreferences: state.usersPreferences
+	};
 };
 
 export default connect(
-  mapStateToProps,
-  { fetchPreferences }
+	mapStateToProps,
+	{ fetchPreferences }
 )(Navbar);

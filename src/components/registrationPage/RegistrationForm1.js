@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import '../../styling/RegistrationForm.css';
 import { Link } from 'react-router-dom';
 
+import ReCaptcha from './ReCaptcha';
+
+
 export default class RegistrationForm extends Component {
   state = {};
 
@@ -9,6 +12,12 @@ export default class RegistrationForm extends Component {
     e.preventDefault();
     this.props.onSubmit(this.state);
   };
+
+  handleCaptcha = () =>{
+    this.setState({
+      isVerified: true
+    })
+  }
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -78,8 +87,10 @@ export default class RegistrationForm extends Component {
                           The passwords have to match!
                         </p>
                       )}
+                   <ReCaptcha handleChanges={this.handleCaptcha}/>
                   </div>
                   <button
+                    disabled={this.state.isVerified=== true? false : true}
                     className="btn btn-lg btn-primary btn-block text-uppercase finalStepBtn"
                     type="submit">
                     Next Step

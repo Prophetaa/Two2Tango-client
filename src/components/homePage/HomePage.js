@@ -143,7 +143,7 @@ export class homePage extends Component {
 							<div className="col-xs-12 col-sm-12 col-md-8 avatar-col-home">
 								<img
 									src={quoteLeft}
-									className="quote left-home float-left"
+									className="quote left-home pr-3 float-left"
 									alt="quote-left"
 								/>
 								<p className="h1 avatar-text-home">
@@ -165,7 +165,7 @@ export class homePage extends Component {
 							<div className="col-xs-12 col-sm-12 col-md-8 avatar-col-home">
 								<img
 									src={quoteLeft}
-									className="quote left-home float-left"
+									className="quote left-home pr-3 float-left"
 									alt="quote-left"
 								/>
 								<p className="h1 avatar-text-home">
