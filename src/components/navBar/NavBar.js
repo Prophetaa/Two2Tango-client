@@ -20,7 +20,7 @@ class Navbar extends Component {
               <div className="nav-header">
                 <Link to="/home">
                   <img className="tangoLogo d-none d-sm-block" src={logoWhite} alt="logo" />
-                  <img className="tangoLogoXs " src={logoXS} alt="logo" />
+                  <img className="tangoLogoXs d-block d-sm-none " src={logoXS} alt="logo" />
                 </Link>
               </div>
               <div className="col-xs-12" id="navbarResponsive">
