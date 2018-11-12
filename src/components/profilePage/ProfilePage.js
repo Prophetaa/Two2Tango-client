@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-import React from "react";
-import "../../styling/ProfilePage.css";
-import MessageForm from "./MessageForm";
-import { toUserId } from "../../jwt";
-import { Link } from "react-router-dom";
-=======
 import React from 'react';
 import '../../styling/ProfilePage.css';
 import MessageForm from './MessageForm';
 import { toUserId } from '../../jwt';
 import { Link } from 'react-router-dom';
->>>>>>> 77a2fa837374e880d9dfc96da55ab4dcddbec458
 
 export default function ProfilePage(props) {
 	const currentUserId = toUserId(props.currentUser.jwt);
