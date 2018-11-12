@@ -8,6 +8,17 @@
   font-weight: 300;
 }
 
+.login-home{
+  text-decoration: none;
+}
+
+.login-home:hover,.login-home:active{
+  text-decoration: none;
+}
+
+.login-container{
+  margin-top:5%;
+}
 
 .background-top-home{
   background: black;
@@ -31,7 +42,7 @@
   color: #ffffff;
   background-color: #A00D26;
   border-color: #a00d1f;
-  margin:10px;
+  /* margin:10px; */
   width:315px;
 }
 

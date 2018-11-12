@@ -4,6 +4,7 @@ import '../../styling/HomePage.css';
 import history from '../../history';
 import { connect } from 'react-redux';
 import { getLatestProfiles } from '../../actions/results';
+import { Link } from 'react-router-dom';
 
 import event from '../../styling/images/Event.png';
 import interview from '../../styling/images/interview.png';
@@ -31,18 +32,22 @@ export class homePage extends Component {
 										Find a tango partner <br />
 										in your city
 									</h2>
-									<button
+									{/* <button
 										type="button"
 										className="btn btn-outline-light btn-lg"
 										onClick={() => this.props.history.push(`/login`)}>
 										Log In
-									</button>
+									</button> */}
 									<button
 										type="button"
 										className="btn btn-primary btn-lg SignInPrmBtn"
 										onClick={() => this.props.history.push(`/signup`)}>
 										Sign Up
 									</button>
+
+									<div className="login-container">
+										Already a menber? <Link to="/login" className="login-home">Log In</Link>
+									</div>
 								</div>
 							</div>
 						</div>
