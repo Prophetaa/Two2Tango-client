@@ -7,9 +7,11 @@ import { toUserId } from '../../jwt';
 
 class ProfilePageContainer extends Component {
 	componentDidMount() {
-		if (this.props.match.params.id === 'my-profile')
-			this.props.getOneProfile(toUserId(this.props.currentUser.jwt));
-		else this.props.getOneProfile(this.props.match.params.id);
+		if (this.props.authenticated) {
+			if (this.props.match.params.id === 'my-profile')
+				this.props.getOneProfile(toUserId(this.props.currentUser.jwt));
+			else this.props.getOneProfile(this.props.match.params.id);
+		}
 	}
 
 	render() {

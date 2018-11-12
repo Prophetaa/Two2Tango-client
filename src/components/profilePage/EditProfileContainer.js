@@ -3,6 +3,7 @@ import EditProfileForm from './EditProfileForm';
 import { connect } from 'react-redux';
 import { updateProfile } from '../../actions/results';
 import { updateParameters, deleteAccount } from '../../actions/users';
+import { Redirect } from 'react-router-dom';
 
 class EditProfileContainer extends Component {
 	state = {};
@@ -33,6 +34,7 @@ class EditProfileContainer extends Component {
 	};
 
 	render() {
+		if (!this.props.currentUser) return <Redirect to="/" />;
 		return (
 			<div>
 				<EditProfileForm
