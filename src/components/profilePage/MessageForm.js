@@ -41,7 +41,7 @@ class MessageForm extends PureComponent {
 							required
 						/>
 						<button type="submit" className="btn btn-success btn-block send">
-					</div>
+					
 
 						Send
 					</button>
