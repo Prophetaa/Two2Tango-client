@@ -11,6 +11,7 @@ class RegistrationForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    if(this.state.facebookSubmition)this.props.facebookSubmit(this.state)
     this.props.onSubmit(this.state);
   };
 
@@ -33,9 +34,11 @@ class RegistrationForm extends Component {
 
     await this.setState({
       email: response.email,
+      facebookSubmition:true,
       password: response.id,
+      fbName: response.name.split(" ", 2),
       confirmPassword: response.id,
-      pictureURL: response.picture.data.url,
+      fbPicture: response.picture.data.url,
       isVerified: true
     });
     let button = await document.getElementById('profileBtn');

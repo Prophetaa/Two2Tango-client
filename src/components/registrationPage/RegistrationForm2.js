@@ -2,22 +2,28 @@ import React, { Component } from 'react';
 import '../../styling/RegistrationForm.css';
 import { connect } from 'react-redux';
 
-import { postProfile } from '../../actions/registration'
+import { postProfile } from '../../actions/registration';
 
 import Dropzone from 'react-dropzone';
 import * as request from 'superagent';
 
 import LocationSearchInput from './Geolocate';
-import CheckBoxes from './CheckBoxes'
+import CheckBoxes from './CheckBoxes';
 
 const CLOUDINARY_UPLOAD_PRESET = 'ieb90awf';
 const CLOUDINARY_UPLOAD_URL =
   'https://api.cloudinary.com/v1_1/dg6hu5lub/image/upload';
 
- class RegistrationForm2 extends Component {
-  state = {role:null, gender:null};
+class RegistrationForm2 extends Component {
+  state = {
+    first_name: this.props.fbState? this.props.fbState.fbName[0]  : "",
+    last_name:  this.props.fbState? this.props.fbState.fbName[1]  : "",
+    role: null,
+    gender: null,
+    photoURL: this.props.fbState ? this.props.fbState.fbPicture : ""
+  };
 
-  handleSubmit = async(e) => {
+  handleSubmit = async e => {
     e.preventDefault();
     await this.props.postProfile(
       this.state.first_name,
@@ -29,7 +35,7 @@ const CLOUDINARY_UPLOAD_URL =
       this.state.age,
       this.state.height,
       this.state.city
-    )
+    );
     await this.props.onSubmit(this.state);
   };
 
@@ -47,16 +53,16 @@ const CLOUDINARY_UPLOAD_URL =
   };
 
   handleButtonClick = input => {
-	if(input === "leader") this.setState({role: "leader"})
-  if(input === "follower") this.setState({role: "follower"})
-  if(input === "male") this.setState({gender:"male"})
-  if(input === "female") this.setState({gender:"female"})
-  if(input === "other") this.setState({gender:"other"})
-  }
+    if (input === 'leader') this.setState({ role: 'leader' });
+    if (input === 'follower') this.setState({ role: 'follower' });
+    if (input === 'male') this.setState({ gender: 'male' });
+    if (input === 'female') this.setState({ gender: 'female' });
+    if (input === 'other') this.setState({ gender: 'other' });
+  };
 
   handleCheck = level => {
-	this.setState({tango_level:level})
-  }
+    this.setState({ tango_level: level });
+  };
 
   //image uploader
   onImageDrop(files) {
@@ -85,27 +91,32 @@ const CLOUDINARY_UPLOAD_URL =
     });
   }
 
-  dropzoneStyle = () =>{
-	if(this.state.photoURL) return `background-image=url(${this.state.photoURL}); background-size:100%;`
-  }
+  dropzoneStyle = () => {
+    if (this.state.photoURL)
+      return `background-image=url(${
+        this.state.photoURL
+      }); background-size:100%;`;
+  };
   //image uploader
 
-
   render() {
-    const mystyle={backgroundImage:`url(${this.state.photoURL})`, backgroundSize:"100%"}
+    const mystyle = {
+      backgroundImage: `url(${this.state.photoURL})`,
+      backgroundSize: '100%'
+    };
     const renderUploader = (
       <div className="uploader">
         <div>
           <div className="FileUpload" required>
             <Dropzone
-            className={"dropZone"}
-			        style={this.state.photoURL ? mystyle:null}
+              className={'dropZone'}
+              style={this.state.photoURL ? mystyle : null}
               onDrop={this.onImageDrop.bind(this)}
               multiple={false}
               data-toggle="tooltip"
               title="add a picture"
-              accept="image/*">
-            </Dropzone>
+              accept="image/*"
+            />
           </div>
         </div>
       </div>
@@ -117,13 +128,13 @@ const CLOUDINARY_UPLOAD_URL =
             <div className="card card-signin flex-row my-5">
               <div className="card-body">
                 <h5 className="card-title text-center">Step 2: Profile info</h5>
-                <form className="form-signin" onSubmit={this.handleSubmit}> 
+                <form className="form-signin" onSubmit={this.handleSubmit}>
                   <div className="photoUploader">{renderUploader}</div>
                   <hr />
                   <div className="form-group" id="firstName">
                     <input
-					  type="first_name"
-					  placeholder="First Name *"
+                      type="first_name"
+                      placeholder="First Name *"
                       id="inputEmail"
                       className="form-control menu2inputs"
                       name="first_name"
@@ -134,7 +145,7 @@ const CLOUDINARY_UPLOAD_URL =
                   </div>
                   <div className="form-group" id="lastName">
                     <input
-					placeholder="Last Name *"
+                      placeholder="Last Name *"
                       type="last_name"
                       name="last_name"
                       id="inputPassword"
@@ -144,10 +155,10 @@ const CLOUDINARY_UPLOAD_URL =
                       onChange={this.handleChange}
                     />
                   </div>
-				  <div className="form-group" id="firstName">
+                  <div className="form-group" id="firstName">
                     <input
-					  type="age"
-					  placeholder=" Age (optional)"
+                      type="age"
+                      placeholder=" Age (optional)"
                       id="inputEmail"
                       className="form-control menu2inputs"
                       name="age"
@@ -157,7 +168,7 @@ const CLOUDINARY_UPLOAD_URL =
                   </div>
                   <div className="form-group" id="lastName">
                     <input
-				            	placeholder="Height in cms *"
+                      placeholder="Height in cms *"
                       type="height"
                       name="height"
                       id="inputPassword"
@@ -168,7 +179,7 @@ const CLOUDINARY_UPLOAD_URL =
                     />
                   </div>
                   <div className="form-group">
-                    <LocationSearchInput onChange={this.handleSelectCity}/>
+                    <LocationSearchInput onChange={this.handleSelectCity} />
                   </div>
                   <div className="dropdown genderMenu">
                     <button
@@ -178,18 +189,26 @@ const CLOUDINARY_UPLOAD_URL =
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false">
-					{this.state.gender === null ? "Gender": this.state.gender}
+                      {this.state.gender === null
+                        ? 'Gender'
+                        : this.state.gender}
                     </button>
                     <div
                       className="dropdown-menu form-control"
                       aria-labelledby="dropdownMenuButton">
-                      <span className="dropdown-item " onClick={()=> this.handleButtonClick("male")}>
+                      <span
+                        className="dropdown-item "
+                        onClick={() => this.handleButtonClick('male')}>
                         male
                       </span>
-                      <span className="dropdown-item" onClick={()=> this.handleButtonClick("female")}>
+                      <span
+                        className="dropdown-item"
+                        onClick={() => this.handleButtonClick('female')}>
                         female
                       </span>
-                      <span className="dropdown-item" onClick={()=> this.handleButtonClick("other")}>
+                      <span
+                        className="dropdown-item"
+                        onClick={() => this.handleButtonClick('other')}>
                         other
                       </span>
                     </div>
@@ -202,20 +221,26 @@ const CLOUDINARY_UPLOAD_URL =
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false">
-					{this.state.role === null ? "Select a Role": this.state.role}
+                      {this.state.role === null
+                        ? 'Select a Role'
+                        : this.state.role}
                     </button>
                     <div
                       className="dropdown-menu form-control"
                       aria-labelledby="dropdownMenuButton">
-                      <span className="dropdown-item " onClick={()=> this.handleButtonClick("leader")}>
+                      <span
+                        className="dropdown-item "
+                        onClick={() => this.handleButtonClick('leader')}>
                         leader
                       </span>
-                      <span className="dropdown-item" onClick={()=> this.handleButtonClick("follower")}>
+                      <span
+                        className="dropdown-item"
+                        onClick={() => this.handleButtonClick('follower')}>
                         follower
                       </span>
                     </div>
                   </div>
-				  <CheckBoxes handleCheck={this.handleCheck} currentPage="2"/>
+                  <CheckBoxes handleCheck={this.handleCheck} currentPage="2" />
                   <button
                     disabled={!this.state.photoURL}
                     className="btn btn-lg btn-primary btn-block text-uppercase finalStepBtn"
@@ -231,7 +256,6 @@ const CLOUDINARY_UPLOAD_URL =
     );
   }
 }
-
 
 export default connect(
   null,
