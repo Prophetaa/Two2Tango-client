@@ -54,24 +54,14 @@ export default function Results(props) {
 							</tr>
 						</Fragment>
 					))}
-
-					<tr>
-						<th scope="row">
-							<img
-								className="results-profile-img"
-								src="images/dummy.jpg"
-								alt=""
-							/>
-						</th>
-						<td className="align-middle">Mark</td>
-						<td className="align-middle">Leader</td>
-						<td className="align-middle">Professional</td>
-						<td className="align-middle">37</td>
-						<td className="align-middle">Male</td>
-						<td className="align-middle">184</td>
-					</tr>
 				</tbody>
 			</table>
+			{!props.results.length && (
+				<div className="text-center mt-5">
+					There are currently no dancers that match your criteria. Change your
+					preferences or come back soon!
+				</div>
+			)}
 		</div>
 	);
 }
