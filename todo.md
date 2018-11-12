@@ -1,15 +1,14 @@
 Planning:
 
-[ ] 1. Registration part 3
-[ ] 2. Connect profile page to display a profile
-[ ] 3. Implement update profile feature
-
-- How to show a modify button only for the profile that belongs to a user?
-  [ ] 4. Homepage
-  [ ] 5. Preference page, with ability to update - How to show only for your own profile?
-  [ ] 6. Message input field on profile page - How to show only if the profile is not yours?
-  [ ] 7. Messages page - set up table/routing & displaying messages on client
-  [ ] 8. Sorting the results page
+1. Navbar dissapears on small screens
+2. Navbar order from left to right - Results, Messages, Settings, Profile
+3. My profile page columns and spacing needs to look better
+4. Edit profile parameters put request should work
+5. Edit profile delete account should work
+6. Messages page (inbox) should look better
+7. Check all redirects after submittting forms
+8. Ask Cinzia to make a Heroku account
+9. Start filling the heroku account with dummy data
 
 Wednesday:
 
