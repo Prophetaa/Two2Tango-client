@@ -1,30 +1,28 @@
 .edit-profile header {
   height: 5rem;
-  background: linear-gradient(to right, #a00d26, rgba(90, 2, 2, 0.733));
+  /* background: linear-gradient(to right, #a00d26, rgba(90, 2, 2, 0.733)); */
+  background-color: #A00D26
+
 }
 .container-profile {
   padding: 0px;
 }
 .edit-profile h1 {
-  font-size: 50px;
+  font-size: 40px;
+  margin: auto;
+  width: 20rem;
   color: #f2efea;
-  padding: 7px;
-  padding-left: 90px;
+  padding: 12px;
   font-weight: 200 !important;
+  text-align: center
 }
 .edit-row {
   margin: 30px;
+  margin-bottom: 5px;
 }
 .labels {
   font-size: 13px;
   margin-bottom: 0;
-}
-.edit-profile h1 {
-  font-size: 50px;
-  color: #f2efea;
-  padding: 7px;
-  padding-left: 100px;
-  font-weight: 200 !important;
 }
 .edit-inputs {
   height: 2rem;
@@ -46,21 +44,22 @@
   font-size: 16px;
   padding: 5px;
 }
-.edit-btn, .param-btn {
+.edit-btn,
+.param-btn {
   background-color: #a00d26;
-  width: 22rem;
+  width: 20rem;
   margin: auto;
-  margin-right: 45px;
+  margin-right: 55px;
   border: none;
+  height: 2rem;
 }
 .edit-btn:hover {
-  background-color: #a00d26;
+  background-color: #b80321;
   border: none;
 }
 .param-btn {
   margin-left: 50px;
-  background-color: rgba(150, 116, 50, 0.21)
-
+  background-color: rgba(150, 116, 50, 0.21);
 }
 .parameters {
   width: 100%;
@@ -70,7 +69,7 @@
   background: rgba(193, 180, 154, 0.21);
   height: 15rem;
   border: 1px solid #747d88;
-  border-bottom: none
+  border-bottom: none;
 }
 .parameters h2 {
   font-size: 40px;
@@ -80,7 +79,7 @@
   width: 100%;
   height: 5rem;
   background: rgba(193, 180, 154, 0.21);
-  border: 1px solid #747d88
+  border: 1px solid #747d88;
 }
 .delete-btn {
   background-color: transparent;
@@ -89,10 +88,10 @@
   color: #a00d26;
   margin: auto;
   margin-right: 20px;
-  width: 30%
+  width: 30%;
 }
 .delete-btn:hover {
-  background-color: transparent;
+  background-color: #b80321;
   color: black;
   border: none;
 }
