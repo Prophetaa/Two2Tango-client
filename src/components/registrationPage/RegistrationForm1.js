@@ -29,7 +29,6 @@ class RegistrationForm extends Component {
   };
 
   render() {
-    if (this.props.currentUser) return <Redirect to="/results" />
     return (
       <div className="container registration-form-1 signupContainer">
         <div className="row">
@@ -92,7 +91,7 @@ class RegistrationForm extends Component {
                    <ReCaptcha handleChanges={this.handleCaptcha}/>
                   </div>
                   <button
-                    disabled={this.state.isVerified=== true? false : true}
+                    disabled={this.state.isVerified=== true ? false : true}
                     className="btn btn-lg btn-primary btn-block text-uppercase finalStepBtn"
                     type="submit">
                     Next Step
