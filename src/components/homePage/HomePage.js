@@ -5,16 +5,11 @@ import history from '../../history';
 import { connect } from 'react-redux';
 import { getLatestProfiles } from '../../actions/results';
 
-// import backgroud1 from '../../styling/images/background01.jpg';
-import event from '../../styling/images/event.png';
+import event from '../../styling/images/Event.png';
 import interview from '../../styling/images/interview.png';
 import laugh from '../../styling/images/laugh.png';
-import Avatar4 from '../../styling/images/Avatar4.png';
-import Avatar2 from '../../styling/images/Avatar2.png';
-import Avatar3 from '../../styling/images/Avatar3.png';
 import Avatar6 from '../../styling/images/Avatar6.png';
 import Avatar7 from '../../styling/images/Avatar7.png';
-// import logoWhite from '../../styling/images/logo-grey.png';
 import quoteLeft from '../../styling/images/quote-left.png';
 import quoteRight from '../../styling/images/quote-right.png';
 import Footer from './Footer';
@@ -32,7 +27,7 @@ export class homePage extends Component {
 						<div className="row">
 							<div className="col-12">
 								<div className="background-dancers-text">
-									<h2>
+									<h2 className="font-home">
 										Find a tango partner <br />
 										in your city
 									</h2>
@@ -145,7 +140,7 @@ export class homePage extends Component {
 								src={Avatar7}
 								alt="avatarBig"
 							/>
-							<div className="col-xs-12 col-sm-12 col-md-8">
+							<div className="col-xs-12 col-sm-12 col-md-8 avatar-col-home">
 								<img
 									src={quoteLeft}
 									className="quote left-home float-left"
@@ -160,13 +155,14 @@ export class homePage extends Component {
 									className="quote right-home float-right"
 									alt="quote-right"
 								/>
-								<div>Clara, 36, leader</div>
+								<div className="testimonail-name-home">Clara, 36, leader</div>
 							</div>
 						</div>
 					</div>
+					<hr/>
 					<div className="container about-home">
 						<div className="row avatar-row-home">
-							<div className="col-xs-12 col-sm-12 col-md-8">
+							<div className="col-xs-12 col-sm-12 col-md-8 avatar-col-home">
 								<img
 									src={quoteLeft}
 									className="quote left-home float-left"
@@ -181,7 +177,7 @@ export class homePage extends Component {
 									className="quote right-home float-right"
 									alt="quote-right"
 								/>
-								<div>Beth, 26, follower</div>
+								<div className="testimonail-name-home">Beth, 26, follower</div>
 							</div>
 							<img
 								className="rounded-circle avatar-big-home mx-auto"
@@ -197,7 +193,7 @@ export class homePage extends Component {
 						<div className="row">
 							<div className="col-12">
 								<div>
-									<p className="h2">
+									<p className="h2 font-home">
 										Time to dance
 										<br />
 										Find your partner now
