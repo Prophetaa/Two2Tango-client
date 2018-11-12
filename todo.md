@@ -16,3 +16,14 @@ Wednesday:
 - Deployment
 
 Thursday: Demo
+
+- When logged in /signup should redirect to /results so you can not signup when you are logged in.
+- Fix the add city button on signup + other css on that page.
+- Sign up step 2 should dispatch action and insert a profile into the database.
+- Signup step 3 should also dispatch a flag action.
+- Form signup registration part 2 gives console error that form cannot appear as descendant of form.
+- Fix results page and set message when there are no results showing.
+- Edit profile placeholders
+- Fix account settings update
+- Fix delete account.
+- Fix the message system.

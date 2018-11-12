@@ -5,16 +5,12 @@ import history from '../../history';
 import { connect } from 'react-redux';
 import { getLatestProfiles } from '../../actions/results';
 
-// import backgroud1 from '../../styling/images/background01.jpg';
 import event from '../../styling/images/event.png';
 import interview from '../../styling/images/interview.png';
 import laugh from '../../styling/images/laugh.png';
-import Avatar4 from '../../styling/images/Avatar4.png';
-import Avatar2 from '../../styling/images/Avatar2.png';
-import Avatar3 from '../../styling/images/Avatar3.png';
 import Avatar6 from '../../styling/images/Avatar6.png';
 import Avatar7 from '../../styling/images/Avatar7.png';
-// import logoWhite from '../../styling/images/logo-grey.png';
+
 import quoteLeft from '../../styling/images/quote-left.png';
 import quoteRight from '../../styling/images/quote-right.png';
 import Footer from './Footer';
@@ -148,7 +144,7 @@ export class homePage extends Component {
 							<div className="col-xs-12 col-sm-12 col-md-8">
 								<img
 									src={quoteLeft}
-									className="quote left-home float-left"
+									className="quote left-home pr-3 float-left"
 									alt="quote-left"
 								/>
 								<p className="h1 avatar-text-home">
@@ -169,7 +165,7 @@ export class homePage extends Component {
 							<div className="col-xs-12 col-sm-12 col-md-8">
 								<img
 									src={quoteLeft}
-									className="quote left-home float-left"
+									className="quote left-home pr-3 float-left"
 									alt="quote-left"
 								/>
 								<p className="h1 avatar-text-home">

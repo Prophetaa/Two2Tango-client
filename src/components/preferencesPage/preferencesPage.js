@@ -14,16 +14,17 @@ import LocationSearchInput from '../registrationPage/Geolocate';
 import CheckBoxes from '../registrationPage/CheckBoxes';
 import GenderMenu from './GenderMenu';
 import RoleMenu from './RoleMenu';
+import LoadingScreen from './LoadingScreen';
 
 class PreferencesPage extends Component {
   async componentDidMount() {
     this.props.fetchPreferences();
   }
-  state ={ cities:[], level: [] };
+  state = { cities: [], level: [] };
 
-  updateState =  () => {
+  updateState = () => {
     if (this.props.currentUser) {
-        this.setState({
+      this.setState({
         role: this.props.usersPreferences.role,
         cities: this.props.usersPreferences.city,
         min_age: this.props.usersPreferences.age[0],
@@ -31,25 +32,26 @@ class PreferencesPage extends Component {
         gender: this.props.usersPreferences.gender,
         min_height: this.props.usersPreferences.height[1],
         max_height: this.props.usersPreferences.height[0]
-      })
-       this.selectLevels();
+      });
+      this.selectLevels();
     }
   };
 
   selectLevels = async () => {
     let arr = await this.props.usersPreferences.level;
-    console.log(arr)
+    console.log(arr);
     if (arr.includes('beginner')) {
       let level = document.getElementById('beginner');
-      level.click();}
+      level.click();
+    }
     if (arr.includes('intermediate')) {
       let level = document.getElementById('intermediate');
       level.click();
-    } 
-     if (arr.includes('advanced')) {
+    }
+    if (arr.includes('advanced')) {
       let level = document.getElementById('advanced');
       level.click();
-    } 
+    }
     if (arr.includes('professional')) {
       let level = document.getElementById('professional');
       level.click();
@@ -67,7 +69,6 @@ class PreferencesPage extends Component {
     }
   };
 
-
   handleButtonClick = input => {
     if (input === 'male') this.setState({ gender: 'male' });
     if (input === 'female') this.setState({ gender: 'female' });
@@ -76,28 +77,29 @@ class PreferencesPage extends Component {
     if (input === 'follower') this.setState({ role: 'follower' });
   };
 
-
   // Cities form
-  selectCities = e => { // adds typed city to the array
+  selectCities = e => {
+    // adds typed city to the array
     e.preventDefault();
     if (this.state.cities.length < 4) {
       if (this.state.cities.includes(this.state.city)) return null;
-      if (this.state.city) this.setState({ cities: [...this.state.cities, this.state.city] });
+      if (this.state.city)
+        this.setState({ cities: [...this.state.cities, this.state.city] });
     }
   };
 
-  removeCity = city => { //removes city from the list
+  removeCity = city => {
+    //removes city from the list
     let i = this.state.cities.findIndex(index => index === city);
     this.state.cities.splice(i, 1);
     this.setState({ cities: [...this.state.cities] });
   };
-  
-  handleSelectCity = event => { // handles selection of city from the suggestted list
+
+  handleSelectCity = event => {
+    // handles selection of city from the suggestted list
     let formatedCity = event.split(',', 1);
     this.setState({ city: formatedCity[0] });
   };
-
-
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -121,49 +123,54 @@ class PreferencesPage extends Component {
         this.state.role,
         this.state.level,
         [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
-      )
-      window.location="/results"
+      );
+      window.location = '/results';
     }
-
   };
-
 
   render() {
     if (!this.props.currentUser) return <Redirect to="/home" />;
     return (
-      <div className="container signupContainer">
-      {Object.keys(this.props.usersPreferences).length > 0 && Object.keys(this.state).length > 2 ?
-        <div className="row">
-          <div className="col-lg-10 col-xl-9 mx-auto">
-            <div className="card card-signin flex-row my-5">
-              <div className="card-body">
-                <h5 className="card-title text-center">
-                  Searching Preferences
-                </h5>
-                <form className="form-signin" onSubmit={this.handleSubmit}>
-                  <div className="form-group">
-                    <LocationSearchInput onChange={this.handleSelectCity} />
-                    <button className="citiesBtn" onClick={this.selectCities}>
-                      add city
-                    </button>
-                  </div>
-                  <div className="selectedCities">
-                    {this.state.cities.map(city => (
-                      <li className="citiesLi">
-                        {city}{' '}
-                        <div
-                          className="removecitiesBtn"
-                          onClick={() => this.removeCity(city)}>
-                          x
-                        </div>
-                      </li>
-                    ))}
-                  </div>
-                  <GenderMenu gender={this.state.gender} handleButtonClick={this.handleButtonClick}/>
-                  <RoleMenu role={this.state.role} handleButtonClick={this.handleButtonClick}/>
+      <div className="container  signupContainer ">
+        {Object.keys(this.props.usersPreferences).length > 0 &&
+        Object.keys(this.state).length > 2 ? (
+          <div className="row">
+            <div className="col-lg-10 col-xl-9 mx-auto">
+              <div className="card card-signin flex-row my-5">
+                <div className="card-body">
+                  <h5 className="card-title text-center">
+                    Searching Preferences
+                  </h5>
+                  <form className="form-signin" onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                      <LocationSearchInput onChange={this.handleSelectCity} />
+                      <button className="citiesBtn" onClick={this.selectCities}>
+                        add city
+                      </button>
+                    </div>
+                    <div className="citiesContainer container row">
+                      {this.state.cities.map(city => (
+                        <span key={city} className="citiesLi">
+                          <span
+                            className="far fa-times-circle deleteIcon"
+                            onClick={() => this.removeCity(city)}
+                          />
+                          {city}
+                        </span>
+                      ))}
+                    </div>
+                    <GenderMenu
+                      gender={this.state.gender}
+                      handleButtonClick={this.handleButtonClick}
+                    />
+                    <RoleMenu
+                      role={this.state.role}
+                      handleButtonClick={this.handleButtonClick}
+                    />
                     <div className="heightSelection">
                       <CheckBoxes handleCheck={this.handleCheck} />
                     </div>
+                    <label className="formLabel">Age Gap: </label>
                     <div className="groupInputs">
                       <div className="form-group smallInput" id="minAge">
                         <input
@@ -173,6 +180,8 @@ class PreferencesPage extends Component {
                           id="inputMaxHeight"
                           className="form-control menu2inputs"
                           required
+                          data-toggle="tooltip"
+                          title="minimum age"
                           value={this.state.min_age || ''}
                           onChange={this.handleChange}
                         />
@@ -182,6 +191,8 @@ class PreferencesPage extends Component {
                           type="number"
                           placeholder="Max Age "
                           id="inputMinHeight"
+                          data-toggle="tooltip"
+                          title="maximum age"
                           className="form-control menu2inputs"
                           name="max_age"
                           value={this.state.max_age || ''}
@@ -190,12 +201,15 @@ class PreferencesPage extends Component {
                         />
                       </div>
                     </div>
+                    <label className="formLabel">Height Gap: </label>
                     <div className="groupInputs bottomPadding">
                       <div className="form-group smallInput" id="minHeight">
                         <input
                           type="number"
                           placeholder="Min Height *"
                           id="inputMinHeight"
+                          data-toggle="tooltip"
+                          title="minimum height"
                           className="form-control menu2inputs"
                           name="min_height"
                           value={this.state.min_height || ''}
@@ -209,6 +223,8 @@ class PreferencesPage extends Component {
                           type="number"
                           name="max_height"
                           id="inputMaxHeight"
+                          data-toggle="tooltip"
+                          title="maximum height"
                           className="form-control menu2inputs"
                           required
                           value={this.state.max_height || ''}
@@ -260,16 +276,20 @@ class PreferencesPage extends Component {
                         <span>Save Changes</span>
                       </button>
                     </div>
-                </form>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
-        </div> :
-      <div> 
-       <h1>Loading...</h1>
-       {Object.keys(this.props.usersPreferences).length > 1 ? this.updateState(): null}
-    </div>}
-   </div>)
+        ) : (
+          <div>
+            {Object.keys(this.props.usersPreferences).length > 1 ? (
+              <LoadingScreen setReactState={this.updateState} />
+            ) : null}
+          </div>
+        )}
+      </div>
+    );
   }
 }
 

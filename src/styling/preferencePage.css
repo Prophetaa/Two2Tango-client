@@ -7,10 +7,21 @@ min-width: 40%;
 color:white;
 }
 
+.buttonsContainer{
+    display: flex;
+}
 .acceptChanges{
+    display: flex;
     margin-left: 10%;
-    max-width: 40%;
+    width: 10rem;
     background-color: green;
+}
+
+.formLabel{
+    display: flex;
+    justify-content: center;
+    margin-bottom:-.5rem;
+    margin-top: 1rem;
 }
 
 .acceptChanges:hover{
@@ -29,4 +40,72 @@ color:white;
 .buttonsContainer{
     display: flex;
     justify-content: center;
+}
+
+.citiesContainer{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    margin-left: 0.03rem;
+    width: 100%;
+    margin-bottom: 2%;
+    border: 1px lightgrey solid;
+    border-radius: 5px;
+}
+
+.citiesLi{
+    position: relative;
+    display: flex;
+    width: 49%;
+    float: left;
+    margin-top:1%;
+    margin-bottom: 1%;
+    margin-right: 0.5%;
+    color: black;
+    border: 1px  lightgray solid;
+    border-radius: 15px;
+    margin-left: 0.5%;
+}
+
+.citiesLi:hover{
+    background-color: rgba(160, 13, 37, 0.726);
+}
+
+.deleteIcon{
+    margin-right:0.5rem;
+    align-self: center;
+    justify-content: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: black;
+}
+
+.deleteIcon:hover{
+    color:white;
+    cursor: pointer;
+}
+
+.gitems{
+    background-color: white;
+}
+
+.item1 , .item2 , .item3{
+    position: relative;
+    top: -0.5rem
+}
+.item1, .item2{
+    background-color: white;
+    border-left: 3px lightgray solid; 
+    border-right: 3px lightgray solid;
+}
+
+.item3{
+    background-color: white;
+    border-left: 3px lightgray solid; 
+    border-right: 3px lightgray solid;
+    border-bottom: 3px lightgray solid;
+}
+
+.acceptChanges{
+
 }

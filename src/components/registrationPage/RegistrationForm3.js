@@ -104,9 +104,9 @@ class RegistrationForm3 extends Component {
                       </li>
                     ))}
                   </div>
-                  <div class="dropdown genderMenu">
+                  <div className="dropdown genderMenu">
                     <button
-                      class="form-control dropdown-toggle"
+                      className="form-control dropdown-toggle"
                       type="button"
                       id="dropdownMenuButton"
                       data-toggle="dropdown"
@@ -120,25 +120,25 @@ class RegistrationForm3 extends Component {
                       className="dropdown-menu form-control"
                       aria-labelledby="dropdownMenuButton">
                       <span
-                        class="dropdown-item "
+                        className="dropdown-item "
                         onClick={() => this.handleButtonClick('male')}>
                         male
                       </span>
                       <span
-                        class="dropdown-item"
+                        className="dropdown-item"
                         onClick={() => this.handleButtonClick('female')}>
                         female
                       </span>
                       <span
-                        class="dropdown-item"
+                        className="dropdown-item"
                         onClick={() => this.handleButtonClick('other')}>
                         other
                       </span>
                     </div>
                   </div>
-                  <div class="dropdown">
+                  <div className="dropdown">
                     <button
-                      class="form-control dropdown-toggle"
+                      className="form-control dropdown-toggle"
                       type="button"
                       required
                       id="dropdownMenuButton"
@@ -153,12 +153,12 @@ class RegistrationForm3 extends Component {
                       className="dropdown-menu form-control"
                       aria-labelledby="dropdownMenuButton">
                       <span
-                        class="dropdown-item "
+                        className="dropdown-item "
                         onClick={() => this.handleButtonClick('leader')}>
                         leader
                       </span>
                       <span
-                        class="dropdown-item"
+                        className="dropdown-item"
                         onClick={() => this.handleButtonClick('follower')}>
                         follower
                       </span>

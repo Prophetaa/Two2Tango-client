@@ -6,7 +6,7 @@ export default class GenderMenu extends Component {
     return (
         <div className="dropdown genderMenu">
         <button
-          className="form-control dropdown-toggle"
+          className="form-control dropdown-toggle genderBtn"
           type="button"
           id="dropdownMenuButton"
           data-toggle="dropdown"
@@ -17,20 +17,20 @@ export default class GenderMenu extends Component {
             : this.props.gender}
         </button>
         <div
-          className="dropdown-menu form-control"
+          className="dropdown-menu form-control gitems"
           aria-labelledby="dropdownMenuButton">
           <span
-            className="dropdown-item "
+            className="dropdown-item item1 "
             onClick={() => this.props.handleButtonClick('male')}>
             male
           </span>
           <span
-            className="dropdown-item"
+            className="dropdown-item item2"
             onClick={() => this.props.handleButtonClick('female')}>
             female
           </span>
           <span
-            className="dropdown-item"
+            className="dropdown-item item3"
             onClick={() => this.props.handleButtonClick('other')}>
             other
           </span>

@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import Messages from './Messages';
 import { getAllMessages } from '../../actions/messages';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 class MessageListContainer extends Component {
 	componentDidMount() {
-		this.props.getAllMessages();
+		if (this.props.authenticated) {
+			this.props.getAllMessages();
+		}
 	}
 
 	render() {
+		if (!this.props.currentUser) return <Redirect to="/home" />;
 		if (!this.props.messages) return null;
 		return (
 			<div>

@@ -4,10 +4,10 @@ import MessageForm from "./MessageForm";
 import { toUserId } from "../../jwt";
 import { Link } from "react-router-dom";
 
-export default function ProfilePage(props) {
-  const currentUserId = toUserId(props.currentUser.jwt);
-  const { profile } = props;
 
+export default function ProfilePage(props) {
+	const currentUserId = toUserId(props.currentUser.jwt);
+	const { profile } = props;
   return (
     <div className="main-profile">
       <div className="row">
@@ -72,8 +72,6 @@ export default function ProfilePage(props) {
               </Link>
 			)}
 			</div>
-        </div>
-      </div>
-    </div>
-  );
+		</div>
+	);
 }
