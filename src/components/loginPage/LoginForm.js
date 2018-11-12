@@ -1,34 +1,22 @@
 import '../../styling/LoginForm.css';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 
 export default class LoginForm extends Component {
-  state = {};
+	state = {};
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.onSubmit(this.state);
-  };
+	handleSubmit = e => {
+		e.preventDefault();
+		this.props.onSubmit(this.state);
+	};
 
-  handleChange = event => {
-    const { name, value } = event.target;
+	handleChange = event => {
+		const { name, value } = event.target;
 
 		this.setState({
 			[name]: value
 		});
 	};
-	responseFacebook = async response => {
-		console.log(response);
-	
-		await this.setState({
-		  email: response.email,
-		  password: response.id,
-		});
-		let button = await document.getElementById('loginButton');
-		button.click();
-	  };
-
 	render() {
 		return (
 			<div className="container login">
@@ -79,27 +67,24 @@ export default class LoginForm extends Component {
 										</Link>
 									</span>
 
-                  <hr className="my-4" />
-                  <FacebookLogin
-                    appId="1052579401609037"
-                    autoLoad={false}
-                    fields="name,email,picture"
-                    callback={this.responseFacebook}
-                    render={renderProps => (
-                      <button
-                        className="btn btn-lg btn-facebook btn-block text-uppercase"
-                        onClick={renderProps.onClick}>
-                        <i className="fab fa-facebook-f mr-2" /> Sign up with
-                        Facebook
-                      </button>
-                    )}
-                  />
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+									<hr className="my-4" />
+									<button
+										className="btn btn-lg btn-google btn-block text-uppercase"
+										type="submit">
+										<i className="fab fa-google mr-2" /> Log in with Google
+									</button>
+									<button
+										className="btn btn-lg btn-facebook btn-block text-uppercase"
+										type="submit">
+										<i className="fab fa-facebook-f mr-2" /> Log in with
+										Facebook
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
