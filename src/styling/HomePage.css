@@ -114,8 +114,13 @@
   background-repeat: no-repeat;
   background-position: left;
   color:white;
-  height: 300px;
-  padding: 2rem;
+  height: 350px;
+  padding-top: 3rem;
+}
+
+.find-your-partner .h2 {
+  margin-top: 20px;
+  font-size: 48px;
 }
 
 footer{
