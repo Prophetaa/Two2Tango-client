@@ -24,6 +24,7 @@ class MessageListContainer extends Component {
 
 const mapStateToProps = function(state) {
 	return {
+		authenticated: state.currentUser !== null,
 		currentUser: state.currentUser,
 		profile: state.profile,
 		messages: state.messages

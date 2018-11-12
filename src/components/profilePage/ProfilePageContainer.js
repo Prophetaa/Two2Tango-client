@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProfilePage from './ProfilePage';
-import { getOneProfile } from '../../actions/results';
+import { getOneProfile, getMyProfile } from '../../actions/results';
 import { Redirect } from 'react-router-dom';
-import { toUserId } from '../../jwt';
 
 class ProfilePageContainer extends Component {
 	componentDidMount() {
 		if (this.props.authenticated) {
 			if (this.props.match.params.id === 'my-profile')
-				this.props.getOneProfile(toUserId(this.props.currentUser.jwt));
+				this.props.getMyProfile();
 			else this.props.getOneProfile(this.props.match.params.id);
 		}
 	}
@@ -39,5 +38,5 @@ const mapStateToProps = function(state) {
 
 export default connect(
 	mapStateToProps,
-	{ getOneProfile }
+	{ getOneProfile, getMyProfile }
 )(ProfilePageContainer);
