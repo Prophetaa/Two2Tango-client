@@ -1,6 +1,6 @@
 import * as request from 'superagent';
 import { baseUrl } from '../constants';
-// import {isExpired} from '../jwt'
+import { isExpired } from '../jwt';
 
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
 export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED';
@@ -10,6 +10,8 @@ export const USER_LOGOUT = 'USER_LOGOUT';
 
 export const USER_SIGNUP_SUCCESS = 'USER_SIGNUP_SUCCESS';
 export const USER_SIGNUP_FAILED = 'USER_SIGNUP_FAILED';
+
+export const USER_UPDATED_PARAMETERS = 'USER_UPDATED_PARAMETERS';
 
 export const logout = () => ({
 	type: USER_LOGOUT
@@ -32,6 +34,10 @@ const userSignupFailed = error => ({
 
 const userSignupSuccess = () => ({
 	type: USER_SIGNUP_SUCCESS
+});
+
+const updatedParameters = () => ({
+	type: USER_UPDATED_PARAMETERS
 });
 
 export const login = (email, password) => dispatch =>
@@ -61,3 +67,30 @@ export const signup = (email, password) => dispatch =>
 				console.error(err);
 			}
 		});
+
+export const updateParameters = data => (dispatch, getState) => {
+	const state = getState();
+	const jwt = state.currentUser.jwt;
+
+	if (isExpired(jwt)) return dispatch(logout());
+
+	request
+		.put(`${baseUrl}/users`)
+		.set('Authorization', `Bearer ${jwt}`)
+		.send(data)
+		.then(result => dispatch(updatedParameters(result.body)))
+		.catch(err => console.log(err));
+};
+
+export const deleteAccount = () => (dispatch, getState) => {
+	const state = getState();
+	const jwt = state.currentUser.jwt;
+
+	if (isExpired(jwt)) return dispatch(logout());
+
+	request
+		.delete(`${baseUrl}/users`)
+		.set('Authorization', `Bearer ${jwt}`)
+		.then(result => dispatch(updatedParameters(result.body)))
+		.catch(err => console.log(err));
+};

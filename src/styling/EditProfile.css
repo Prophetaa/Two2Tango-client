@@ -76,7 +76,7 @@
   font-size: 40px;
   padding: 10px;
 }
-.foot {
+.profile-footer {
   width: 100%;
   height: 5rem;
   background: rgba(193, 180, 154, 0.21);
@@ -95,6 +95,13 @@
   background-color: transparent;
   color: black;
   border: none;
+}
+
+.delete-btn:focus {
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  outline: none;
 }
 
 /* Blue border remove */
