@@ -52,3 +52,12 @@
     margin-top:0px!important;
     margin-bottom: 0px!important;
 }
+
+
+.singUpClick{
+    color: #A00D26;
+}
+
+.navButtonHover:hover{
+    color: rgb(110, 7, 24)
+}

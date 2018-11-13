@@ -7,7 +7,13 @@ export const MESSAGE_SENT_SUCCESS = 'MESSAGE_SENT_SUCCESS';
 export const SET_ALL_CHATS = 'SET_ALL_CHATS';
 export const FETCHED_MESSAGES = 'FETCHED_MESSAGES'
 export const RESET_MESSAGES = "RESET_MESSAGES"
+export const SET_CHAT_ID = "SET_CHAT_ID"
+export const CLEAN_CHAT_ID = "CLEAN_CHAT_ID";
+export const CHAT_CREATED = "CHAT_CREATED";
 
+const chatCreated = () => ({
+	type: CHAT_CREATED
+})
 
 const setAllMessages = chats => ({
 	type: SET_ALL_CHATS,
@@ -28,6 +34,16 @@ export const resetMessages = () => ({
 	type: RESET_MESSAGES
 })
 
+export const setChatId = payload => ({
+	type: SET_CHAT_ID,
+	payload
+})	
+export const resetChatId = () => ({
+	type:CLEAN_CHAT_ID
+})
+
+
+
 export const getAllChats = () => (dispatch, getState) => {
 	const state = getState();
 	const jwt = state.currentUser.jwt;
@@ -41,6 +57,18 @@ export const getAllChats = () => (dispatch, getState) => {
 		.catch(err => console.log(err));
 };
 
+export const createChat = (receiver) => (dispatch, getState) => {
+	const state = getState();
+	const jwt = state.currentUser.jwt;
+
+	if (isExpired(jwt)) return dispatch(logout())
+
+	request
+	.post(`${baseUrl}/chats/${receiver}`)
+	.set('Authorization', `Bearer ${jwt}`)
+	.then(res=>dispatch(chatCreated(res)))
+	.catch(err => console.log(err));
+}
 
 export const renderMessageContainer = (id) => (dispatch, getState) => {
 	const state = getState();

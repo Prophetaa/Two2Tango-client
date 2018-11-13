@@ -18,7 +18,16 @@
     padding: 0 0 20px 0;
   }
 
+  .matchBtn{
+    width: 21.5rem;
+    height: 3rem;
+    background-color: #A00D26;
+    color: white;
+  }
   
+  .matchBtn:hover{
+    background-color: rgb(207, 22, 53);
+  }
   
   @media screen and (max-width: 768px) {
     .profile-page {
