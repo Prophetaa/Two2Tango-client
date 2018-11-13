@@ -12,15 +12,13 @@ export default class Footer extends Component {
 				<div className="container text-center text-md-left">
 					<div className="row">
 						<div className="col mt-md-0 mt-3">
-							<h5 className="text-uppercase">NewsLetter</h5>
-          		<p>
-							<form class="input-group">
-            		<input type="text" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2" />
-            		<div class="input-group-append">
-              		<button class="btn btn-sm btn-outline-white" type="button">Sign up</button>
+							<h5 className="text-uppercase">NewsLetter</h5>       		
+							<form className="input-group">
+            		<input type="text" className="form-control form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2" />
+            		<div className="input-group-append">
+              		<button className="btn btn-sm btn-outline-white" type="button">Sign up</button>
             		</div>
           		</form>
-							</p>
 						</div>
 						<hr className="clearfix w-100 d-md-none pb-3" />
         		<div className="col mb-md-0 mb-3">
@@ -34,29 +32,29 @@ export default class Footer extends Component {
               	</li>
             	</ul>
           	</div>
-          	<div className="col-md-3 mb-md-0 mb-3">
+          	<div className="col mb-md-0 mb-3">
 							<h6 className="text-uppercase">Social</h6>
 							<ul className="list-unstyled">
 								<li className="list-footer">
 									<Link to="#!" className="link-footer">
-										<img src={facebook} alt="fb" />
+										<img src={facebook} alt="fb" className="icons-footbar"/>
 									</Link>
 								</li>
 								<li className="list-footer">
 									<Link to="#!" className="link-footer">
-										<img src={tweet} alt="tw" />
+										<img src={tweet} alt="tw" className="icons-footbar"/>
 									</Link>
 								</li>
 								<li className="list-footer">
 									<Link to="#!" className="link-footer">
-										<img src={instagram} alt="ig" />
+										<img src={instagram} alt="ig" className="icons-footbar"/>
 									</Link>
 								</li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="footer-copyright text-center py-3">
+				<div className="footer-copyright text-center py-3">
 					© 2018 Copyright:
 					<Link to="#!" className="link-footer">
 						{' '}

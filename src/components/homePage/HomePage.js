@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { getLatestProfiles } from '../../actions/results';
 import { Link } from 'react-router-dom';
 
-import event from '../../styling/images/Event.png';
+import event from '../../styling/images/event.png';
 import interview from '../../styling/images/interview.png';
 import laugh from '../../styling/images/laugh.png';
 import Avatar6 from '../../styling/images/Avatar6.png';
