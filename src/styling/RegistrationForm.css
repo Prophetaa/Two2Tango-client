@@ -6,7 +6,8 @@
   .signupContainer{
     align-content: center;
     max-width: 650px;
-    width: 42% !important;
+    margin-top: 80px;
+    width: 66% !important;
   }
    
   .card-signin {
@@ -273,3 +274,26 @@ div#lastName{
 display: inline;
 
 }
+
+@media only screen and (max-width: 768px) {
+  [class*="col-"] {
+      width: 100%;
+  }
+  .signupContainer {
+    width: 100%;
+    min-width: 18rem;
+    max-width: 28rem;
+    margin: auto;
+    padding: 0 !important;
+  }
+  /* .signupContainer-final {
+    width: 100%;
+    min-width: 20rem;
+    max-width: 28rem;
+    margin: auto;
+    padding: 0 !important;
+  } */
+  .card-signin .card-body {
+    padding: 0rem;
+  }
+  }
