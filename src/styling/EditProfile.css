@@ -62,27 +62,29 @@
 .edit-btn {
   margin-top: 82px !important;
 }
-.edit-btn:hover {
-  background-color: #b80321;
-  border: none;
-}
 .param-btn {
-  margin-left: 50px;
-  background-color: rgba(150, 116, 50, 0.21);
+  background-color: #a00d26;
+  min-width: 20rem;
+  
 }
+.param-btn:hover, .edit-btn:hover {
+  border: none;
+  background-color: #b80321;
+}
+
 .parameters {
   width: 100%;
-  padding: 30px;
+  padding: 20px 30px 20px 30px;
   margin: 0;
   margin-top: 20px;
   background: rgba(193, 180, 154, 0.21);
-  height: 15rem;
-  border: 1px solid #747d88;
+  height: 13rem;
+  border: 1px solid lightgrey;
   border-bottom: none;
 }
 .parameters h2 {
   font-size: 40px;
-  padding: 10px;
+  padding: 0px;
 }
 .param-form {
   width: 60%
@@ -91,8 +93,17 @@
   width: 100%;
   max-width: 100%;
   height: 5rem;
+  
   background: rgba(193, 180, 154, 0.21);
-  border: 1px solid #747d88;
+  border: 1px solid lightgray;
+}
+.param-input {
+  height: 2rem;
+  width: 100%;
+  min-width: 20rem;
+  border: none;
+  /* border-bottom: 1px solid lightgrey; */
+  margin-bottom: 10px;
 }
 .delete-btn {
   background-color: transparent;
@@ -100,9 +111,9 @@
   border: none;
   color: #a00d26;
   margin: auto;
-  margin-right: 20px;
   width: 30%;
-  margin-top: 5px;
+  min-width: 20rem;
+  margin-top: 10px;
 }
 
 .delete-btn:hover {

@@ -1,11 +1,11 @@
 import React from 'react';
-import '../../styling/ProfilePage.css';
-import MessageForm from './MessageForm';
+import '../../styling/MyProfile.css';
+import history from '../../history';
 
 export default function ProfilePage(props) {
 	const { profile } = props;
 	return (
-		<section className="profile-page">
+		<section className="my-profile-page">
 			<header>
 				<div className="container">
 					<h1>My profile</h1>
@@ -50,7 +50,12 @@ export default function ProfilePage(props) {
 					<div className="col-sm-12 col-md-4">
 						<h3 className="pb-4">About me:</h3>
 						<p>{profile.about}</p>
-						<MessageForm />
+
+						<button
+							onClick={() => history.push('/edit-profile')}
+							className="btn update-btn-profile btn-block text-uppercase">
+							modify my profile
+						</button>
 					</div>
 				</div>
 			</div>

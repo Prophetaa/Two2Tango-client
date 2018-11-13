@@ -1,0 +1,47 @@
+.my-profile-page header {
+  background: #A00D26;
+  color: white;
+  padding: 20px 0;
+  font-family: 'Work Sans';
+  margin: 0 0 40px 0;
+}
+
+.my-profile-page img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.my-profile-page {
+  background:#F2EFEA;
+  padding: 0 0 20px 0;
+}
+
+.update-btn-profile {
+	background-color: #a00d26;
+	border: none;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  padding: 10px;
+  text-align: center;
+  color: white !important;
+}
+
+.update-btn-profile:hover {
+  background-color: #b80321;
+  text-decoration: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  .my-profile-page {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .my-profile-page {
+    text-align: center;
+  }
+}
+
+

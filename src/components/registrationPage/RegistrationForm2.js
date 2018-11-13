@@ -11,8 +11,7 @@ import LocationSearchInput from './Geolocate';
 import CheckBoxes from './CheckBoxes';
 
 const CLOUDINARY_UPLOAD_PRESET = 'ieb90awf';
-const CLOUDINARY_UPLOAD_URL =
-  'https://api.cloudinary.com/v1_1/dg6hu5lub/image/upload';
+const CLOUDINARY_UPLOAD_URL ='https://api.cloudinary.com/v1_1/dg6hu5lub/image/upload';
 
 class RegistrationForm2 extends Component {
   state = {
