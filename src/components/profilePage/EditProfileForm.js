@@ -163,14 +163,14 @@ export default function EditProfileForm(props) {
 
 					<div className="parameters">
 						<h2>
-							<u>Danger area:</u>
+						Danger area:
 						</h2>
 						<form onSubmit={props.onParametersSubmit}>
-							<div className="row param-form">
-								<div className="col-sm-4">
+							<div className="row ">
+								<div className="col-sm-4 param-form">
 									<div className="form-group">
 										<label htmlFor="password" className="text-uppercase labels">
-											Change password:
+											Change password:	
 										</label>
 										<input
 											type="text"
