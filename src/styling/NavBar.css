@@ -2,6 +2,9 @@
     background-color: white;
 }
 
+.font-link-navbar{
+    padding-left: 10px;
+}
 .icons-navbar{
     background-color: transparent;
     margin-left:5px;
@@ -9,14 +12,11 @@
     border:0;
 }
 
-.nav-btn{
-    max-width: 25px;
-    max-height: 25px;
-}
-
 .link-navbar{
     color:black;
     text-decoration: none;
+    max-width: 10px;
+    max-height: 10px;
 }
 
 .link-navbar:hover,.icons-navbar:hover{
