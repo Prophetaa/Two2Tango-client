@@ -32,7 +32,7 @@ export default function Results(props) {
 				</thead>
 				<tbody>
 					{props.results.map(result => (
-						<Fragment key={result}>
+						<Fragment key={result.id}>
 							<tr>
 								<th scope="row">
 									<Link to={`/profiles/${result.id}`}>
