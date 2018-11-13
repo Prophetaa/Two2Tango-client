@@ -38,8 +38,8 @@
     color:#A00D26;
 }
 
-.dropdown .nav-item {
-    cursor:pointer;
+.dropdown.nav-item {
+    cursor:pointer !important;
 }
 
 .dropDownLi:hover{
