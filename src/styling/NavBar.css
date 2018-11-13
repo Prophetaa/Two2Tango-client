@@ -2,15 +2,27 @@
     background-color: white;
 }
 
+.font-link-navbar{
+    padding-left: 10px;
+}
 .icons-navbar{
     background-color: transparent;
-    border: 0;
+    margin-left:5px;
+    color:#A00D26;
+    border:0;
 }
 
 .link-navbar{
     color:black;
+    text-decoration: none;
+    max-width: 10px;
+    max-height: 10px;
 }
 
+.link-navbar:hover,.icons-navbar:hover{
+    color:#A00D26;
+    text-decoration: none;
+}
 
 .link-navbar:hover, 
 .link-navbar:focus, 
@@ -26,9 +38,17 @@
     color:#A00D26;
 }
 
+.dropdown.nav-item {
+    cursor:pointer !important;
+}
 
 .dropDownLi:hover{
     background-color: #A00D26;
     color: white
 
+}
+
+.breakline-navba{
+    margin-top:0px!important;
+    margin-bottom: 0px!important;
 }

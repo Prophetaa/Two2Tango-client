@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProfilePage from './ProfilePage';
-import { getOneProfile, getMyProfile } from '../../actions/results';
+import MyProfile from './MyProfile';
+import { getMyProfile } from '../../actions/results';
 import { Redirect } from 'react-router-dom';
 
 class ProfilePageContainer extends Component {
-	state = {};
-
 	componentDidMount() {
 		if (this.props.authenticated) {
-			this.props.getOneProfile(this.props.match.params.id);
+			this.props.getMyProfile();
 		}
 	}
 
@@ -18,10 +16,7 @@ class ProfilePageContainer extends Component {
 		if (!this.props.profile) return null;
 		return (
 			<div>
-				<ProfilePage
-					profile={this.props.profile}
-					currentUser={this.props.currentUser}
-				/>
+				<MyProfile profile={this.props.profile} />
 			</div>
 		);
 	}
@@ -38,5 +33,5 @@ const mapStateToProps = function(state) {
 
 export default connect(
 	mapStateToProps,
-	{ getOneProfile, getMyProfile }
+	{ getMyProfile }
 )(ProfilePageContainer);

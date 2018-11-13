@@ -13,7 +13,7 @@ export default function EditProfileForm(props) {
 					<form onSubmit={props.onProfileSubmit}>
 						<div className="row edit-row">
 							<div className="col-sm">
-								<img src={props.photoUrl} className="image-profile" alt="" />
+								<img src={props.photoUrl} className="image-profile-edit" alt="" />
 								<div className="form-group">
 									<label htmlFor="firstName" className="text-uppercase labels">
 										First name:
@@ -163,38 +163,38 @@ export default function EditProfileForm(props) {
 
 					<div className="parameters">
 						<h2>
-							<u>Danger area:</u>
+						Danger area
 						</h2>
 						<form onSubmit={props.onParametersSubmit}>
-							<div className="row">
-								<div className="col-sm-4">
+							<div className="row ">
+								<div className="col-sm-4 param-form">
 									<div className="form-group">
 										<label htmlFor="password" className="text-uppercase labels">
-											Change password:
+											Change password:	
 										</label>
 										<input
 											type="text"
-											className="form-control edit-inputs"
+											className="form-control param-input"
 											id="password"
 											name="password"
 											value={props.password || ''}
 											onChange={props.onChange}
 										/>
-									</div>
-									<div className="form-group">
 										<button
-											className="btn btn-primary btn-block text-uppercase edit-btn param-btn"
+											className="btn btn-primary btn-block text-uppercase param-btn"
 											type="submit">
 											Save changes
 										</button>
+									</div>
+									<div className="form-group">
+										
 									</div>
 								</div>
 							</div>
 						</form>
 					</div>
 				</main>
-
-				<div className="profile-footer">
+				<div className="profile-footer edit-profile">
 					<button
 						className="btn btn-block text-uppercase delete-btn"
 						onClick={() => props.deleteAccount()}>

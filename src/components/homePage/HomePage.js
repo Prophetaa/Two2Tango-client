@@ -4,13 +4,13 @@ import '../../styling/HomePage.css';
 import history from '../../history';
 import { connect } from 'react-redux';
 import { getLatestProfiles } from '../../actions/results';
+import { Link } from 'react-router-dom';
 
 import event from '../../styling/images/event.png';
 import interview from '../../styling/images/interview.png';
 import laugh from '../../styling/images/laugh.png';
 import Avatar6 from '../../styling/images/Avatar6.png';
 import Avatar7 from '../../styling/images/Avatar7.png';
-
 import quoteLeft from '../../styling/images/quote-left.png';
 import quoteRight from '../../styling/images/quote-right.png';
 import Footer from './Footer';
@@ -28,22 +28,29 @@ export class homePage extends Component {
 						<div className="row">
 							<div className="col-12">
 								<div className="background-dancers-text">
-									<h2>
+									<h2 className="font-home">
 										Find a tango partner <br />
 										in your city
 									</h2>
-									<button
+									{/* <button
 										type="button"
 										className="btn btn-outline-light btn-lg"
 										onClick={() => this.props.history.push(`/login`)}>
 										Log In
-									</button>
+									</button> */}
 									<button
 										type="button"
 										className="btn btn-primary btn-lg SignInPrmBtn"
 										onClick={() => this.props.history.push(`/signup`)}>
 										Sign Up
 									</button>
+
+									<div className="login-container">
+										Already a menber?{' '}
+										<Link to="/login" className="login-home">
+											Log In
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -141,7 +148,7 @@ export class homePage extends Component {
 								src={Avatar7}
 								alt="avatarBig"
 							/>
-							<div className="col-xs-12 col-sm-12 col-md-8">
+							<div className="col-xs-12 col-sm-12 col-md-8 avatar-col-home">
 								<img
 									src={quoteLeft}
 									className="quote left-home pr-3 float-left"
@@ -156,13 +163,14 @@ export class homePage extends Component {
 									className="quote right-home float-right"
 									alt="quote-right"
 								/>
-								<div>Clara, 36, leader</div>
+								<div className="testimonail-name-home">Clara, 36, leader</div>
 							</div>
 						</div>
 					</div>
+					<hr />
 					<div className="container about-home">
 						<div className="row avatar-row-home">
-							<div className="col-xs-12 col-sm-12 col-md-8">
+							<div className="col-xs-12 col-sm-12 col-md-8 avatar-col-home">
 								<img
 									src={quoteLeft}
 									className="quote left-home pr-3 float-left"
@@ -177,7 +185,7 @@ export class homePage extends Component {
 									className="quote right-home float-right"
 									alt="quote-right"
 								/>
-								<div>Beth, 26, follower</div>
+								<div className="testimonail-name-home">Beth, 26, follower</div>
 							</div>
 							<img
 								className="rounded-circle avatar-big-home mx-auto"
@@ -192,8 +200,8 @@ export class homePage extends Component {
 					<div className="container background-bottom-home text-right">
 						<div className="row">
 							<div className="col-12">
-								<div>
-									<p className="h2">
+								<div className="partner-text">
+									<p className="h2 font-home">
 										Time to dance
 										<br />
 										Find your partner now
@@ -209,8 +217,9 @@ export class homePage extends Component {
 						</div>
 					</div>
 				</section>
-
-				<Footer />
+				<section>
+					<Footer />
+				</section>
 			</div>
 		);
 	}

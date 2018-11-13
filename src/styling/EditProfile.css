@@ -16,13 +16,22 @@
   font-weight: 200 !important;
   text-align: center
 }
+.image-profile-edit {
+  width: 70%;
+    max-width: 300px;
+    height: auto;
+    min-height: 200px;
+    border-radius: 50%;
+    margin: 30px;
+    margin-bottom: 55px;
+}
 .edit-row {
   margin: 30px;
   margin-bottom: 5px;
 }
 .labels {
   font-size: 13px;
-  margin-bottom: 0;
+  margin-bottom: 1px;
 }
 .edit-inputs {
   height: 2rem;
@@ -47,39 +56,54 @@
 .edit-btn,
 .param-btn {
   background-color: #a00d26;
-  width: 20rem;
-  margin: auto;
-  margin-right: 55px;
   border: none;
   height: 2rem;
 }
-.edit-btn:hover {
-  background-color: #b80321;
-  border: none;
+.edit-btn {
+  margin-top: 82px !important;
 }
 .param-btn {
-  margin-left: 50px;
-  background-color: rgba(150, 116, 50, 0.21);
+  background-color: #a00d26;
+  min-width: 20rem;
+  
 }
+.param-btn:hover, .edit-btn:hover {
+  border: none;
+  background-color: #b80321;
+}
+
 .parameters {
   width: 100%;
-  padding: 30px;
+  padding: 20px 30px 20px 30px;
   margin: 0;
   margin-top: 20px;
   background: rgba(193, 180, 154, 0.21);
-  height: 15rem;
-  border: 1px solid #747d88;
+  height: 13rem;
+  border: 1px solid lightgrey;
   border-bottom: none;
 }
 .parameters h2 {
   font-size: 40px;
-  padding: 10px;
+  padding: 0px;
+}
+.param-form {
+  width: 60%
 }
 .profile-footer {
   width: 100%;
+  max-width: 100%;
   height: 5rem;
+  
   background: rgba(193, 180, 154, 0.21);
-  border: 1px solid #747d88;
+  border: 1px solid lightgray;
+}
+.param-input {
+  height: 2rem;
+  width: 100%;
+  min-width: 20rem;
+  border: none;
+  /* border-bottom: 1px solid lightgrey; */
+  margin-bottom: 10px;
 }
 .delete-btn {
   background-color: transparent;
@@ -87,20 +111,18 @@
   border: none;
   color: #a00d26;
   margin: auto;
-  margin-right: 20px;
   width: 30%;
-}
-.delete-btn:hover {
-  background-color: #b80321;
-  color: black;
-  border: none;
+  min-width: 20rem;
+  margin-top: 10px;
 }
 
-.delete-btn:focus {
+.delete-btn:hover {
   background-color: transparent;
-  color: black;
-  border: 2px solid black;
+  color: #a00d26;
+  font-weight: bold;
+  border: none;
   outline: none;
+ 
 }
 
 /* Blue border remove */

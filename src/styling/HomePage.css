@@ -4,7 +4,21 @@
   background-color: #FFFFFF;
 }
 
+.font-home{
+  font-weight: 300;
+}
 
+.login-home{
+  text-decoration: none;
+}
+
+.login-home:hover,.login-home:active{
+  text-decoration: none;
+}
+
+.login-container{
+  margin-top:5%;
+}
 
 .background-top-home{
   background: black;
@@ -28,11 +42,15 @@
   color: #ffffff;
   background-color: #A00D26;
   border-color: #a00d1f;
-  margin:10px;
-  width:315px;
+  /* margin:10px; */
+  max-width:315px;
+  width:55%
 }
 
-.SignInPrmBtn:hover, .SignInPrmBtn:focus, .SignInPrmBtn:active, .SignInPrmBtn.active{
+.SignInPrmBtn:hover, 
+.SignInPrmBtn:focus, 
+.SignInPrmBtn:active, 
+.SignInPrmBtn.active{
   color: #A00D26;
   background-color: #ffffff;
   border-color: #ffffff; 
@@ -91,6 +109,10 @@
   padding-bottom: 20px;
 }
 
+.avatar-col-home{
+  margin-top: 7%;
+}
+
 .avatar-big-home{
   width: 12rem;
   height: 12rem;
@@ -100,12 +122,21 @@
 
 .avatar-text-home{
   color:black;
-  /* margin-left:50px; */
-  font-weight: 300;
+  margin-left:50px;
+  font-weight: 400i;
+  font-family: "Playfair Display";
+  font-size: 30px;
+  line-height:1.3;
+  
 }
 
 .left-home{
   margin-left:-10px;
+}
+
+.testimonail-name-home{
+  padding-top: 5%;
+  padding-left: 8.3%;
 }
 
 .find-your-partner{
@@ -123,18 +154,15 @@
   font-size: 48px;
 }
 
-footer{
-  background-color: #FFFFFF;
-  padding-top: 1.5625rem;
-  padding-bottom: 30px;
-  text-align: center;
+.partner-text{
+  padding-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {
   .find-your-partner {
     text-align: center;
-    height: 200px;
-    padding: 10px;
+    /* height: 200px;
+    padding: 10px; */
   }
 
   .background-top-home {
