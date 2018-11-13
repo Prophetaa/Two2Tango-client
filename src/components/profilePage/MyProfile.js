@@ -1,71 +1,55 @@
 import React from 'react';
-import '../../styling/ProfilePage.css';
+import '../../styling/MyProfile.css';
 import { Link } from 'react-router-dom';
 
 export default function ProfilePage(props) {
 	const { profile } = props;
 	return (
-		<div className="main-profile">
-			<div className="row">
-				<div className="col-12 my-profile">
-					<h1>{profile.firstName}'s Profile</h1>
-					<div className="image" />
+		<section className="my-profile-page">
+			<header>
+				<div className="container">
+					<h1>My profile</h1>
 				</div>
-				<div className="row main-profile">
-					<div className="col-xs-12 col-sm-6 col-md-4 image-column-profile">
-						<img src={profile.photoUrl} className="image-profile" alt="" />
+			</header>
+			<div className="container">
+				<div className="row">
+					<div className="col-sm-12 col-md-4">
+						<img src={profile.photoUrl} alt="" />
 					</div>
-					<div className="col-xs-12 col-sm-6 col-md-4 details-profile">
-						<ul className="list-unstyled details-list-profile">
-							<li className="d-flex">
-								<span className="text-uppercase details-specs-profile">
-									name:
-								</span>
-								<span className="my-details-profile">{profile.firstName}</span>
-							</li>
-							<li className="d-flex">
-								<span className="text-uppercase details-specs-profile">
-									city:
-								</span>
-								<span className="my-details-profile">{profile.city}</span>
-							</li>
-							<li className="d-flex">
-								<span className="text-uppercase details-specs-profile">
-									role:
-								</span>
-								<span className="my-details-profile">{profile.role}</span>
-							</li>
-							<li className="d-flex">
-								<span className="text-uppercase details-specs-profile">
-									level:
-								</span>
-								<span className="my-details-profile">{profile.level}</span>
-							</li>
-							<li className="d-flex">
-								<span className="text-uppercase details-specs-profile">
-									height:
-								</span>
-								<span className="my-details-profile">{profile.height} cm</span>
-							</li>
-							<li className="d-flex">
-								<span className="text-uppercase details-specs-profile">
-									age:
-								</span>
-								<span className="my-details-profile">{profile.age}</span>
-							</li>
-							<li className="d-flex">
-								<span className="text-uppercase details-specs-profile">
-									gender:
-								</span>
-								<span className="my-details-profile">{profile.gender}</span>
-							</li>
-						</ul>
+					<div className="col-sm-12 col-md-4 profile-details">
+						<h3 className="pb-4">Personalia</h3>
+						<div className="row">
+							<div className="col-6 col-md-5 text-uppercase mb-3">Name:</div>
+							<div className="col-6 col-md-6">{profile.firstName}</div>
+						</div>
+						<div className="row">
+							<div className="col-6 col-md-5 text-uppercase mb-3">City:</div>
+							<div className="col-6 col-md-6">{profile.city}</div>
+						</div>
+						<div className="row">
+							<div className="col-6 col-md-5 text-uppercase mb-3">Role:</div>
+							<div className="col-6 col-md-6">{profile.role}</div>
+						</div>
+						<div className="row">
+							<div className="col-6 col-md-5 text-uppercase mb-3">Level:</div>
+							<div className="col-6 col-md-6">{profile.level}</div>
+						</div>
+						<div className="row">
+							<div className="col-6 col-md-5 text-uppercase mb-3">Height:</div>
+							<div className="col-6 col-md-6">{profile.height}</div>
+						</div>
+						<div className="row">
+							<div className="col-6 col-md-5 text-uppercase mb-3">Age</div>
+							<div className="col-6 col-md-6">{profile.age}</div>
+						</div>
+						<div className="row">
+							<div className="col-6 col-md-5 text-uppercase mb-3">Gender:</div>
+							<div className="col-6 col-md-6">{profile.gender}</div>
+						</div>
 					</div>
-					<div className="col-xs-12 col-sm-6 col-md-4 about-profile">
-						<h3 className="text-uppercase">about me</h3>
+					<div className="col-sm-12 col-md-4">
+						<h3 className="pb-4">About me:</h3>
 						<p>{profile.about}</p>
-					</div>
-					<div className="row update-profile">
 						<Link to="/edit-profile">
 							<button className="btn update-btn-profile text-uppercase">
 								modify my profile
@@ -74,6 +58,6 @@ export default function ProfilePage(props) {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
