@@ -186,9 +186,6 @@ export default function EditProfileForm(props) {
 											Save changes
 										</button>
 									</div>
-									<div className="form-group">
-										
-									</div>
 								</div>
 							</div>
 						</form>
