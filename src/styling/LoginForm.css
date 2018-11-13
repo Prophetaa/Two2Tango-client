@@ -7,7 +7,6 @@
   margin-top: 0px !important;
   padding: 0 !important
 }
-.login-input {}
 
 .card-signin {
   border: 0;
@@ -267,8 +266,10 @@
 }
 .login {
   width: 100%;
+  min-width: 20rem;
   max-width: 28rem;
-  margin: 0 ;
+  margin: auto;
+  padding: 0 !important;
 }
 .padd {
   padding: 0px;
