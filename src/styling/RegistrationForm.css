@@ -290,3 +290,45 @@ display: inline;
     padding: 0rem;
   }
   }
+
+  .noUi-connect{
+    background:#A00D26 !important;
+  }
+
+  .slideTitle{
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ageBar{
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+  }
+  .noUi-handle{
+    width: 1.5rem !important;
+  }
+
+  .heightBar{
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+  }
+
+  .heightSlider{
+    display: flex;
+    justify-content: center;
+  }
+
+  .sliderBar{
+    width: 20rem;
+  }
+
+  .minValue{
+    position: relative;
+    left: -1rem;
+  }
+
+  .maxValue{
+    position: relative;
+    right: -1.5rem;
+  }

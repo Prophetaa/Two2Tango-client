@@ -4,6 +4,8 @@ import '../../styling/RegistrationForm.css';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Nouislider from 'nouislider-react';
+import 'nouislider/distribute/nouislider.css'
 
 import {
   updatePreferences,
@@ -30,8 +32,8 @@ class PreferencesPage extends Component {
         min_age: this.props.usersPreferences.age[0],
         max_age: this.props.usersPreferences.age[1],
         gender: this.props.usersPreferences.gender,
-        min_height: this.props.usersPreferences.height[1],
-        max_height: this.props.usersPreferences.height[0]
+        min_height: this.props.usersPreferences.height[0],
+        max_height: this.props.usersPreferences.height[1]
       });
       this.selectLevels();
     }
@@ -56,6 +58,17 @@ class PreferencesPage extends Component {
       let level = document.getElementById('professional');
       level.click();
     }
+  };
+
+  handleHeightBar =  render => {
+     this.setState({
+      min_height: render[0],
+      max_height: render[1]
+    });
+  };
+
+  handleAgeBar =  render => {
+     this.setState({ min_age: render[0], max_age: render[1] });
   };
 
   handleCheck = nLevel => {
@@ -111,21 +124,18 @@ class PreferencesPage extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    let error = document.getElementById('inputError');
-    if (!error) {
       await this.props.updatePreferences(
         this.state.cities,
         this.state.gender,
         [
-          parseInt(this.state.max_height, 10),
-          parseInt(this.state.min_height, 10)
+          parseInt(this.state.min_height, 10),
+          parseInt(this.state.max_height, 10)
         ],
         this.state.role,
         this.state.level,
         [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
       );
       window.location = '/results';
-    }
   };
 
   render() {
@@ -144,8 +154,10 @@ class PreferencesPage extends Component {
                   <form className="form-signin" onSubmit={this.handleSubmit}>
                     <div className="form-group row cityInput">
                       <LocationSearchInput onChange={this.handleSelectCity} />
-                      <button className="citiesBtn text-uppercase" onClick={this.selectCities}>
-                       add city
+                      <button
+                        className="citiesBtn text-uppercase"
+                        onClick={this.selectCities}>
+                        add city
                       </button>
                     </div>
                     <div className="citiesContainer container row">
@@ -170,100 +182,42 @@ class PreferencesPage extends Component {
                     <div className="heightSelection">
                       <CheckBoxes handleCheck={this.handleCheck} />
                     </div>
-                    <label className="formLabel">Age Gap: </label>
-                    <div className="groupInputs">
-                      <div className="form-group smallInput" id="minAge">
-                        <input
-                          placeholder="Min Age "
-                          type="number"
-                          name="min_age"
-                          id="inputMaxHeight"
-                          className="form-control menu2inputs"
-                          required
-                          data-toggle="tooltip"
-                          title="minimum age"
-                          value={this.state.min_age || ''}
-                          onChange={this.handleChange}
-                        />
-                      </div>
-                      <div className="form-group smallInput" id="maxAge">
-                        <input
-                          type="number"
-                          placeholder="Max Age "
-                          id="inputMinHeight"
-                          data-toggle="tooltip"
-                          title="maximum age"
-                          className="form-control menu2inputs"
-                          name="max_age"
-                          value={this.state.max_age || ''}
-                          required
-                          onChange={this.handleChange}
-                        />
-                      </div>
+                    <span className="slideTitle">Age:</span>
+                    <div className="heightSlider ageBar">
+                      <span className="minValue">
+                        {this.state.min_age && Math.round(this.state.min_age)}
+                      </span>
+                      <Nouislider
+                        className="sliderBar"
+                        range={{ min: 10, max: 99 }}
+                        start={[this.state.min_age && this.state.min_age, this.state.max_age && this.state.max_age]}
+                        connect
+                        step={5}
+                        onSlide={this.handleAgeBar}
+                      />
+                      <span className="maxValue">
+                        {this.state.max_age && Math.round(this.state.max_age)}
+                      </span>
                     </div>
-                    <label className="formLabel">Height Gap: </label>
-                    <div className="groupInputs bottomPadding">
-                      <div className="form-group smallInput" id="minHeight">
-                        <input
-                          type="number"
-                          placeholder="Min Height *"
-                          id="inputMinHeight"
-                          data-toggle="tooltip"
-                          title="minimum height"
-                          className="form-control menu2inputs"
-                          name="min_height"
-                          value={this.state.min_height || ''}
-                          required
-                          onChange={this.handleChange}
-                        />
-                      </div>
-                      <div className="form-group smallInput " id="maxHeight">
-                        <input
-                          placeholder="Max Height *"
-                          type="number"
-                          name="max_height"
-                          id="inputMaxHeight"
-                          data-toggle="tooltip"
-                          title="maximum height"
-                          className="form-control menu2inputs"
-                          required
-                          value={this.state.max_height || ''}
-                          onChange={this.handleChange}
-                        />
-                      </div>
+                    <span className="slideTitle">Height:</span>
+                    <div className="heightSlider heightBar">
+                      <span className="minValue">
+                        {this.state.min_height &&
+                          Math.round(this.state.min_height)}
+                      </span>
+                      <Nouislider
+                        className="sliderBar"
+                        range={{ min: 130, max: 200 }}
+                        start={[this.state.min_height && this.state.min_height, this.state.max_height && this.state.max_height]}
+                        connect
+                        step={5}
+                        onSlide={this.handleHeightBar}
+                      />
+                      <span className="maxValue">
+                        {this.state.max_height &&
+                          Math.round(this.state.max_height)}
+                      </span>
                     </div>
-                    {this.state.max_age > 99 || this.state.min_age < 10 ? (
-                      <span
-                        id="inputError"
-                        className="warningAge"
-                        style={{ color: 'red' }}>
-                        Please , people that age probably don't tango...
-                      </span>
-                    ) : null}
-                    {this.state.min_height < 130 && (
-                      <span
-                        id="inputError"
-                        className="warningAge"
-                        style={{ color: 'red' }}>
-                        that's too low, come on...
-                      </span>
-                    )}
-                    {this.state.max_height > 210 && (
-                      <span
-                        id="inputError"
-                        className="warningAge"
-                        style={{ color: 'red' }}>
-                        that's too high, come on...
-                      </span>
-                    )}
-                    {this.state.min_height > this.state.max_height && (
-                      <span
-                        id="inputError"
-                        className="warningAge"
-                        style={{ color: 'red' }}>
-                        minimum height can't be higher than the maximum height!
-                      </span>
-                    )}
                     <div className="buttonsContainer">
                       <Link className="Links" to={'/results'}>
                         <button className="btn btn-lg btn-block text-uppercase prefBtn cancelChanges">

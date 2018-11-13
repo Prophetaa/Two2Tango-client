@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../../styling/RegistrationForm.css';
+import Nouislider from 'nouislider-react';
+import 'nouislider/distribute/nouislider.css';
 
 import { connect } from 'react-redux';
 
@@ -9,7 +11,7 @@ import CheckBoxes from './CheckBoxes';
 import GenderMenu from '../preferencesPage/GenderMenu';
 import RoleMenu from '../preferencesPage/RoleMenu';
 class RegistrationForm3 extends Component {
-  state = { cities:[], role: null, gender: null, tango_level: [], age: [] };
+  state = { cities: [], role: null, gender: null, tango_level: [], age: [] , min_age:10, max_age:99, min_height:130, max_height:200};
 
   handleCheck = level => {
     //Checks if this level is already on the react state, if it is it deletes it
@@ -42,6 +44,17 @@ class RegistrationForm3 extends Component {
     if (input === 'other') this.setState({ gender: 'other' });
   };
 
+  handleHeightBar = async render => {
+    await this.setState({
+      min_height: render[0],
+      max_height: render[1]
+    });
+  };
+
+  handleAgeBar = async render => {
+    await this.setState({ min_age: render[0], max_age: render[1] });
+  };
+
   selectCities = e => {
     e.preventDefault();
     if (this.state.cities.length < 4) {
@@ -53,9 +66,9 @@ class RegistrationForm3 extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    let error = document.getElementById('inputError');
-    if (!error) {
-      await this.props.postPreferences(
+
+    await this.props
+      .postPreferences(
         this.state.cities,
         this.state.gender,
         [
@@ -65,9 +78,8 @@ class RegistrationForm3 extends Component {
         this.state.role,
         this.state.tango_level,
         [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
-        ).then(this.props.onSubmit());
-  
-    }
+      )
+      .then(this.props.onSubmit());
   };
 
   handleChange = event => {
@@ -88,135 +100,75 @@ class RegistrationForm3 extends Component {
                   Step 3: Matching Preferences
                 </h5>
                 <form className="form-signin" onSubmit={this.handleSubmit}>
-                <div className="form-group row cityInput">
-                      <LocationSearchInput onChange={this.handleSelectCity} />
-                      <button className="citiesBtn text-uppercase" onClick={this.selectCities}>
-                       add city
-                      </button>
-                    </div>
-                    <div className="citiesContainer container row">
-                      {this.state.cities.map(city => (
-                        <span key={city} className="citiesLi">
-                          <span
-                            className="far fa-times-circle deleteIcon"
-                            onClick={() => this.removeCity(city)}
-                          />
-                          {city}
-                        </span>
-                      ))}
-                    </div>
-                    <GenderMenu
-                      gender={this.state.gender}
-                      handleButtonClick={this.handleButtonClick}
-                    />
-                    <RoleMenu
-                      role={this.state.role}
-                      handleButtonClick={this.handleButtonClick}
-                    />
-
-                    <div className="heightSelection">
-                      <CheckBoxes handleCheck={this.handleCheck} />
-
-                   <label className="formLabel">Age Gap: </label>
-                    <div className="groupInputs">
-                      <div className="form-group smallInput" id="minAge">
-                        <input
-                          placeholder="Min Age "
-                          type="number"
-                          name="min_age"
-                          id="inputMaxHeight"
-                          className="form-control menu2inputs"
-                          required
-                          data-toggle="tooltip"
-                          title="minimum age"
-                          value={this.state.min_age || ''}
-                          onChange={this.handleChange}
-                        />
-                      </div>
-                      <div className="form-group smallInput" id="maxAge">
-                        <input
-                          type="number"
-                          placeholder="Max Age "
-                          id="inputMinHeight"
-                          data-toggle="tooltip"
-                          title="maximum age"
-                          className="form-control menu2inputs"
-                          name="max_age"
-                          value={this.state.max_age || ''}
-                          required
-                          onChange={this.handleChange}
-                        />
-                      </div>
-                    </div>
-                    <label className="formLabel">Height Gap: </label>
-                    <div className="groupInputs bottomPadding">
-                      <div className="form-group smallInput" id="minHeight">
-                        <input
-                          type="number"
-                          placeholder="Min Height *"
-                          id="inputMinHeight"
-                          data-toggle="tooltip"
-                          title="minimum height"
-                          className="form-control menu2inputs"
-                          name="min_height"
-                          value={this.state.min_height || ''}
-                          required
-                          onChange={this.handleChange}
-                        />
-                      </div>
-                      <div className="form-group smallInput " id="maxHeight">
-                        <input
-                          placeholder="Max Height *"
-                          type="number"
-                          name="max_height"
-                          id="inputMaxHeight"
-                          data-toggle="tooltip"
-                          title="maximum height"
-                          className="form-control menu2inputs"
-                          required
-                          value={this.state.max_height || ''}
-                          onChange={this.handleChange}
-                        />
-                      </div>
-                    </div>
-                    {this.state.max_age > 99 || this.state.min_age < 10 ? (
-                      <span
-                        id="inputError"
-                        className="warningAge"
-                        style={{ color: 'red' }}>
-                        Please , people that age probably don't tango...
-                      </span>
-                    ) : null}
-                    {this.state.min_height < 130 && (
-                      <span
-                        id="inputError"
-                        className="warningAge"
-                        style={{ color: 'red' }}>
-                        that's too low, come on...
-                      </span>
-                    )}
-                    {this.state.max_height > 210 && (
-                      <span
-                        id="inputError"
-                        className="warningAge"
-                        style={{ color: 'red' }}>
-                        that's too high, come on...
-                      </span>
-                    )}
-                    {this.state.min_height > this.state.max_height && (
-                      <span
-                        id="inputError"
-                        className="warningAge"
-                        style={{ color: 'red' }}>
-                        minimum height can't be higher than the maximum height!
-                      </span>
-                    )}
+                  <div className="form-group row cityInput">
+                    <LocationSearchInput onChange={this.handleSelectCity} />
                     <button
-                      className="btn btn-lg btn-block text-uppercase finalStepBtn"
-                      type="submit">
-                      <span>Let's find a Partner!</span>
+                      className="citiesBtn text-uppercase"
+                      onClick={this.selectCities}>
+                      add city
                     </button>
                   </div>
+                  <div className="citiesContainer container row">
+                    {this.state.cities.map(city => (
+                      <span key={city} className="citiesLi">
+                        <span
+                          className="far fa-times-circle deleteIcon"
+                          onClick={() => this.removeCity(city)}
+                        />
+                        {city}
+                      </span>
+                    ))}
+                  </div>
+                  <GenderMenu
+                    gender={this.state.gender}
+                    handleButtonClick={this.handleButtonClick}
+                  />
+                  <RoleMenu
+                    role={this.state.role}
+                    handleButtonClick={this.handleButtonClick}
+                  />
+                  <CheckBoxes handleCheck={this.handleCheck} />
+                  <span className="slideTitle">Age:</span>
+                  <div className="heightSlider ageBar">
+                    <span className="minValue">
+                      {this.state.min_age && Math.round(this.state.min_age)}
+                    </span>
+                    <Nouislider
+                      className="sliderBar"
+                      range={{ min: 10, max: 99 }}
+                      start={[10, 99]}
+                      connect
+                      step={5}
+                      onSlide={this.handleAgeBar}
+                    />
+                    <span className="maxValue">
+                      {this.state.max_age && Math.round(this.state.max_age)}
+                    </span>
+                  </div>
+                  <span className="slideTitle">Height:</span>
+                  <div className="heightSlider heightBar">
+                    <span className="minValue">
+                      {this.state.min_height &&
+                        Math.round(this.state.min_height)}
+                    </span>
+                    <Nouislider
+                      className="sliderBar"
+                      range={{ min: 130, max: 200 }}
+                      start={[130, 200]}
+                      connect
+                      step={5}
+                      onSlide={this.handleHeightBar}
+                    />
+                    <span className="maxValue">
+                      {this.state.max_height &&
+                        Math.round(this.state.max_height)}
+                    </span>
+                  </div>
+                  <button
+                    className="btn btn-lg btn-block text-uppercase finalStepBtn"
+                    type="submit">
+                    <span>Let's find a Partner!</span>
+                  </button>
                 </form>
               </div>
             </div>

@@ -6368,10 +6368,23 @@ normalize-url@^3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
 
+nouislider-react@^1.6.4:
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/nouislider-react/-/nouislider-react-1.6.4.tgz#647f107efaefbc80464fe2f4e1825ce8499b18b9"
+  integrity sha512-cxJDxC9Uj1aGVBu/KZEeVOA/gIB+z2iexIq0XKX550h8+Wgw6sCwQ6d1P2ZZ4SVz8GZ/u6HuwvLheF+LmtUDEQ==
+  dependencies:
+    nouislider "^12.1.0"
+    react "^16.6.0"
+
 nouislider@^12.1.0:
   version "12.1.0"
   resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-12.1.0.tgz#a4416b4b3357e77e52217f8ecf060eb14a855f59"
   integrity sha512-SAOabF6hBm8201c6LDbkVOVhgwY49+/ms72ZLUF2qkN5RCf7FfUvEh/hGZ7XcwZHU+I/grlicPmcSk1/rrMnOw==
+
+nouislider@^9.2.0:
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-9.2.0.tgz#e87c507de2b0b4d075038b5a42547c7dbbebaf69"
+  integrity sha1-6HxQfeKwtNB1A4taQlR8fbvrr2k=
 
 npm-bundled@^1.0.1:
   version "1.0.5"
@@ -7887,6 +7900,13 @@ react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-nouislider@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-nouislider/-/react-nouislider-2.0.1.tgz#94ba46d78627aa1f168d5744c4e2a89df67ab3d4"
+  integrity sha512-/K5cHKkvsvZ/fwgFATxkORAEtuiWVrQOqNchEInRn7qlv9mDh+LEq+NydFu91v7Cy2XjHzVPD9ZU12wg5t9yCg==
+  dependencies:
+    nouislider "^9.2.0"
 
 react-overlays@^0.8.0:
   version "0.8.3"

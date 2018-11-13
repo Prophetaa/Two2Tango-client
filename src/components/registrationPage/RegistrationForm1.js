@@ -11,7 +11,7 @@ class RegistrationForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if(this.state.facebookSubmition)this.props.facebookSubmit(this.state)
+    if (this.state.facebookSubmition) this.props.facebookSubmit(this.state);
     this.props.onSubmit(this.state);
   };
 
@@ -30,20 +30,24 @@ class RegistrationForm extends Component {
   };
 
   responseFacebook = async response => {
-    if(response.email) { 
-    await this.setState({
-      email: response.email,
-      facebookSubmition:true,
-      password: response.id,
-      fbName: response.name.split(" ", 2),
-      confirmPassword: response.id,
-      fbPicture: response.picture.data.url,
-      isVerified: true
-    });
-    let button = await document.getElementById('profileBtn');
-    button.click();
-  }
-  return null
+    if (response.email) {
+      await this.setState({
+        email: response.email,
+        facebookSubmition: true,
+        password: response.id,
+        fbName: response.name.split(' ', 2),
+        confirmPassword: response.id,
+        fbPicture: response.picture.data.url,
+        isVerified: true
+      });
+      let button = await document.getElementById('profileBtn');
+      button.click();
+    }
+    return null;
+  };
+
+  responseGoogle = async response => {
+    console.log(response);
   };
 
   render() {

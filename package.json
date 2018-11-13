@@ -6,7 +6,7 @@
 	"dependencies": {
 		"history": "^4.7.2",
 		"i": "^0.3.6",
-		"nouislider": "^12.1.0",
+		"nouislider-react": "^1.6.4",
 		"react": "^16.6.0",
 		"react-bootstrap": "^0.32.4",
 		"react-dom": "^16.6.0",
