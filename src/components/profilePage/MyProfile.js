@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styling/MyProfile.css';
-import { Link } from 'react-router-dom';
+import history from '../../history';
 
 export default function ProfilePage(props) {
 	const { profile } = props;
@@ -50,11 +50,12 @@ export default function ProfilePage(props) {
 					<div className="col-sm-12 col-md-4">
 						<h3 className="pb-4">About me:</h3>
 						<p>{profile.about}</p>
-						<Link to="/edit-profile">
-							<button className="btn update-btn-profile text-uppercase">
-								modify my profile
-							</button>
-						</Link>
+
+						<button
+							onClick={() => history.push('/edit-profile')}
+							className="btn update-btn-profile btn-block text-uppercase">
+							modify my profile
+						</button>
 					</div>
 				</div>
 			</div>
