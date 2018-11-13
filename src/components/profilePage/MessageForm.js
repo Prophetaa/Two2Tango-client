@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { sendMessage } from '../../actions/messages';
+
 import "../../styling/MessageForm.css";
 
 class MessageForm extends PureComponent {
@@ -61,5 +61,5 @@ const mapStateToProps = function(state) {
 };
 export default connect(
 	mapStateToProps,
-	{ sendMessage }
+	{  }
 )(MessageForm);
