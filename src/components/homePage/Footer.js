@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logoWhite from '../../styling/images/logo-grey.png';
+import logoWhite from '../../styling/images/logo.png';
 
 export default class Footer extends Component {
 	render() {

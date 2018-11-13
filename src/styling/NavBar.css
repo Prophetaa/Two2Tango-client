@@ -4,13 +4,25 @@
 
 .icons-navbar{
     background-color: transparent;
-    border: 0;
+    margin-left:5px;
+    color:#A00D26;
+    border:0;
+}
+
+.nav-btn{
+    max-width: 25px;
+    max-height: 25px;
 }
 
 .link-navbar{
     color:black;
+    text-decoration: none;
 }
 
+.link-navbar:hover,.icons-navbar:hover{
+    color:#A00D26;
+    text-decoration: none;
+}
 
 .link-navbar:hover, 
 .link-navbar:focus, 
