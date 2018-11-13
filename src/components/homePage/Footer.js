@@ -16,39 +16,36 @@ export default class Footer extends Component {
       		<div class="row">
 						<div class="col-md-6 mt-md-0 mt-3">
 						<h5 class="text-uppercase">Footer Content</h5>
-          		<p>Here you can use rows and columns here to organize your footer content.</p>
+          		<p>Two2Tango</p>
 						</div>
 						<hr class="clearfix w-100 d-md-none pb-3" />
         		<div class="col-md-3 mb-md-0 mb-3">
-            	<h5 class="text-uppercase">Links</h5>
+            	<h6 class="text-uppercase">Contacts</h6>
             	<ul class="list-unstyled">
             		<li>
-                	<a href="#!">Link 1</a>
+                	<Link className="link-footer" to="#!">Two2Tango@email.com</Link>
               	</li>
               	<li>
-                	<a href="#!">Link 2</a>
+                	<Link className="link-footer" to="#!">cinziadmin@email.com</Link>
               	</li>
             	</ul>
           	</div>
           	<div class="col-md-3 mb-md-0 mb-3">
-							<h5 class="text-uppercase">Links</h5>
+							<h6 class="text-uppercase">Social</h6>
 							<ul class="list-unstyled">
 								<li>
-									<Link to="#!">
+									<Link to="#!" className="link-footer">
 										<img src={facebook} alt="fb"/>
-										Facebook
 									</Link>
 								</li>
 								<li>
-									<Link to="#!">
+									<Link to="#!" className="link-footer">
 										<img src={tweet} alt="tw"/>
-										Tweeter
 									</Link>
 								</li>
 								<li>
-									<Link to="#!">
+									<Link to="#!" className="link-footer">
 										<img src={instagram} alt="ig"/>
-										Instagram
 									</Link>
 								</li>
 							</ul>
@@ -56,7 +53,7 @@ export default class Footer extends Component {
 					</div>
 				</div>
 				<div class="footer-copyright text-center py-3">© 2018 Copyright:
-					<Link to="https://mdbootstrap.com/education/bootstrap/"> Two2Tango.com</Link>
+					<Link to="#!" className="link-footer"> Two2Tango.com</Link>
 				</div>
 			</footer>
 

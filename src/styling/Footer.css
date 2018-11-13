@@ -1,0 +1,16 @@
+footer{
+ background-color: #A00D26; 
+ color: white;
+}
+
+.link-footer{
+  color:white;
+  text-decoration:none;
+}
+
+.link-footer:hover, 
+.link-footer:focus, 
+.link-footer:active, 
+.link-footer.active{
+    color:black;
+}
