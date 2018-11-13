@@ -246,12 +246,12 @@
   background-color: #3b5998;
 }
 .signup-link, .account-no {
-  font-size: .8rem
+  font-size: 1rem;
+  padding-top: 5px;
 }
 .signup-link {
   font-weight: 400;
-  font-size: .9rem;
-  
+  font-size: .9rem;  
 }
 .signup-link:hover {
   font-weight: bold !important;
@@ -266,12 +266,13 @@
 }
 .login {
   width: 100%;
-  min-width: 20rem;
+  min-width: 18rem;
   max-width: 28rem;
   margin: auto;
   padding: 0 !important;
 }
-.padd {
-  padding: 0px;
+.card-signin .card-body {
+  padding: 0rem;
+  max-width: 100%;
 }
 }

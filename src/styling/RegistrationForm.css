@@ -280,7 +280,7 @@ display: inline;
       width: 100%;
   }
   .signupContainer {
-    width: 100%;
+    width: 100% !important;
     min-width: 18rem;
     max-width: 28rem;
     margin: auto;
@@ -288,5 +288,8 @@ display: inline;
   }
   .card-signin .card-body {
     padding: 0rem;
+  }
+  .padd {
+    padding: 0px;
   }
   }
