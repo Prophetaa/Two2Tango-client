@@ -79,7 +79,7 @@ class RegistrationForm3 extends Component {
 
   render() {
     return (
-      <div className="container signupContainer signupContainer-final">
+      <div className="container signupContainer">
         <div className="row">
           <div className="col-lg-10 col-xl-9 mx-auto padd">
             <div className="card card-signin flex-row my-5">
