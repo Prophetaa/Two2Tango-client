@@ -14,9 +14,7 @@ export default function ProfilePage(props) {
 					{props.profile.userId !== currentUserId && (
 						<h1>{profile.firstName}'s Profile</h1>
 					)}
-					{props.profile.userId === currentUserId && (
-						<h1>{profile.firstName}My Profile</h1>
-					)}
+					{props.profile.userId === currentUserId && <h1>My Profile</h1>}
 					<div className="image" />
 				</div>
 				<div className="row main-profile">
