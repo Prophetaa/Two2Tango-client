@@ -265,14 +265,11 @@ div#lastName{
   color:white;
   margin-left: 2%;
 }
-
 .removecitiesBtn:hover{
   background-color: rgba(160, 13, 37, 0.877);
 }
-
 .citiesLi{
 display: inline;
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -287,9 +284,15 @@ display: inline;
     padding: 0 !important;
   }
   .card-signin .card-body {
-    padding: 0rem;
+    padding: 1rem;
   }
   .padd {
     padding: 0px;
+  }
+  .form-signin {
+    padding: 5px 10px 5px 10px;
+  }
+  input {
+    height: 3rem !important;
   }
   }

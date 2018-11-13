@@ -1,7 +1,7 @@
-import '../../styling/LoginForm.css';
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
+import "../../styling/LoginForm.css";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 
 export default class LoginForm extends Component {
   state = {};
@@ -24,9 +24,9 @@ export default class LoginForm extends Component {
 
     await this.setState({
       email: response.email,
-      password: response.id,
+      password: response.id
     });
-    let button = await document.getElementById('loginButton');
+    let button = await document.getElementById("loginButton");
     button.click();
   };
   render() {
@@ -38,7 +38,7 @@ export default class LoginForm extends Component {
               <div className="card-body">
                 <form className="form-signin" onSubmit={this.handleSubmit}>
                   <h5 className="card-title text-center">Login</h5>
-                 
+
                   <div className="form-label-group">
                     <input
                       type="email"
@@ -47,10 +47,12 @@ export default class LoginForm extends Component {
                       placeholder="Email address"
                       name="email"
                       required
-                      value={this.state.email || ''}
+                      value={this.state.email || ""}
                       onChange={this.handleChange}
                     />
-                     {!this.state.email && <label htmlFor="inputEmail">Email address</label>}
+                    {!this.state.email && (
+                      <label htmlFor="inputEmail">Email address</label>
+                    )}
                   </div>
                   <div className="form-label-group mb-5">
                     <input
@@ -60,22 +62,26 @@ export default class LoginForm extends Component {
                       placeholder="Password"
                       name="password"
                       required
-                      value={this.state.password || ''}
+                      value={this.state.password || ""}
                       onChange={this.handleChange}
                     />
-                    {!this.state.password && <label htmlFor="inputPassword">Password</label>}
+                    {!this.state.password && (
+                      <label htmlFor="inputPassword">Password</label>
+                    )}
                   </div>
                   <button
-					className="btn btn-lg btn-primary btn-block text-uppercase btn-login"
-					id="loginButton"
-                    type="submit">
+                    className="btn btn-lg btn-primary btn-block text-uppercase btn-login"
+                    id="loginButton"
+                    type="submit"
+                  >
                     Login
                   </button>
                   <span className="d-block text-center mt-2 small account-no">
                     Don't have an account yet?
                     <Link
                       to="/signup"
-                      className="d-block text-center mt-2 small Links signup-link">
+                      className="d-block text-center mt-2 small Links signup-link"
+                    >
                       Sign up here
                     </Link>
                   </span>
@@ -89,8 +95,9 @@ export default class LoginForm extends Component {
                     render={renderProps => (
                       <button
                         className="btn btn-lg btn-facebook btn-block text-uppercase"
-                        onClick={renderProps.onClick}>
-                        <i className="fab fa-facebook-f mr-2" /> Sign up with
+                        onClick={renderProps.onClick}
+                      >
+                        <i className="fab fa-facebook-f mr-2" /> Log in with
                         Facebook
                       </button>
                     )}

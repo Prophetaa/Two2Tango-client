@@ -117,7 +117,7 @@ class RegistrationForm extends Component {
                   </button>
                   <p className="d-block text-center mt-2 small account-no">
                     Already a user?
-                    <Link to={'/login'} className="d-block text-center mt-2 small Links signup-link"> Sign In</Link>
+                    <Link to={'/login'} className="d-block text-center mt-2 small Links signup-link"> Log In</Link>
                   </p>
                   <hr className="my-4" />
                   <FacebookLogin
