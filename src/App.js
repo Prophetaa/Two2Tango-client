@@ -11,6 +11,7 @@ import MessageListContainer from './components/messagePage/MessageListContainer'
 import EditProfileContainer from './components/profilePage/EditProfileContainer';
 import LogoutPage from './components/logoutPage/LogoutPage';
 import preferencesPage from './components/preferencesPage/preferencesPage';
+import MyProfileContainer from './components/profilePage/MyProfileContainer';
 
 class App extends Component {
 	render() {
@@ -25,6 +26,7 @@ class App extends Component {
 						<Route exact path="/logout" component={LogoutPage} />
 						<Route exact path="/signup" component={RegistrationPage} />
 						<Route exact path="/results" component={ResultsListContainer} />
+						<Route exact path="/my-profile" component={MyProfileContainer} />
 						<Route
 							exact
 							path="/profiles/:id"

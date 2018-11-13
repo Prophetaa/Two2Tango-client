@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styling/ProfilePage.css';
-import MessageForm from './MessageForm';
+import { Link } from 'react-router-dom';
 
 export default function ProfilePage(props) {
 	const { profile } = props;
@@ -65,8 +65,12 @@ export default function ProfilePage(props) {
 						<h3 className="text-uppercase">about me</h3>
 						<p>{profile.about}</p>
 					</div>
-					<div className="container-fluid">
-						<MessageForm />
+					<div className="row update-profile">
+						<Link to="/edit-profile">
+							<button className="btn update-btn-profile text-uppercase">
+								modify my profile
+							</button>
+						</Link>
 					</div>
 				</div>
 			</div>
