@@ -8,7 +8,7 @@ export default function ProfilePage(props) {
 		<section className="profile-page">
 			<header>
 				<div className="container">
-					<h1>My profile</h1>
+					<h1>{`${profile.firstName}'s profile`}</h1>
 				</div>
 			</header>
 			<div className="container">

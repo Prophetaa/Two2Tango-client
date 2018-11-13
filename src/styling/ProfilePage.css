@@ -1,9 +1,10 @@
 .profile-page header {
-    background: #A00D26;
-    color: white;
-    padding: 20px 0;
-    font-family: 'Work Sans';
-    margin: 0 0 40px 0;
+  background: url('./images/profile.jpg') no-repeat right;
+  background-color: #A00D26;
+  color: white;
+  padding: 30px 0;
+  font-family: 'Work Sans';
+  margin: 0 0 40px 0;
   }
   
   .profile-page img {
