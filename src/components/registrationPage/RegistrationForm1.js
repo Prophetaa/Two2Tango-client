@@ -120,7 +120,7 @@ class RegistrationForm extends Component {
                   </p>
                   <hr className="my-4" />
                   <FacebookLogin
-                    appId="1052579401609037"
+                    appId="516292132220329"
                     autoLoad={false}
                     fields="name,email,picture"
                     callback={this.responseFacebook}

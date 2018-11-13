@@ -47,7 +47,10 @@
   width:55%
 }
 
-.SignInPrmBtn:hover, .SignInPrmBtn:focus, .SignInPrmBtn:active, .SignInPrmBtn.active{
+.SignInPrmBtn:hover, 
+.SignInPrmBtn:focus, 
+.SignInPrmBtn:active, 
+.SignInPrmBtn.active{
   color: #A00D26;
   background-color: #ffffff;
   border-color: #ffffff; 
