@@ -3,41 +3,70 @@ import { baseUrl } from '../constants';
 import { isExpired } from '../jwt';
 import { logout } from '../actions/users';
 
-export const MESSAGE_SENT_SUCCES = 'MESSAGE_SENT_SUCCES';
-export const SET_ALL_MESSAGES = 'SET_ALL_MESSAGES';
+export const MESSAGE_SENT_SUCCESS = 'MESSAGE_SENT_SUCCESS';
+export const SET_ALL_CHATS = 'SET_ALL_CHATS';
+export const FETCHED_MESSAGES = 'FETCHED_MESSAGES'
+export const RESET_MESSAGES = "RESET_MESSAGES"
 
-const messageSent = () => ({
-	type: MESSAGE_SENT_SUCCES
+
+const setAllMessages = chats => ({
+	type: SET_ALL_CHATS,
+	payload: chats
 });
 
-const setAllMessages = messages => ({
-	type: SET_ALL_MESSAGES,
+const receivedMessages = messages => ({
+	type: FETCHED_MESSAGES,
 	payload: messages
-});
+})
 
-export const getAllMessages = () => (dispatch, getState) => {
+const updatedMessages = payload => ({
+	type: MESSAGE_SENT_SUCCESS,
+	payload
+})
+
+export const resetMessages = () => ({
+	type: RESET_MESSAGES
+})
+
+export const getAllChats = () => (dispatch, getState) => {
 	const state = getState();
 	const jwt = state.currentUser.jwt;
 
 	if (isExpired(jwt)) return dispatch(logout());
 
 	request
-		.get(`${baseUrl}/messages`)
+		.get(`${baseUrl}/chats`)
 		.set('Authorization', `Bearer ${jwt}`)
 		.then(result => dispatch(setAllMessages(result.body)))
 		.catch(err => console.log(err));
 };
 
-export const sendMessage = (content, userId) => (dispatch, getState) => {
+
+export const renderMessageContainer = (id) => (dispatch, getState) => {
 	const state = getState();
 	const jwt = state.currentUser.jwt;
 
 	if (isExpired(jwt)) return dispatch(logout());
 
 	request
-		.post(`${baseUrl}/messages`)
+		.get(`${baseUrl}/${id}/messages`)
 		.set('Authorization', `Bearer ${jwt}`)
-		.send({ content, userId })
-		.then(result => dispatch(messageSent()))
+		.then(result => dispatch(receivedMessages(result.body)))
 		.catch(err => console.log(err));
-};
+}
+
+
+export const postMessage = (content, id) => (dispatch, getState) => {
+	const state = getState();
+	const jwt = state.currentUser.jwt;
+
+	if (isExpired(jwt)) return dispatch(logout());
+
+	request
+		.post(`${baseUrl}/${id}/messages`)
+		.set('Authorization', `Bearer ${jwt}`)
+		.send({ content })
+		.then(result => dispatch(updatedMessages(result.body)))
+		.catch(err => console.log(err));
+
+}

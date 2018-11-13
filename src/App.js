@@ -11,6 +11,8 @@ import MessageListContainer from './components/messagePage/MessageListContainer'
 import EditProfileContainer from './components/profilePage/EditProfileContainer';
 import LogoutPage from './components/logoutPage/LogoutPage';
 import preferencesPage from './components/preferencesPage/preferencesPage';
+import MessagesContainer from './components/messagePage/MessagesContainer'
+
 
 class App extends Component {
 	render() {
@@ -32,6 +34,7 @@ class App extends Component {
 						/>
 						<Route exact path="/preferences" component={preferencesPage} />
 						<Route exact path="/messages" component={MessageListContainer} />
+						<Route exact path="/chat" component={MessagesContainer}/>
 						<Route
 							exact
 							path="/edit-profile"

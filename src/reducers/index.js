@@ -4,18 +4,20 @@ import signup from './signup';
 import currentRegPage from './currentRegPage';
 import results from './results';
 import profile from './profile';
-import messages from './messages';
+import chats from './chats';
 import usersPreferences from './usersPreferences';
 import latestProfiles from './latestProfiles';
+import messages from './messages'
 
 export default {
 	currentRegPage,
 	currentUser,
 	login,
-	messages,
+	chats,
 	profile,
 	usersPreferences,
 	results,
 	signup,
-	latestProfiles
+	latestProfiles,
+	messages
 };
