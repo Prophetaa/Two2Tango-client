@@ -15,6 +15,7 @@ import MessagesContainer from './components/messagePage/MessagesContainer'
 import MyProfileContainer from './components/profilePage/MyProfileContainer';
 
 
+
 class App extends Component {
 	render() {
 		return (

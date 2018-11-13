@@ -7,6 +7,7 @@ import { postProfile } from '../../actions/registration';
 import Dropzone from 'react-dropzone';
 import * as request from 'superagent';
 
+
 import LocationSearchInput from './Geolocate';
 import CheckBoxes from './CheckBoxes';
 
