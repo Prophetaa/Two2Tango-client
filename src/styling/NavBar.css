@@ -38,6 +38,9 @@
     color:#A00D26;
 }
 
+.dropdown .nav-item {
+    cursor:pointer;
+}
 
 .dropDownLi:hover{
     background-color: #A00D26;
