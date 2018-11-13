@@ -154,18 +154,15 @@
   font-size: 48px;
 }
 
-footer{
-  background-color: #FFFFFF;
-  padding-top: 1.5625rem;
-  padding-bottom: 30px;
-  text-align: center;
+.partner-text{
+  padding-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {
   .find-your-partner {
     text-align: center;
-    height: 200px;
-    padding: 10px;
+    /* height: 200px;
+    padding: 10px; */
   }
 
   .background-top-home {
