@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import { postMessage, resetMessages } from '../../actions/messages';
+import { postMessage, resetMessages, resetChatId } from '../../actions/messages';
 
 class MessagesContainer extends Component {
   handleChange = event => {
@@ -18,12 +18,16 @@ class MessagesContainer extends Component {
     await this.props.postMessage(this.state.message, chatId);
   };
 
+  componentWillUnmount(){
+    this.props.resetMessages()
+    this.props.resetChatId()
+  }
+
   render() {
     if (!this.props.messages) return <Redirect to="/messages" />;
     return (
       <div>
         <h2 className="text-center">Chat</h2>
-        <button onClick={() => this.props.resetMessages()}>Go Back</button>
         <div className="container">
           {this.props.messages.map(message => (
             <div className="message-candidate center-block">
@@ -53,7 +57,7 @@ class MessagesContainer extends Component {
                       className="btn btn-default"
                       type="button"
                       onClick={() =>
-                        this.handleSubmit(this.props.messages[0].chatId)
+                        this.handleSubmit(this.props.chatId)
                       }>
                       Send
                     </button>
@@ -71,10 +75,11 @@ class MessagesContainer extends Component {
 const mapStateToProps = function(state) {
   return {
     currentUser: state.currentUser,
-    messages: state.messages
+    messages: state.messages,
+    chatId: state.chatId
   };
 };
 export default connect(
   mapStateToProps,
-  { postMessage, resetMessages }
+  { postMessage, resetMessages, resetChatId }
 )(MessagesContainer);

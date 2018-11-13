@@ -1,9 +1,8 @@
 import React from 'react';
 import '../../styling/ProfilePage.css';
-import MessageForm from './MessageForm';
 
 export default function ProfilePage(props) {
-	const { profile } = props;
+	const { profile, matchUser } = props;
 	return (
 		<section className="profile-page">
 			<header>
@@ -50,7 +49,7 @@ export default function ProfilePage(props) {
 					<div className="col-sm-12 col-md-4">
 						<h3 className="pb-4">About me:</h3>
 						<p>{profile.about}</p>
-						<MessageForm />
+						<button className="btn matchBtn" onClick={()=> matchUser(profile.userId)}>Match this Person</button>
 					</div>
 				</div>
 			</div>

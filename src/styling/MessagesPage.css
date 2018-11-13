@@ -19,3 +19,21 @@
 	box-shadow: 0 0 5px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
 }
 
+.NoMessages{
+	margin-top: 10rem;
+	display: flex;
+	justify-content: center;
+}
+
+.matchButton{
+	display: flex;
+	justify-content: center;
+	background-color: #A00D26;
+	color:white;
+	margin-top: 8rem;
+	margin-left: -33rem;
+}
+
+.matchButton:hover{
+	background-color: rgb(185, 16, 44);
+}

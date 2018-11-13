@@ -1,0 +1,29 @@
+.chatContainer{
+    border-radius: 5px !important;
+    border:none !important;
+    outline: none;
+    margin-bottom: 1rem;
+}
+.chatContainer:hover{
+    width: 31rem;
+}
+
+.chatContainer:onclick{
+    background-color: rgb(238, 238, 238);
+}
+
+.chatNamesContainer{
+    border-radius: 5px !important;
+}
+.chatUserPhoto{ 
+    border-radius: 100%;
+}
+
+.chatNames{
+    margin-left: 1rem;
+}
+
+
+.chatIcon{
+   size:10rem;
+}

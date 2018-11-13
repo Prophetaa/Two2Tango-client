@@ -36,7 +36,7 @@ class Navbar extends Component {
 									<li className="nav-item">
 										<button className="btn btn-outline-light btn-lg icons-navbar">
 											<Link to="/messages" className="link-navbar">
-												<img className="nav-btn" alt="icon" src={email} />
+												<img className="nav-btn navButtonHover" alt="icon" src={email} />
 											</Link>
 										</button>
 									</li>
@@ -49,7 +49,7 @@ class Navbar extends Component {
                   </li> */}
 									<li className="nav-item">
 										<button className="btn btn-outline-light btn-lg icons-navbar">
-											<Link to="/results" className="link-navbar">
+											<Link to="/results" className="link-navbar navButtonHover">
 												<img className="nav-btn" alt="icon" src={partners} />
 											</Link>
 										</button>
@@ -61,15 +61,15 @@ class Navbar extends Component {
 											role="button"
 											aria-haspopup="true"
 											aria-expanded="false">
-											<img className="nav-btn" alt="icon" src={user} />
+											<img className="nav-btn navButtonHover" alt="icon" src={user} />
 										</div>
 										<ul className="dropdown-menu">
 											<Link className="Links" to={'/my-profile'}>
-												<li className="dropDownLi">
+												<li className="dropDownLi navButtonHover">
 													<span className="pl-4 dropDownLink">My Profile</span>
 												</li>
 											</Link>
-											<Link className="Links" to={'/preferences'}>
+											<Link className="Links " to={'/preferences'}>
 												<li className="dropDownLi">
 													<span className="pl-4  dropDownLink">
 														Preferences
@@ -98,7 +98,7 @@ class Navbar extends Component {
 								<ul className="navbar-nav ml-auto d-inline-md right-align">
 									<li className="nav-item ">
 										<Link to="/signup" className="link-navbar">
-											<h6 className="font-link-navbar">Sign Up</h6>
+											<h6 className="font-link-navbar singUpClick">Sign Up</h6>
 										</Link>
 									</li>
 									<li className="nav-item">

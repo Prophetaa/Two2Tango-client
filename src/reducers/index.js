@@ -8,6 +8,7 @@ import chats from './chats';
 import usersPreferences from './usersPreferences';
 import latestProfiles from './latestProfiles';
 import messages from './messages'
+import chatId from './chatId'
 
 export default {
 	currentRegPage,
@@ -18,6 +19,7 @@ export default {
 	usersPreferences,
 	results,
 	signup,
+	chatId,
 	latestProfiles,
 	messages
 };

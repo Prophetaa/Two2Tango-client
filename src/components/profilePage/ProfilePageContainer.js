@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProfilePage from './ProfilePage';
 import { getOneProfile, getMyProfile } from '../../actions/results';
+import { createChat } from '../../actions/messages'
 import { Redirect } from 'react-router-dom';
 
 class ProfilePageContainer extends Component {
@@ -12,6 +13,10 @@ class ProfilePageContainer extends Component {
 			this.props.getOneProfile(this.props.match.params.id);
 		}
 	}
+	
+	handleMatch = async(userId) =>{
+		await this.props.createChat(userId)
+	}
 
 	render() {
 		if (!this.props.authenticated) return <Redirect to="/login" />;
@@ -21,6 +26,7 @@ class ProfilePageContainer extends Component {
 				<ProfilePage
 					profile={this.props.profile}
 					currentUser={this.props.currentUser}
+					matchUser={this.handleMatch}
 				/>
 			</div>
 		);
@@ -38,5 +44,5 @@ const mapStateToProps = function(state) {
 
 export default connect(
 	mapStateToProps,
-	{ getOneProfile, getMyProfile }
+	{ getOneProfile, getMyProfile, createChat }
 )(ProfilePageContainer);
