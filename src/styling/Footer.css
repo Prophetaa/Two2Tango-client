@@ -1,6 +1,10 @@
 footer{
  background-color: #A00D26; 
  color: white;
+ /* max-height: 250px; */
+ font-family: "Work Sans";
+ font-weight: 300;
+  border-top:solid 1px white; 
 }
 
 .link-footer{
@@ -8,9 +12,18 @@ footer{
   text-decoration:none;
 }
 
+.list-footer{
+  display:inline;
+  padding-right: 10px;
+}
+
 .link-footer:hover, 
 .link-footer:focus, 
 .link-footer:active, 
 .link-footer.active{
     color:black;
+}
+
+.footer-copyright{
+  border-top:solid 1px white;
 }

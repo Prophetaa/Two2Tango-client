@@ -197,7 +197,7 @@ export class homePage extends Component {
 					<div className="container background-bottom-home text-right">
 						<div className="row">
 							<div className="col-12">
-								<div>
+								<div className="partner-text">
 									<p className="h2 font-home">
 										Time to dance
 										<br />
@@ -214,8 +214,9 @@ export class homePage extends Component {
 						</div>
 					</div>
 				</section>
-
-				<Footer />
+				<section>
+					<Footer />
+				</section>
 			</div>
 		);
 	}
