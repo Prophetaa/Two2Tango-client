@@ -49,8 +49,8 @@ color:white;
     margin-left: 0.03rem;
     width: 100%;
     margin-bottom: 2%;
-    border: 1px lightgrey solid;
-    border-radius: 5px;
+    /* border: 1px lightgrey solid;
+    border-radius: 5px; */
 }
 
 .citiesLi{
@@ -63,7 +63,7 @@ color:white;
     margin-right: 0.5%;
     color: black;
     border: 1px  lightgray solid;
-    border-radius: 15px;
+    border-radius: .25rem;
     margin-left: 0.5%;
 }
 
@@ -115,7 +115,7 @@ color:white;
 .citiesBtn{
     background-color: #A00D26;
     color:white;
-    border-radius: 5px 0x 5px 5px;
+    border-radius: .25rem;
     border:none;
     outline: none;
 }
