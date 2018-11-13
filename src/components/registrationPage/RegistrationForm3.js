@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import { postPreferences } from '../../actions/registration';
 import LocationSearchInput from './Geolocate';
 import CheckBoxes from './CheckBoxes';
+import GenderMenu from '../preferencesPage/GenderMenu';
+import RoleMenu from '../preferencesPage/RoleMenu';
 class RegistrationForm3 extends Component {
   state = { cities:[], role: null, gender: null, tango_level: [], age: [] };
 
@@ -57,14 +59,14 @@ class RegistrationForm3 extends Component {
         this.state.cities,
         this.state.gender,
         [
-          parseInt(this.state.max_height, 10),
-          parseInt(this.state.min_height, 10)
+          parseInt(this.state.min_height, 10),
+          parseInt(this.state.max_height, 10)
         ],
         this.state.role,
         this.state.tango_level,
         [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
-      );
-      this.props.onSubmit();
+        ).then(this.props.onSubmit());
+  
     }
   };
 
@@ -86,95 +88,47 @@ class RegistrationForm3 extends Component {
                   Step 3: Matching Preferences
                 </h5>
                 <form className="form-signin" onSubmit={this.handleSubmit}>
-                  <div className="form-group">
-                    <LocationSearchInput onChange={this.handleSelectCity} />
-                    <button className="citiesBtn" onClick={this.selectCities}>
-                      add city
-                    </button>
-                  </div>
-                  <div className="selectedCities">
-                    {this.state.cities.map(city => (
-                      <li className="citiesLi">
-                        {city}{' '}
-                        <div
-                          className="removecitiesBtn"
-                          onClick={() => this.removeCity(city)}>
-                          x
-                        </div>
-                      </li>
-                    ))}
-                  </div>
-                  <div className="dropdown genderMenu">
-                    <button
-                      className="form-control dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false">
-                      {this.state.gender === null
-                        ? 'Select a Gender'
-                        : this.state.gender}
-                    </button>
-                    <div
-                      className="dropdown-menu form-control"
-                      aria-labelledby="dropdownMenuButton">
-                      <span
-                        className="dropdown-item "
-                        onClick={() => this.handleButtonClick('male')}>
-                        male
-                      </span>
-                      <span
-                        className="dropdown-item"
-                        onClick={() => this.handleButtonClick('female')}>
-                        female
-                      </span>
-                      <span
-                        className="dropdown-item"
-                        onClick={() => this.handleButtonClick('other')}>
-                        other
-                      </span>
+                <div className="form-group row cityInput">
+                      <LocationSearchInput onChange={this.handleSelectCity} />
+                      <button className="citiesBtn text-uppercase" onClick={this.selectCities}>
+                       add city
+                      </button>
                     </div>
-                  </div>
-                  <div className="dropdown">
-                    <button
-                      className="form-control dropdown-toggle"
-                      type="button"
-                      required
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false">
-                      {this.state.role === null
-                        ? 'Select a Role'
-                        : this.state.role}
-                    </button>
-                    <div
-                      className="dropdown-menu form-control"
-                      aria-labelledby="dropdownMenuButton">
-                      <span
-                        className="dropdown-item "
-                        onClick={() => this.handleButtonClick('leader')}>
-                        leader
-                      </span>
-                      <span
-                        className="dropdown-item"
-                        onClick={() => this.handleButtonClick('follower')}>
-                        follower
-                      </span>
+                    <div className="citiesContainer container row">
+                      {this.state.cities.map(city => (
+                        <span key={city} className="citiesLi">
+                          <span
+                            className="far fa-times-circle deleteIcon"
+                            onClick={() => this.removeCity(city)}
+                          />
+                          {city}
+                        </span>
+                      ))}
                     </div>
+                    <GenderMenu
+                      gender={this.state.gender}
+                      handleButtonClick={this.handleButtonClick}
+                    />
+                    <RoleMenu
+                      role={this.state.role}
+                      handleButtonClick={this.handleButtonClick}
+                    />
+
                     <div className="heightSelection">
                       <CheckBoxes handleCheck={this.handleCheck} />
-                    </div>
+
+                   <label className="formLabel">Age Gap: </label>
                     <div className="groupInputs">
                       <div className="form-group smallInput" id="minAge">
                         <input
-                          placeholder="Min Age *"
+                          placeholder="Min Age "
                           type="number"
                           name="min_age"
                           id="inputMaxHeight"
                           className="form-control menu2inputs"
                           required
+                          data-toggle="tooltip"
+                          title="minimum age"
                           value={this.state.min_age || ''}
                           onChange={this.handleChange}
                         />
@@ -182,8 +136,10 @@ class RegistrationForm3 extends Component {
                       <div className="form-group smallInput" id="maxAge">
                         <input
                           type="number"
-                          placeholder="Max Age *"
+                          placeholder="Max Age "
                           id="inputMinHeight"
+                          data-toggle="tooltip"
+                          title="maximum age"
                           className="form-control menu2inputs"
                           name="max_age"
                           value={this.state.max_age || ''}
@@ -192,12 +148,15 @@ class RegistrationForm3 extends Component {
                         />
                       </div>
                     </div>
+                    <label className="formLabel">Height Gap: </label>
                     <div className="groupInputs bottomPadding">
                       <div className="form-group smallInput" id="minHeight">
                         <input
                           type="number"
                           placeholder="Min Height *"
                           id="inputMinHeight"
+                          data-toggle="tooltip"
+                          title="minimum height"
                           className="form-control menu2inputs"
                           name="min_height"
                           value={this.state.min_height || ''}
@@ -211,6 +170,8 @@ class RegistrationForm3 extends Component {
                           type="number"
                           name="max_height"
                           id="inputMaxHeight"
+                          data-toggle="tooltip"
+                          title="maximum height"
                           className="form-control menu2inputs"
                           required
                           value={this.state.max_height || ''}

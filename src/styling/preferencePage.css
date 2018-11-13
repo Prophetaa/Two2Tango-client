@@ -117,6 +117,7 @@ color:white;
     color:white;
     border-radius: 5px 0x 5px 5px;
     border:none;
+    outline: none;
 }
 
 .citiesBtn:hover{

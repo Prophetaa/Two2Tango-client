@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import '../../styling/RegistrationForm.css';
-import { Link , Redirect} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import ReCaptcha from './ReCaptcha';
-
 
 class RegistrationForm extends Component {
   state = {};
 
   handleSubmit = e => {
     e.preventDefault();
+    if(this.state.facebookSubmition)this.props.facebookSubmit(this.state)
     this.props.onSubmit(this.state);
   };
 
-  handleCaptcha = () =>{
+  handleCaptcha = () => {
     this.setState({
       isVerified: true
-    })
-  }
+    });
+  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -28,8 +29,23 @@ class RegistrationForm extends Component {
     });
   };
 
+  responseFacebook = async response => {
+    console.log(response);
+
+    await this.setState({
+      email: response.email,
+      facebookSubmition:true,
+      password: response.id,
+      fbName: response.name.split(" ", 2),
+      confirmPassword: response.id,
+      fbPicture: response.picture.data.url,
+      isVerified: true
+    });
+    let button = await document.getElementById('profileBtn');
+    button.click();
+  };
+
   render() {
-    if (this.props.currentUser) return <Redirect to="/results" />
     return (
       <div className="container registration-form-1 signupContainer">
         <div className="row">
@@ -89,11 +105,12 @@ class RegistrationForm extends Component {
                           The passwords have to match!
                         </p>
                       )}
-                   <ReCaptcha handleChanges={this.handleCaptcha}/>
+                    <ReCaptcha handleChanges={this.handleCaptcha} />
                   </div>
                   <button
-                    disabled={this.state.isVerified=== true? false : true}
+                    disabled={this.state.isVerified === true ? false : true}
                     className="btn btn-lg btn-primary btn-block text-uppercase finalStepBtn"
+                    id="profileBtn"
                     type="submit">
                     Next Step
                   </button>
@@ -102,19 +119,20 @@ class RegistrationForm extends Component {
                     <Link to={'/login'}> Sign In</Link>
                   </p>
                   <hr className="my-4" />
-                  <button
-                    disabled
-                    className="btn btn-lg btn-google btn-block text-uppercase"
-                    type="submit">
-                    <i className="fab fa-google mr-2" /> Sign up with Google
-                  </button>
-                  <button
-                    disabled
-                    className="btn btn-lg btn-facebook btn-block text-uppercase"
-                    type="submit">
-                    <i className="fab fa-facebook-f mr-2" /> Sign up with
-                    Facebook
-                  </button>
+                  <FacebookLogin
+                    appId="1052579401609037"
+                    autoLoad={false}
+                    fields="name,email,picture"
+                    callback={this.responseFacebook}
+                    render={renderProps => (
+                      <button
+                        className="btn btn-lg btn-facebook btn-block text-uppercase"
+                        onClick={renderProps.onClick}>
+                        <i className="fab fa-facebook-f mr-2" /> Sign up with
+                        Facebook
+                      </button>
+                    )}
+                  />
                 </form>
               </div>
             </div>
@@ -126,9 +144,9 @@ class RegistrationForm extends Component {
 }
 
 const mapStateToProps = function(state) {
-	return {
-		currentUser: state.currentUser
-	};
+  return {
+    currentUser: state.currentUser
+  };
 };
 
-export default connect(mapStateToProps)(RegistrationForm)
+export default connect(mapStateToProps)(RegistrationForm);
