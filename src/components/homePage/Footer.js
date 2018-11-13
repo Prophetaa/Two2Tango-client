@@ -7,7 +7,6 @@ import tweet from '../../styling/images/tweet.png';
 import instagram from '../../styling/images/instagram.png';
 
 
-
 export default class Footer extends Component {
 	render() {
 		return (
