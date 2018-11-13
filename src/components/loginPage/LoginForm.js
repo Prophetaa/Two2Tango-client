@@ -38,7 +38,7 @@ export default class LoginForm extends Component {
               <div className="card-body">
                 <form className="form-signin" onSubmit={this.handleSubmit}>
                   <h5 className="card-title text-center">Login</h5>
-				  <label className="loginLabels"> email: </label>
+                 
                   <div className="form-label-group">
                     <input
                       type="email"
@@ -50,9 +50,8 @@ export default class LoginForm extends Component {
                       value={this.state.email || ''}
                       onChange={this.handleChange}
                     />
+                     {!this.state.email && <label htmlFor="inputEmail">Email address</label>}
                   </div>
-                  <hr />
-				  <label className="loginLabels"> password: </label>
                   <div className="form-label-group mb-5">
                     <input
                       type="password"
@@ -64,6 +63,7 @@ export default class LoginForm extends Component {
                       value={this.state.password || ''}
                       onChange={this.handleChange}
                     />
+                    {!this.state.password && <label htmlFor="inputPassword">Password</label>}
                   </div>
                   <button
 					className="btn btn-lg btn-primary btn-block text-uppercase btn-login"

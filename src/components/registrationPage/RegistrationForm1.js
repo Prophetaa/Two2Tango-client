@@ -30,8 +30,7 @@ class RegistrationForm extends Component {
   };
 
   responseFacebook = async response => {
-    console.log(response);
-
+    if(response.email) { 
     await this.setState({
       email: response.email,
       facebookSubmition:true,
@@ -43,6 +42,8 @@ class RegistrationForm extends Component {
     });
     let button = await document.getElementById('profileBtn');
     button.click();
+  }
+  return null
   };
 
   render() {
