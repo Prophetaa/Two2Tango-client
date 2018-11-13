@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { getLatestProfiles } from '../../actions/results';
 import { Link } from 'react-router-dom';
 
-import event from '../../styling/images/Event.png';
+import event from '../../styling/images/event.png';
 import interview from '../../styling/images/interview.png';
 import laugh from '../../styling/images/laugh.png';
 import Avatar6 from '../../styling/images/Avatar6.png';
@@ -46,7 +46,10 @@ export class homePage extends Component {
 									</button>
 
 									<div className="login-container">
-										Already a menber? <Link to="/login" className="login-home">Log In</Link>
+										Already a menber?{' '}
+										<Link to="/login" className="login-home">
+											Log In
+										</Link>
 									</div>
 								</div>
 							</div>
@@ -164,7 +167,7 @@ export class homePage extends Component {
 							</div>
 						</div>
 					</div>
-					<hr/>
+					<hr />
 					<div className="container about-home">
 						<div className="row avatar-row-home">
 							<div className="col-xs-12 col-sm-12 col-md-8 avatar-col-home">
