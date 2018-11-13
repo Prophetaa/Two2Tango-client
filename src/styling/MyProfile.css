@@ -1,0 +1,32 @@
+.my-profile-page header {
+  background: #A00D26;
+  color: white;
+  padding: 20px 0;
+  font-family: 'Work Sans';
+  margin: 0 0 40px 0;
+}
+
+.my-profile-page img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.my-profile-page {
+  background:#F2EFEA;
+  padding: 0 0 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .my-profile-page {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .my-profile-page {
+    text-align: center;
+  }
+}
+
+
