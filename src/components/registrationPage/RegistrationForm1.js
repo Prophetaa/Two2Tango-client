@@ -30,8 +30,7 @@ class RegistrationForm extends Component {
   };
 
   responseFacebook = async response => {
-    console.log(response);
-
+    if(response.email) { 
     await this.setState({
       email: response.email,
       facebookSubmition:true,
@@ -43,6 +42,8 @@ class RegistrationForm extends Component {
     });
     let button = await document.getElementById('profileBtn');
     button.click();
+  }
+  return null
   };
 
   render() {
@@ -120,7 +121,7 @@ class RegistrationForm extends Component {
                   </p>
                   <hr className="my-4" />
                   <FacebookLogin
-                    appId="1052579401609037"
+                    appId="516292132220329"
                     autoLoad={false}
                     fields="name,email,picture"
                     callback={this.responseFacebook}
