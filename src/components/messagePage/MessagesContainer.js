@@ -3,7 +3,11 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import '../../styling/MessagesContainer.css';
 
-import { postMessage, resetMessages, resetChatId } from '../../actions/messages';
+import {
+  postMessage,
+  resetMessages,
+  resetChatId
+} from '../../actions/messages';
 import Messages from './Messages';
 
 class MessagesContainer extends Component {
@@ -33,67 +37,41 @@ class MessagesContainer extends Component {
         <h2 className="text-center">Chat</h2>
         <div className="container chat-box">
           <div className="container chat-messages-box">
-            <Messages/>
+            <Messages />
           </div>
           <div className="center-block fixed-bottom">
-          <div className="container-fluid txtAreaBgrnd">
-            <div className="row-12">
-              <div className="col-xs-12">
-                <div className="input-group container">
-                  <input
-                    type="text"
-                    name="message"
-                    onChange={this.handleChange}
-                    className="form-control input-message"
-                  />
-                  <span className="input-group-btn">
-                    <button
-                      className="btn-lg btn-outline-light btn-send"
-                      type="button"
-                      onClick={() =>
-                        this.handleSubmit(this.props.chatId)
-                      }>
-                      Send
-                    </button>
-                  </span>
-                </div>
-              </div>
-
-            </div>
-          ))}
-          <div className="messaging center-block fixThis">
-            <div className="row-12">
-              <div className="col-xs-12">
-                <div className="input-group">
-                  <form
-                    onSubmit={e => {
-                      e.preventDefault();
-                      this.handleSubmit(this.props.chatId);
-                      e.target.children[0].value = '';
-                    }}>
-                    <input
-                      type="text"
-                      name="message"
-                      id="chat"
-                      onChange={this.handleChange}
-                      className="form-control"
-                      defaultValue=""
-                    />
-                    <span className="input-group-btn">
-                      <button
-                        className="btn btn-outline-light btn-send"
-                        type="submit">
-                        Send
-                      </button>
-                    </span>
-                  </form>
+            <div className="container-fluid txtAreaBgrnd">
+              <div className="row-12">
+                <div className="col-xs-12">
+                  <div className="input-group container">
+                    <form
+                      onSubmit={e => {
+                        e.preventDefault();
+                        this.handleSubmit(this.props.chatId);
+                        e.target.children[0].value = '';
+                      }}>
+                      <input
+                        type="text"
+                        name="message"
+                        id="chat"
+                        onChange={this.handleChange}
+                        className="form-control"
+                        defaultValue=""
+                      />
+                      <span className="input-group-btn">
+                        <button
+                          className="btn btn-outline-light btn-send"
+                          type="submit">
+                          Send
+                        </button>
+                      </span>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      </div>
       </div>
     );
   }

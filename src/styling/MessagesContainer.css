@@ -45,6 +45,21 @@
 }
 
 .time-right{
-  float: right; 
+  float: center; 
+}
+
+.chat-box form {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.chat-box{
+  width: 80%;
+  margin: 0 auto;
+}
+
+#chat {
+  width: inherit;
+  display: inline;
 }
 
