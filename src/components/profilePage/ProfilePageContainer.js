@@ -1,48 +1,68 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ProfilePage from './ProfilePage';
-import { getOneProfile, getMyProfile } from '../../actions/results';
-import { createChat } from '../../actions/messages'
+import {
+  getOneProfile,
+  getMyProfile,
+  getUserMatches,
+  cleanMatches
+} from '../../actions/results';
+import { createChat, createMatch } from '../../actions/messages';
 import { Redirect } from 'react-router-dom';
 
 class ProfilePageContainer extends Component {
-	state = {};
+  state = {};
 
-	componentDidMount() {
-		if (this.props.authenticated) {
-			this.props.getOneProfile(this.props.match.params.id);
-		}
-	}
-	
-	handleMatch = async(userId) =>{
-		await this.props.createChat(userId)
-	}
+  componentDidMount() {
+    if (this.props.authenticated) {
+      this.props.getOneProfile(this.props.match.params.id);
+      this.props.getUserMatches();
+    }
+  }
 
-	render() {
-		if (!this.props.authenticated) return <Redirect to="/login" />;
-		if (!this.props.profile) return null;
-		return (
-			<div>
-				<ProfilePage
-					profile={this.props.profile}
-					currentUser={this.props.currentUser}
-					matchUser={this.handleMatch}
-				/>
-			</div>
-		);
-	}
+  handleMatch = async userId => {
+    await this.props.createMatch(userId);
+    await this.props.createChat(userId);
+  };
+
+  componentWillUnmount() {
+    this.props.cleanMatches();
+  }
+
+  render() {
+    if (!this.props.authenticated) return <Redirect to="/login" />;
+    if (!this.props.profile) return null;
+    return (
+      <div>
+        <ProfilePage
+          profile={this.props.profile}
+          currentUser={this.props.currentUser}
+          matchUser={this.handleMatch}
+          matches={this.props.matches}
+        />
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = function(state) {
-	return {
-		login: state.login,
-		authenticated: state.currentUser !== null,
-		currentUser: state.currentUser,
-		profile: state.profile
-	};
+  return {
+    login: state.login,
+    matches: state.matches,
+    authenticated: state.currentUser !== null,
+    currentUser: state.currentUser,
+    profile: state.profile
+  };
 };
 
 export default connect(
-	mapStateToProps,
-	{ getOneProfile, getMyProfile, createChat }
+  mapStateToProps,
+  {
+    getOneProfile,
+    getMyProfile,
+    createChat,
+    createMatch,
+    getUserMatches,
+    cleanMatches
+  }
 )(ProfilePageContainer);
