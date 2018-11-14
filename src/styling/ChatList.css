@@ -34,3 +34,7 @@
 .chatIcon{
    size:10rem;
 }
+
+.media-body.message {
+    cursor: pointer;
+}

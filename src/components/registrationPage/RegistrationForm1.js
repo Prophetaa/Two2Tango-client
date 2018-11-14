@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import ReCaptcha from './ReCaptcha';
 
+import { FACEBOOK_API_KEY } from '../../constants'
 class RegistrationForm extends Component {
   state = {};
 
@@ -124,7 +125,7 @@ class RegistrationForm extends Component {
                   </p>
                   <hr className="my-4" />
                   <FacebookLogin
-                    appId="516292132220329"
+                    appId={FACEBOOK_API_KEY}
                     autoLoad={false}
                     fields="name,email,picture"
                     callback={this.responseFacebook}
