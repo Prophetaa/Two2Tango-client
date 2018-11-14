@@ -34,3 +34,15 @@
 .chatIcon{
    size:10rem;
 }
+
+.NoMessagesBtn{
+    margin-top: 10%;
+    margin-left:45%;
+    background-color: #A00D26;
+    border: 0;
+}
+
+.NoMessagesBtn:hover{
+    background-color: white;
+    color:#A00D26;
+}

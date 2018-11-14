@@ -8,14 +8,21 @@ import email from '../../styling/images/EMAIL.png';
 export default function messages(props) {
   if (props.chats[0].length < 1 && props.chats[1].length < 1)
     return (
-      <div className="NoMessages">
-        <h1 className=" header">
-          Looks Like you didn't connect with anyone yet..
-        </h1>
-        <Link className="Links" to="/results">
-          <button className="matchButton btn">Start Matching!</button>
-        </Link>
+      <div className="container">
+        <div className="col-sm-12">
+          <div className="row">
+            <h1 className="header NoMessages">
+              Looks Like you didn't connect with anyone yet..
+            </h1>
+          </div>
+          <div className="row">    
+            <Link className="Links" to="/results">
+              <button className="btn btn btn-primary btn-lg NoMessagesBtn">Start Matching!</button>
+            </Link>
+          </div>
+        </div>
       </div>
+      
     );
   return (
 
