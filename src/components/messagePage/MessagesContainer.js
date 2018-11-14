@@ -3,11 +3,8 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import '../../styling/MessagesContainer.css';
 
-import {
-  postMessage,
-  resetMessages,
-  resetChatId
-} from '../../actions/messages';
+import { postMessage, resetMessages, resetChatId } from '../../actions/messages';
+import Messages from './Messages';
 
 class MessagesContainer extends Component {
   state = { message: null };
@@ -34,25 +31,34 @@ class MessagesContainer extends Component {
     return (
       <div className="container">
         <h2 className="text-center">Chat</h2>
-        <div className="container">
-          {this.props.messages.map(message => (
-            <div className="center-block" key={message.id}>
-              <div className="row">
-                <div className="col-xs-1 col-md-3 ">
-                  {/* <h4 className="message-name">{message.poster}</h4> */}
-                  <h6>
-                    <small>
-                      {message.poster},{message.time}
-                    </small>
-                  </h6>
+        <div className="container chat-box">
+          <div className="container chat-messages-box">
+            <Messages/>
+          </div>
+          <div className="center-block fixed-bottom">
+          <div className="container-fluid txtAreaBgrnd">
+            <div className="row-12">
+              <div className="col-xs-12">
+                <div className="input-group container">
+                  <input
+                    type="text"
+                    name="message"
+                    onChange={this.handleChange}
+                    className="form-control input-message"
+                  />
+                  <span className="input-group-btn">
+                    <button
+                      className="btn-lg btn-outline-light btn-send"
+                      type="button"
+                      onClick={() =>
+                        this.handleSubmit(this.props.chatId)
+                      }>
+                      Send
+                    </button>
+                  </span>
                 </div>
-                {/* <div className="col-xs-4 col-md-6 text-right message-date">
-                  {message.time}
-                </div> */}
               </div>
-              <div className="row message-text poster-messages container">
-                {message.content}
-              </div>
+
             </div>
           ))}
           <div className="messaging center-block fixThis">
@@ -86,6 +92,8 @@ class MessagesContainer extends Component {
             </div>
           </div>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

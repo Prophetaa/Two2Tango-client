@@ -36,7 +36,7 @@ export default function Results(props) {
 							<tr className="resultsRow" onClick={()=> history.replace(`/profiles/${result.id}`) }>
 								<th scope="row">
 										<img
-											className="results-profile-img"
+											className="results-profile-img rounded-circle"
 											src={result.photoUrl}
 											alt="profile"
 										/>
