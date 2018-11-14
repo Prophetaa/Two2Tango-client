@@ -68,7 +68,7 @@ export const signup = (email, password) => dispatch =>
 			}
 		});
 
-export const updateParameters = data => (dispatch, getState) => {
+export const updateParameters = password => (dispatch, getState) => {
 	const state = getState();
 	const jwt = state.currentUser.jwt;
 
@@ -77,7 +77,7 @@ export const updateParameters = data => (dispatch, getState) => {
 	request
 		.put(`${baseUrl}/users`)
 		.set('Authorization', `Bearer ${jwt}`)
-		.send(data)
+		.send({ password })
 		.then(result => dispatch(updatedParameters(result.body)))
 		.catch(err => console.log(err));
 };
