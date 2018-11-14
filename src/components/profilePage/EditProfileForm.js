@@ -4,7 +4,7 @@ import '../../styling/EditProfile.css';
 export default function EditProfileForm(props) {
 	console.log(props);
 	return (
-		<div className="edit-profile">
+		<div className="container-fluid edit-profile">
 			<header>
 				<h1>Modify my profile</h1>
 			</header>
