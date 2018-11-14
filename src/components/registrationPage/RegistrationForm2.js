@@ -7,12 +7,9 @@ import { postProfile } from '../../actions/registration';
 import Dropzone from 'react-dropzone';
 import * as request from 'superagent';
 
-
+import { CLOUDINARY_UPLOAD_PRESET, CLOUDINARY_UPLOAD_URL } from '../../constants'
 import LocationSearchInput from './Geolocate';
 import CheckBoxes from './CheckBoxes';
-
-const CLOUDINARY_UPLOAD_PRESET = 'ieb90awf';
-const CLOUDINARY_UPLOAD_URL ='https://api.cloudinary.com/v1_1/dg6hu5lub/image/upload';
 
 class RegistrationForm2 extends Component {
   state = {
@@ -95,14 +92,14 @@ class RegistrationForm2 extends Component {
     if (this.state.photoURL)
       return `background-image=url(${
         this.state.photoURL
-      }); background-size:100%;`;
+      }); background-size:150%;`;
   };
   //image uploader
 
   render() {
     const mystyle = {
       backgroundImage: `url(${this.state.photoURL})`,
-      backgroundSize: '100%'
+      backgroundSize: '150%'
     };
     const renderUploader = (
       <div className="uploader">
