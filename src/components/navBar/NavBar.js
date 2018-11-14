@@ -17,7 +17,7 @@ class Navbar extends Component {
 				<nav className="navbar navbar-expand navbar-light sticky-top navbar-right">
 					{this.props.currentUser && (
 						<div className="container">
-							<div className="nav-header">
+							<div className="nav-header tangoLogoHeader">
 								<Link to="/home">
 									<img
 										className="tangoLogo d-none d-sm-block"

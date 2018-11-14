@@ -36,7 +36,7 @@ export default function ProfilePage(props) {
 						</div>
 						<div className="row">
 							<div className="col-6 col-md-5 text-uppercase mb-3">Height:</div>
-							<div className="col-6 col-md-6">{profile.height}</div>
+							<div className="col-6 col-md-6">{profile.height} cm</div>
 						</div>
 						<div className="row">
 							<div className="col-6 col-md-5 text-uppercase mb-3">Age</div>
