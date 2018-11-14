@@ -47,7 +47,7 @@ class MessagesContainer extends Component {
                   />
                   <span className="input-group-btn">
                     <button
-                      className="btn btn-outline-light btn-send"
+                      className="btn-lg btn-outline-light btn-send"
                       type="button"
                       onClick={() =>
                         this.handleSubmit(this.props.chatId)

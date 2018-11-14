@@ -17,13 +17,13 @@
 
 .btn-send{
   color:white!important;
-  border-color:white;
+  border: solid 1px white;
 }
 
 .btn-send:hover{
-  background-color: #A00D26;
-  color: white!important;
-  border-color:#A00D26;
+  background-color: white!important;
+  color: #A00D26!important;
+  border-color:white!important;
 }
 
 .txtbox-messages{
