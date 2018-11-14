@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-
+import {toUserId} from '../../jwt'
 
 class Messages extends Component {
   render() {
@@ -18,7 +18,7 @@ class Messages extends Component {
                   </div>
 
                 </h6>
-                <div className="row message-text poster-messages">{message.content}</div>
+                <div className={`row message-text poster-messages ${message.userId === toUserId(this.props.currentUser.jwt) && 'poster-message'}`}>{message.content}</div>
               </div>
             </div>
           ))}
