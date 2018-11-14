@@ -40,3 +40,11 @@
   margin-bottom: 100px!important;
 }
 
+.post-left{
+  float: left;
+}
+
+.time-right{
+  float: right; 
+}
+
