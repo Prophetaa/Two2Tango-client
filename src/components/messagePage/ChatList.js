@@ -8,7 +8,7 @@ import email from '../../styling/images/EMAIL.svg';
 export default function messages(props) {
   if (props.chats[0].length < 1 && props.chats[1].length < 1)
     return (
-      <div className="container">
+      <div className="container container-msg">
         <div className="col-sm-12">
           <div className="row">
             <h1 className="header NoMessages">

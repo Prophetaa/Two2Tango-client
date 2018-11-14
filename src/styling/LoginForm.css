@@ -281,3 +281,8 @@
   height: 3rem;
 }
 }
+@media only screen and (min-width : 1224px) {
+  .login {
+    margin-bottom: 100px;
+  }
+}

@@ -10,7 +10,7 @@ export default function ProfilePage(props) {
 					<h1>{`${profile.firstName}'s profile`}</h1>
 				</div>
 			</header>
-			<div className="container">
+			<div className="container profile-main">
 				<div className="row">
 					<div className="col-sm-12 col-md-4">
 						<img src={profile.photoUrl} alt="" />

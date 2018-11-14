@@ -8,14 +8,27 @@
 }
 
 .my-profile-page img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
 }
+
 
 .my-profile-page {
   background:#F2EFEA;
   padding: 0 0 20px 0;
+}
+.profile-details h3 {
+  text-align: center;
+  width: 80%
+}
+
+.prf {
+  width: 80%;
+  margin: auto
+}
+.about {
+  text-align: justify
 }
 
 .update-btn-profile {
@@ -43,12 +56,17 @@
   .my-profile-page {
     text-align: center;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .my-profile-page {
-    text-align: center;
+  .profile-details {
+    margin: 40px 0 40px 0;
   }
 }
 
+@media only screen and (min-width : 1224px) {
+  .my-profile-page header {
+    margin: 0 0 80px 0;
+  }
+  .my-profile-main {
+  margin-bottom: 80px;
+}
+}
 
