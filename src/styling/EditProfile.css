@@ -29,9 +29,12 @@
     margin: 30px;
     margin-bottom: 55px;
 }
+.dropZone-edit {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
 .dropZone-edit:hover {
   cursor: pointer;
-
 }
 .edit-row {
   margin: 30px;
@@ -175,5 +178,8 @@ textarea {
   }
   .edit-btn, .param-btn {
     height: 3rem;
+  }
+  .dropZone-edit {
+    width: 100%;
   }
 }
