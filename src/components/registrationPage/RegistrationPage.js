@@ -12,8 +12,7 @@ import RegistrationForm3 from './RegistrationForm3';
 import {
   resetRegPage,
   goToSecondPage,
-  goToThirdPage,
-  goToResults
+  goToThirdPage
 } from '../../actions/registration';
 import currentRegPage from '../../reducers/index';
 class SignupPage extends Component {
@@ -37,9 +36,6 @@ class SignupPage extends Component {
   };
   handlePageChange2 = async () => {
     await this.props.goToThirdPage();
-  };
-  handlePageChange3 = async () => {
-    await this.props.goToResults();
   };
 
   isLogged = async () => {
@@ -74,7 +70,7 @@ class SignupPage extends Component {
         )}
         {this.props.currentRegPage === 3 && (
           <div>
-            <RegistrationForm3 onSubmit={this.handlePageChange3} />
+            <RegistrationForm3 />
             <p style={{ color: 'red' }}>{this.props.signup.error}</p>{' '}
           </div>
         )}
@@ -101,7 +97,6 @@ export default connect(
     goToSecondPage,
     goToThirdPage,
     postProfile,
-    login,
-    goToResults
+    login
   }
 )(SignupPage);

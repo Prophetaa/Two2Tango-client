@@ -5,6 +5,7 @@ import { isExpired } from '../jwt';
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
 export const USER_LOGIN_FAILED = 'USER_LOGIN_FAILED';
 export const GET_USER = 'GET_USER';
+export const CLEAR_USER_ERROR = "CLEAR_USER_ERROR";
 
 export const USER_LOGOUT = 'USER_LOGOUT';
 
@@ -26,6 +27,10 @@ const userLoginFailed = error => ({
 	type: USER_LOGIN_FAILED,
 	payload: error || 'Unknown error'
 });
+
+export const clearError = () =>({
+	type: CLEAR_USER_ERROR
+})
 
 const userSignupFailed = error => ({
 	type: USER_SIGNUP_FAILED,

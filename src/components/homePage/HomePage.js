@@ -48,7 +48,7 @@ export class homePage extends Component {
 									<div className="login-container">
 										Already a member?
 										<Link to="/login" className="login-home">
-											Log In
+											&nbsp;Log In
 										</Link>
 									</div>
 								</div>

@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { login } from '../../actions/users';
+import { login, clearError } from '../../actions/users';
 import LoginForm from './LoginForm';
 
 class LoginPage extends Component {
+
 	handleSubmit = data => {
 		this.props.login(data.email, data.password);
 	};
+
+	componentWillUnmount(){
+		this.props.clearError()
+	}
 
 	render() {
 		if (this.props.currentUser) return <Redirect to="/results" />;
@@ -27,5 +32,5 @@ const mapStateToProps = function(state) {
 
 export default connect(
 	mapStateToProps,
-	{ login }
+	{ login, clearError }
 )(LoginPage);

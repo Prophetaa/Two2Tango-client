@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import '../../styling/MessagesContainer.css'
+import '../../styling/MessagesContainer.css';
 
-import { postMessage, resetMessages, resetChatId } from '../../actions/messages';
+import {
+  postMessage,
+  resetMessages,
+  resetChatId
+} from '../../actions/messages';
 
 class MessagesContainer extends Component {
+  state = { message: null };
+
   handleChange = event => {
     const { name, value } = event.target;
-
     this.setState({
       [name]: value
     });
   };
 
   handleSubmit = async chatId => {
-    console.log(chatId);
+    if (!this.state.message) return null;
     await this.props.postMessage(this.state.message, chatId);
   };
 
-  componentWillUnmount(){
-    this.props.resetMessages()
-    this.props.resetChatId()
+  componentWillUnmount() {
+    this.props.resetMessages();
+    this.props.resetChatId();
   }
 
   render() {
@@ -35,42 +40,52 @@ class MessagesContainer extends Component {
               <div className="row">
                 <div className="col-xs-1 col-md-3 ">
                   {/* <h4 className="message-name">{message.poster}</h4> */}
-                  <h6><small>{message.poster},{message.time}</small></h6>
+                  <h6>
+                    <small>
+                      {message.poster},{message.time}
+                    </small>
+                  </h6>
                 </div>
                 {/* <div className="col-xs-4 col-md-6 text-right message-date">
                   {message.time}
                 </div> */}
               </div>
-              <div className="row message-text poster-messages container">{message.content}</div>
+              <div className="row message-text poster-messages container">
+                {message.content}
+              </div>
             </div>
           ))}
-
           <div className="messaging center-block fixThis">
-          <div className="row-12">
-            <div className="col-xs-12">
-              <div className="input-group">
-                <input
-                  type="text"
-                  name="message"
-                  onChange={this.handleChange}
-                  className="form-control"
-                />
-                <span className="input-group-btn">
-                  <button
-                    className="btn btn-outline-light btn-send"
-                    type="button"
-                    onClick={() =>
-                      this.handleSubmit(this.props.chatId)
-                    }>
-                    Send
-                  </button>
-                </span>
+            <div className="row-12">
+              <div className="col-xs-12">
+                <div className="input-group">
+                  <form
+                    onSubmit={e => {
+                      e.preventDefault();
+                      this.handleSubmit(this.props.chatId);
+                      e.target.children[0].value = '';
+                    }}>
+                    <input
+                      type="text"
+                      name="message"
+                      id="chat"
+                      onChange={this.handleChange}
+                      className="form-control"
+                      defaultValue=""
+                    />
+                    <span className="input-group-btn">
+                      <button
+                        className="btn btn-outline-light btn-send"
+                        type="submit">
+                        Send
+                      </button>
+                    </span>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        </div>
-        
       </div>
     );
   }

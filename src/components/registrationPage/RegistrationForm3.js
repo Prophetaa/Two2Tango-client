@@ -79,7 +79,6 @@ class RegistrationForm3 extends Component {
         this.state.tango_level,
         [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
       )
-      .then(this.props.onSubmit());
   };
 
   handleChange = event => {
