@@ -1,23 +1,31 @@
 .edit-profile header {
-  height: 5rem;
-  /* background: linear-gradient(to right, #a00d26, rgba(90, 2, 2, 0.733)); */
-  background-color: #A00D26
-
+  background: url('./images/profile.jpg') no-repeat right;
+  background-color: #A00D26;
+  color: white;
+  padding: 20px 0px 15px 25px;
+  font-family: 'Work Sans';
+  margin: 0 0 40px 0;
 }
-.container-profile {
-  padding: 0px;
+.edit-profile img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 .edit-profile h1 {
   font-size: 40px;
-  margin: auto;
   width: 20rem;
   color: #f2efea;
   padding: 12px;
-  font-weight: 200 !important;
-  text-align: center
+  margin-left: 20px;
+  /* text-align: center */
+}
+.edit-profile {
+  padding: 0px !important;
+  margin: auto;
+
 }
 .image-profile-edit {
-  width: 70%;
+    width: 70%;
     max-width: 300px;
     height: auto;
     min-height: 200px;
@@ -144,12 +152,27 @@ textarea {
   [class*="col-"] {
     width: 100%;
   }
+  .edit-row {
+    width: 100%;
+    margin: auto;
+  }
   .edit-profile h1 {
-    padding-left: 30px;
-    font-size: 40px;
+    font-size: 30px;
+    margin: 0;
   }
   .edit-btn {
     margin: auto;
     margin-bottom: 10px;
+  }
+  .edit-inputs, .edit-select, .param-input, .param-btn  {
+    width: 100% !important;
+    min-width: 10rem;
+  }
+  .parameters {
+    max-width: 100%;
+    /* padding: 10px 5px 10px 5px; */
+  }
+  .edit-btn, .param-btn {
+    height: 3rem;
   }
 }
