@@ -14,7 +14,7 @@ export default function EditProfileForm(props) {
           <form onSubmit={props.onProfileSubmit}>
             <div className="row edit-row">
               <div className="col-sm-12 col-md-4">
-                {props.dropZone}
+			  <div className='dropZone-edit'>{props.dropZone}</div>
                 <div className="form-group">
                   <label htmlFor="firstName" className="text-uppercase labels">
                     First name:

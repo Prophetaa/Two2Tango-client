@@ -6,14 +6,10 @@
   font-family: 'Work Sans';
   margin: 0 0 40px 0;
 }
-.edit-profile img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
+
+
 .edit-profile h1 {
   font-size: 40px;
-  width: 20rem;
   color: #f2efea;
   padding: 12px;
   margin-left: 20px;
@@ -32,6 +28,13 @@
     border-radius: 50%;
     margin: 30px;
     margin-bottom: 55px;
+}
+.dropZone-edit {
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.dropZone-edit:hover {
+  cursor: pointer;
 }
 .edit-row {
   margin: 30px;
@@ -158,7 +161,8 @@ textarea {
   }
   .edit-profile h1 {
     font-size: 30px;
-    margin: 0;
+    margin: auto !important;
+
   }
   .edit-btn {
     margin: auto;
@@ -174,5 +178,8 @@ textarea {
   }
   .edit-btn, .param-btn {
     height: 3rem;
+  }
+  .dropZone-edit {
+    width: 100%;
   }
 }

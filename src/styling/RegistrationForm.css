@@ -123,6 +123,7 @@ justify-content: center;
 
 .dropZone{
     border-radius: 100px;
+    margin: 20px;
     width: 200px;
     height: 200px;
        border: solid 1px #555;
