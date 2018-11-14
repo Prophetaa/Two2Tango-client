@@ -12,6 +12,10 @@
     background-color: rgb(238, 238, 238);
 }
 
+.list-style{
+    margin-top:25px;
+}
+
 .chatNamesContainer{
     border-radius: 5px !important;
 }

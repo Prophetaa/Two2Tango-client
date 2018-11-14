@@ -1,9 +1,11 @@
 .poster-messages{
   border:solid 1px black;
   border-radius: 5px;
-  /* width:20%; */
   padding:10px 35px;
   margin-left:5px;
+  max-width: 650px;
+  min-width: 200px;
+  word-break:break-all;
 }
 
 .messaging{
@@ -14,8 +16,8 @@
 }
 
 .btn-send{
-  color:#A00D26!important;
-  border-color:#A00D26;
+  color:white!important;
+  border-color:white;
 }
 
 .btn-send:hover{
@@ -24,11 +26,17 @@
   border-color:#A00D26;
 }
 
-/* .message-candidate{
-  background-color: blue;
+.txtbox-messages{
+  margin-top:15px;
 }
 
-.poster-messages{
-  background-color: green;
-} */
+.txtAreaBgrnd{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #A00D26;
+}
+
+.chat-messages-box{
+  margin-bottom: 100px!important;
+}
 

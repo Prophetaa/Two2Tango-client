@@ -8,6 +8,8 @@
 .results-profile-img {
   border-radius: 50%;
   border: 2px solid #A00D26;
-  width: 100px;
+  vertical-align: middle;
+  width: 6.25rem;
+  height: 6.25rem;
 }
 
