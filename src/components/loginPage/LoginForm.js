@@ -2,7 +2,7 @@ import '../../styling/LoginForm.css';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-
+import { FACEBOOK_API_KEY } from '../../constants'
 export default class LoginForm extends Component {
 	state = {};
 
@@ -82,7 +82,7 @@ export default class LoginForm extends Component {
 
                   <hr className="my-4" />
                   <FacebookLogin
-                    appId="516292132220329"
+                    appId={FACEBOOK_API_KEY}
                     autoLoad={false}
                     fields="name,email,picture"
                     callback={this.responseFacebook}

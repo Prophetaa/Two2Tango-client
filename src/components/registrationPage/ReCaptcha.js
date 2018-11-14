@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Recaptcha from 'react-recaptcha';
 
+import { GOOGLE_API_KEY } from '../../constants'
+
 export default class ReCaptcha extends Component {
     constructor(props) {
         super(props)
@@ -24,7 +26,7 @@ export default class ReCaptcha extends Component {
         return (
           <div className="recaptcha">
               <Recaptcha
-                sitekey="6LepOXoUAAAAAHN3GTNxdcI4rZ_96K118NiJpAIj" //Change this with the key from google reCaptcha
+                sitekey={GOOGLE_API_KEY} //Change this with the key from google reCaptcha
                 render="explicit"
                 onloadCallback={this.recaptchaLoaded}
                 verifyCallback={this.verifyCallback}
