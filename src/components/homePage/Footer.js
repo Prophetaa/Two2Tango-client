@@ -8,7 +8,7 @@ import instagram from '../../styling/images/instagram.png';
 export default class Footer extends Component {
 	render() {
 		return (
-			<footer className="page-footer font-small blue pt-4">
+			<footer className="page-footer font-small pt-4">
 				<div className="container text-center text-md-left">
 					<div className="row">
 						<div className="col mt-md-0 mt-3">
