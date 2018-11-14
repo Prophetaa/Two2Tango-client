@@ -3,6 +3,7 @@ import '../../styling/EditProfile.css';
 
 
 export default function EditProfileForm(props) {
+	console.log(props);
   return (
     <div className="edit-profile">
       <header>
@@ -12,8 +13,8 @@ export default function EditProfileForm(props) {
         <main>
           <form onSubmit={props.onProfileSubmit}>
             <div className="row edit-row">
-              <div className="col-sm">
-                {props.dropZone}
+              <div className="col-sm-12 col-md-4">
+			  <div className='dropZone-edit'>{props.dropZone}</div>
                 <div className="form-group">
                   <label htmlFor="firstName" className="text-uppercase labels">
                     First name:
@@ -160,7 +161,6 @@ export default function EditProfileForm(props) {
               </div>
             </div>
           </form>
-
           <div className="parameters">
             <h2>Danger area</h2>
             <form onSubmit={props.onParametersSubmit}>

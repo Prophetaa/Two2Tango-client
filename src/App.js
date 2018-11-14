@@ -11,44 +11,42 @@ import MessageListContainer from './components/messagePage/MessageListContainer'
 import EditProfileContainer from './components/profilePage/EditProfileContainer';
 import LogoutPage from './components/logoutPage/LogoutPage';
 import preferencesPage from './components/preferencesPage/preferencesPage';
-import MessagesContainer from './components/messagePage/MessagesContainer'
+import MessagesContainer from './components/messagePage/MessagesContainer';
 import MyProfileContainer from './components/profilePage/MyProfileContainer';
 
-
-
 class App extends Component {
-	render() {
-		return (
-			<div className="App">
-				<NavBar />
-				<div className="main">
-					<Switch>
-						<Route exact path="/" component={HomePage} />
-						<Route exact path="/home" component={HomePage} />
-						<Route exact path="/login" component={LoginPage} />
-						<Route exact path="/logout" component={LogoutPage} />
-						<Route exact path="/signup" component={RegistrationPage} />
-						<Route exact path="/results" component={ResultsListContainer} />
-						<Route exact path="/my-profile" component={MyProfileContainer} />
-						<Route
-							exact
-							path="/profiles/:id"
-							component={ProfilePageContainer}
-						/>
-						<Route exact path="/preferences" component={preferencesPage} />
-						<Route exact path="/messages" component={MessageListContainer} />
-						<Route exact path="/chat" component={MessagesContainer}/>
-						<Route
-							exact
-							path="/edit-profile"
-							component={EditProfileContainer}
-						/>
-						<Route component={HomePage} />
-					</Switch>
-				</div>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className="App">
+        <NavBar />
+        <div className="main">
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/logout" component={LogoutPage} />
+            <Route exact path="/signup" component={RegistrationPage} />
+            <Route exact path="/results" component={ResultsListContainer} />
+            <Route exact path="/my-profile" component={MyProfileContainer} />
+            <Route
+              exact
+              path="/profiles/:id"
+              component={ProfilePageContainer}
+            />
+            <Route exact path="/preferences" component={preferencesPage} />
+            <Route exact path="/messages" component={MessageListContainer} />
+            <Route exact path="/chat" component={MessagesContainer} />
+            <Route
+              exact
+              path="/edit-profile"
+              component={EditProfileContainer}
+            />
+            <Route component={HomePage} />
+          </Switch>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

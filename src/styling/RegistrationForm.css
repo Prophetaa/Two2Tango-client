@@ -5,8 +5,8 @@
 
   .signupContainer{
     align-content: center;
-    max-width: 650px;
-    margin-top: 80px;
+    width: 62%;
+    max-width: 40.625rem;
     width: 66% !important;
   }
    
@@ -123,6 +123,7 @@ justify-content: center;
 
 .dropZone{
     border-radius: 100px;
+    margin: 20px;
     width: 200px;
     height: 200px;
        border: solid 1px #555;
@@ -235,6 +236,25 @@ div#lastName{
   opacity: 1;
   right: 0;
 }
+
+.finalStepBtn:disabled{
+  background-color: #A00D26;
+}
+
+.finalStepBtn:disabled span {
+  cursor: inherit;
+}
+
+.centerText{
+display:flex;
+justify-content: center;
+padding-bottom: .5rem;
+}
+
+.finalStepBtn:disabled span:after {
+  content: none;
+}
+
 .recaptcha{
   display: flex;
   justify-content: center;
@@ -243,9 +263,7 @@ div#lastName{
 .checkmark{
   margin-left: 5%;
 }
-.finalStepBtn:disabled{
-  background-color: #A00D26;
-}
+
 
 .dropdown-menu{
   background-color: rgb(247, 244, 244);
@@ -337,4 +355,92 @@ display: inline;
   .maxValue{
     position: relative;
     right: -1.5rem;
+  }
+
+
+  .levelSlider{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom:2rem;
+  }
+
+  .levelBarName{
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+
+  .levelSliderBar  .noUi-handle-upper{
+    top: -.6rem !important;
+    border-radius: 100%;
+    border: 22px rgb(150, 11, 34) !important;
+    background: #A00D26 !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
+
+.levelSlider .sliderBar,
+  .levelSliderBar  .noUi-connect{
+    height: .7rem !important;
+  }
+
+  .levelSliderBar  .noUi-handle-upper::before{
+    content: none !important; 
+  }
+
+  .levelSliderBar  .noUi-handle-upper::after{
+    content: none !important; 
+  }
+
+  .signup-link{
+    color:#A00D26;
+  }
+
+  .levelSliderBar  .noUi-handle-lower{
+    border: none !important;
+    border-radius: 3px;
+    background: none !important;
+    cursor: none !important;
+    box-shadow: none !important; 
+
+  }
+
+  .uIError{
+    padding-top: .3rem;
+    color: rgb(209, 1, 1);
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .levelSliderBar  .noUi-handle-lower::before{
+    content: none !important; 
+  }
+
+  .levelSliderBar  .noUi-handle-lower::after{
+    content: none !important; 
+  }
+
+  .btnShaddow{
+      -moz-box-shadow:    1px 1px 1px 1px rgb(146, 146, 146) !important;
+      -webkit-box-shadow: 1px 1px 1px 1px rgb(146, 146, 146) !important;
+      box-shadow: 1px 1px 1px 1px rgb(146, 146, 146) !important;
+  }
+
+  .btnShaddow:hover{
+    -moz-box-shadow:  .5px .5px .5px .5px rgb(192, 192, 192) !important;
+    -webkit-box-shadow: .5px .5px .5px .5px rgb(192, 192, 192) !important;
+    box-shadow: .5px .5px .5px .5px rgb(192, 192, 192) !important;
+  }
+
+  .fbButton:hover{
+    background-color: #4d76c9 ;
+  }
+
+  .boxShaddow{
+    -moz-box-shadow:  .5px .5px .5px .5px rgb(192, 192, 192) !important;
+    -webkit-box-shadow: .5px .5px .5px .5px rgb(192, 192, 192) !important;
+    box-shadow: .5px .5px .5px .5px rgb(192, 192, 192) !important;
   }
