@@ -47,7 +47,6 @@ export default function messages(props) {
               <div className="media-body message chatNamesContainer container">
                 {props.currentUser === message.userId ? (
                   <div>
-                    {' '}
                     <img
                       alt={message.id}
                       className="chatUserPhoto rounded-circle"
@@ -62,7 +61,6 @@ export default function messages(props) {
                   </div>
                 ) : (
                   <div>
-                    {' '}
                     <img
                       alt={message.id}
                       className="chatUserPhoto rounded-circle"
