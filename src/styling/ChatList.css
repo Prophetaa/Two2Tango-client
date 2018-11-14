@@ -15,14 +15,17 @@
 .chatNamesContainer{
     border-radius: 5px !important;
 }
+
 .chatUserPhoto{ 
-    border-radius: 100%;
+  vertical-align: middle;
+  width: 6.25rem;
+  height: 6.25rem;
+  /* border-radius: 50%; */
 }
 
 .chatNames{
     margin-left: 1rem;
 }
-
 
 .chatIcon{
    size:10rem;

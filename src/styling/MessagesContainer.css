@@ -1,0 +1,34 @@
+.poster-messages{
+  border:solid 1px black;
+  border-radius: 5px;
+  /* width:20%; */
+  padding:10px 35px;
+  margin-left:5px;
+}
+
+.messaging{
+  position:absolute;
+  bottom:10px;
+  width: 80%;
+  margin-left:15px;
+}
+
+.btn-send{
+  color:#A00D26!important;
+  border-color:#A00D26;
+}
+
+.btn-send:hover{
+  background-color: #A00D26;
+  color: white!important;
+  border-color:#A00D26;
+}
+
+/* .message-candidate{
+  background-color: blue;
+}
+
+.poster-messages{
+  background-color: green;
+} */
+
