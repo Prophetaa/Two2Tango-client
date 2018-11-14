@@ -1,23 +1,23 @@
-import "../../styling/LoginForm.css";
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import '../../styling/LoginForm.css';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 
 export default class LoginForm extends Component {
-  state = {};
+	state = {};
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.onSubmit(this.state);
-  };
+	handleSubmit = e => {
+		e.preventDefault();
+		this.props.onSubmit(this.state);
+	};
 
-  handleChange = event => {
-    const { name, value } = event.target;
+	handleChange = event => {
+		const { name, value } = event.target;
 
-    this.setState({
-      [name]: value
-    });
-  };
+		this.setState({
+			[name]: value
+		});
+	};
 
   responseFacebook = async response => {
     await this.setState({
@@ -59,8 +59,10 @@ export default class LoginForm extends Component {
                       value={this.state.password || ""}
                       onChange={this.handleChange}
                     />
-                   
                   </div>
+                   <p className="text-center" style={{ color: 'red' }}>
+											{this.props.error}
+										</p>
                   <button
                     className="btn btn-lg btn-primary btn-block text-uppercase btn-login btnShaddow"
                     id="loginButton"
@@ -102,4 +104,5 @@ export default class LoginForm extends Component {
       </div>
     );
   }
+
 }

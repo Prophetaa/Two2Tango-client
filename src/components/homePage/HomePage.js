@@ -46,7 +46,7 @@ export class homePage extends Component {
 									</button>
 
 									<div className="login-container">
-										Already a menber?{' '}
+										Already a member?
 										<Link to="/login" className="login-home">
 											Log In
 										</Link>

@@ -5,8 +5,8 @@
 
   .signupContainer{
     align-content: center;
-    max-width: 650px;
-    margin-top: 80px;
+    width: 62%;
+    max-width: 40.625rem;
     width: 66% !important;
   }
    
