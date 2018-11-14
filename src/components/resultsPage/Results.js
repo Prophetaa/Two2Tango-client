@@ -37,7 +37,7 @@ export default function Results(props) {
 								<th scope="row">
 									<Link to={`/profiles/${result.id}`}>
 										<img
-											className="results-profile-img"
+											className="results-profile-img rounded-circle"
 											src={result.photoUrl}
 											alt="profile"
 										/>

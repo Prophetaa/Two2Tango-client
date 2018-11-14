@@ -30,33 +30,36 @@ export default function messages(props) {
           Inbox
         </h1>
       </div>
-      <ul className="list-unstyled">
-        {props.chats[0].map(message => (
+      <ul className="list-unstyled list-style">
+        {
+          props.chats[0].map(message => (
           <div className="row" key={message.id}>
             <li
-            key={message.id}
-            className="media flex-row my-5"
-            onClick={() => props.renderMessage(message)}>
+              key={message.id}
+              className="chatContainer media"
+              onClick={() => props.renderMessage(message)}
+            >
               <div className="media-body message chatNamesContainer container">
                 {props.currentUser === message.userId
                  ? <div> <img alt={message.id} className="chatUserPhoto rounded-circle" src={message.receiverPhoto}/><span className="chatNames text-uppercase">{message.receiver}</span></div>
                  : <div> <img alt={message.id} className="chatUserPhoto rounded-circle" src={message.creatorPhoto}/><span className="chatNames text-uppercase">{message.creator}</span></div>}
               </div>
             </li>
-          </div>
-          
+          </div>  
         ))}
         {props.chats[1].map(message => (
-          <li
-            key={message.id}
-            className="chatContainer media " 
-            onClick={() => props.renderMessage(message)}>
-            <div className="media-body message chatNamesContainer container">
-              {props.currentUser === message.userId
-                ? <div> <img alt="" className="chatUserPhoto" src={message.receiverPhoto}/><span className="chatNames text-uppercase">{message.receiver}</span></div>
-                : <div> <img alt="" className="chatUserPhoto" src={message.creatorPhoto}/><span className="chatNames text-uppercase">{message.creator}</span></div>}
-            </div>
-          </li>
+          <div className="row" key={message.id}>
+            <li
+              key={message.id}
+              className="chatContainer media" 
+              onClick={() => props.renderMessage(message)}>
+              <div className="media-body message chatNamesContainer container">
+                {props.currentUser === message.userId
+                  ? <div> <img alt="" className="chatUserPhoto rounded-circle" src={message.receiverPhoto}/><span className="chatNames text-uppercase">{message.receiver}</span></div>
+                  : <div> <img alt="" className="chatUserPhoto rounded-circle" src={message.creatorPhoto}/><span className="chatNames text-uppercase">{message.creator}</span></div>}
+              </div>
+            </li>
+          </div>
         ))}
       </ul>
     </div>
