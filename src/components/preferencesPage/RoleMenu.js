@@ -9,7 +9,7 @@ export default class RoleMenu extends Component {
     return (
       <div className="dropdown">
         <button
-          className="form-control dropdown-toggle"
+          className="form-control dropdown-toggle boxShaddow"
           type="button"
           required
           id="dropdownMenuButton"

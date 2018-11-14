@@ -8,7 +8,7 @@ export default class LocationSearchInput extends Component {
 	state = { city: `` };
 
 	handleChange = async city => {
-		await this.setState({ city:`${city.split(',',1)}` });
+		await this.setState({ city: `${city.split(',',1)}` });
 	await	this.props.onChange(city);
 		
 	};
@@ -29,7 +29,7 @@ export default class LocationSearchInput extends Component {
 							{...getInputProps({
 								id:'geoLocate',
 								placeholder: 'City *',
-								className: 'location-search-input  form-control'
+								className: 'location-search-input  form-control boxShaddow'
 							})}
 						/>	
 						<div className="autocomplete-dropdown-container">

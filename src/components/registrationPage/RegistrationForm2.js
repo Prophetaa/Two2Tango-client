@@ -1,32 +1,37 @@
-import React, { Component } from 'react';
 import '../../styling/RegistrationForm.css';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import { postProfile } from '../../actions/registration';
-
+import GenderMenu from '../preferencesPage/GenderMenu'
+import RoleMenu from '../preferencesPage/RoleMenu'
 import Dropzone from 'react-dropzone';
 import * as request from 'superagent';
-
 import { CLOUDINARY_UPLOAD_PRESET, CLOUDINARY_UPLOAD_URL } from '../../constants'
 import LocationSearchInput from './Geolocate';
-import CheckBoxes from './CheckBoxes';
+import Nouislider from 'nouislider-react';
+import 'nouislider/distribute/nouislider.css';
 
 class RegistrationForm2 extends Component {
   state = {
     first_name: this.props.fbState? this.props.fbState.fbName[0]  : "",
     last_name:  this.props.fbState? this.props.fbState.fbName[1]  : "",
     role: null,
+    level:"beginer",
     gender: null,
     photoURL: this.props.fbState ? this.props.fbState.fbPicture : ""
   };
 
   handleSubmit = async e => {
     e.preventDefault();
+    if(!this.state.role && !this.state.gender) return this.setState({roleError:true , genderError:true})
+    if(!this.state.role) return this.setState({roleError:true})
+    if(!this.state.gender) return this.setState({genderError:true})
+    if(!this.state.roleError && !this.state.genderError){ 
     await this.props.postProfile(
       this.state.first_name,
       this.state.last_name,
       this.state.role,
-      this.state.tango_level,
+      this.state.level,
       this.state.photoURL,
       this.state.gender,
       this.state.age,
@@ -35,6 +40,7 @@ class RegistrationForm2 extends Component {
     );
     await this.props.onSubmit(this.state);
   };
+}
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -50,15 +56,19 @@ class RegistrationForm2 extends Component {
   };
 
   handleButtonClick = input => {
-    if (input === 'leader') this.setState({ role: 'leader' });
-    if (input === 'follower') this.setState({ role: 'follower' });
-    if (input === 'male') this.setState({ gender: 'male' });
-    if (input === 'female') this.setState({ gender: 'female' });
-    if (input === 'other') this.setState({ gender: 'other' });
+    if (input === 'leader') this.setState({ role: 'leader' , roleError:false});
+    if (input === 'follower') this.setState({ role: 'follower', roleError:false });
+    if (input === 'male') this.setState({ gender: 'male' , genderError: false });
+    if (input === 'female') this.setState({ gender: 'female' , genderError: false  });
+    if (input === 'other') this.setState({ gender: 'other', genderError: false  });
   };
 
-  handleCheck = level => {
-    this.setState({ tango_level: level });
+  handleLevelBar =  render => {
+    let newRender = Math.round(render[1])
+    if(newRender === 1) this.setState({level:"beginer"})
+    if(newRender === 2) this.setState({level:"intermediate"})
+    if(newRender === 3) this.setState({level:"advance"})
+    if(newRender === 4) this.setState({level:"professional"})
   };
 
   //image uploader
@@ -133,7 +143,7 @@ class RegistrationForm2 extends Component {
                       type="first_name"
                       placeholder="First Name *"
                       id="inputEmail"
-                      className="form-control menu2inputs"
+                      className="form-control menu2inputs boxShaddow"
                       name="first_name"
                       value={this.state.first_name || ''}
                       required
@@ -146,7 +156,7 @@ class RegistrationForm2 extends Component {
                       type="last_name"
                       name="last_name"
                       id="inputPassword"
-                      className="form-control menu2inputs"
+                      className="form-control menu2inputs boxShaddow"
                       required
                       value={this.state.last_name || ''}
                       onChange={this.handleChange}
@@ -154,10 +164,11 @@ class RegistrationForm2 extends Component {
                   </div>
                   <div className="form-group" id="firstName">
                     <input
+                      required
                       type="age"
-                      placeholder=" Age (optional)"
+                      placeholder=" Age *"
                       id="inputEmail"
-                      className="form-control menu2inputs"
+                      className="form-control menu2inputs boxShaddow"
                       name="age"
                       value={this.state.age || ''}
                       onChange={this.handleChange}
@@ -169,7 +180,7 @@ class RegistrationForm2 extends Component {
                       type="height"
                       name="height"
                       id="inputPassword"
-                      className="form-control menu2inputs"
+                      className="form-control menu2inputs boxShaddow"
                       required
                       value={this.state.height || ''}
                       onChange={this.handleChange}
@@ -178,66 +189,27 @@ class RegistrationForm2 extends Component {
                   <div className="form-group">
                     <LocationSearchInput onChange={this.handleSelectCity} />
                   </div>
-                  <div className="dropdown genderMenu">
-                    <button
-                      className="form-control dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false">
-                      {this.state.gender === null
-                        ? 'Gender'
-                        : this.state.gender}
-                    </button>
-                    <div
-                      className="dropdown-menu form-control"
-                      aria-labelledby="dropdownMenuButton">
-                      <span
-                        className="dropdown-item "
-                        onClick={() => this.handleButtonClick('male')}>
-                        male
-                      </span>
-                      <span
-                        className="dropdown-item"
-                        onClick={() => this.handleButtonClick('female')}>
-                        female
-                      </span>
-                      <span
-                        className="dropdown-item"
-                        onClick={() => this.handleButtonClick('other')}>
-                        other
-                      </span>
+                  <GenderMenu
+                      gender={this.state.gender}
+                      handleButtonClick={this.handleButtonClick}
+                    />
+                    {this.state.genderError && <span className="uIError">Please select a gender.</span>}
+                    <RoleMenu
+                      role={this.state.role}
+                      handleButtonClick={this.handleButtonClick}
+                    />
+                    {this.state.roleError && <span className="uIError">Please select a role.</span>}
+                  <span className="levelBarName">Level: {this.state.level && this.state.level}</span>
+                  <div className="levelSlider">
+                  <Nouislider
+                      className="sliderBar levelSliderBar"
+                      range={{ min: 1, max: 4 }}
+                      start={[1,1]}
+                      connect
+                      step={1}
+                      onSlide={this.handleLevelBar}
+                    />
                     </div>
-                  </div>
-                  <div className="dropdown">
-                    <button
-                      className="form-control dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false">
-                      {this.state.role === null
-                        ? 'Select a Role'
-                        : this.state.role}
-                    </button>
-                    <div
-                      className="dropdown-menu form-control"
-                      aria-labelledby="dropdownMenuButton">
-                      <span
-                        className="dropdown-item "
-                        onClick={() => this.handleButtonClick('leader')}>
-                        leader
-                      </span>
-                      <span
-                        className="dropdown-item"
-                        onClick={() => this.handleButtonClick('follower')}>
-                        follower
-                      </span>
-                    </div>
-                  </div>
-                  <CheckBoxes handleCheck={this.handleCheck} currentPage="2" />
                   <button
                     disabled={!this.state.photoURL}
                     className="btn btn-lg btn-primary btn-block text-uppercase finalStepBtn"
