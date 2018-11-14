@@ -1,9 +1,16 @@
-body {
+.App {
   margin: 0px;
   padding: 0px;  
+  min-height: 100%;
 }
 button, input {
   outline: none;
   border: none;
   box-shadow: none !important;
+}
+.footer {
+  /* position:absolute; */
+  left:0;
+  bottom:0;
+  right:0;
 }

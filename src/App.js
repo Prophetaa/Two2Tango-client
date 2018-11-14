@@ -13,6 +13,7 @@ import LogoutPage from './components/logoutPage/LogoutPage';
 import preferencesPage from './components/preferencesPage/preferencesPage';
 import MessagesContainer from './components/messagePage/MessagesContainer';
 import MyProfileContainer from './components/profilePage/MyProfileContainer';
+import Footer from './components/homePage/Footer';
 
 class App extends Component {
   render() {
@@ -44,6 +45,10 @@ class App extends Component {
             <Route component={HomePage} />
           </Switch>
         </div>
+        <div className='footer'>
+        <Footer />
+        </div>
+       
       </div>
     );
   }
