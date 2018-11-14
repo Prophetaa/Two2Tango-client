@@ -35,6 +35,19 @@
    size:10rem;
 }
 
+
 .media-body.message {
     cursor: pointer;
+
+.NoMessagesBtn{
+    margin-top: 10%;
+    margin-left:45%;
+    background-color: #A00D26;
+    border: 0;
+}
+
+.NoMessagesBtn:hover{
+    background-color: white;
+    color:#A00D26;
+
 }

@@ -11,9 +11,8 @@ import interview from '../../styling/images/interview.png';
 import laugh from '../../styling/images/laugh.png';
 import Avatar6 from '../../styling/images/Avatar6.png';
 import Avatar7 from '../../styling/images/Avatar7.png';
-import quoteLeft from '../../styling/images/quote-left.png';
-import quoteRight from '../../styling/images/quote-right.png';
-import Footer from './Footer';
+import quoteLeft from '../../styling/images/quote-left.svg';
+import quoteRight from '../../styling/images/quote-right.svg';
 
 export class homePage extends Component {
 	componentDidMount() {
@@ -216,9 +215,6 @@ export class homePage extends Component {
 							</div>
 						</div>
 					</div>
-				</section>
-				<section>
-					<Footer />
 				</section>
 			</div>
 		);

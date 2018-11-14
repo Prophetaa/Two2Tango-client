@@ -159,12 +159,14 @@ class PreferencesPage extends Component {
                       data-placement="bottom"
                       title="Don't forget to click add!">
                       <LocationSearchInput onChange={this.handleSelectCity} />
-                      <button
-                        className="citiesBtn text-uppercase btnShaddow"
-                        onClick={this.selectCities}>
-                        add city
-                      </button>
-                    </div>
+                      <div className="input-group-btn ">
+                        <button
+                          className="citiesBtn text-uppercase btnShaddow align-center btn-lg"
+                          onClick={this.selectCities}>
+                          add city
+                        </button>
+                      </div>            
+                    </div>                  
                     <div className="citiesContainer container row">
                       {this.state.cities.map(city => (
                         <span key={city} className="citiesLi">

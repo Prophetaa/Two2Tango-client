@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styling/Footer.css';
-import facebook from '../../styling/images/facebook.png';
-import tweet from '../../styling/images/tweet.png';
-import instagram from '../../styling/images/instagram.png';
+import facebook from '../../styling/images/facebook.svg';
+import tweet from '../../styling/images/twitter.svg';
+import instagram from '../../styling/images/instagram.svg';
 
 export default class Footer extends Component {
 	render() {
@@ -32,7 +32,7 @@ export default class Footer extends Component {
               	</li>
             	</ul>
           	</div>
-          	<div className="col mb-md-0 mb-3">
+          	<div className="col-xs-12 mb-md-0 mb-3">
 							<h6 className="text-uppercase">Social</h6>
 							<ul className="list-unstyled">
 								<li className="list-footer">
