@@ -130,7 +130,7 @@ export class homePage extends Component {
 									<h4 className="display-4">Join them on the dancefloor</h4>
 									<button
 										type="button"
-										className="btn btn-primary btn-lg SignInPrmBtn"
+										className="btn btn-primary btn-lg SignInPrmBtn boxShaddow"
 										onClick={() => history.push(`/signup`)}>
 										Sign Up
 									</button>
@@ -208,7 +208,7 @@ export class homePage extends Component {
 									</p>
 									<button
 										type="button"
-										className="btn btn-primary btn-lg SignInPrmBtn"
+										className="btn btn-primary btn-lg SignInPrmBtn "
 										onClick={() => history.push(`/signup`)}>
 										Sign Up
 									</button>

@@ -20,8 +20,6 @@ export default class LoginForm extends Component {
   };
 
   responseFacebook = async response => {
-    console.log(response);
-
     await this.setState({
       email: response.email,
       password: response.id
@@ -38,39 +36,33 @@ export default class LoginForm extends Component {
               <div className="card-body">
                 <form className="form-signin" onSubmit={this.handleSubmit}>
                   <h5 className="card-title text-center">Login</h5>
-
-                  <div className="form-label-group">
+                  <div className="form-group">
                     <input
                       type="email"
                       id="inputEmail"
-                      className="form-control p-3"
+                      className="form-control p-3 boxShaddow"
                       placeholder="Email address"
                       name="email"
                       required
                       value={this.state.email || ""}
                       onChange={this.handleChange}
                     />
-                    {!this.state.email && (
-                      <label htmlFor="inputEmail">Email address</label>
-                    )}
                   </div>
-                  <div className="form-label-group mb-5">
+                  <div className="form-group mb-5">
                     <input
                       type="password"
                       id="inputPassword"
-                      className="form-control"
+                      className="form-control p-3  boxShaddow"
                       placeholder="Password"
                       name="password"
                       required
                       value={this.state.password || ""}
                       onChange={this.handleChange}
                     />
-                    {!this.state.password && (
-                      <label htmlFor="inputPassword">Password</label>
-                    )}
+                   
                   </div>
                   <button
-                    className="btn btn-lg btn-primary btn-block text-uppercase btn-login"
+                    className="btn btn-lg btn-primary btn-block text-uppercase btn-login btnShaddow"
                     id="loginButton"
                     type="submit"
                   >
@@ -94,7 +86,7 @@ export default class LoginForm extends Component {
                     callback={this.responseFacebook}
                     render={renderProps => (
                       <button
-                        className="btn btn-lg btn-facebook btn-block text-uppercase"
+                        className="btn btn-lg btn-facebook btn-block text-uppercase fbButton btnShaddow"
                         onClick={renderProps.onClick}
                       >
                         <i className="fab fa-facebook-f mr-2" /> Log in with

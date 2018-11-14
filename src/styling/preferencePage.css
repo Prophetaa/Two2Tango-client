@@ -11,9 +11,10 @@ color:white;
     display: flex;
 }
 .acceptChanges{
+    justify-content: center;
     display: flex;
     margin-left: 10%;
-    width: 10rem;
+    width: 5rem;
     background-color: green;
 }
 
@@ -32,6 +33,8 @@ color:white;
     
     background-color: #A00D26;
 }
+
+
 
 .cancelChanges:hover{
     background-color: rgb(185, 17, 45);
@@ -123,4 +126,35 @@ color:white;
 .citiesBtn:hover{
     background-color: rgb(185, 14, 43);
 }
+
+
+.heightSlider .noUi-handle-lower,
+.heightSlider  .noUi-handle-upper{
+    top: -.6rem !important;
+    border-radius: 100%;
+    border: 22px rgb(150, 11, 34) !important;
+    background: #A00D26 !important;
+    box-shadow: .5px .5px .5px .5px rgb(192, 192, 192) !important;
+    outline: none !important;
+  }
+
+  .heightSlider .noUi-handle-lower:active,
+.heightSlider  .noUi-handle-upper:active{
+    background: rgb(175, 15, 42) !important;
+}
+
+.heightSlider .sliderBar,
+  .heightSlider  .noUi-connect{
+    height: .7rem !important;
+  }
+
+  .heightSlider  .noUi-handle-lower::before,
+  .heightSlider  .noUi-handle-upper::before{
+    content: none !important; 
+  }
+
+  .heightSlider  .noUi-handle-lower::after,
+  .heightSlider  .noUi-handle-upper::after{
+    content: none !important; 
+  }
 

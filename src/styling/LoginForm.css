@@ -2,6 +2,7 @@
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
 }
+
 .login{
   width: 66%;
   margin-top: 0px !important;
@@ -15,6 +16,7 @@
   overflow: hidden;
   margin-top: 20px !important;
 }
+
 
 .loginLabels{
   display: flex;

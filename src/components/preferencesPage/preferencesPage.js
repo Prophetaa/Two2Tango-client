@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Nouislider from 'nouislider-react';
-import 'nouislider/distribute/nouislider.css'
+import 'nouislider/distribute/nouislider.css';
 
 import {
   updatePreferences,
@@ -60,15 +60,15 @@ class PreferencesPage extends Component {
     }
   };
 
-  handleHeightBar =  render => {
-     this.setState({
+  handleHeightBar = render => {
+    this.setState({
       min_height: render[0],
       max_height: render[1]
     });
   };
 
-  handleAgeBar =  render => {
-     this.setState({ min_age: render[0], max_age: render[1] });
+  handleAgeBar = render => {
+    this.setState({ min_age: render[0], max_age: render[1] });
   };
 
   handleCheck = nLevel => {
@@ -124,18 +124,18 @@ class PreferencesPage extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-      await this.props.updatePreferences(
-        this.state.cities,
-        this.state.gender,
-        [
-          parseInt(this.state.min_height, 10),
-          parseInt(this.state.max_height, 10)
-        ],
-        this.state.role,
-        this.state.level,
-        [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
-      );
-      window.location = '/results';
+    await this.props.updatePreferences(
+      this.state.cities,
+      this.state.gender,
+      [
+        parseInt(this.state.min_height, 10),
+        parseInt(this.state.max_height, 10)
+      ],
+      this.state.role,
+      this.state.level,
+      [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
+    );
+    window.location = '/results';
   };
 
   render() {
@@ -152,10 +152,15 @@ class PreferencesPage extends Component {
                     Searching Preferences
                   </h5>
                   <form className="form-signin" onSubmit={this.handleSubmit}>
-                    <div className="form-group row cityInput">
-                      <LocationSearchInput onChange={this.handleSelectCity} onSubmit={this.selectCities} />
+                  <span className="centerText">Type a city name and click add.</span>
+                    <div
+                      className="form-group row cityInput "
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Don't forget to click add!">
+                      <LocationSearchInput onChange={this.handleSelectCity} />
                       <button
-                        className="citiesBtn text-uppercase"
+                        className="citiesBtn text-uppercase btnShaddow"
                         onClick={this.selectCities}>
                         add city
                       </button>
@@ -179,7 +184,7 @@ class PreferencesPage extends Component {
                       role={this.state.role}
                       handleButtonClick={this.handleButtonClick}
                     />
-                    <div className="heightSelection">
+                    <div className="heightSelection ">
                       <CheckBoxes handleCheck={this.handleCheck} />
                     </div>
                     <span className="slideTitle">Age:</span>
@@ -188,9 +193,12 @@ class PreferencesPage extends Component {
                         {this.state.min_age && Math.round(this.state.min_age)}
                       </span>
                       <Nouislider
-                        className="sliderBar"
+                        className="sliderBar boxShaddow"
                         range={{ min: 10, max: 99 }}
-                        start={[this.state.min_age && this.state.min_age, this.state.max_age && this.state.max_age]}
+                        start={[
+                          this.state.min_age && this.state.min_age,
+                          this.state.max_age && this.state.max_age
+                        ]}
                         connect
                         step={5}
                         onSlide={this.handleAgeBar}
@@ -206,9 +214,12 @@ class PreferencesPage extends Component {
                           Math.round(this.state.min_height)}
                       </span>
                       <Nouislider
-                        className="sliderBar"
+                        className="sliderBar boxShaddow"
                         range={{ min: 130, max: 200 }}
-                        start={[this.state.min_height && this.state.min_height, this.state.max_height && this.state.max_height]}
+                        start={[
+                          this.state.min_height && this.state.min_height,
+                          this.state.max_height && this.state.max_height
+                        ]}
                         connect
                         step={5}
                         onSlide={this.handleHeightBar}
@@ -220,14 +231,14 @@ class PreferencesPage extends Component {
                     </div>
                     <div className="buttonsContainer">
                       <Link className="Links" to={'/results'}>
-                        <button className="btn btn-lg btn-block text-uppercase prefBtn cancelChanges">
-                          <span>Cancel Changes</span>
+                        <button className="btn btn-lg btn-block text-uppercase prefBtn cancelChanges btnShaddow">
+                          <span> Cancel </span>
                         </button>
                       </Link>
                       <button
-                        className="btn btn-lg btn-block text-uppercase prefBtn acceptChanges"
+                        className="btn btn-lg btn-block text-uppercase prefBtn acceptChanges btnShaddow"
                         type="submit">
-                        <span>Save Changes</span>
+                        <span> Save </span>
                       </button>
                     </div>
                   </form>

@@ -6,7 +6,7 @@ export default class GenderMenu extends Component {
     return (
         <div className="dropdown genderMenu">
         <button
-          className="form-control dropdown-toggle genderBtn"
+          className="form-control dropdown-toggle genderBtn boxShaddow"
           type="button"
           id="dropdownMenuButton"
           data-toggle="dropdown"

@@ -53,7 +53,7 @@ export default function ProfilePage(props) {
 
 						<button
 							onClick={() => history.push('/edit-profile')}
-							className="btn update-btn-profile btn-block text-uppercase">
+							className="btn update-btn-profile btn-block text-uppercase boxShaddow">
 							modify my profile
 						</button>
 					</div>
