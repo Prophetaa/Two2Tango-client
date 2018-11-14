@@ -13,6 +13,10 @@ import Messages from './Messages';
 class MessagesContainer extends Component {
   state = { message: null };
 
+  componentDidMount(){
+      window.scrollTo(0, 111111);
+  }
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -20,16 +24,25 @@ class MessagesContainer extends Component {
     });
   };
 
+
   handleSubmit = async chatId => {
     if (!this.state.message) return null;
     await this.props.postMessage(this.state.message, chatId);
   };
+
+  componentDidUpdate(){
+    window.scrollTo(0,1313123123123123)
+  }
 
   componentWillUnmount() {
     this.props.resetMessages();
     this.props.resetChatId();
   }
 
+  componentDidCatch(){
+    console.log("what")
+  }
+  
   render() {
     if (!this.props.messages) return <Redirect to="/messages" />;
     return (
@@ -48,7 +61,7 @@ class MessagesContainer extends Component {
                       onSubmit={e => {
                         e.preventDefault();
                         this.handleSubmit(this.props.chatId);
-                        e.target.children[0].value = '';
+                        e.target.children[0].value = ''
                       }}>
                       <input
                         type="text"

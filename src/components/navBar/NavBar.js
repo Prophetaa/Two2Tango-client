@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import { fetchPreferences } from '../../actions/registration';
 import '../../styling/NavBar.css';
 import logoWhite from '../../styling/images/logo.svg';
-import partners from '../../styling/images/PARTNERS.png';
-import email from '../../styling/images/EMAIL.png';
-import user from '../../styling/images/USER.png';
+import partners from '../../styling/images/PARTNERS.svg';
+import email from '../../styling/images/EMAIL.svg';
+import user from '../../styling/images/USER.svg';
 import logoXS from '../../styling/images/logoXS.png';
 
 class Navbar extends Component {
@@ -34,7 +34,7 @@ class Navbar extends Component {
 							<div className="col-xs-12" id="navbarResponsive">
 								<ul className="navbar-nav ml-auto d-inline-md navbar-right">
 									<li className="nav-item">
-										<button className="btn btn-outline-light btn-lg icons-navbar">
+										<button className="btn btn-outline-light icons-navbar">
 											<Link to="/messages" className="link-navbar">
 												<img className="nav-btn navButtonHover" alt="icon" src={email} />
 											</Link>
@@ -56,7 +56,7 @@ class Navbar extends Component {
 									</li>
 									<li className="dropdown nav-item">
 										<div
-											className="btn-lg icons-navbar dropdown-toggle"
+											className="btn icons-navbar dropdown-toggle"
 											data-toggle="dropdown"
 											role="button"
 											aria-haspopup="true"
