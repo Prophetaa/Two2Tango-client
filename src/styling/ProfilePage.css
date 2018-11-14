@@ -1,3 +1,4 @@
+
 .profile-page header {
   background: url('./images/profile.jpg') no-repeat right;
   background-color: #A00D26;
@@ -6,6 +7,10 @@
   font-family: 'Work Sans';
   margin: 0 0 40px 0;
   }
+  .profile-main {
+    margin-bottom: 40px;
+  }
+  
   
   .profile-page img {
     width: 200px;
@@ -34,12 +39,14 @@
       text-align: center;
     }
   }
-  
-  @media screen and (max-width: 768px) {
-    .profile-page {
-      text-align: center;
+  /* Large laptops and desktops */
+  @media only screen and (min-width : 1224px) {
+    .profile-page header {
+      margin: 0 0 80px 0;
     }
+    .profile-main {
+    margin-bottom: 90px;
   }
-  
+  }
   
   

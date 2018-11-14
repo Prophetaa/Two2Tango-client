@@ -38,8 +38,9 @@
 
 .media-body.message {
     cursor: pointer;
+}
 
-.NoMessagesBtn{
+.NoMessagesBtn {
     margin-top: 10%;
     margin-left:45%;
     background-color: #A00D26;
