@@ -79,7 +79,8 @@ export const postPreferences = (city , gender, height, role, level, age) => asyn
 	request
 	  .post(`${baseUrl}/preferences`,console.log(level))
 	  .set('Authorization', `Bearer ${jwt}`)
-	  .send({city, gender, height, role,level, age })
+    .send({city, gender, height, role,level, age })
+    .then(res=> dispatch(goToResults()))
 	  .catch(err => {
 		console.error(err);
 	  });

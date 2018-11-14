@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import '../../styling/ResultsPage.css';
+import history from '../../history'
 
 export default function Results(props) {
 	return (
@@ -19,13 +19,13 @@ export default function Results(props) {
 						<th scope="col" className="text-uppercase">
 							Level
 						</th>
-						<th scope="col" className="text-uppercase">
+						<th scope="col" className="ageRow text-uppercase">
 							Age
 						</th>
-						<th scope="col" className="text-uppercase">
+						<th scope="col" className="genderRow text-uppercase">
 							Gender
 						</th>
-						<th scope="col" className="text-uppercase">
+						<th scope="col" className="heightRow text-uppercase">
 							Height
 						</th>
 					</tr>
@@ -33,24 +33,22 @@ export default function Results(props) {
 				<tbody>
 					{props.results.map(result => (
 						<Fragment key={result.id}>
-							<tr>
+							<tr className="resultsRow" onClick={()=> history.replace(`/profiles/${result.id}`) }>
 								<th scope="row">
-									<Link to={`/profiles/${result.id}`}>
 										<img
 											className="results-profile-img rounded-circle"
 											src={result.photoUrl}
 											alt="profile"
 										/>
-									</Link>
 								</th>
 								<td className="align-middle">
 									{result.firstName} {result.lastName}
 								</td>
 								<td className="align-middle">{result.role}</td>
 								<td className="align-middle">{result.level}</td>
-								<td className="align-middle">{result.age}</td>
-								<td className="align-middle">{result.gender}</td>
-								<td className="align-middle">{result.height}</td>
+								<td className="ageRow align-middle">{result.age}</td>
+								<td className="genderRow align-middle">{result.gender}</td>
+								<td className="heightRow align-middle">{result.height}</td>
 							</tr>
 						</Fragment>
 					))}

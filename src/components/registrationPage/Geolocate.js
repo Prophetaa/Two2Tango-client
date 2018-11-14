@@ -50,7 +50,9 @@ export default class LocationSearchInput extends Component {
 										<span onClick={this.handleSelect}>
 											{suggestion.description.split(",",1)}
 										</span>
+										
 									</div>
+									
 								);
 							})}
 						</div>

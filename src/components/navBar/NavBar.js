@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { fetchPreferences } from '../../actions/registration';
 import '../../styling/NavBar.css';
-import logoWhite from '../../styling/images/logo.png';
+import logoWhite from '../../styling/images/logo.svg';
 import partners from '../../styling/images/PARTNERS.png';
 import email from '../../styling/images/EMAIL.png';
 import user from '../../styling/images/USER.png';
