@@ -2,7 +2,7 @@ import '../../styling/MessagesPage.css';
 import '../../styling/ChatList.css'
 import React from 'react';
 import { Link } from 'react-router-dom';
-import email from '../../styling/images/EMAIL.png';
+import email from '../../styling/images/EMAIL.svg';
 
 
 export default function messages(props) {
