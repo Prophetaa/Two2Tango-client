@@ -24,6 +24,8 @@
     text-decoration: none;
 }
 
+
+
 .link-navbar:hover, 
 .link-navbar:focus, 
 .link-navbar:active, 
@@ -56,6 +58,10 @@
 
 .singUpClick{
     color: #A00D26;
+}
+
+.singUpClick:hover{
+    color:black;
 }
 
 .navButtonHover:hover{
