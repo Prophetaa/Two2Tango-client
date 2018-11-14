@@ -4,7 +4,7 @@ import '../../styling/EditProfile.css';
 export default function EditProfileForm(props) {
 	console.log(props);
 	return (
-		<div className="container-fluid edit-profile">
+		<div className=" edit-profile">
 			<header>
 				<h1>Modify my profile</h1>
 			</header>
@@ -12,7 +12,7 @@ export default function EditProfileForm(props) {
 				<main>
 					<form onSubmit={props.onProfileSubmit}>
 						<div className="row edit-row">
-							<div className="col-sm">
+							<div className="col-sm-12 col-md-4">
 								<img src={props.photoUrl} className="image-profile-edit" alt="" />
 								<div className="form-group">
 									<label htmlFor="firstName" className="text-uppercase labels">
