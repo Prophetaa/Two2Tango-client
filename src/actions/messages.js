@@ -10,6 +10,8 @@ export const RESET_MESSAGES = "RESET_MESSAGES"
 export const SET_CHAT_ID = "SET_CHAT_ID"
 export const CLEAN_CHAT_ID = "CLEAN_CHAT_ID";
 export const CHAT_CREATED = "CHAT_CREATED";
+export const USERS_MATCHED = "USERS_MATCHED"
+
 
 const chatCreated = () => ({
 	type: CHAT_CREATED
@@ -42,6 +44,9 @@ export const resetChatId = () => ({
 	type:CLEAN_CHAT_ID
 })
 
+export const matchSuccess = () => ({
+	type: USERS_MATCHED
+})
 
 
 export const getAllChats = () => (dispatch, getState) => {
@@ -56,6 +61,21 @@ export const getAllChats = () => (dispatch, getState) => {
 		.then(result => dispatch(setAllMessages(result.body)))
 		.catch(err => console.log(err));
 };
+
+
+export const createMatch = (userTwo) => (dispatch, getState) =>{
+	const state = getState();
+	const jwt = state.currentUser.jwt;
+
+	if (isExpired(jwt)) return dispatch(logout())
+
+	request
+	.post(`${baseUrl}/matchUsers/${userTwo}`)
+	.set('Authorization', `Bearer ${jwt}`)
+	.then(res=>dispatch(matchSuccess()))
+	.catch(err => console.log(err));
+}
+
 
 export const createChat = (receiver) => (dispatch, getState) => {
 	const state = getState();
@@ -95,6 +115,22 @@ export const postMessage = (content, id) => (dispatch, getState) => {
 		.set('Authorization', `Bearer ${jwt}`)
 		.send({ content })
 		.then(result => dispatch(updatedMessages(result.body)))
+		.catch(err => console.log(err));
+
+}
+
+
+export const postLastMessage = (lastMessage, id) => (dispatch,getState) =>{
+	const state = getState();
+	const jwt = state.currentUser.jwt;
+
+	if (isExpired(jwt)) return dispatch(logout());
+
+	request
+		.put(`${baseUrl}/chats/${id}`)
+		.set('Authorization', `Bearer ${jwt}`)
+		.send({ lastMessage })
+		.then(result => console.log(result))
 		.catch(err => console.log(err));
 
 }

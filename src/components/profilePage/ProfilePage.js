@@ -1,8 +1,9 @@
 import React from 'react';
 import '../../styling/ProfilePage.css';
+import { toUserId } from '../../jwt';
 
 export default function ProfilePage(props) {
-	const { profile, matchUser } = props;
+	const { profile, matchUser, currentUser, matches } = props;
 	return (
 		<section className="profile-page">
 			<header>
@@ -15,6 +16,7 @@ export default function ProfilePage(props) {
 					<div className="col-sm-12 col-md-4">
 						<img src={profile.photoUrl} alt="" />
 					</div>
+					{console.log(profile)}
 					<div className="col-sm-12 col-md-4 profile-details">
 						<h3 className="pb-4">Personalia</h3>
 						<div className="row">
@@ -49,7 +51,9 @@ export default function ProfilePage(props) {
 					<div className="col-sm-12 col-md-4">
 						<h3 className="pb-4">About me:</h3>
 						<p>{profile.about}</p>
+						{matches && !matches.includes(`[${toUserId(currentUser.jwt)},${profile.userId}]`) && matches && !matches.includes(`[${profile.userId},${toUserId(currentUser.jwt)}]` )&& 
 						<a href="/messages"><button className="btn matchBtn" onClick={()=> matchUser(profile.userId)}>Match this Person</button></a>
+						}
 					</div>
 				</div>
 			</div>

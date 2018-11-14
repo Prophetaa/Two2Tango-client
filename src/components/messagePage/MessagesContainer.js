@@ -6,7 +6,8 @@ import '../../styling/MessagesContainer.css';
 import {
   postMessage,
   resetMessages,
-  resetChatId
+  resetChatId,
+  postLastMessage
 } from '../../actions/messages';
 import Messages from './Messages';
 
@@ -27,7 +28,8 @@ class MessagesContainer extends Component {
 
   handleSubmit = async chatId => {
     if (!this.state.message) return null;
-    await this.props.postMessage(this.state.message, chatId);
+    await this.props.postLastMessage(this.state.message, chatId)
+     this.props.postMessage(this.state.message, chatId);
   };
 
   componentDidUpdate(){
@@ -99,5 +101,5 @@ const mapStateToProps = function(state) {
 };
 export default connect(
   mapStateToProps,
-  { postMessage, resetMessages, resetChatId }
+  { postMessage, resetMessages, resetChatId, postLastMessage }
 )(MessagesContainer);

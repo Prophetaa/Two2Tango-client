@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import ReCaptcha from './ReCaptcha';
 
-import { FACEBOOK_API_KEY } from '../../constants'
+
+import { FACEBOOK_API_KEY } from '../../constants';
 class RegistrationForm extends Component {
   state = {};
 
@@ -46,7 +47,7 @@ class RegistrationForm extends Component {
     return null;
   };
 
-  responseGoogle = async response => {
+  responseInstagram = async response => {
     console.log(response);
   };
 
@@ -117,11 +118,16 @@ class RegistrationForm extends Component {
                     className="btn btn-lg btn-primary btn-block text-uppercase finalStepBtn btnShaddow"
                     id="profileBtn"
                     type="submit">
-                   <span> Next Step </span>
+                    <span> Next Step </span>
                   </button>
                   <p className="d-block text-center mt-2 small account-no">
                     Already a user?
-                    <Link to={'/login'} className="d-block text-center mt-2 small Links signup-link"> Log In</Link>
+                    <Link
+                      to={'/login'}
+                      className="d-block text-center mt-2 small Links signup-link">
+                      {' '}
+                      Log In
+                    </Link>
                   </p>
                   <hr className="my-4" />
                   <FacebookLogin

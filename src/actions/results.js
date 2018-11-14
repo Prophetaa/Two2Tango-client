@@ -7,6 +7,8 @@ export const SET_RESULTS = 'SET_RESULTS';
 export const SET_PROFILE = 'SET_PROFILE';
 export const UPDATED_PROFILE = 'UPDATED_PROFILE';
 export const SET_LATEST_PROFILES = 'SET_LATEST_PROFILES';
+export const MATCHES_FETCHED = 'MATCHES_FETCHED'
+export const RESET_MATCHES = "RESET_MATCHES"
 
 const setAllResults = results => ({
 	type: SET_RESULTS,
@@ -23,10 +25,23 @@ const setLatestProfiles = profiles => ({
 	payload: profiles
 });
 
+
+const matchesFetched = payload => ({
+	type: MATCHES_FETCHED,
+	payload
+})
+
+
+export const cleanMatches = () => ({
+	type:RESET_MATCHES
+})
+
+
 const updatedProfile = profile => ({
 	type: UPDATED_PROFILE,
 	payload: profile
 });
+
 
 export const getAllResults = () => (dispatch, getState) => {
 	const state = getState();
@@ -87,3 +102,10 @@ export const updateProfile = data => (dispatch, getState) => {
 		.then(result => dispatch(updatedProfile(result.body)))
 		.catch(err => console.log(err));
 };
+
+export const getUserMatches = () => (dispatch) =>{
+	request
+		.get(`${baseUrl}/matchedUsers`)
+		.then(result => dispatch(matchesFetched(JSON.stringify(result.body))))
+		.catch(err => console.log(err));
+}
