@@ -13,7 +13,7 @@ export default function EditProfileForm(props) {
         <main>
           <form onSubmit={props.onProfileSubmit}>
             <div className="row edit-row">
-              <div className="col-sm-12 col-md-4">
+              <div className="col-sm-12 col-md-4 dropZone-edit">
                 {props.dropZone}
                 <div className="form-group">
                   <label htmlFor="firstName" className="text-uppercase labels">
