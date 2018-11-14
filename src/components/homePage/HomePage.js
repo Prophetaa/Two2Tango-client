@@ -13,7 +13,6 @@ import Avatar6 from '../../styling/images/Avatar6.png';
 import Avatar7 from '../../styling/images/Avatar7.png';
 import quoteLeft from '../../styling/images/quote-left.png';
 import quoteRight from '../../styling/images/quote-right.png';
-import Footer from './Footer';
 
 export class homePage extends Component {
 	componentDidMount() {
@@ -216,9 +215,6 @@ export class homePage extends Component {
 							</div>
 						</div>
 					</div>
-				</section>
-				<section>
-					<Footer />
 				</section>
 			</div>
 		);

@@ -4,7 +4,7 @@ import '../../styling/ResultsPage.css';
 
 export default function Results(props) {
 	return (
-		<div>
+		<div className='results'>
 			<h1 className="text-center p-3 ">Your future tango partners</h1>
 			<table className="table table-striped">
 				<thead>
