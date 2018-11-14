@@ -31,8 +31,8 @@ class Navbar extends Component {
 									/>
 								</Link>
 							</div>
-							<div className="col-xs-12" id="navbarResponsive">
-								<ul className="navbar-nav ml-auto d-inline-md navbar-right">
+							<div className="col-xs-12" id="navbarResponsive ">
+								<ul className="navbar-nav ml-auto d-inline-md navbar-right nvbr">
 									<li className="nav-item">
 										<button className="btn btn-outline-light icons-navbar">
 											<Link to="/messages" className="link-navbar">
@@ -63,7 +63,7 @@ class Navbar extends Component {
 											aria-expanded="false">
 											<img className="nav-btn navButtonHover" alt="icon" src={user} />
 										</div>
-										<ul className="dropdown-menu">
+										<ul className="dropdown-menu dropdown-menu-right droplinks">
 											<Link className="Links" to={'/my-profile'}>
 												<li className="dropDownLi navButtonHover">
 													<span className="pl-4 dropDownLink">My Profile</span>
