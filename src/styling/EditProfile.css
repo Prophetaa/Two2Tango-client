@@ -150,6 +150,15 @@ textarea {
   border: 1px solid #ccc !important;
 }
 
+.dropZone input {
+  width: 90%;
+  margin: auto 
+}
+.dropZone-edit .dropZone {
+  margin: auto
+}
+
+
 /* Small screens */
 
 @media only screen and (max-width: 768px) {
@@ -182,5 +191,8 @@ textarea {
   }
   .dropZone-edit {
     width: 100%;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

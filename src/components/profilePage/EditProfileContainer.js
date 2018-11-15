@@ -72,13 +72,13 @@ class EditProfileContainer extends Component {
 		if (input === 'old') {
 			const mystyle = {
 				backgroundImage: `url(${this.props.profile.photoUrl})`,
-				backgroundSize: '150%'
+				backgroundSize: '100%'
 			};
 			return mystyle;
 		} else if (input === 'new') {
 			const mystyle = {
 				backgroundImage: `url(${this.state.photoUrl})`,
-				backgroundSize: '150%'
+				backgroundSize: '100%'
 			};
 			return mystyle;
 		}
