@@ -13,7 +13,7 @@ export default function ProfilePage(props) {
 			</header>
 			<div className="container my-profile-main">
 				<div className="row">
-					<div className="col-sm-12 col-md-4">
+					<div className="col-sm-12 col-md-4 my-img">
 						<img src={profile.photoUrl} alt="" />
 					</div>
 					<div className="col-sm-12 col-md-4 profile-details">
