@@ -181,4 +181,7 @@ color:white;
     .input-group-btn button {
         width: 100%
     }
+    .card-body button {
+    height: 3rem
+    }
 }
