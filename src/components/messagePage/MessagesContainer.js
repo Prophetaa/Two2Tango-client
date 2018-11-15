@@ -48,7 +48,7 @@ class MessagesContainer extends Component {
   render() {
     if (!this.props.messages) return <Redirect to="/messages" />;
     return (
-      <div className="container">
+      <div className="container container-msg">
         <h2 className="text-center">Chat</h2>
         <div className="chat-box">
             <Messages />
