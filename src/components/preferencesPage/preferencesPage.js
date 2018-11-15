@@ -112,7 +112,7 @@ class PreferencesPage extends Component {
     e.preventDefault();
     if (this.state.cities.length === 4) return null
     if(this.state.cities.includes(e.target.innerHTML)) return null
-     this.setState({ cities: [...this.state.cities, e.target.innerHTML] });
+     this.setState({ cities: [...this.state.cities, e.target.innerHTML],error:false });
     }
   
 
@@ -122,6 +122,11 @@ class PreferencesPage extends Component {
       [name]: value
     });
   };
+
+
+  doNothing = () =>{
+    return null
+  }
 
   handleSubmit = async e => {
     e.preventDefault();
@@ -146,8 +151,8 @@ class PreferencesPage extends Component {
     if (!this.props.currentUser) return <Redirect to="/home" />;
     return (
       <div className="container  signupContainer ">
-        {Object.keys(this.props.usersPreferences).length > 0 &&
-        Object.keys(this.state).length > 2 ? (
+        {Object.keys(this.props.usersPreferences).length > 1 &&
+        Object.keys(this.state).length >3 ? (
           <div className="row signup-row">
             <div className="col-lg-10 col-xl-9 mx-auto col-padding">
               <div className="card card-signin flex-row my-5">
@@ -161,7 +166,7 @@ class PreferencesPage extends Component {
                       data-toggle="tooltip"
                       data-placement="bottom"
                       title="Don't forget to click add!">
-                      <LocationSearchInput  onClick={this.selectCities} />  
+                      <LocationSearchInput  onChange={this.doNothing}onClick={this.selectCities} />  
                     </div>               
                     {this.state.error && <span className="error">You have to click on the city name</span>}       
                     <div className="citiesContainer container row">

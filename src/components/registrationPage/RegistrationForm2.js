@@ -79,6 +79,10 @@ class RegistrationForm2 extends Component {
     this.handleImageUpload(files[0]);
   }
 
+  doNothing = () =>{
+    return null
+  }
+
   handleImageUpload(file) {
     let upload = request
       .post(CLOUDINARY_UPLOAD_URL)
@@ -187,7 +191,7 @@ class RegistrationForm2 extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <LocationSearchInput onChange={this.handleSelectCity} />
+                    <LocationSearchInput  onClick={this.doNothing} onChange={this.handleSelectCity} />
                   </div>
                   <GenderMenu
                       gender={this.state.gender}
