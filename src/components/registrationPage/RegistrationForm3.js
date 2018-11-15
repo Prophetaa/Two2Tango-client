@@ -99,34 +99,32 @@ class RegistrationForm3 extends Component {
                   Step 3: Matching Preferences
                 </h5>
                 <form className="form-signin" onSubmit={this.handleSubmit}>
-                  <div className="form-group row cityInput input-group">
-                    <div className="text-city-btn">
-                      <LocationSearchInput onChange={this.handleSelectCity}/>
+                  <span className="centerText">Type a city name and click add.</span>
+                    <div
+                      className="form-group row cityInput "
+                      data-toggle="tooltip"
+                      data-placement="bottom"
+                      title="Don't forget to click add!">
+                      <LocationSearchInput onChange={this.handleSelectCity} />
+                      <div className="input-group-btn">
+                        <button
+                          className="citiesBtn text-uppercase btnShaddow align-center btn-lg"
+                          onClick={this.selectCities}>
+                          add city
+                        </button>
+                      </div>            
+                    </div>                  
+                    <div className="citiesContainer container row">
+                      {this.state.cities.map(city => (
+                        <span key={city} className="citiesLi">
+                          <span
+                            className="far fa-times-circle deleteIcon"
+                            onClick={() => this.removeCity(city)}
+                          />
+                          {city}
+                        </span>
+                      ))}
                     </div>
-                    <div className="input-group-btn ">
-                      <button
-                        className="citiesBtn text-uppercase btn d-none d-sm-block"
-                        onClick={this.selectCities}>
-                        <span>add city</span>
-                      </button>
-                      <button
-                        className="citiesBtn text-uppercase btn-lg d-block d-sm-none"
-                        onClick={this.selectCities}>
-                        <span>add city</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="citiesContainer container row">
-                    {this.state.cities.map(city => (
-                      <span key={city} className="citiesLi">
-                        <span
-                          className="far fa-times-circle deleteIcon"
-                          onClick={() => this.removeCity(city)}
-                        />
-                        {city}
-                      </span>
-                    ))}
-                  </div>
                   <GenderMenu
                     gender={this.state.gender}
                     handleButtonClick={this.handleButtonClick}
