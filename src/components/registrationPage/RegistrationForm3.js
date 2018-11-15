@@ -100,10 +100,17 @@ class RegistrationForm3 extends Component {
                 </h5>
                 <form className="form-signin" onSubmit={this.handleSubmit}>
                   <div className="form-group row cityInput input-group">
-                    <LocationSearchInput onChange={this.handleSelectCity} />
-                    <div className="input-group-btn">
+                    <div className="text-city-btn">
+                      <LocationSearchInput onChange={this.handleSelectCity}/>
+                    </div>
+                    <div className="input-group-btn ">
                       <button
-                        className="citiesBtn text-uppercase btn"
+                        className="citiesBtn text-uppercase btn d-none d-sm-block"
+                        onClick={this.selectCities}>
+                        <span>add city</span>
+                      </button>
+                      <button
+                        className="citiesBtn text-uppercase btn-lg d-block d-sm-none"
                         onClick={this.selectCities}>
                         <span>add city</span>
                       </button>
