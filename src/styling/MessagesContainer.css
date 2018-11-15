@@ -1,71 +1,46 @@
-.container-msg {
-  min-height: 100vh
-}
-.poster-messages{
-  border:solid 1px black;
-  border-radius: 5px;
-  padding:10px 35px;
-  margin-left:5px;
-  max-width: 650px;
-  min-width: 200px;
-  word-break:break-all;
-}
-
-.messaging{
-  position:absolute;
-  bottom:10px;
-  width: 80%;
-  margin-left:15px;
-}
-
-.btn-send{
-  color:white!important;
-  border: solid 1px white;
-}
-
-.btn-send:hover{
-  background-color: white!important;
-  color: #A00D26!important;
-  border-color:white!important;
-}
-
-.txtbox-messages{
-  margin-top:15px;
-}
-
-.txtAreaBgrnd{
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: #A00D26;
-}
-
-.chat-messages-box{
-  margin-bottom: 100px!important;
-}
-
-.post-left{
-  float: left;
-}
-
-.time-right{
-  float: center; 
-}
-
-.chat-box form {
-  margin: 0 auto;
-  width: 70%;
-}
 
 .chat-box{
-  width: 80%;
-  margin: 0 auto;
+  padding: 20px 50px ;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
 }
 
-#chat {
-  width: inherit;
-  display: inline;
+.poster-messages{
+  background-color: beige !important;
+  padding: 20px ;
+  border-radius: 5px;
 }
 
-.poster-message{
-  background-color: rgba(160, 13, 37, 0.37);
+.messageTextArea{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0, 0.2), 0 6px 20px 0 rgba(0,0,0, 0.19);
+
 }
+.receiver-messages{
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #e7e7e7e1
+}
+
+.message{
+ width: 60%;
+}
+
+
+.sendMessageBox{
+  width: 60%;
+  margin: 40px auto;
+
+}
+
+.submitMessage{
+  display: block;
+  width: 100%;
+  background-color: #A00D26;
+  color:white;
+}
+
+
+.submitMessage:hover{
+  background-color: rgba(160, 13, 37, 0.856);
+}
+
+

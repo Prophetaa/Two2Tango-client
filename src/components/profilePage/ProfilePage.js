@@ -16,7 +16,6 @@ export default function ProfilePage(props) {
 					<div className="col-sm-12 col-md-4">
 						<img src={profile.photoUrl} alt="" />
 					</div>
-					{console.log(profile)}
 					<div className="col-sm-12 col-md-4 profile-details">
 						<h3 className="pb-4">Personalia</h3>
 						<div className="row">

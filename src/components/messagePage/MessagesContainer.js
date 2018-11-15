@@ -50,44 +50,36 @@ class MessagesContainer extends Component {
     return (
       <div className="container">
         <h2 className="text-center">Chat</h2>
-        <div className="container chat-box">
-          <div className="container chat-messages-box">
+        <div className="chat-box">
             <Messages />
-          </div>
-          <div className="center-block fixed-bottom">
-            <div className="container-fluid txtAreaBgrnd">
-              <div className="row-12">
-                <div className="col-xs-12">
-                  <div className="input-group container">
+              <div className="sendMessageBox row">
+                <div className="col-12">
                     <form
                       onSubmit={e => {
                         e.preventDefault();
                         this.handleSubmit(this.props.chatId);
                         e.target.children[0].value = ''
                       }}>
-                      <input
-                        type="text"
+                      <textarea
                         name="message"
                         id="chat"
                         onChange={this.handleChange}
-                        className="form-control"
+                        className="form-control messageTextArea"
                         defaultValue=""
-                      />
-                      <span className="input-group-btn">
+                        rows="3"
+                      />       
                         <button
-                          className="btn btn-outline-light btn-send"
+                          className="btn submitMessage btnShaddow"
                           type="submit">
                           Send
                         </button>
-                      </span>
+             
                     </form>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+
     );
   }
 }

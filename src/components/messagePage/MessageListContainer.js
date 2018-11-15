@@ -19,7 +19,6 @@ class MessageListContainer extends Component {
   }
 
   renderMessage = async message => {
-    console.log(message);
     await this.props.renderMessageContainer(message.id);
     await this.props.setChatId(message.id);
   };

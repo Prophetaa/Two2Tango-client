@@ -5,20 +5,15 @@ import {toUserId} from '../../jwt'
 class Messages extends Component {
   render() {
     return (
-      <div className="container container-msg">
+      <div className="row">
         {this.props.messages.map(message => (
-            <div className="center-block list-style" key={message.id}>
-              <div className="container">
-                <h6>
-                  <div >
+            <div className="col-12 center-block list-style" key={message.id}>
+              <div className={`message ${message.userId === toUserId(this.props.currentUser.jwt) ? 'float-left poster-messages':" receiver-messages float-right"}`}>      
                   <small>
-                    <span className="poster-left">{message.poster}</span>
-                    <span className="time-right">{message.time}</span>
+                    <span className="">{message.poster}</span>
+                    <span className="">{message.time}</span>
                   </small>
-                  </div>
-
-                </h6>
-                <div className={`row message-text poster-messages ${message.userId === toUserId(this.props.currentUser.jwt) && 'poster-message'}`}>{message.content}</div>
+                <div className="messageContent" ><p>{message.content}</p></div>
               </div>
             </div>
           ))}

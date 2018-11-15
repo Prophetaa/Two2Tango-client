@@ -45,13 +45,15 @@ class App extends Component {
             <Route component={HomePage} />
           </Switch>
         </div>
-        <div className='footer'>
-        <Footer />
-        </div>
-       
+        {!this.props.chatId && (
+          <div className="footer">
+            <Footer />
+          </div>
+        )}
       </div>
     );
   }
 }
+
 
 export default App;

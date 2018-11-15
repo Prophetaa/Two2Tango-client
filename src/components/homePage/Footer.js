@@ -5,8 +5,10 @@ import facebook from '../../styling/images/facebook.svg';
 import tweet from '../../styling/images/twitter.svg';
 import instagram from '../../styling/images/instagram.svg';
 
-export default class Footer extends Component {
+import { connect } from 'react-redux'
+ class Footer extends Component {
 	render() {
+		if(this.props.chatId) return null
 		return (
 			<footer className="page-footer font-small pt-4">
 				<div className="container text-center text-md-left">
@@ -65,3 +67,13 @@ export default class Footer extends Component {
 		);
 	}
 }
+
+const mapStateToProps = function(state) {
+	return {
+		chatId: state.chatId
+	};
+  };
+  export default connect(
+	mapStateToProps
+  )(Footer);
+  
