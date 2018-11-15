@@ -143,8 +143,8 @@ class PreferencesPage extends Component {
       <div className="container  signupContainer ">
         {Object.keys(this.props.usersPreferences).length > 0 &&
         Object.keys(this.state).length > 2 ? (
-          <div className="row">
-            <div className="col-lg-10 col-xl-9 mx-auto">
+          <div className="row signup-row">
+            <div className="col-lg-10 col-xl-9 mx-auto col-padding">
               <div className="card card-signin flex-row my-5">
                 <div className="card-body">
                   <h5 className="card-title text-center">

@@ -130,7 +130,7 @@ class RegistrationForm2 extends Component {
     );
     return (
       <div className="container signupContainer">
-        <div className="row">
+        <div className="row signup-row">
           <div className="col-lg-10 col-xl-9 mx-auto padd">
             <div className="card card-signin flex-row my-5">
               <div className="card-body">
