@@ -72,7 +72,7 @@ export class homePage extends Component {
 									alt="interview icons-home"
 									className="icons-home"
 								/>
-								<div className="text-center">
+								<div className="text-center mb-5">
 									Build a network of suitable partners
 								</div>
 							</div>
@@ -82,7 +82,7 @@ export class homePage extends Component {
 									alt="event icons-home"
 									className="icons-home "
 								/>
-								<div className="text-center">
+								<div className="text-center mb-5">
 									Discover tango events all over the world
 								</div>
 							</div>
@@ -90,7 +90,7 @@ export class homePage extends Component {
 								<img
 									src={laugh}
 									alt="laugh icons-home"
-									className="icons-home "
+									className="icons-home mb-4"
 								/>
 								<div className="text-center">
 									Keep in touch with the tango community
