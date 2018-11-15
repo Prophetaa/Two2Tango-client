@@ -86,3 +86,11 @@ input[type="radio"] {
   -ms-appearance: checkbox;     /* not currently supported */
   -o-appearance: checkbox;      /* not currently supported */
 }
+@media only screen and (max-width: 768px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+  .check_container span {
+  font-size: 1rem;
+}
+}
