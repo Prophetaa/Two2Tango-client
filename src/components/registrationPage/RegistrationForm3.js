@@ -105,7 +105,7 @@ class RegistrationForm3 extends Component {
                       <button
                         className="citiesBtn text-uppercase btn"
                         onClick={this.selectCities}>
-                        add city
+                        <span>add city</span>
                       </button>
                     </div>
                   </div>
