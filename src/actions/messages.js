@@ -130,7 +130,6 @@ export const postLastMessage = (lastMessage, id) => (dispatch,getState) =>{
 		.put(`${baseUrl}/chats/${id}`)
 		.set('Authorization', `Bearer ${jwt}`)
 		.send({ lastMessage })
-		.then(result => console.log(result))
 		.catch(err => console.log(err));
 
 }
