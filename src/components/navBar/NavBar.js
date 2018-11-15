@@ -8,7 +8,7 @@ import logoWhite from '../../styling/images/logo.svg';
 import partners from '../../styling/images/PARTNERS.svg';
 import email from '../../styling/images/EMAIL.svg';
 import user from '../../styling/images/USER.svg';
-import logoXS from '../../styling/images/logoXS.png';
+import logoXS from '../../styling/images/logoXS.svg';
 
 class Navbar extends Component {
 

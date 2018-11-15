@@ -85,6 +85,12 @@
 .tangoLogo{
     width: 15rem;
 }
+
+.tangoLogoXs{
+    width: 68px;
+    height: 68px;
+}
+
 .droplinks {
     font-size: 1.5rem !important; 
 }
