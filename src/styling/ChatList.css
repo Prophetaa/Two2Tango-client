@@ -1,3 +1,6 @@
+.container-msg {
+    min-height: 100vh;
+}
 .chatContainer{
     border-radius: 5px !important;
     border:none !important;
