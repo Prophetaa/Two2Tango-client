@@ -99,13 +99,15 @@ class RegistrationForm3 extends Component {
                   Step 3: Matching Preferences
                 </h5>
                 <form className="form-signin" onSubmit={this.handleSubmit}>
-                  <div className="form-group row cityInput">
+                  <div className="form-group row cityInput input-group">
                     <LocationSearchInput onChange={this.handleSelectCity} />
-                    <button
-                      className="citiesBtn text-uppercase"
-                      onClick={this.selectCities}>
-                      add city
-                    </button>
+                    <div className="input-group-btn">
+                      <button
+                        className="citiesBtn text-uppercase btn"
+                        onClick={this.selectCities}>
+                        add city
+                      </button>
+                    </div>
                   </div>
                   <div className="citiesContainer container row">
                     {this.state.cities.map(city => (

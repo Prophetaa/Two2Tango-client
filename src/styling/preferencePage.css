@@ -121,6 +121,8 @@ color:white;
     border-radius: .25rem;
     border:none;
     outline: none;
+    max-height: 38px;
+    padding-top: -4px;
 }
 
 .citiesBtn:hover{
