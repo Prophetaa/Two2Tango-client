@@ -35,6 +35,11 @@
    size:10rem;
 }
 
+.inbox-icon{
+    max-width: 75px;
+    max-height: 75px;
+}
+
 
 .media-body.message {
     cursor: pointer;
