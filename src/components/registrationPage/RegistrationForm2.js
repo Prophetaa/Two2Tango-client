@@ -16,7 +16,7 @@ class RegistrationForm2 extends Component {
     first_name: this.props.fbState? this.props.fbState.fbName[0]  : "",
     last_name:  this.props.fbState? this.props.fbState.fbName[1]  : "",
     role: null,
-    level:"beginer",
+    level:"beginner",
     gender: null,
     photoURL: this.props.fbState ? this.props.fbState.fbPicture : ""
   };
@@ -65,9 +65,9 @@ class RegistrationForm2 extends Component {
 
   handleLevelBar =  render => {
     let newRender = Math.round(render[1])
-    if(newRender === 1) this.setState({level:"beginer"})
+    if(newRender === 1) this.setState({level:"beginner"})
     if(newRender === 2) this.setState({level:"intermediate"})
-    if(newRender === 3) this.setState({level:"advance"})
+    if(newRender === 3) this.setState({level:"advanced"})
     if(newRender === 4) this.setState({level:"professional"})
   };
 
@@ -102,14 +102,14 @@ class RegistrationForm2 extends Component {
     if (this.state.photoURL)
       return `background-image=url(${
         this.state.photoURL
-      }); background-size:150%;`;
+      }); background-size:100%;`;
   };
   //image uploader
 
   render() {
     const mystyle = {
       backgroundImage: `url(${this.state.photoURL})`,
-      backgroundSize: '150%'
+      backgroundSize: '100%'
     };
     const renderUploader = (
       <div className="uploader">

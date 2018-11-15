@@ -12,6 +12,14 @@
     border:0;
 }
 
+.login-home{
+    color:#A00D26;
+}
+
+.login-home:hover{
+    color: white;
+}
+
 .link-navbar{
     color:black;
     text-decoration: none;
