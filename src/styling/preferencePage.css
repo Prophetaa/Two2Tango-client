@@ -122,7 +122,11 @@ color:white;
     border:none;
     outline: none;
     max-height: 38px;
-    padding-top: -4px;
+    /* padding-top: -14px; */
+}
+
+.text-city-btn{
+    max-height: 38px;
 }
 
 .citiesBtn:hover{

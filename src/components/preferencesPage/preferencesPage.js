@@ -158,7 +158,7 @@ class PreferencesPage extends Component {
                       data-placement="bottom"
                       title="Don't forget to click add!">
                       <LocationSearchInput onChange={this.handleSelectCity} />
-                      <div className="input-group-btn ">
+                      <div className="input-group-btn">
                         <button
                           className="citiesBtn text-uppercase btnShaddow align-center btn-lg"
                           onClick={this.selectCities}>
