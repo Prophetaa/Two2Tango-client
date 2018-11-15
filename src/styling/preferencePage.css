@@ -157,4 +157,7 @@ color:white;
   .heightSlider  .noUi-handle-upper::after{
     content: none !important; 
   }
+  .col-padding {
+      padding: 0px;
+  }
 
