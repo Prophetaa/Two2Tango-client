@@ -17,6 +17,9 @@
     overflow: hidden;
   }
 
+  .cityInput input{
+    margin-bottom: 1rem;
+  }
   .card-signin .card-title {
     margin-bottom: 2rem;
     font-weight: 300;

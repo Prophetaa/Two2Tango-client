@@ -8,15 +8,18 @@ export default class LocationSearchInput extends Component {
 	state = { city: `` };
 
 	handleChange = async city => {
-		await this.setState({ city: `${city.split(',',1)}` });
-	await	this.props.onChange(city);
-		
+	await this.setState({ city: `${city.split(',',1)}` });
 	};
 
 	handleSelect = city => {
 		geocodeByAddress(city)
 			.then(results => getLatLng(results[0]))
 	};
+
+	handleCity = e =>{
+		this.props.onClick(e)
+	}
+
 
 	render() {
 		return (
@@ -28,7 +31,7 @@ export default class LocationSearchInput extends Component {
 						<input
 							{...getInputProps({
 								id:'geoLocate',
-								placeholder: 'City *',
+								placeholder: 'Select Cities *',
 								className: 'location-search-input  form-control boxShaddow'
 							})}
 						/>	
@@ -47,10 +50,9 @@ export default class LocationSearchInput extends Component {
 											className,
 											style
 										})}>
-										<span onClick={this.handleSelect}>
+										<span onClick={this.handleCity}>
 											{suggestion.description.split(",",1)}
 										</span>
-										
 									</div>
 									
 								);
