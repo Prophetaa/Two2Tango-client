@@ -11,11 +11,12 @@ import user from '../../styling/images/USER.svg';
 import logoXS from '../../styling/images/logoXS.png';
 
 class Navbar extends Component {
+
 	render() {
 		return (
 			<div className="navbar-style">
 				<nav className="navbar navbar-expand navbar-light sticky-top navbar-right">
-					{this.props.currentUser && (
+					{this.props.currentUser && this.props.currentRegPage !== 2 && this.props.currentRegPage !== 3 && (
 						<div className="container">
 							<div className="nav-header tangoLogoHeader">
 								<Link to="/home">
@@ -40,13 +41,7 @@ class Navbar extends Component {
 											</Link>
 										</button>
 									</li>
-									{/* <li className="nav-item">
-                    <button className="btn btn-outline-light btn-lg icons-navbar">
-                      <Link to="/preferences" className="link-navbar">
-                        <i className="fas fa-cog fa-md" />
-                      </Link>
-                    </button>
-                  </li> */}
+			
 									<li className="nav-item">
 										<button className="btn btn-outline-light btn-lg icons-navbar">
 											<Link to="/results" className="link-navbar navButtonHover">
@@ -64,11 +59,13 @@ class Navbar extends Component {
 											<img className="nav-btn navButtonHover" alt="icon" src={user} />
 										</div>
 										<ul className="dropdown-menu dropdown-menu-right droplinks">
+						
 											<Link className="Links" to={'/my-profile'}>
 												<li className="dropDownLi navButtonHover">
 													<span className="pl-4 dropDownLink">My Profile</span>
 												</li>
 											</Link>
+							
 											<Link className="Links " to={'/preferences'}>
 												<li className="dropDownLi">
 													<span className="pl-4  dropDownLink">
@@ -119,6 +116,7 @@ class Navbar extends Component {
 const mapStateToProps = function(state) {
 	return {
 		currentUser: state.currentUser,
+		currentRegPage: state.currentRegPage,
 		usersPreferences: state.usersPreferences
 	};
 };

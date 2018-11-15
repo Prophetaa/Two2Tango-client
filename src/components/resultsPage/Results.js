@@ -13,7 +13,7 @@ export default function Results(props) {
 						<th scope="col" className="text-uppercase">
 							Name
 						</th>
-						<th scope="col" className="text-uppercase">
+						<th scope="col" className="roleRow text-uppercase">
 							Role
 						</th>
 						<th scope="col" className="text-uppercase">
@@ -44,7 +44,7 @@ export default function Results(props) {
 								<td className="align-middle">
 									{result.firstName} {result.lastName}
 								</td>
-								<td className="align-middle">{result.role}</td>
+								<td className="roleRow align-middle">{result.role}</td>
 								<td className="align-middle">{result.level}</td>
 								<td className="ageRow align-middle">{result.age}</td>
 								<td className="genderRow align-middle">{result.gender}</td>
