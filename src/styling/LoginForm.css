@@ -260,6 +260,9 @@
   color: #A00D26 !important
 
 }
+.signup-row {
+  margin: 0
+}
 
 /* Small screens */
 @media only screen and (max-width: 768px) {
