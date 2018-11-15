@@ -22,7 +22,7 @@ class PreferencesPage extends Component {
   async componentDidMount() {
     this.props.fetchPreferences();
   }
-  state = { cities: [], level: [] };
+  state = { cities: [], level: [], error:null };
 
   updateState = () => {
     if (this.props.currentUser) {
@@ -125,6 +125,8 @@ class PreferencesPage extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
+    if(this.state.cities.length === 0) this.setState({error:true})
+    if(this.state.error === false){
     await this.props.updatePreferences(
       this.state.cities,
       this.state.gender,
@@ -138,6 +140,7 @@ class PreferencesPage extends Component {
     );
     window.location = '/results';
   };
+}
 
   render() {
     if (!this.props.currentUser) return <Redirect to="/home" />;
@@ -159,7 +162,8 @@ class PreferencesPage extends Component {
                       data-placement="bottom"
                       title="Don't forget to click add!">
                       <LocationSearchInput  onClick={this.selectCities} />  
-                    </div>                  
+                    </div>               
+                    {this.state.error && <span className="error">You have to click on the city name</span>}       
                     <div className="citiesContainer container row">
                       {this.state.cities.map(city => (
                         <span key={city} className="citiesLi">
