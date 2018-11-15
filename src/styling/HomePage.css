@@ -171,12 +171,13 @@
 .partner-text{
   padding-bottom: 50px;
 }
+.tangueros-img img {
+   object-fit: cover;
+}
 
 @media screen and (max-width: 768px) {
   .find-your-partner {
     text-align: center;
-    /* height: 200px;
-    padding: 10px; */
   }
 
   .background-top-home {

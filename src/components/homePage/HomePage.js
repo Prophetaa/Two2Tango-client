@@ -107,12 +107,12 @@ export class homePage extends Component {
 								<p className="display-4 title-home ">New tangueros</p>
 							</div>
 						</div>
-						<div className="row text-center d-flex justify-content-around">
+						<div className="row text-center d-flex justify-content-around ">
 							{this.props.latestProfiles &&
 								this.props.latestProfiles.map((profile, i) => (
 									<div
 										key={i}
-										className="col-4 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home">
+										className="col-4 col-sm-4 col-md-4 col-lg-1 col-xl-1 avatar-box-home tangueros-img">
 										<img
 											src={profile.photoUrl}
 											className="avatar-home m-4"
