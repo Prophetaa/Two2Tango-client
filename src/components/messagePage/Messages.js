@@ -5,7 +5,7 @@ import {toUserId} from '../../jwt'
 class Messages extends Component {
   render() {
     return (
-      <div className="container ">
+      <div className="container container-msg">
         {this.props.messages.map(message => (
             <div className="center-block list-style" key={message.id}>
               <div className="container">
