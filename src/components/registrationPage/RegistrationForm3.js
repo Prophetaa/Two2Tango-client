@@ -11,7 +11,7 @@ import CheckBoxes from './CheckBoxes';
 import GenderMenu from '../preferencesPage/GenderMenu';
 import RoleMenu from '../preferencesPage/RoleMenu';
 class RegistrationForm3 extends Component {
-  state = { cities: [], role: null, gender: null, tango_level: [], age: [] , min_age:10, max_age:99, min_height:130, max_height:200};
+  state = { cities: [], role: null, gender: null, tango_level: [], age: [] , min_age:10, max_age:99, min_height:130, max_height:200, error:null};
 
   handleCheck = level => {
     //Checks if this level is already on the react state, if it is it deletes it
@@ -59,12 +59,13 @@ class RegistrationForm3 extends Component {
     e.preventDefault();
     if (this.state.cities.length === 4) return null
     if(this.state.cities.includes(e.target.innerHTML)) return null
-     this.setState({ cities: [...this.state.cities, e.target.innerHTML] });
+     this.setState({ cities: [...this.state.cities, e.target.innerHTML],error:false });
     }
 
   handleSubmit = async e => {
     e.preventDefault();
-
+    if(this.state.cities.length === 0) this.setState({error:true})
+    if(this.state.error === false){ 
     await this.props
       .postPreferences(
         this.state.cities,
@@ -77,6 +78,7 @@ class RegistrationForm3 extends Component {
         this.state.tango_level,
         [parseInt(this.state.min_age, 10), parseInt(this.state.max_age, 10)]
       )
+    }
   };
 
   handleChange = event => {
@@ -103,7 +105,8 @@ class RegistrationForm3 extends Component {
                       data-placement="bottom"
                       title="Don't forget to click add!">
                       <LocationSearchInput  onClick={this.selectCities} />
-                    </div>                  
+                    </div>
+                    {this.state.error && <span className="error">You have to click on the city name</span>}              
                     <div className="citiesContainer container row">
                       {this.state.cities.map(city => (
                         <span key={city} className="citiesLi">

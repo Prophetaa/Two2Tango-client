@@ -17,6 +17,12 @@
     overflow: hidden;
   }
 
+  .error{
+    color:red;
+    display:flex;
+    justify-content: center;
+  }
+
   .cityInput input{
     margin-bottom: 1rem;
   }
