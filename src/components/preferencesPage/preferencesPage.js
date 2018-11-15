@@ -107,15 +107,17 @@ class PreferencesPage extends Component {
     this.setState({ cities: [...this.state.cities] });
   };
 
-  handleSelectCity = event => {
-    // handles selection of city from the suggestted list
-    let formatedCity = event.split(',', 1);
-    this.setState({ city: formatedCity[0] });
-  };
+
+  selectCities = e =>{
+    e.preventDefault();
+    if (this.state.cities.length === 4) return null
+    if(this.state.cities.includes(e.target.innerHTML)) return null
+     this.setState({ cities: [...this.state.cities, e.target.innerHTML] });
+    }
+  
 
   handleChange = event => {
     const { name, value } = event.target;
-
     this.setState({
       [name]: value
     });
@@ -151,20 +153,12 @@ class PreferencesPage extends Component {
                     Searching Preferences
                   </h5>
                   <form className="form-signin" onSubmit={this.handleSubmit}>
-                  <span className="centerText">Type a city name and click add.</span>
                     <div
                       className="form-group row cityInput "
                       data-toggle="tooltip"
                       data-placement="bottom"
                       title="Don't forget to click add!">
-                      <LocationSearchInput onChange={this.handleSelectCity} />
-                      <div className="input-group-btn">
-                        <button
-                          className="citiesBtn text-uppercase btnShaddow align-center btn-lg"
-                          onClick={this.selectCities}>
-                          add city
-                        </button>
-                      </div>            
+                      <LocationSearchInput  onClick={this.selectCities} />  
                     </div>                  
                     <div className="citiesContainer container row">
                       {this.state.cities.map(city => (
@@ -175,7 +169,7 @@ class PreferencesPage extends Component {
                           />
                           {city}
                         </span>
-                      ))}
+                      ))} 
                     </div>
                     <GenderMenu
                       gender={this.state.gender}

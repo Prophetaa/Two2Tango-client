@@ -55,14 +55,12 @@ class RegistrationForm3 extends Component {
     await this.setState({ min_age: render[0], max_age: render[1] });
   };
 
-  selectCities = e => {
+  selectCities = e =>{
     e.preventDefault();
-    if (this.state.cities.length < 4) {
-      if (this.state.cities.includes(this.state.city)) return null;
-      if (this.state.city)
-        this.setState({ cities: [...this.state.cities, this.state.city] });
+    if (this.state.cities.length === 4) return null
+    if(this.state.cities.includes(e.target.innerHTML)) return null
+     this.setState({ cities: [...this.state.cities, e.target.innerHTML] });
     }
-  };
 
   handleSubmit = async e => {
     e.preventDefault();
@@ -99,20 +97,12 @@ class RegistrationForm3 extends Component {
                   Step 3: Matching Preferences
                 </h5>
                 <form className="form-signin" onSubmit={this.handleSubmit}>
-                  <span className="centerText">Type a city name and click add.</span>
                     <div
                       className="form-group row cityInput "
                       data-toggle="tooltip"
                       data-placement="bottom"
                       title="Don't forget to click add!">
-                      <LocationSearchInput onChange={this.handleSelectCity} />
-                      <div className="input-group-btn">
-                        <button
-                          className="citiesBtn text-uppercase btnShaddow align-center btn-lg"
-                          onClick={this.selectCities}>
-                          add city
-                        </button>
-                      </div>            
+                      <LocationSearchInput  onClick={this.selectCities} />
                     </div>                  
                     <div className="citiesContainer container row">
                       {this.state.cities.map(city => (
