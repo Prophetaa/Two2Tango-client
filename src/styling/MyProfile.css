@@ -51,6 +51,9 @@
   background-color: #b80321;
   text-decoration: none !important;
 }
+.my-img img {
+  object-fit: cover
+}
 
 @media screen and (max-width: 768px) {
   .my-profile-page {
