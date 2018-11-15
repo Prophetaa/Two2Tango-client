@@ -62,6 +62,11 @@ class RegistrationForm3 extends Component {
      this.setState({ cities: [...this.state.cities, e.target.innerHTML],error:false });
     }
 
+
+    doNothing =() =>{
+      return null
+    }
+
   handleSubmit = async e => {
     e.preventDefault();
     if(this.state.cities.length === 0) this.setState({error:true})
@@ -104,7 +109,7 @@ class RegistrationForm3 extends Component {
                       data-toggle="tooltip"
                       data-placement="bottom"
                       title="Don't forget to click add!">
-                      <LocationSearchInput  onClick={this.selectCities} />
+                      <LocationSearchInput onChange={this.doNothing} onClick={this.selectCities} />
                     </div>
                     {this.state.error && <span className="error">You have to click on the city name</span>}              
                     <div className="citiesContainer container row">
