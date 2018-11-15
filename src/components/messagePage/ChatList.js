@@ -29,7 +29,7 @@ export default function messages(props) {
       <div className="container">
         <h1 className="text-center">
           <img
-            className="mr-3"
+            className="mr-3 inbox-icon"
             src={email}
             alt="email"
             //  width="50"
