@@ -7,9 +7,9 @@ import email from '../../styling/images/EMAIL.svg';
 export default function messages(props) {
   if (props.chats[0].length < 1 && props.chats[1].length < 1)
     return (
-      <div className="container container-msg">
+      <div className="container ">
         <div className="col-sm-12">
-          <div className="row">
+          <div className="row container-msg">
             <h1 className="header NoMessages">
               Looks Like you didn't connect with anyone yet..
             </h1>
@@ -25,7 +25,7 @@ export default function messages(props) {
       </div>
     );
   return (
-    <div className="messages">
+    <div className="messages container-msg">
       <div className="container">
         <h1 className="text-center">
           <img

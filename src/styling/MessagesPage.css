@@ -1,4 +1,6 @@
-
+.container-msg {
+	min-height: 100vh
+}
 .messages {
 	padding: 20px;
 }
