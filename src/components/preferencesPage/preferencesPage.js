@@ -41,7 +41,6 @@ class PreferencesPage extends Component {
 
   selectLevels = async () => {
     let arr = await this.props.usersPreferences.level;
-    console.log(arr);
     if (arr.includes('beginner')) {
       let level = document.getElementById('beginner');
       level.click();

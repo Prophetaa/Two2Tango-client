@@ -3,7 +3,6 @@ import '../../styling/EditProfile.css';
 
 
 export default function EditProfileForm(props) {
-	console.log(props);
   return (
     <div className="edit-profile">
       <header>
