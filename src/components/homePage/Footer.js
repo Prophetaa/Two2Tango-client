@@ -21,7 +21,7 @@ export default class Footer extends Component {
           		</form>
 						</div>
 						<hr className="clearfix w-100 d-md-none pb-3" />
-        		<div className="col mb-md-0 mb-3">
+        		<div className="col-md-4 mb-md-0 mb-3">
             	<h6 className="text-uppercase">Contacts</h6>
             	<ul className="list-unstyled">
             		<li>
