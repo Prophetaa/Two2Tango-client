@@ -37,19 +37,19 @@ export class homePage extends Component {
 										onClick={() => this.props.history.push(`/login`)}>
 										Log In
 									</button> */}
-									<button
+									{!this.props.currentUser && (<button
 										type="button"
 										className="btn btn-primary btn-lg SignInPrmBtn"
 										onClick={() => this.props.history.push(`/signup`)}>
 										Sign Up
-									</button>
+									</button>)}
 
-									<div className="login-container">
+									{!this.props.currentUser && (<div className="login-container">
 										Already a member?
 										<Link to="/login" className="login-home">
 											&nbsp;Log In
 										</Link>
-									</div>
+									</div>)}
 								</div>
 							</div>
 						</div>
