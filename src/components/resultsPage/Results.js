@@ -33,7 +33,7 @@ export default function Results(props) {
 				<tbody>
 					{props.results.map(result => (
 						<Fragment key={result.id}>
-							<tr className="resultsRow" onClick={()=> history.replace(`/profiles/${result.id}`) }>
+							<tr className="resultsRow" onClick={()=> history.push(`/profiles/${result.id}`) }>
 								<th scope="row">
 										<img
 											className="results-profile-img rounded-circle"
