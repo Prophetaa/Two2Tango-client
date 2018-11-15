@@ -77,7 +77,7 @@ export const postPreferences = (city , gender, height, role, level, age) => asyn
 	let jwt = state.currentUser.jwt;
 	if (isExpired(jwt)) return dispatch(logout());
 	request
-	  .post(`${baseUrl}/preferences`,console.log(level))
+	  .post(`${baseUrl}/preferences`)
 	  .set('Authorization', `Bearer ${jwt}`)
     .send({city, gender, height, role,level, age })
     .then(res=> dispatch(goToResults()))
@@ -93,7 +93,7 @@ export const postPreferences = (city , gender, height, role, level, age) => asyn
 	if (isExpired(jwt)) return dispatch(logout());
 	request
 	  .get(`${baseUrl}/preferences`)
-	  .set('Authorization', `Bearer ${jwt}`, console.log("fetching prefs"))
+	  .set('Authorization', `Bearer ${jwt}`)
     .then(res => dispatch(preferencesFetched(res.body)))
 	  .catch(err => {
 		console.error(err);
@@ -107,7 +107,7 @@ export const postPreferences = (city , gender, height, role, level, age) => asyn
     if (isExpired(jwt)) return dispatch(logout());
   
     request
-      .put(`${baseUrl}/preferences`, console.log("puting"))
+      .put(`${baseUrl}/preferences`)
       .set('Authorization', `Bearer ${jwt}`)
       .send({city, gender, height, role, level, age})
       .then(res=> console.log(res.body))
