@@ -106,6 +106,9 @@ export default function messages(props) {
                     <span className="chatNames text-uppercase">
                       {message.creator}
                     </span>
+                    <p className=""> 
+                    {message.lastMessage}
+                    </p>
                   </div>
                 )}
               </div>
