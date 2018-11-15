@@ -114,6 +114,9 @@ color:white;
     justify-content: center;
     width: 100%;
 }
+.form-signin .row {
+    margin: 0px;
+}
 
 .citiesBtn{
     background-color: #A00D26;
@@ -167,3 +170,15 @@ color:white;
       padding: 0px;
   }
 
+  /* Small screens */
+  @media only screen and (max-width: 768px) {
+    [class*="col-"] {
+      width: 100%;
+    }
+    .cityInput div {
+        width: 100%
+    }
+    .input-group-btn button {
+        width: 100%
+    }
+}
