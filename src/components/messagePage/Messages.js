@@ -5,7 +5,7 @@ import {toUserId} from '../../jwt'
 class Messages extends Component {
   render() {
     return (
-      <div className="row ">
+      <div className="row">
         {this.props.messages.map(message => (
             <div className="col-12 center-block list-style" key={message.id}>
               <div className={`message ${message.userId === toUserId(this.props.currentUser.jwt) ? 'float-left poster-messages':" receiver-messages float-right"}`}>      
