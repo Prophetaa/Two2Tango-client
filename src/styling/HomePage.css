@@ -19,6 +19,13 @@
 .login-container{
   margin-top:5%;
 }
+.login-container a {
+  font-size: 1.2rem;
+  color: #FFFFFF
+}
+.login-container a:hover {
+  font-weight: 600
+}
 
 .background-top-home{
   background: black;
