@@ -7,4 +7,8 @@
 - yarn install
 - yarn start
 
-A visitor can signup and login. When a user is logged in, they can see a list of results of selected tango partners. These potential partners are carefully selected based on the preferences of the user. When a certain result is clicked the profile page of that particular user is showed.
+This is the out-come of a challenge we were handed in the Real-world Projects of the Codaisseur Full-stack academy course. We were given the challenge of building a website to help tango dancers meet other tango dancers.
+
+We used React, Redux, bootstrap for the front-end.
+
+Whant a live version? visit https://two2tango.herokuapp.com
