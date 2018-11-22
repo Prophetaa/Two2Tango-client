@@ -11,4 +11,4 @@ This is the out-come of a challenge we were handed in the Real-world Projects of
 
 We used React, Redux, bootstrap for the front-end.
 
-Whant a live version? visit https://two2tango.herokuapp.com
+Want a live version? visit https://two2tango.herokuapp.com
